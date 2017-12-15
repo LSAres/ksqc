@@ -50,9 +50,9 @@ function tool($index)
 	$arr = [
 		1 => ['miner_gold' => 3000, 'start' => 1, 'end' => 11],		//11.6
 		2 => ['miner_gold' => 6000, 'start' => 1, 'end' => 23],		//23.6
-		3 => ['miner_gold' => 12000, 'start' => 1, 'end' => 44],		//44.6
-		4 => ['miner_gold' => 25000, 'start' => 1, 'end' => 97],		//97.2
-		5 => ['miner_gold' => 50000, 'start' => 1, 'end' => 194],	//194.4
+		3 => ['miner_gold' => 12000, 'start' => 1 'end' => 44],		//44.6
+		4 => ['miner_gold' => 25000, 'start' => 1 'end' => 97],		//97.2
+		5 => ['miner_gold' => 50000, 'start' => 1 'end' => 194],	//194.4
 	];
     return $arr[$index];
 }
