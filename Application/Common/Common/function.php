@@ -24,6 +24,16 @@ function getUser($userId) {
 }
 
 /**
+ * [getUser 获取仓库信息]
+ * @param  [type] $userId [userId]
+ * @return [type]         [array]
+ */
+function getStore($userId) {
+	$store = M('store')->where(array('uid' => $userId))->find();
+	return $store;
+}
+
+/**
  * [area 开发新矿区所需消耗物品]
  * 共5大区，煤矿自动开启，所有只有四条
  * @return [type] [array]

@@ -21,38 +21,37 @@ class LoginController extends Controller
 
 		!IS_POST ? false : die;
 	    	
-    	$mobile=I('post.telephone');
-	    $psw=I('post.password','');
+    	$mobile = I('post.telephone');
+	    $psw = I('post.password','');
 
-	   	$code=I('verify');
-		$udb=M('user');
+	   	$code = I('verify');
+		$udb = M('user');
+
 		$db_userlog = M('user_log');
-		$usinfo=$udb->where("mobile='{$mobile}' or account='{$mobile}'")->find();
+		$usinfo = $udb->where("mobile='{$mobile}' or account='{$mobile}'")->find();
 		
         if ($usinfo['lockuser']) {
         	msg('你账号已锁定，请联系管理员');
         }
 
-		$us_old=md5(md5($psw).$usinfo['salt']);
+		$us_old = md5(md5($psw).$usinfo['salt']);
 		if (empty($usinfo)) msg("账号错误", U('Login/login'));
 		if ($us_old != $usinfo['password']) msg("密码错误", U('Login/login'));
 
-		session('userId', $usinfo['userid'], 3600*3);
+		session('userId', $usinfo['id'], 3600*3);
 		session('mobile', $mobile, 3600*3);
                	
         //记录登录时间
-		M('user')->where('userid='.$usinfo['userid'].'')->setField('last_login',time());
-		M('user')->where('userid='.$usinfo['userid'].'')->setField('login_ip',get_client_ip());
-		$uInfo = M('store')->where('uid='.$usinfo['userid'].'')->find();
+        M('user')->where('id='.$usinfo['id'].'')->save(array('last_login' => time(), 'login_ip' => get_client_ip()));
 
 		$logInfo = array(
-			'uid'      => $usinfo['userid'],
+			'uid'      => $usinfo['id'],
 			'type'     => trim('Login'),
 			'time'     => time(),
 			'log_ip'   => get_client_ip(),
 		 );
 
-		M('user_log')->data($logInfo)->add();
+		$db_userlog->data($logInfo)->add();
 		redirect( U('/Index/Index'));
 		
 	}
@@ -61,28 +60,29 @@ class LoginController extends Controller
 	{
 		if (empty( I('post.'))) die();
 
-	    $udb=M('user');
-	    $db_farm=M('nzusfarm');
-	    $arr=I('post.'); 
+	    $udb = M('user');
+	   	$store = M('store');
+		$layer = M('layer');
+	    $arr = I('post.'); 
         //========判断查出来的父级id是否为空============
-        $recommend_ren=trim($arr['recommend_ren']); 
-        $data=$udb->where("account='".$recommend_ren."'")->find(); 
+        $parent_id = trim($arr['parent_id']); 
+        $data = $udb->where("account='".$parent_id."'")->find(); 
 
         if(empty($data)) msg('推荐人不存在');
             //========判断新的账号名是否已经存在============
-        $account=trim($arr['account']); 
-        $data2=$udb->where("account='".$account."'")->find(); 
+        $account = trim($arr['account']); 
+        $data2 = $udb->where("account='".$account."'")->find(); 
         if(!empty($data2)) msg('账号名已经存在，请重新输入');
 
         // 姓名是否填写
         $username=trim($arr['username']);
-        if(!empty($data2)) msg('忘记填写姓名啦');
+        if(!empty($username)) msg('忘记填写姓名啦');
             
 
            //判断手机号是否有重复
         $post_mobile = trim($arr['mobile']);
         $mobileInfo = $udb->where('mobile="'.$post_mobile.'"')->find();
-        if(!empty($data2)) msg('该手机号已注册请换个号码');
+        if(!empty($mobileInfo)) msg('该手机号已注册请换个号码');
 
 /*	$sms_code = I('post.sms_code');
       $trade_code= session('trade_code');
@@ -91,27 +91,24 @@ class LoginController extends Controller
         exit();
       }*/
         //========判断两次输入的一级密码是否一致============
-        if(trim($arr['password'])!== trim($arr['passwordr'])) msg('两次一级密码不一样');
+        if(trim($arr['password']) !== trim($arr['passwordr'])) msg('两次一级密码不一样');
              
         //========判断两次输入的二级密码是否一致============
-        if(trim($arr['two_password'])!== trim($arr['two_passwordr'])) msg('两次二级密码不一样');
+        if(trim($arr['two_password']) !== trim($arr['two_passwordr'])) msg('两次二级密码不一样');
 
         //=============登录密码加密==============
-        $salt= substr(md5(time()),0,3);
-        $password=md5(md5(trim($arr['passwordr'])).$salt);
+        $salt = substr(md5(time()),0,3);
+        $password = md5(md5(trim($arr['passwordr'])).$salt);
         
 
         //=============安全密码加密==============
-        $two_salt= substr(md5(time()),0,3);
-        $two_password=md5(md5(trim($arr['two_passwordr'])).$two_salt);
+        $two_salt = substr(md5(time()),0,3);
+        $two_password = md5(md5(trim($arr['two_passwordr'])).$two_salt);
 
-       $registerInfo=array(
-       		'miner_gold'	 => 0,	//挖矿金
-       		'diamonds'       => 300,	//钻石
-       		'money'			 => 0,			//现金
-       		'brand'			 => 0,			//牌照
+        //添加用户
+       $userInfo = array(
             'account'        => trim($arr['account']),
-            'parent_id'      => $data['userid'],
+            'parent_id'      => $data['id'],
             'username'       => trim($arr['username']),
             'sex'            => trim($arr['sex']),
             'mobile'         => trim($arr['mobile']),
@@ -122,19 +119,52 @@ class LoginController extends Controller
             'safety_salt'    => $two_salt,
 			'lockuser'		 => 0,
             'add_time'		 => time(),
-            'ip'			 => get_client_ip(), 
-			'last_login'	 => 0,
-			'area_1' 		 => 1,
-			'area_2' 		 => 0,
-			'area_3' 		 => 0,
-			'area_4' 		 => 0,
-			'area_5' 		 => 0
+            'ip'			 => get_client_ip(),
+			'last_login'	 => 0
         );
-  
-        //========向user表添加信息=======
-        $zhuce=$udb->data($registerInfo)->add();  
+        $uid = $udb->data($userInfo)->add();
+
+        //创建仓库		从水库拨10元转10000挖矿分做启动资金 此处缺少水库记录
+        $user_store = [
+        	'uid' => $uid,
+        	'miner_gold' => 10000,
+        	'diamonds' => 300,
+        	'money' => ,
+        	'brand' => ,
+        	'case' => 0,
+        	'prize_ticket' => 0
+        ];
+        $store->add($user_store);
+
+        //插入矿层
+        for ($i = 1; $i < 13; $i + +) { 
+        	//第一层免费开放
+        	if ($i === 1) {
+        		$layer_data = [
+	        		'uid' => $uid,
+	        		'layer_id' => $i,
+	        		'tool_id' => 0,
+	        		'tool_count' => 0,
+	        		'tool_use_time' => 0,
+	        		'is_open' => 1,
+	        		'open_time' => time(),
+	        	];
+        	} else {
+	        	$layer_data = [
+	        		'uid' => $uid,
+	        		'layer_id' => $i,
+	        		'tool_id' => 0,
+	        		'tool_count' => 0,
+	        		'tool_use_time' => 0,
+	        		'is_open' => 0,
+	        		'open_time' => 0,
+	        	];
+        	}
+        	$layer->add($layer_data);
+        }
+
         //=========检查刚才添加的是否有值============
-        $check_zhuce=$udb->where("account='".$registerInfo['account']."'")->find();
+        $check_zhuce=$udb->where("account='".$userInfo['account']."'")->find();
         $userid=$check_zhuce['userid'];
        
         if(!empty($data2)) msg('注册成功', U('Regus/login'));
@@ -142,16 +172,16 @@ class LoginController extends Controller
 
 	//用户退出 
 	public function logout(){
-        $userid=session('userid');
+        $userid = session('userId');
         if (empty($userid)) {
-            redirect(U('Mobile/Index/login'));
+            redirect(U('Index/login'));
 		}
 
-		session('userid',null);
+		session('userId',null);
 		session('mobile',null);
 
 		//if ($browser == 'pc') {
-		redirect(U('Pc/Index/login'));
+		redirect(U('Index/login'));
 		// } else {
 		// 	redirect(U('Mobile/Index/login'));
 		// }
