@@ -32,34 +32,34 @@ class LoginController extends Controller
         if ($usinfo['lockuser']) {
         	msg('你账号已锁定，请联系管理员');
         }
-			
-		$us_old=md5(md5($psw).$usinfo['salt']);
-		if (empty($usinfo)) msg("账号错误", U('Regus/login'));
-		if ($us_old != $usinfo['password']) msg("密码错误", U('Regus/login'));
 
-		session('userid',$usinfo['userid'],1296000);
-		session('mobile',$mobile,1296000);
+		$us_old=md5(md5($psw).$usinfo['salt']);
+		if (empty($usinfo)) msg("账号错误", U('Login/login'));
+		if ($us_old != $usinfo['password']) msg("密码错误", U('Login/login'));
+
+		session('userId', $usinfo['userid'], 3600*3);
+		session('mobile', $mobile, 3600*3);
                	
         //记录登录时间
 		M('user')->where('userid='.$usinfo['userid'].'')->setField('last_login',time());
 		M('user')->where('userid='.$usinfo['userid'].'')->setField('login_ip',get_client_ip());
 		$uInfo = M('store')->where('uid='.$usinfo['userid'].'')->find();
-		$logInfo=array(
-				'uid'      =>$usinfo['userid'],
-				'type'     =>trim('Login'),
-				'time'=>time(),
-				'log_ip'=>get_client_ip(), 
-				'fruit_total'=>$uInfo['fruit_total'],
 
+		$logInfo = array(
+			'uid'      => $usinfo['userid'],
+			'type'     => trim('Login'),
+			'time'     => time(),
+			'log_ip'   => get_client_ip(),
 		 );
+
 		M('user_log')->data($logInfo)->add();
-		redirect(U(MODULE_NAME.'/Index/menu'));
+		redirect( U('/Index/Index'));
 		
 	}
 
 	public function zhuce()
 	{
-		if (empty(I('post.'))) die();
+		if (empty( I('post.'))) die();
 
 	    $udb=M('user');
 	    $db_farm=M('nzusfarm');
@@ -106,25 +106,29 @@ class LoginController extends Controller
         $two_password=md5(md5(trim($arr['two_passwordr'])).$two_salt);
 
        $registerInfo=array(
-            'account'        =>trim($arr['account']),
-            'parent_id'      =>$data['userid'],
-            'username'       =>trim($arr['username']),
-            'sex'            =>trim($arr['sex']),
-            'mobile'         =>trim($arr['mobile']),
-            'alipay'         =>trim($arr['alipay']), 
-            'password'       =>$password,
-            'salt'           =>$salt,
-            'safety_pw'      =>$two_password,
-            'safety_salt'    =>$two_salt,
-			'lockuser'		 =>0,
-            'add_time'=>time(),
-            'ip'=>get_client_ip(), 
-			'last_login'=>0,
-			'area_1' = 1;
-			'area_2' = 0;
-			'area_3' = 0;
-			'area_4' = 0;
-			'area_5' = 0;
+       		'miner_gold'	 => 0,	//挖矿金
+       		'diamonds'       => 300,	//钻石
+       		'money'			 => 0,			//现金
+       		'brand'			 => 0,			//牌照
+            'account'        => trim($arr['account']),
+            'parent_id'      => $data['userid'],
+            'username'       => trim($arr['username']),
+            'sex'            => trim($arr['sex']),
+            'mobile'         => trim($arr['mobile']),
+            'alipay'         => trim($arr['alipay']), 
+            'password'       => $password,
+            'salt'           => $salt,
+            'safety_pw'      => $two_password,
+            'safety_salt'    => $two_salt,
+			'lockuser'		 => 0,
+            'add_time'		 => time(),
+            'ip'			 => get_client_ip(), 
+			'last_login'	 => 0,
+			'area_1' 		 => 1,
+			'area_2' 		 => 0,
+			'area_3' 		 => 0,
+			'area_4' 		 => 0,
+			'area_5' 		 => 0
         );
   
         //========向user表添加信息=======
@@ -156,8 +160,8 @@ class LoginController extends Controller
     //验证码
 	public function verify(){
 		ob_clean();
-		$config =    array(
-		'codeSet' =>  '0123456789',   
+		$config       =    array(
+		'codeSet'     =>  '0123456789',   
 		'fontSize'    =>    30,    // 验证码字体大小   
 		'length'      =>    4,     // 验证码位数    
 		//'fontttf'     =>   '4.ttf',

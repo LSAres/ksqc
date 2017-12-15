@@ -12,3 +12,13 @@ function msg($message, $url = '') {
 		echo '<script>alert("'.$message.'");</script><script>window.location.href='.$url.'</script>';die;
 	}
 }
+
+/**
+ * [getUser 获取用户信息]
+ * @param  [type] $userId [userId]
+ * @return [type]         [array]
+ */
+function getUser($userId) {
+	$user = M('user')->where(array('id' => $userId))->find();
+	return $user;
+}
