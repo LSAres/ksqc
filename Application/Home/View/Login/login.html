@@ -556,18 +556,21 @@
                 return false;
             }
             $.ajax({
-                url:host + "/Login/index",
+                //url:host + "/Login/testid",
+				url:"{:U('Login/testid')}",
                 type:"post",
                 data:{mobile:phone,pwd:password},
                 dataType:"json",
                 success:function(data){
-                    if(data.errcode != 10000){
+				    console.log(data);
+                    if(data.success!=1){
                         alertMsg(data.msg);
                     }else{
                         alertMsg("登录成功",function(){
-                            sessionStorage.setItem('userInfo',JSON.stringify(data.result[0]));
-                            var token = data.result[0].token;
-                            var url = "<{:U('Index/home')}>?token="+token;
+//                            sessionStorage.setItem('userInfo',JSON.stringify(data.result[0]));
+//                            var token = data.result[0].token;
+//                            var url = "<{:U('Index/farm')}>?token="+token;
+							var url = "{:U('Index/farm')}";
                             self.location=url;
                         });
 

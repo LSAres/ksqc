@@ -16,6 +16,16 @@ class IndexController extends CommonController
         $this->display();
     }
 
+    //游戏主界面
+    public function farm(){
+        $userId = session('userId');
+        $user =  getUser($userId);
+        $storeInfo = M('store')->where('uid='.$userId)->find();
+        $this->assign('storeInfo',$storeInfo);
+        $this->assign('user',$userId);
+        $this->display();
+    }
+
     //开启铁矿区矿层
     public function openlayer(){
         $userId = session('userId');

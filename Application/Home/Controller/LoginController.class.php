@@ -18,11 +18,8 @@ class LoginController extends Controller
 
 	//登陆验证
 	public function testid(){
-
-		!IS_POST ? false : die;
-	    	
-    	$mobile=I('post.telephone');
-	    $psw=I('post.password','');
+    	$mobile=I('post.mobile');
+	    $psw=I('post.pwd','');
 
 	   	$code=I('verify');
 		$udb=M('user');
@@ -30,12 +27,25 @@ class LoginController extends Controller
 		$usinfo=$udb->where("mobile='{$mobile}' or account='{$mobile}'")->find();
 		
         if ($usinfo['lockuser']) {
-        	msg('你账号已锁定，请联系管理员');
+            $data['msg'] = "您的账号已锁定，请联系管理员";
+            $data['success']=0;
+            $this->ajaxReturn($data);
+        	//msg('你账号已锁定，请联系管理员');
         }
 
 		$us_old=md5(md5($psw).$usinfo['salt']);
-		if (empty($usinfo)) msg("账号错误", U('Login/login'));
-		if ($us_old != $usinfo['password']) msg("密码错误", U('Login/login'));
+		if (empty($usinfo)){
+            //msg("账号错误", U('Login/login'));
+            $data['msg']="账号错误";
+            $data['success']=0;
+            $this->ajaxReturn($data);
+        }
+		if ($us_old != $usinfo['password']){
+            //msg("密码错误", U('Login/login'));
+            $data['msg']="密码错误";
+            $data['success']=0;
+            $this->ajaxReturn($data);
+        }
 
 		session('userId', $usinfo['userid'], 3600*3);
 		session('mobile', $mobile, 3600*3);
@@ -53,7 +63,10 @@ class LoginController extends Controller
 		 );
 
 		M('user_log')->data($logInfo)->add();
-		redirect( U('/Index/Index'));
+		$data['msg']="登陆成功";
+		$data['success']=1;
+		$this->ajaxReturn($data);
+		//redirect( U('/Index/Index'));
 		
 	}
 

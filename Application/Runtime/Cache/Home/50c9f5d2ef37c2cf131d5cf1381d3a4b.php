@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>富贵鸡</title>
+	<title></title>
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
 	<!-- viewport 后面加上 minimal-ui 在safri 体现效果 -->
@@ -556,18 +556,21 @@
                 return false;
             }
             $.ajax({
-                url:host + "/Login/index",
+                //url:host + "/Login/testid",
+				url:"<?php echo U('Login/testid');?>",
                 type:"post",
                 data:{mobile:phone,pwd:password},
                 dataType:"json",
                 success:function(data){
-                    if(data.errcode != 10000){
+				    console.log(data);
+                    if(data.success!=1){
                         alertMsg(data.msg);
                     }else{
                         alertMsg("登录成功",function(){
-                            sessionStorage.setItem('userInfo',JSON.stringify(data.result[0]));
-                            var token = data.result[0].token;
-                            var url = "<<?php echo U('Index/home');?>>?token="+token;
+//                            sessionStorage.setItem('userInfo',JSON.stringify(data.result[0]));
+//                            var token = data.result[0].token;
+//                            var url = "<<?php echo U('Index/farm');?>>?token="+token;
+							var url = "<?php echo U('Index/farm');?>";
                             self.location=url;
                         });
 
