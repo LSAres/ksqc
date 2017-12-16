@@ -1,0 +1,782 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    border: solid 1px transparent;
+}
+
+/*游戏顶端*/
+.gameTop {
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(204, 204, 204, .8));
+    border-bottom: solid 1px #999;
+    position: fixed;
+    top: 0;
+}
+
+.gameTop-show {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.gameTop-showBlock {
+    width: 25%;
+    height: 20px;
+    background: #999;
+    border-radius: 15px;
+    display: inline-block;
+    margin: 0 10px;
+    margin-top: 20px;
+}
+
+.gameTop-showBlock img {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    margin-left: -10px;
+}
+
+.gameTop-showBlock span {
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gameTop-showBlock label {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513754654&di=604ecc1d38621bb0fb54bfd7603104f6&imgtype=jpg&er=1&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F14%2F88%2F86%2F75k58PICVub_1024.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 3px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    float: right;
+    margin-right: -12px;
+}
+
+.gameTop-showBlock div {
+    width: 80%;
+    text-align: center;
+    font-size: 12px;
+    margin: 0 auto;
+}
+
+/*游戏充值*/
+.chageDiv {
+    width: 100%;
+    background: #fff;
+    background: url(../images/pop/tack-background.png);
+    background-size: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+}
+
+.closeCharge {
+    width: 50px;
+    height: 50px;
+    margin: 15px 0 0 15px;
+}
+
+.chargeInputBlock {
+    width: 80%;
+    border: solid 1px #999;
+    border-radius: 10px;
+    background: #f7f7f7;
+    box-shadow: 0 0 3px #000 inset;
+    margin: 10px auto;
+}
+
+.userWealth {
+    text-align: center;
+    color: #f35000;
+    margin: 10px 0;
+}
+
+.userWealth span {
+    color: darkred;
+}
+
+.chargeInput {
+    width: 75%;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    background: #ccc;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: block;
+}
+
+.chargeNumSelect {
+    width: 75%;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.chargeNumSelect div {
+    width: 30%;
+    color: #999;
+    display: inline-block;
+    text-align: center;
+    border: solid 1px orange;
+    border-radius: 15px;
+    margin: 5px 0%;
+    padding: 10px 0;
+}
+
+.chargeNumSelect div.selected {
+    background: orange;
+    border: solid 1px transparent;
+    color: #fff;
+}
+
+.chargeType {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.chargeType h3 {
+    color: orange;
+    font-weight: bolder;
+    margin: 10px 0;
+}
+
+.chargeType div {
+    text-indent: 10%;
+    padding: 10px 0;
+}
+
+.selected, .selected span {
+    background: orange;
+    color: #fff !important;
+}
+
+.chargeType div img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.chargeType div span {
+    color: orange;
+}
+
+.chargeButton {
+    width: 70%;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    background: url(../images/pop/btn-submit.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 15px auto;
+}
+
+/*页脚*/
+.gemeFotter {
+    width: 100%;
+    height: 75px;
+    border: solid 1px red;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+}
+
+.gemeFotter div {
+    flex: 1;
+    line-height: 43px;
+}
+
+.gemeFotter div img {
+    width: 50px;
+    height: 40px;
+    border: solid 1px red;
+    display: block;
+    margin: 12px auto 0 auto;
+}
+
+/*升级商店DIV*/
+.upgradeShow {
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+}
+
+.upgrade {
+    width: 80%;
+    border: solid 4px #ffc297;
+    background: #ccc;
+    border-radius: 10px;
+    background: url(../images/farm/grain.png) repeat-y, #fffae4;
+    background-size: 100%;
+    box-shadow: 0 0 5px #000 inset;
+    display: block;
+    margin: 0 auto;
+    margin-top: 16%;
+}
+
+.upgradeTitle {
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+.upgradeTitle span {
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+.upgradeTitle img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 15px;
+}
+
+.upgradeHeader {
+}
+
+.upgradeHeader_left {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: solid 2px #a07600;
+    border-radius: 100%;
+    margin: 10px;
+    margin-right: 8%;
+    vertical-align: middle;
+}
+
+.upgradeHeader_rightDisplay {
+    width: 55%;
+    height: 25px;
+    border: solid 2px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.upgradeHeader_rightDisplay img {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: -23px;
+    top: -7px;
+}
+
+.upgradeHeader_rightDisplay div {
+    width: 15%;
+    max-width: 100%;
+    height: 100%;
+    background: green;
+}
+
+.upgradeHeader_rightDisplay label {
+    color: #fff;
+    font-size: 14px;
+    float: right;
+}
+
+.upgradeSelect {
+    height: 350px;
+    overflow-y: auto;
+}
+
+.upgradeSelect div {
+    height: 60px;
+    width: 92%;
+    border: solid 1px #796151;
+    border-radius: 10px;
+    margin: 5px auto;
+    background: linear-gradient(to right, #f7f5f5, #eabfbf, #fff);
+}
+
+.upgradeSelect div:nth-child(odd) {
+    background: linear-gradient(to right, #eabfbf, #fff, #eabfbf);
+}
+
+.upgradeSelect div img {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 10px 10px 10px;
+}
+
+.upgradeSelect div span {
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+.upgradeSelect div button {
+    font-size: 14px;
+    padding: 5px 15px;
+    float: right;
+    margin-top: 15px;
+}
+
+/*好友界面*/
+.friend {
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.friendAll {
+    width: 90%;
+    height: 80%;
+    border: solid 3px #a55c03;
+    border-radius: 15px;
+    background: url(../images/farm/grain.png) repeat-y, #fffae4;
+    background-size: 100%;
+    box-shadow: 0 0 7px #000 inset;
+    margin: 0 auto;
+    margin-top: 15%;
+}
+
+.closeFrienList {
+    display: block;
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin: -17px -17px 0 0;
+}
+
+.friendList {
+    width: 90%;
+    height: 70%;
+    border: solid 3px #8c6e76;
+    border-radius: 10px;
+    background: #ccc;
+    margin: 0 auto;
+    margin-top: 20%;
+    overflow-y: hidden;
+}
+
+.friendList div {
+    width: 90%;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.friendList div p {
+    background: #d0bd6f;
+    padding: 10px;
+}
+
+.friendList div p span {
+    font-size: 14px;
+    color: #fff;
+}
+
+.friendList div p label {
+    font-size: 14px;
+    color: #fff;
+    float: right;
+}
+
+.friendList div button {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(to top, #f38701, #f3e68d);
+    padding: 10px 0;
+    display: block;
+}
+
+/*个人中心*/
+.userCenter {
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    background: url(../images/pop/tack-background.png);
+    background-size: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.closeUserCenter {
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+.userCenterControl {
+    width: 85%;
+    height: 76%;
+    border: solid 1px transparent;
+    background: url(../images/pop/pop-panel2.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.userCenter_functionDisplay {
+    width: 90%;
+    height: 85%;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #000 inset;
+    overflow-y: auto;
+    margin: 0% auto;
+    margin-top: 15%;
+}
+
+.userCenter_functionDisplay input {
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+    width: 80%;
+    border: solid 1px #999;
+    border-radius: 15px;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 0;
+}
+
+.userCenter_functionDisplay input[type='submit'] {
+    background: url(../images/pop/btn-submit.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.userCenter_bottomFunctionSelect {
+    height: 60px;
+    width: 100%;
+    border: solid 1px #fff;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+}
+
+.userCenter_bottomFunctionSelect img {
+    flex: 1;
+    border: solid 1px red;
+}
+
+/*商店：宝箱购买*/
+.catchShop {
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.closeCatchShop {
+    width: 30px;
+    height: 30px;
+    margin: -15px;
+    float: right;
+    display: block;
+
+}
+
+.catchShop_show {
+    width: 70%;
+    height: 70%;
+    border: solid 3px #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #4a341d inset;
+    background: url(../images/farm/grain.png) repeat-y, #fffae4;
+    background-size: 100%;
+    margin: 25% 0% 0 20%;
+}
+
+.catchShop_leftControl {
+    width: 19%;
+    margin-left: -19%;
+    float: left;
+}
+
+.catchShop_leftControl img {
+    width: 100%;
+    height: 80px;
+    border: solid 1px #fff;
+    border-radius: 5px 0 0 5px;
+    margin: 5px 0;
+    display: block;
+}
+
+.catchShopDisplay {
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    background: #f5f5f5;
+    border: solid 3px #ce8c29;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000 inset;
+    overflow-y: auto;
+    margin: 10% auto;
+}
+
+.catchShop_catchCatch {
+    text-align: center;
+    background: #f5f5f5;
+    border: solid 3px #ce8c29;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000 inset;
+    overflow-y: auto;
+}
+
+.catchShop_catchCatch_top {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.caseBlock {
+    width: 45%;
+    border: solid 1px #999;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.caseBlock img:nth-child(1) {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 10px auto;
+}
+
+.caseBlock div {
+    text-align: center;
+    width: 80%;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #f59504, #ffd58c);
+    margin: 5px auto;
+}
+
+/*商店：积分互换*/
+.pointExchange {
+}
+
+.pointExchange .pointExchange_title {
+    width: 100px;
+    height: 30px;
+    margin: 10px auto;
+    display: block;
+}
+
+.pointExchange .exchangeDiv {
+    width: 95%;
+    height: 40px;
+    border-bottom: solid 2px #ccc;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pointExchange .exchangeDiv img {
+    width: 25%;
+    height: 30px;
+    border-radius: 5px;
+    transition: all 1s;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.pointExchange .exchangeDiv img:nth-child(1) {
+    box-shadow: 0 0 5px #666;
+    transform: translateZ(-2px) translateX(0%);
+}
+
+.pointExchange .exchangeDiv img:nth-child(2) {
+    transform: translateZ(0px) translateX(160%);
+}
+
+.pointExchange .exchangeDiv img:nth-child(3) {
+    box-shadow: 0 0 5px #666;
+    transform: translateZ(2px) translateX(300%);
+}
+
+.exchange_inputChange {
+    width: 50%;
+    height: 30px;
+    display: block;
+    margin: 5px auto;
+}
+
+.exchange_inputForm {
+    height: 70%;
+    width: 100%;
+    overflow-y: auto;
+    border: solid 1px;
+    padding: 5px;
+}
+
+.exchange_inputForm input[type="text"] {
+    width: 75%;
+    color: #999;
+    font-size: 16px;
+    border: solid 2px #7d5432;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px auto;
+    display: block;
+}
+
+.exchange_inputForm div {
+    width: 50%;
+    height: 30px;
+    background: url(../images/pop/btn-submit.png) no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    margin: 15px auto;
+}
+
+/*商店：仓库背包*/
+.warehouse {
+}
+
+.warehouse .propsBlock {
+    width: 40%;
+    height: 20%;
+    border: solid 1px #999;
+    box-shadow: 0 0 5px #a95d00;
+    display: inline-block;
+    margin: 8% 2%;
+}
+.warehouse .propsBlock .propsNumber {
+    color: #fff;
+    width: 50px;
+    font-size: 12px;
+    text-align: center;
+    background: linear-gradient(to bottom,#ffc449,#d68a00);
+    border-bottom: solid 1px #999;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    float: right;
+    margin-top: -16px;
+}
+.warehouse .propsBlock .propsImg {
+    width: 100%;
+    height: 100%;
+    border: solid 1px #ccc;
+    display: block;
+}
+.warehouse .propsBlock .propsUse {
+    display: block;
+    width: 70px;
+    height: 20px;
+    font-size: 14px;
+    color: #fff;
+    border-top: solid 1px #999;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(to bottom,#da9007,#fdc146);
+    margin: 0 auto;
+}
+
+
+
+/*提示*/
+.promptDiv{
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.promptBlock{
+    width: 80%;
+    border: solid 1px #ccc;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 70% auto;
+}
+.promptBlock .promptBlock_title{
+    background: rgba(255,255,255,.8);
+    border-radius: 10px 10px 0 0;
+    border-bottom: solid 2px #999;
+}
+.promptBlock .promptBlock_title span{
+    color: #fff;
+    text-shadow: 0 0 4px #000;
+    margin: 2% 0 2% 10%;
+    display: inline-block;
+}
+.promptBlock .promptBlock_message{
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 3px #000;
+    background: rgba(255,255,255,.5);
+    padding: 15px 0;
+}
+.promptBlock .promptBlock_foot {
+    text-align: center;
+    background: rgba(255,255,255,.7);
+    border-radius: 0 0 10px 10px;
+    border-top: solid 2px #999;
+    padding: 5px 0;
+}
+.promptBlock .promptBlock_foot span{
+    width: 80px;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    border: solid 1px #999;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0 5%;
+
+}
+/*游戏 */
+.gameBody{
+    width: 100%;
+    border:solid 1px peru;
+}
+/*顶部 青天白云 搬运矿工*/
+.gameBody .gameBody_top{
+    border: solid 1px orange;
+    height: 190px;
+}
+.gameBody .gameBody_top .gameBody_topCanvas{
+    width: 100%;
+    height: 190px;
+    background: #ccc;
+}
+
+
+
+
+
