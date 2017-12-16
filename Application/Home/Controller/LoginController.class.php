@@ -106,10 +106,6 @@ class LoginController extends Controller
         $two_password=md5(md5(trim($arr['two_passwordr'])).$two_salt);
 
        $registerInfo=array(
-       		'miner_gold'	 => 0,	//挖矿金
-       		'diamonds'       => 300,	//钻石
-       		'money'			 => 0,			//现金
-       		'brand'			 => 0,			//牌照
             'account'        => trim($arr['account']),
             'parent_id'      => $data['userid'],
             'username'       => trim($arr['username']),
@@ -128,15 +124,33 @@ class LoginController extends Controller
 			'area_2' 		 => 0,
 			'area_3' 		 => 0,
 			'area_4' 		 => 0,
-			'area_5' 		 => 0
+			'area_5' 		 => 0,
         );
   
         //========向user表添加信息=======
         $zhuce=$udb->data($registerInfo)->add();  
         //=========检查刚才添加的是否有值============
         $check_zhuce=$udb->where("account='".$registerInfo['account']."'")->find();
+        if(!$check_zhuce){
+            msg('注册失败，请重新注册');
+        }
         $userid=$check_zhuce['userid'];
-       
+        $information['uid'] = $userid;
+        $information['diamonds']=300;
+        $res = M('store')->data($information)->add();
+        if(!$res){
+            msg('仓库创建出错，请联系管理员');
+        }
+        for($i=1;$i<=12;$i++){
+            $informationT['uid']=$userid;
+            $informationT['layer_id'] = $i;
+            $informationT['tool_id'] = 0;
+            $informationT['tool_count']= 0;
+            $informationT['tool_user_time']= 0;
+            $informationT['is_open']= 0;
+            $informationT['open_time'] = 0;
+            M('iron_layer')->data($informationT)->add();
+        }
         if(!empty($data2)) msg('注册成功', U('Regus/login'));
 	}
 
