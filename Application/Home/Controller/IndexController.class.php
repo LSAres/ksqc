@@ -18,11 +18,11 @@ class IndexController extends CommonController
 
     //游戏主界面
     public function farm(){
-        $userId = session('userId');
-        $user =  getUser($userId);
-        $storeInfo = M('store')->where('uid='.$userId)->find();
-        $this->assign('storeInfo',$storeInfo);
-        $this->assign('user',$userId);
+//        $userId = session('userId');
+//        $user =  getUser($userId);
+//        $storeInfo = M('store')->where('uid='.$userId)->find();
+//        $this->assign('storeInfo',$storeInfo);
+//        $this->assign('user',$userId);
         $this->display();
     }
 
