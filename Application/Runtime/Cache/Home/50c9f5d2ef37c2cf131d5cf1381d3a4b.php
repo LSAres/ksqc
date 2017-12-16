@@ -571,7 +571,7 @@
 //                            var token = data.result[0].token;
 //                            var url = "<<?php echo U('Index/farm');?>>?token="+token;
 							var url = "<?php echo U('Index/farm');?>";
-                            self.location=url;
+                            location.href = url;
                         });
 
                     }
