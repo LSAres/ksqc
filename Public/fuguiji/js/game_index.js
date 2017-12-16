@@ -178,25 +178,33 @@ $(function(){
     var topCtx = gameTopCanvas.getContext('2d');
     /**顶部：左侧传送机器绘制*/
     var top_leftMachinePoint = {x:20,y:368,w:150,h:400};
+    var leftMachineImg = document.getElementById('gameTopLeft');
+
     function  top_leftMachine(ctx) {
         ctx.beginPath();
-        ctx.rect(top_leftMachinePoint.x,top_leftMachinePoint.y ,top_leftMachinePoint.w, top_leftMachinePoint.h);
-        ctx.fillStyle = '#f5f5f5';
-        ctx.fill();
+        ctx.drawImage(leftMachineImg ,top_leftMachinePoint.x,top_leftMachinePoint.y ,top_leftMachinePoint.w, top_leftMachinePoint.h);
         ctx.stroke();
         ctx.closePath();
     }
     top_leftMachine(topCtx);
+
+    /**顶部：右侧机器*/
+    var top_rightMachinePoint = {x:800,y:368,w:150,h:400};
+    var topRightMachineImg = document.getElementById('gameTopRight');
+    function  top_rightMachine(ctx) {
+        ctx.beginPath();
+        ctx.drawImage(topRightMachineImg,top_rightMachinePoint.x,top_rightMachinePoint.y ,top_rightMachinePoint.w, top_rightMachinePoint.h);
+        ctx.stroke();
+        ctx.closePath();
+    }
     /**顶部：人物绘制*/
-    var top_humenImg = new Image();
-    top_humenImg.src = '';
-    /* x:图片X轴 y: 图片Y轴 w:图片宽度 h:图片高度 d:图片直径（用于操作帧图片）g:人物移动速度*/
-    var topHumentPoint = {x:175,y:618,w:75,h:150,d:0,g:2};
+    /* x:图片X轴 y: 图片Y轴 w:图片宽度 h:图片高度 d:图片直径（用于操作帧图片）g:人物移动速度 acp_x:截取图像宽度 acp_y：截取图像高度 */
+    var topHumentPoint = {x:170,y:588,w:100,h:300,d:0,g:0.1,acp_x:0,acp_y:80};
+    var topHumentImg = document.getElementById('gameTopHumen');
     function top_humen(ctx){
         ctx.beginPath();
-        ctx.rect(topHumentPoint.x,topHumentPoint.y,topHumentPoint.w,topHumentPoint.h);
-        ctx.fillStyle = '#000';
-        ctx.fill();
+        ctx.drawImage(topHumentImg,topHumentPoint.acp_x,topHumentPoint.acp_y,400,500,topHumentPoint.x,topHumentPoint.y,topHumentPoint.w,topHumentPoint.h);
+        ctx.strokeStyle = "#000";
         ctx.stroke();
         ctx.closePath();
     }
@@ -208,23 +216,14 @@ $(function(){
         if(topHumentPoint.x <= (top_leftMachinePoint.x + top_leftMachinePoint.w) ){
             topHumentPoint.g = (topHumentPoint.g + 4);
         }
+        if(topHumentPoint.acp_x >= 1400){
+            topHumentPoint.acp_x = 0;
+        }
+        topHumentPoint.acp_x += 380;
         topHumentPoint.x += topHumentPoint.g;
 
     }
-    /**顶部：右侧机器*/
-    var top_rightMachinePoint = {x:800,y:368,w:150,h:400};
-    function  top_rightMachine(ctx) {
-        ctx.beginPath();
-        ctx.rect(top_rightMachinePoint.x,top_rightMachinePoint.y ,top_rightMachinePoint.w, top_rightMachinePoint.h);
-        ctx.fillStyle = 'blue';
-        ctx.fill();
-        ctx.stroke();
-        ctx.closePath();
-    }
     /**顶部：场景绘制*/
-    top_leftMachine(topCtx);
-    top_rightMachine(topCtx);
-    top_humenMove();
     var topActive = setInterval(function(){
         topCtx.clearRect(0,0,topCtx.canvas.width,topCtx.canvas.height);
         top_leftMachine(topCtx);
@@ -232,10 +231,22 @@ $(function(){
         top_humenMove();
         top_humen(topCtx);
 
-    },20);
+    },200);
+
+
+
     /**矿层绘制*/
-    var seamCanvas = document.getElementsByClassName('gameBody_seamCanvas');
-    var seamCtx = seamCanvas.getContext('2d');
+    var seam = document.getElementsByClassName('seam');
+    seam.width = 1024;
+    seam.height = 768;
+    /**电梯*/
+    /*根据矿层数量的多少  自动更改 左侧电梯的长度*/
+    var gameBody_bottomLeftHeight = 0;
+    for(var i=0; i<seam.length; i++){
+        gameBody_bottomLeftHeight += 150;
+    }
+    document.getElementsByClassName('gameBody_bottomLeft')[0].style.height = gameBody_bottomLeftHeight + 'px';
+
 
 
 

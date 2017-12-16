@@ -73,7 +73,7 @@
             <img src=""/>
             <span>1411ad</span>
             <label style="display: none;">可操作点击</label>
-            <div style="color: orangered;">数值名称</div>
+            <div style="color: yellowgreen;">数值名称</div>
         </div>
         <div class="gameTop-showBlock">
             <img src=""/>
@@ -329,11 +329,31 @@
 <div class="gameBody" >
     <!--顶部 青天白云 搬运矿工-->
     <div class="gameBody_top">
+        <img src="__PUBLIC__/fuguiji/images/farm/gameTopLeft.png" id="gameTopLeft" style="display: none;"/>
+        <img src="__PUBLIC__/fuguiji/images/farm/gameTopRight.png" id="gameTopRight"  style="display: none;"/>
+        <img src="__PUBLIC__/fuguiji/images/farm/tophumen.png" id="gameTopHumen" style="display:none;"/>
         <canvas class="gameBody_topCanvas">您的浏览器或手机不支持此功能！</canvas>
     </div>
-    <!--矿层-->
-    <div class="gameBody_seamDiv">
-        <canvas class="gameBody_seamCanvas">您的浏览器或手机不支持此功能！</canvas>
+    <!--下方 电梯和矿层-->
+    <div class="gameBody_bottom">
+        <!--下方左侧电梯-->
+        <div class="gameBody_bottomLeft">
+            <canvas class="gameBody_bottomLeftCanvas">您的浏览器或手机不支持此功能</canvas>
+        </div>
+        <!--下方右侧矿层-->
+        <div class="gameBody_bottomRight">
+            <!--矿层显示-->
+            <div class="seamDiv">
+                <canvas class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <!--矿层遮罩-->
+                <div class=" "></div>
+            </div>
+            <!--矿层显示-->
+            <div class="seamDiv">
+                <canvas class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+            </div>
+        </div>
+
     </div>
 
 </div>
