@@ -76,7 +76,7 @@
 
 </head>
 <body>
-<div id="loadingbg">
+<div id="loadingbg"  >
 	<div id="loadingwrap">
 		<img class="j" src="/ksqc/Public/fuguiji/images/loading/chicken.png" alt="">
 		<div class="loading-out">
@@ -128,11 +128,14 @@
 			<div class="fgpw-context">
 				<div><input type="text" name="realname" required placeholder="真实姓名"/></div>
 				<div><input type="text" name="mobile" required placeholder="请输入你要注册的手机号" maxlength="20"/></div>
-				<div class="fcaptcha"><input type="text" required name="code" placeholder="验证码" maxlength="6"/></div>
+				<!--<div class="fcaptcha"><input type="text" required name="code" placeholder="验证码" maxlength="6"/></div>-->
 				<div><input type="password" name="pwd" required placeholder="设置密码"/></div>
 				<div><input type="password" name="payPwd" required placeholder="确认密码"/></div>
-				<div><input type="text" name="leadMobile" value="<<?php echo ($_GET['user']); ?>>" required placeholder="上级手机号"/></div>
-				<a class="send-captcha">获取验证码</a>
+				<div><input type="password" name="two_pwd" required placeholder="设置二级密码"/></div>
+				<div><input type="password" name="two_paypwd" required placeholder="确认二级密码"/></div>
+				<div><input type="text" name="payPwd" required placeholder="支付宝"/></div>
+				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
+				<!--<a class="send-captcha">获取验证码</a>-->
 			</div>
 			<a class="close-btn closefgpwBtn"></a>
 			<a class="only-confirm  reg"></a>
@@ -367,7 +370,9 @@
 //				$("#loadingbg").animate({opacity:"0"},function(){
 //					$(this).hide()
 //				})
-                $("#loadingbg").hide();
+                setTimeout(function(){
+                    $("#loadingbg").hide();
+				},10000)
             }
         }else{
             $(this).load(function(){
@@ -380,7 +385,9 @@
 //					$("#loadingbg").animate({opacity:"0"},function(){
 //						$(this).hide()
 //					})
-                    $("#loadingbg").hide();
+                    setTimeout(function(){
+                        $("#loadingbg").hide();
+                    },10000)
                 }
             })
         }
@@ -495,8 +502,10 @@
             var pwd = $('input[name=pwd]').val();
             var payPwd = $('input[name=payPwd]').val();
             var realname = $('input[name=realname]').val();
-            var code = $('input[name=code]').val();
-            var data = {leadMobile:leadMobile,mobile:mobile,pwd:pwd,payPwd:payPwd,realname:realname,code:code};
+            var two_pwd = $('input[name=two_pwd]').val();
+            var two_payPwd = $('input[name=two_paypwd]').val();
+//            var code = $('input[name=code]').val();
+            var data = {leadMobile:leadMobile,mobile:mobile,pwd:pwd,payPwd:payPwd,realname:realname,two_pwd:two_pwd,two_payPwd:two_payPwd};
             if(!leadMobile){
                 alertMsg("请填写上级手机号");
                 return false;
@@ -517,16 +526,20 @@
                 alertMsg("请填写名字");
                 return false;
             }
-            if(!code){
-                alertMsg("请填写验证码");
-                return false;
-            }
+//            if(!code){
+//                alertMsg("请填写验证码");
+//                return false;
+//            }
             if(payPwd != pwd){
                 alertMsg("两次密码不一致");
                 return false;
             }
+            if(two_payPwd != two_pwd){
+                alertMsg("两次二级密码不一致");
+                return false;
+            }
             $.ajax({
-                url:host + "/Login/reg",
+                url:"<?php echo U('Login/zhuce');?>",
                 type:"post",
                 data:data,
                 dataType:"json",

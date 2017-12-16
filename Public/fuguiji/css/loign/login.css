@@ -19,7 +19,7 @@
     background-size: 65%;
     margin: auto;
     position: relative;
-    top: 31%; 
+    top: 44%;
 	left:18%;
     overflow: hidden;
     box-sizing: border-box; 
@@ -130,15 +130,15 @@
     z-index: 0;
 }
 
-.loginbg .logo {
-    background-image: url(../../images/login/logo.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 56%;
-    /*top: -56%; */
-    position: relative;
-}
+/*.loginbg .logo {*/
+    /*background-image: url(../../images/login/logo.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100%;*/
+    /*width: 100%;*/
+    /*height: 56%;*/
+    /*!*top: -56%; *!*/
+    /*position: relative;*/
+/*}*/
 
 .canvas{
 	display: block;

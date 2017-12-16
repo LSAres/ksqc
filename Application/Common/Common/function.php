@@ -31,11 +31,11 @@ function getUser($userId) {
 function area($index)
 {
 	$arr = [
-		1 => ['miner_num' => 0,'brand_num' => 0],
-		2 => ['miner_num' => 5000000,'brand_num' => 800],
-		3 => ['miner_num' => 20000000,'brand_num' => 2000],
-		4 => ['miner_num' => 50000000,'brand_num' => 5000],
-		5 => ['miner_num' => 100000000,'brand_num' => 10000],
+		1 => ['miner_num' => 0,'erect' =>0,'brand_num' => 0],
+		2 => ['miner_num' => 5000000,'erect' =>10,'brand_num' => 800],
+		3 => ['miner_num' => 20000000,'erect' =>12,'brand_num' => 2000],
+		4 => ['miner_num' => 50000000,'erect' =>15,'brand_num' => 5000],
+		5 => ['miner_num' => 100000000,'erect' =>20,'brand_num' => 10000],
 	];
     return $arr[$index];
 }

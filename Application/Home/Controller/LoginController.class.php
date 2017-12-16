@@ -166,7 +166,7 @@ class LoginController extends Controller
             $informationT['tool_user_time']= 0;
             $informationT['is_open']= 0;
             $informationT['open_time'] = 0;
-            M('iron_layer')->data($informationT)->add();
+            M('coal_layer')->data($informationT)->add();
         }
         if(!empty($data2)) msg('注册成功', U('Regus/login'));
 	}
