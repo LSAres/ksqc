@@ -18,6 +18,8 @@ class LoginController extends Controller
 
 	//登陆验证
 	public function testid(){
+	    $data['success']=1;
+	    $this->ajaxReturn($data);
     	$mobile=I('post.mobile');
 	    $psw=I('post.pwd','');
 
