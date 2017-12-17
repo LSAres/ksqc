@@ -77,29 +77,47 @@ class LoginController extends Controller
 	public function zhuce()
 	{
 		if (empty( I('post.'))) die();
-
 	    $udb=M('user');
-	    $db_farm=M('nzusfarm');
-	    $arr=I('post.'); 
+	    $arr=I('post.');
         //========判断查出来的父级id是否为空============
-        $recommend_ren=trim($arr['recommend_ren']); 
-        $data=$udb->where("account='".$recommend_ren."'")->find(); 
+        $recommend_ren=trim($arr['leadMobile']);
+        $data=$udb->where("account='".$recommend_ren."'")->find();
 
-        if(empty($data)) msg('推荐人不存在');
+        if(empty($data)){
+            $return['msg']="上级账号不存在";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('上级不存在');
+        }
             //========判断新的账号名是否已经存在============
-        $account=trim($arr['account']); 
+        $account=trim($arr['mobile']);
         $data2=$udb->where("account='".$account."'")->find(); 
-        if(!empty($data2)) msg('账号名已经存在，请重新输入');
+        if(!empty($data2)){
+            $return['msg'] = "账号名已经存在，请重新输入";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('账号名已经存在，请重新输入');
+        }
 
         // 姓名是否填写
-        $username=trim($arr['username']);
-        if(!empty($data2)) msg('忘记填写姓名啦');
+        $username=trim($arr['realname']);
+        if(!empty($data2)){
+            $return['msg']="忘记填写姓名啦";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            // msg('忘记填写姓名啦');
+        }
             
 
            //判断手机号是否有重复
         $post_mobile = trim($arr['mobile']);
         $mobileInfo = $udb->where('mobile="'.$post_mobile.'"')->find();
-        if(!empty($data2)) msg('该手机号已注册请换个号码');
+        if(!empty($mobileInfo)){
+            $return['msg'] = "该手机号已注册，请换个手机号";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('该手机号已注册请换个号码');
+        }
 
 /*	$sms_code = I('post.sms_code');
       $trade_code= session('trade_code');
@@ -108,25 +126,35 @@ class LoginController extends Controller
         exit();
       }*/
         //========判断两次输入的一级密码是否一致============
-        if(trim($arr['password'])!== trim($arr['passwordr'])) msg('两次一级密码不一样');
+        if(trim($arr['pwd'])!== trim($arr['payPwd'])){
+            $return['msg'] = "两次一级密码不一样";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('两次一级密码不一样');
+        }
              
         //========判断两次输入的二级密码是否一致============
-        if(trim($arr['two_password'])!== trim($arr['two_passwordr'])) msg('两次二级密码不一样');
+        if(trim($arr['two_pwd'])!== trim($arr['two_payPwd'])){
+            $return['msg'] = "两次二级密码不一样";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('两次二级密码不一样');
+        }
 
         //=============登录密码加密==============
         $salt= substr(md5(time()),0,3);
-        $password=md5(md5(trim($arr['passwordr'])).$salt);
+        $password=md5(md5(trim($arr['pwd'])).$salt);
         
 
         //=============安全密码加密==============
         $two_salt= substr(md5(time()),0,3);
-        $two_password=md5(md5(trim($arr['two_passwordr'])).$two_salt);
+        $two_password=md5(md5(trim($arr['two_pwd'])).$two_salt);
 
        $registerInfo=array(
-            'account'        => trim($arr['account']),
-            'parent_id'      => $data['userid'],
-            'username'       => trim($arr['username']),
-            'sex'            => trim($arr['sex']),
+            'account'        => trim($arr['mobile']),
+            'parent_id'      => $data['id'],
+            'username'       => trim($arr['realname']),
+            'sex'            => 1,//trim($arr['sex']),
             'mobile'         => trim($arr['mobile']),
             'alipay'         => trim($arr['alipay']), 
             'password'       => $password,
@@ -149,14 +177,20 @@ class LoginController extends Controller
         //=========检查刚才添加的是否有值============
         $check_zhuce=$udb->where("account='".$registerInfo['account']."'")->find();
         if(!$check_zhuce){
-            msg('注册失败，请重新注册');
+            $return['msg'] = "注册失败，请重新注册";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('注册失败，请重新注册');
         }
-        $userid=$check_zhuce['userid'];
+        $userid=$check_zhuce['id'];
         $information['uid'] = $userid;
         $information['diamonds']=300;
         $res = M('store')->data($information)->add();
         if(!$res){
-            msg('仓库创建出错，请联系管理员');
+            $return['msg'] = "仓库创建出错，请联系管理员";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('仓库创建出错，请联系管理员');
         }
         for($i=1;$i<=12;$i++){
             $informationT['uid']=$userid;
@@ -168,7 +202,12 @@ class LoginController extends Controller
             $informationT['open_time'] = 0;
             M('coal_layer')->data($informationT)->add();
         }
-        if(!empty($data2)) msg('注册成功', U('Regus/login'));
+        if(!empty($zhuce)){
+            $return['msg'] = "注册成功";
+            $return['errcode'] = 10000;
+            $this->ajaxReturn($return);
+            //msg('注册成功', U('Regus/login'));
+        }
 	}
 
 	//用户退出 

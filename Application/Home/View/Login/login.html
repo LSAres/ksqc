@@ -133,11 +133,11 @@
 				<div><input type="password" name="payPwd" required placeholder="确认密码"/></div>
 				<div><input type="password" name="two_pwd" required placeholder="设置二级密码"/></div>
 				<div><input type="password" name="two_paypwd" required placeholder="确认二级密码"/></div>
-				<div><input type="text" name="payPwd" required placeholder="支付宝"/></div>
+				<div><input type="text" name="alipay" required placeholder="支付宝"/></div>
 				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
-				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
-				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
-				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
+				<!--<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>-->
+				<!--<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>-->
+				<!--<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>-->
 				<!--<a class="send-captcha">获取验证码</a>-->
 			</div>
 			<a class="close-btn closefgpwBtn"></a>
@@ -504,9 +504,10 @@
             var payPwd = $('input[name=payPwd]').val();
             var realname = $('input[name=realname]').val();
             var two_pwd = $('input[name=two_pwd]').val();
-            var two_payPwd = $('input[name=two_paypwd]').val();
+            var two_payPwd = $('input[name=two_paypwd]').val();//alipay
+            var alipay = $('input[name=alipay]').val();
 //            var code = $('input[name=code]').val();
-            var data = {leadMobile:leadMobile,mobile:mobile,pwd:pwd,payPwd:payPwd,realname:realname,two_pwd:two_pwd,two_payPwd:two_payPwd};
+            var data = {leadMobile:leadMobile,mobile:mobile,pwd:pwd,payPwd:payPwd,realname:realname,two_pwd:two_pwd,two_payPwd:two_payPwd,alipay:alipay};
             if(!leadMobile){
                 alertMsg("请填写上级手机号");
                 return false;
@@ -525,6 +526,18 @@
             }
             if(!realname){
                 alertMsg("请填写名字");
+                return false;
+            }
+            if(!two_pwd){
+                alertMsg("请填写二级密码");
+                return false;
+            }
+            if(!two_payPwd){
+                alertMsg("请填写确认二级密码");
+                return false;
+            }
+            if(!alipay){
+                alertMsg("请填写支付宝");
                 return false;
             }
 //            if(!code){
@@ -549,7 +562,7 @@
                         alertMsg(data.msg);
                     }else{
                         alertMsg("注册成功");
-                        history.go(0);
+                        setTimeout(function(){history.go(0)},2000);
                     }
 
                 }

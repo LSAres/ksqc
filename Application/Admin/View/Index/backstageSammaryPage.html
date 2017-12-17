@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <Title>矿世奇财后台管理汇总页面</Title>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/commentT.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/css/styleSheetT.css">
+
+	<style>
+		.contentTitelDiv{
+			<!--background: url("__PUBLIC__/image/systemTitle.jpg");-->
+			background-size:100% 100%;
+			background-position:center;
+			background-repeat:no-repeat
+		}
+		 .leftControle{
+		 	<!--background: url("__PUBLIC__/image/systemTitle.jpg");-->
+			background-size:100% 100%;
+			background-position:center;
+			background-repeat:no-repeat
+		 }
+	</style>
+</head>
+<body>
+<!--后台管理首页内容显示DIV-->
+<div class="contentDisplayDiv">
+    <!--上方题头显示-->
+    <div class="contentTitelDiv">
+        <div class="TitleMessage">
+            拼团后台管理
+        </div>
+        <div class="adminMessageDiv">
+            <span class="welcomeDiv"><span class="welcome">欢迎：</span><span class="userName">{$sp_username}</span></span>
+            <span class="loginOut"><a href="{:U(MODULE_NAME.'/Index/outlogin')}">退出</a></span>
+        </div>
+    </div>
+    <!--左侧显示控制列表-->
+    <div class="leftControle">
+
+        <div class="liDiv">
+            <div class=" liTitle">会员管理功能</div>
+            <ul class="ulDiv">
+                <li class="testOne">会员列表</li>
+            </ul>
+
+
+        </div>
+        <div class="liDiv">
+            <div class=" liTitle">财富汇总明细</div>
+            <ul class="ulDiv">
+                <li class="userDetails">会员注册记录</li>
+            </ul>
+        </div>
+        <div class="liDiv">
+            <div class=" liTitle">公告选项</div>
+            <ul class="ulDiv">
+                <li class="addNoticePage">添加公告</li>
+                <li class="noticeListPage">公告列表</li>
+            </ul>
+        </div>
+        <div class="liDiv">
+            <div class=" liTitle">参数概率</div>
+            <ul class="ulDiv">
+                <li class="functionValueReset">功能参数设置</li>
+                <li class="operationLog">操作日志</li>
+                <li class="capitalLog">积分冲减日志</li>
+                <li class="helpDocument">帮助文档列表</li>
+                <li class="addHelpDocument">添加帮助文档</li>
+            </ul>
+        </div>
+
+        <div class="liDiv">
+            <div class=" liTitle">后台管理</div>
+            <ul class="ulDiv">
+                <li class="websiteSwitch">网站开关</li>
+            </ul>
+        </div>
+        <div class="liDiv">
+            <div class=" liTitle">管理员选项</div>
+            <ul class="ulDiv">
+                <li class="adminAppend">新增管理员</li>
+                <li class="adminList">管理员列表</li>
+            </ul>
+        </div>
+
+
+
+    </div>
+    <!--控制左侧控制列表收缩-->
+    <div class="leftControDiv" id="controDiv"></div>
+    <!--右方页面切换DIV-->
+    <div class="rightPageChange">
+        <iframe align="center" width="100%" height="100%" src="{:U(MODULE_NAME.'/Index/gameNotice')}"
+                style="border: none;">
+
+        </iframe>
+    </div>
+
+</div>
+
+
+</body>
+<script>
+
+</script>
+
+</html>
