@@ -135,6 +135,9 @@
 				<div><input type="password" name="two_paypwd" required placeholder="确认二级密码"/></div>
 				<div><input type="text" name="payPwd" required placeholder="支付宝"/></div>
 				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
+				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
+				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
+				<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>
 				<!--<a class="send-captcha">获取验证码</a>-->
 			</div>
 			<a class="close-btn closefgpwBtn"></a>
@@ -370,9 +373,7 @@
 //				$("#loadingbg").animate({opacity:"0"},function(){
 //					$(this).hide()
 //				})
-                setTimeout(function(){
-                    $("#loadingbg").hide();
-				},10000)
+				$("#loadingbg").hide();
             }
         }else{
             $(this).load(function(){
@@ -385,9 +386,9 @@
 //					$("#loadingbg").animate({opacity:"0"},function(){
 //						$(this).hide()
 //					})
-                    setTimeout(function(){
-                        $("#loadingbg").hide();
-                    },10000)
+
+					$("#loadingbg").hide();
+
                 }
             })
         }

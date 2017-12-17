@@ -10,11 +10,11 @@
 
 .login .login-input {
     width: 100%;
-    height: 252px;
+    height: 181px;
     text-align: -webkit-center;
     text-align: -moz-center;
     background: url(../../images/login/login-back.png) no-repeat;
-    background-size: 65% 100%;
+    background-size: 65%;
     margin: auto;
     position: relative;
     top: 44%;
@@ -209,11 +209,12 @@
 }
 
 .login-alert .fgpw-board .fgpw-context {
-	position: absolute;
-    width: 84%;
+    position: absolute;
+    width: 81%;
     height: 57%;
-    top: 15%;
-    left: 7%;
+    top: 12%;
+    left: 9%;
+    overflow-y: auto;
 }
 
 .login-alert .fgpw-board .fgpw-context>div {
@@ -296,8 +297,8 @@
     background-size: contain;
 }
 #Regsiter .fgpw-board {
-    height : calc(104vw*598/602);
-    top: calc(50% - 50vw*598/602);
+    height: 77%;
+    top: 12%;
     background-size: 102% 100%;
 }
 #Regsiter .fgpw-board .fgpw-context a.send-captcha {
