@@ -80,3 +80,14 @@ function area1($index)
 	];
 	return $arr[$index];
 }
+
+/**
+ * [today 今天的时间范围时间戳]
+ * @return [type] [array]
+ */
+function today()
+{
+	$res['start'] = strtotime(date('Y-m-d', time()));
+	$res['end'] = strtotime(date('Y-m-d', time()))+86400;
+	return $res;
+}
