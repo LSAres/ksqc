@@ -80,15 +80,15 @@ class LoginController extends Controller
 	    $udb=M('user');
 	    $arr=I('post.');
         //========判断查出来的父级id是否为空============
-//        $recommend_ren=trim($arr['leadMobile']);
-//        $data=$udb->where("account='".$recommend_ren."'")->find();
-//
-//        if(empty($data)){
-//            $return['msg']="上级账号不存在";
-//            $return['errcode'] = 2;
-//            $this->ajaxReturn($return);
-//            //msg('上级不存在');
-//        }
+        $recommend_ren=trim($arr['leadMobile']);
+        $data=$udb->where("account='".$recommend_ren."'")->find();
+
+        if(empty($data)){
+            $return['msg']="上级账号不存在";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('上级不存在');
+        }
             //========判断新的账号名是否已经存在============
         $account=trim($arr['mobile']);
         $data2=$udb->where("account='".$account."'")->find(); 
@@ -152,7 +152,7 @@ class LoginController extends Controller
 
        $registerInfo=array(
             'account'        => trim($arr['mobile']),
-            'parent_id'      => 1,
+            'parent_id'      => $data['id'],
             'username'       => trim($arr['realname']),
             'sex'            => 1,//trim($arr['sex']),
             'mobile'         => trim($arr['mobile']),
