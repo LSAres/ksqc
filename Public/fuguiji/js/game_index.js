@@ -177,7 +177,7 @@ $(function(){
     gameTopCanvas.height = 768;
     var topCtx = gameTopCanvas.getContext('2d');
     /**顶部：左侧传送机器绘制*/
-    var top_leftMachinePoint = {x:20,y:368,w:150,h:400};
+    var top_leftMachinePoint = {x:0,y:368,w:300,h:400};
     var leftMachineImg = document.getElementById('gameTopLeft');
 
     function  top_leftMachine(ctx) {
@@ -189,7 +189,7 @@ $(function(){
     top_leftMachine(topCtx);
 
     /**顶部：右侧机器*/
-    var top_rightMachinePoint = {x:800,y:368,w:150,h:400};
+    var top_rightMachinePoint = {x:(topCtx.canvas.width - 220),y:368,w:220,h:400};
     var topRightMachineImg = document.getElementById('gameTopRight');
     function  top_rightMachine(ctx) {
         ctx.beginPath();
@@ -199,7 +199,7 @@ $(function(){
     }
     /**顶部：人物绘制*/
     /* x:图片X轴 y: 图片Y轴 w:图片宽度 h:图片高度 d:图片直径（用于操作帧图片）g:人物移动速度 acp_x:截取图像宽度 acp_y：截取图像高度 */
-    var topHumentPoint = {x:170,y:588,w:100,h:300,d:0,g:0.1,acp_x:0,acp_y:80};
+    var topHumentPoint = {x:170,y:668,w:100,h:150,d:0,g:0.1,acp_x:0,acp_y:80};
     var topHumentImg = document.getElementById('gameTopHumen');
     function top_humen(ctx){
         ctx.beginPath();
@@ -243,7 +243,7 @@ $(function(){
     /*根据矿层数量的多少  自动更改 左侧电梯的长度*/
     var gameBody_bottomLeftHeight = 0;
     for(var i=0; i<seam.length; i++){
-        gameBody_bottomLeftHeight += 150;
+        gameBody_bottomLeftHeight += 135;
     }
     document.getElementsByClassName('gameBody_bottomLeft')[0].style.height = gameBody_bottomLeftHeight + 'px';
 

@@ -764,21 +764,18 @@ body {
 .gameBody{
     width: 100%;
     border:solid 1px peru;
-    background:  url("../images/farm/gameBottomBackground.png");
-    background-repeat: no-repeat;
-    background-position: center ;
-    background-size: 100% 100%;
+    overflow-y: auto;
 
 }
 /*顶部 青天白云 搬运矿工*/
 .gameBody .gameBody_top{
     border: solid 1px orange;
-    height: 190px;
+    height: 410px;
 
 }
 .gameBody .gameBody_top .gameBody_topCanvas{
     width: 100%;
-    height: 190px;
+    height: 100%;
     background: url("../images/farm/gameTopBackground.png");
     background-repeat: no-repeat;
     background-position: center 0%;
@@ -786,24 +783,32 @@ body {
 }
 .gameBody_bottom{
     border-top:solid 3px green;
+    background:  url("../images/farm/gameBottomBackground.png");
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: 100% 100%;
 }
 /*左侧电梯*/
 .gameBody_bottomLeft{
-    width: 12%;
+    width: 19%;
     border:solid 1px #000;
     display: inline-block;
     vertical-align: top;
 }
+.gameBody_bottomLeft canvas{
+    width:100%;
+    height: 100%;
+}
 /*右侧矿层*/
 .gameBody_bottomRight{
-    width: 87%;
+    width: 80%;
     border:solid 1px red;
     display: inline-block;
     margin-left: -1%;
     vertical-align: top;
 }
 .seamDiv{
-    height: 150px;
+    height: 135px;
 }
 .seam{
     width:100%;
