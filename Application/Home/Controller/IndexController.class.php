@@ -239,7 +239,7 @@ class IndexController extends CommonController
         $reservoir = M('reservoir');
         $reservoir_log = M('reservoir_log');
         $store = M('store');
-        $userInfo = $store->where(array('uid' = $userId))->find();
+        $userInfo = $store->where(array('uid' => $userId))->find();
 
         if ($userInfo['is_get_reservoir']) {
             msg('抱歉您已领取过水库奖励');
