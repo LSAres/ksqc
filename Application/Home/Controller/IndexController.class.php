@@ -229,8 +229,59 @@ class IndexController extends CommonController
             M('store')->where('uid='.$userId)->setInc('miner_gold',$consume_miner_gold);
             msg('矿层开启失败');
         }
-
     }
 
+
+    //领取10元水库奖励并提拨70元进入水库
+    public function getReservoir()
+    {
+        $userId = session('userId');
+        $reservoir = M('reservoir');
+        $reservoir_log = M('reservoir_log');
+        $store = M('store');
+        $userInfo = $store->where(array('uid' => $userId))->find();
+
+        if ($userInfo['is_get_reservoir']) {
+            msg('抱歉您已领取过水库奖励');
+        }
+        //提拨70
+        $this->newsTibo();
+        //水库减10元分给用户挖矿金  10元=10000挖矿金
+        $s1 = $store->where(array('uid' => $userId))->save(array('is_get_reservoir' => 1));
+        $s2 = $reservoir->where(array('id' => 1))->setDec('reservoir', 10);
+        $s3 = $store->where(array('uid' => $userId))->setInc('miner_gold', 10000);
+
+        $data['uid'] = $userId;
+        $data['reservoir'] = 10;
+        $data['type'] = 0;
+        $data['note'] = '拨出10元给新用户作为挖矿金';
+        $data['time'] = time();
+        $s4 = $reservoir_log->add($data);
+
+        if ($s1 && $s2 && $s3 && $s4) {
+            msg('恭喜您领取成功');
+        } else {
+            msg('领取失败');
+        }
+    }
+
+    //新用户提拨70元进入水库
+    public function newsTibo()
+    {
+        $userId = session('userId');
+
+        $reservoir = M('reservoir');
+        $reservoir_log = M('reservoir_log');
+        $store = M('store');
+
+        $reservoir->where(array('id' => 1))->setInc('reservoir', 70);
+
+        $data['uid'] = $userId;
+        $data['reservoir'] = 70;
+        $data['type'] = 1;
+        $data['note'] = '新用户提拨70元';
+        $data['time'] = time();
+        $reservoir_log->add($data);
+    }
 
 }
