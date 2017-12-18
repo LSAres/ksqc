@@ -69,7 +69,7 @@ class IndexController extends CommonController
         //给上级推荐人100现金分
         $db_store = M('store');
         $db_store->where(array('id' => $parent_id))->setInc('money', C('parent_money'));
-        $data[
+        $data = [
             'uid' => $parent_id,
             'money' => C('parent_money'),
             'type' => 1,
