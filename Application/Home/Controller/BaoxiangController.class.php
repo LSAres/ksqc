@@ -4,7 +4,7 @@ use Think\Controller;
 class BaoxiangController extends CommonController
 {
 	/**
-	 * [getBaoxiang 手动挖矿时调用]
+	 * [getBaoxiang 抽取宝箱 手动挖矿时调用]
 	 * @param  [type] $area [矿区id 煤铁铜银金分别对应12345]
 	 * @return [type]       [boolean]
 	 */
@@ -88,13 +88,17 @@ class BaoxiangController extends CommonController
     	$db_diamonds_log = M('diamonds_log');
     	$user = getUser($uid);
     	$store = getStore($uid);
+
+    	$baoxiang_count = $store->where(array('id' => $uid))->getField('case');
+    	if ($baoxiang_count < 1) die(0);
     	//取出一个宝箱
-    	$baoxiang = $db_baoxiang->where(array('uid'))->find();
+    	$baoxiang = $db_baoxiang->where(array('uid' => $uid))->find();
     	if (empty($baoxiang) || empty($baoxiang)) die(0);
     	if ($store['diamonds'] < C('key_price')) {
     		msg('抱歉，钻石分不足');
     	}
     	//开箱，获得箱内分数
+    	$store->where(array('id' => $baoxiang['id']))->setDec('case', 1);
     	$miner_gold = $db_baoxiang->where(array('id' => $baoxiang['id']))->getField('miner_gold');
     	//修改宝箱状态
     	$my_case = $db_baoxiang->where(array('id' => $baoxiang['id']))->save(array('open_time' => time(), 'status' => 1));

@@ -118,3 +118,17 @@ function getpage(&$m,$where,$pagesize=10){
 
     return $p;
 }
+
+function jdRelation($son_count){
+	$arr = [
+		3 => 5,
+		4 => 6,
+		5 => 7,
+		6 => 8,
+		7 => 9,
+		8 => 10,
+		9 => 11,
+		10 => 12
+	];
+	return $arr[$son_count];
+}

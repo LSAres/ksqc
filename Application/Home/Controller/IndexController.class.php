@@ -48,6 +48,60 @@ class IndexController extends CommonController
         }
     }
 
+    //推荐人
+    public function tuijian()
+    {
+        $uid = session('userId');
+        $db_user = M('user');
+        $db_money_log = M('money_log');
+        $userInfo = $db_user->where(array('id' => $uid))->find();
+        if (!empty($userInfo)) die(0);
+
+        $parent = I('post.mobile');
+        $parent_id = $db_user->where(array('mobile' => $parent))->gitField('id');
+        if (empty($parent_id)) {
+            msg('该用户不存在');
+        } else {
+            $db_user->where(array('id' => $uid))->setInc('son_count', 1);
+            $db_user->where(array('id' => $uid))->save(array('parent_id' => $parent_id));
+        }
+        
+        //给上级推荐人100现金分
+        $db_store = M('store');
+        $db_store->where(array('id' => $parent_id))->setInc('money', C('parent_money'));
+        $data[
+            'uid' => $parent_id,
+            'money' => C('parent_money'),
+            'type' => 1,
+            'note' => '获得推荐奖金,uid-'.$uid,
+            'time' => time()
+        ];
+        $db_money_log->add($data);
+
+        //返利、见点
+        $next_id = $parent_id;
+        for ($i = 1; $i < 13; $i++) {
+            //见点奖，最多12层
+            $nextUser = getUser($next_id);
+            //直推三人及以上可返利代数
+            if ($nextUser['con_count'] >= 3) {
+                $nextUser['con_count'] = jdRelation($nextUser['con_count']);
+            }
+            if ($nextUser['con_count'] >= $i) {
+                $db_user->where(array('id' => $next_id))->setInc('money', C('jiandian'));
+                $data1[
+                    'uid' => $next_id,
+                    'money' => C('jiandian'),
+                    'type' => 1,
+                    'note' => '获得第'.$nextUser['con_count'].'代见点奖'.C('jiandian').'现金分,uid-'.$uid,
+                    'time' => time()
+                ];
+                $db_money_log->add($data1);
+            }
+            $next_id = $nextUser['parent_id'];
+        }
+    }
+
     //开启矿区
     public function open_mine_area(){
         $userId = session('userId');
