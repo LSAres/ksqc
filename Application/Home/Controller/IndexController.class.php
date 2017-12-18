@@ -89,7 +89,7 @@ class IndexController extends CommonController
             }
             if ($nextUser['con_count'] >= $i) {
                 $db_user->where(array('id' => $next_id))->setInc('money', C('jiandian'));
-                $data1[
+                $data1 = [
                     'uid' => $next_id,
                     'money' => C('jiandian'),
                     'type' => 1,
