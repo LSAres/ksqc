@@ -64,11 +64,18 @@ $(function () {
 
     /**
      * 升级商店*/
-    $('.upgradeCall').click(function () {
-        $('.upgradeShow').fadeIn();
-    });
+    // $('.upgradeCall').click(function () {
+    //     $('.upgradeShow').fadeIn();
+    // });
+    //关闭升级商店
     $('.upgradeTitle img').click(function () {
         $('.upgradeShow').fadeOut();
+    });
+    /*所有的 升级商店呼出按钮*/
+    var seamUpCallAll = $('.seamUpCall');
+    var upgradeAll = $('.upgradeShow');
+    $(seamUpCallAll).click(function(){
+        $(upgradeAll[parseInt($(this).attr('callnumber')) - 1] ).fadeIn();
     });
     /**
      * 好友*/
@@ -88,8 +95,12 @@ $(function () {
     $('.closeUserCenter').click(function () {
         $('.userCenter').fadeOut();
     });
+    /*个人中心：记录点击向下箭头 展示详细信息*/
+    $('.miningHistory_date').click(function(){
+        $(this).parent().find('.miningHistory_message').slideToggle();
+    });
     /*底部的功能按钮*/
-    var userCenterBottomButton = $('.userCenter_bottomFunctionSelect img');
+    var userCenterBottomButton = $('.userCenter_bottomFunctionSelect div');
     var userCenterFunctionBlock = $('.userCenter_functionDisplay');
     $('.userCenter').css({
         'height': $(window).outerHeight() + 'px'
