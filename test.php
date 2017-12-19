@@ -1,20 +1,36 @@
 <?php
-	$mysql_database = 'ksqc';
+/*============================开始你的表演===============================*/
 
-	$link = connect();
-    $strsql="select * from nb_user";
-    $result=mysql_db_query($mysql_database, $strsql, $link);
-    $row=mysql_fetch_row($result);
+//连接数据库
+date_default_timezone_set('Asia/Shanghai');
+$mysql_database = 'ksqc';
+$link = connect();
+
+$rowAll = fetchAll('SELECT * FROM `nb_store`');
+$all_minergold = 0;
+$start = strtotime(date('Y-m-d', time()));
+foreach ($rowAll as $key => $value) {
+    //今天没买道具
+    if ($value['last_buytool_time'] < $start) {
+        continue;
+    } else {
+        $all_minergold += $value['today_buytool_minergold'];
+    }
+}
+//获得今日所有玩家购买工具的挖矿分1%
+$fenHong = intval($all_minergold/100);
+
+print_r($rowAll);
 
 
-   
- 	writeTxt($row);
 
+
+//=============================以下为工具函数==============================
 function connect(){
-    $host="localhost"; //数据库服务器名称
-    $username="root"; // 连接数据库用户名
-    $password="root"; // 连接数据库密码
-    $dbName="ksqc"; // 数据库的名字
+    $host="localhost";
+    $username="root";
+    $password="root";
+    $dbName="ksqc";
     $charset = "utf8";
     //连接mysql
     $link=@mysql_connect($host,$username,$password) or die ('数据库连接失败<br/>ERROR '.mysql_errno().':'.mysql_error());
@@ -94,16 +110,16 @@ function insert($table,$arr){
     }
 }
 
-function writeTxt($result){
-	if (is_array($result)) {
-		$str = implode('-----', $result);
-	} else {
-		$str = $result;
-	}
-	$fp = @fopen(dirname(__FILE__)."/123.txt", "a+");
-	fwrite($fp, " $str \n");
-	fclose($fp);
-	exit;
-}
+// function writeTxt($result){
+// 	if (is_array($result)) {
+// 		$str = implode('-----', $result);
+// 	} else {
+// 		$str = $result;
+// 	}
+// 	$fp = @fopen(dirname(__FILE__)."/123.txt", "a+");
+// 	fwrite($fp, " $str \n");
+// 	fclose($fp);
+// 	exit;
+// }
 
 ?>
