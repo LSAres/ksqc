@@ -425,9 +425,9 @@ class IndexController extends CommonController
         $final_score = intval($tool[$tool_id]['miner_gold']/10);
         $db_reservoir->where(array('id' => 1))->setInc('coal_baoxiang', $final_score);
         $db_reservoir->where(array('id' => 1))->save(array('tool_'.$tool_id.'usetime', time()));
-        $data1[
+        $data1 = [
           'uid' => $uid,
-          'reservoir' => ,
+          'reservoir' => $final_score,
           'type' => 1,
           'note' => '矿层升级10%回流作为宝箱红利，挖矿分'.$final_score,
           'time' =>time()
@@ -442,7 +442,7 @@ class IndexController extends CommonController
     //设置默认工具
     public function setDefaultTool()
     {
-      
+
     }
 
     //计算挖矿分
