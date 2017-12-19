@@ -142,3 +142,28 @@ function jdRelation($son_count){
 	];
 	return $arr[$son_count];
 }
+
+/**
+ * 对二维数组进行排序
+ * 模拟 数据表记录按字段排序
+ *
+ * <code>
+ *  @list_order($list, $get['orderKey'], $get['orderType']);
+ * </code>
+ * @param array $array 要排序的数组
+ * @param string $orderKey 排序关键字/字段
+ * @param string $orderType 排序方式，'asc':升序，'desc':降序
+ * @param string $orderValueType 排序字段值类型，'number':数字，'string':字符串
+ * @link http://www.cnblogs.com/52php/p/5668809.html
+ */
+function list_order(&$array, $orderKey, $orderType = 'asc', $orderValueType = 'string') {
+    if (is_array($array)) {
+        $orderArr = array();
+        foreach ($array as $val) {
+            $orderArr[] = $val[$orderKey];
+        }
+        $orderType = ($orderType == 'asc') ? SORT_ASC : SORT_DESC;
+        $orderValueType = ($orderValueType == 'string') ? SORT_STRING : SORT_NUMERIC;
+        array_multisort($orderArr, $orderType, $orderValueType, $array);
+    }
+}

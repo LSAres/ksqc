@@ -345,6 +345,7 @@ class IndexController extends CommonController
     {
         $uid = session('userId');
         $db_store = M('store');
+        $db_miner_log = M('miner_log');
         $db_miner_gold_log = M('miner_gold_log');
 
         
@@ -365,11 +366,20 @@ class IndexController extends CommonController
         $data = [
             'uid' => $uid,
             'miner_gold' => $score,
-            'type' => 1,
+            'type' => 1,    //0减 1加
             'note' => '手动挖矿,获得'.$score.'挖矿分',
             'time' => time()
         ];
         $store->add($data);
+
+        $data1 = [
+            'uid' => $uid,
+            'miner' => $score,
+            'type' => 0,    //0手动 1自动
+            'note' => '手动挖矿,获得'.$score.'挖矿分',
+            'time' => time()
+        ];
+        $miner_log->add($data1);
 
         $this->ajaxReturn(array(
             'status' => 'success',
