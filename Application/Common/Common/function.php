@@ -34,6 +34,16 @@ function getStore($userId) {
 }
 
 /**
+ * [getUser 获取指定层信息]
+ * @param  [type] $userId [userId]
+ * @return [type] $layer [layer]
+ */
+function getLayer($userId, $layer) {
+	$layer = M('coal_layer')->where(array('uid' => $userId, 'layer_id' => $layer))->find();
+	return $layer;
+}
+
+/**
  * [area 开发新矿区所需消耗物品]
  * 共5大区，煤矿自动开启，所有只有四条
  * @return [type] [array]
@@ -58,11 +68,11 @@ function area($index)
 function tool($index)
 {
 	$arr = [
-		1 => ['miner_gold' => 3000, 'start' => 1, 'end' => 11],		//11.6
-		2 => ['miner_gold' => 6000, 'start' => 1, 'end' => 23],		//23.6
-		3 => ['miner_gold' => 12000, 'start' => 1, 'end' => 44],		//44.6
-		4 => ['miner_gold' => 25000, 'start' => 1, 'end' => 97],		//97.2
-		5 => ['miner_gold' => 50000, 'start' => 1, 'end' => 194],	//194.4
+		1 => ['miner_gold' => 3000, 'start' => 1, 'end' => 11, 'name' => '十字镐'],		//11.6
+		2 => ['miner_gold' => 6000, 'start' => 1, 'end' => 23, 'name' => '电钻'],		//23.6
+		3 => ['miner_gold' => 12000, 'start' => 1, 'end' => 44, 'name' => '小型挖矿机'],		//44.6
+		4 => ['miner_gold' => 25000, 'start' => 1, 'end' => 97, 'name' => '大型挖矿机'],		//97.2
+		5 => ['miner_gold' => 50000, 'start' => 1, 'end' => 194, 'name' => '炸药'],	//194.4
 	];
     return $arr[$index];
 }
@@ -141,4 +151,29 @@ function jdRelation($son_count){
 		10 => 12
 	];
 	return $arr[$son_count];
+}
+
+/**
+ * 对二维数组进行排序
+ * 模拟 数据表记录按字段排序
+ *
+ * <code>
+ *  @list_order($list, $get['orderKey'], $get['orderType']);
+ * </code>
+ * @param array $array 要排序的数组
+ * @param string $orderKey 排序关键字/字段
+ * @param string $orderType 排序方式，'asc':升序，'desc':降序
+ * @param string $orderValueType 排序字段值类型，'number':数字，'string':字符串
+ * @link http://www.cnblogs.com/52php/p/5668809.html
+ */
+function list_order(&$array, $orderKey, $orderType = 'asc', $orderValueType = 'string') {
+    if (is_array($array)) {
+        $orderArr = array();
+        foreach ($array as $val) {
+            $orderArr[] = $val[$orderKey];
+        }
+        $orderType = ($orderType == 'asc') ? SORT_ASC : SORT_DESC;
+        $orderValueType = ($orderValueType == 'string') ? SORT_STRING : SORT_NUMERIC;
+        array_multisort($orderArr, $orderType, $orderValueType, $array);
+    }
 }

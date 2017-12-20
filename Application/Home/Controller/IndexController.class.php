@@ -67,7 +67,7 @@ class IndexController extends CommonController
             $db_user->where(array('id' => $uid))->setInc('son_count', 1);
             $db_user->where(array('id' => $uid))->save(array('parent_id' => $parent_id));
         }
-        
+
         //给上级推荐人100现金分
         $db_store = M('store');
         $db_store->where(array('id' => $parent_id))->setInc('money', C('parent_money'));
@@ -345,12 +345,13 @@ class IndexController extends CommonController
     {
         $uid = session('userId');
         $db_store = M('store');
+        $db_miner_log = M('miner_log');
         $db_miner_gold_log = M('miner_gold_log');
 
-        
+
 
         //正在自动挖矿中禁止手动挖矿
-        
+
 
         //正在挖矿中禁止再次挖矿
         $max_record_id = $db_miner_gold_log->max('id');
@@ -365,11 +366,20 @@ class IndexController extends CommonController
         $data = [
             'uid' => $uid,
             'miner_gold' => $score,
-            'type' => 1,
+            'type' => 1,    //0减 1加
             'note' => '手动挖矿,获得'.$score.'挖矿分',
             'time' => time()
         ];
         $store->add($data);
+
+        $data1 = [
+            'uid' => $uid,
+            'miner' => $score,
+            'type' => 0,    //0手动 1自动
+            'note' => '手动挖矿,获得'.$score.'挖矿分',
+            'time' => time()
+        ];
+        $miner_log->add($data1);
 
         $this->ajaxReturn(array(
             'status' => 'success',
@@ -377,16 +387,67 @@ class IndexController extends CommonController
         ));
     }
 
-    //购买道具
+    //购买道具 升级
     public function buyTool()
     {
-        //购买道具时更新次此字段用于12点分红
-        $tools = tool();
-        $buytool_minergold = $tools[0]['miner_gold'];
+        $layer = I('post.layer', 0);
+        $tool_id = I('post.tool_id');
+        if ($layer < 1 || $layer > 12) die(0);
+        if ($layer < 1 || $layer > 5) die(0);
+
         $uid = session('userId');
-        $store = M('store');
-        $store->where(array('uid' => $uid))->setInc('today_buytool_minergold', $buytool_minergold);
+        $tool = tool();
+        $store = getStore($uid);
+        if ($store['miner_gold'] < $tool[$tool_id]['miner_gold']) {
+          msg('抱歉挖矿分不足');die(0);
+        }
+        $layer = getLayer($uid, $layer);
+        if ($layer['tool_'.$tool_id] == 1) {
+          msg('请先领取挖矿金');die(0);
+        }
+
+        //购买
+        $db_store = M('store');
+        $db_miner_gold_log = M('miner_gold_log');
+        $db_store->where(array('uid' => $uid))->setDec('miner_gold', $tool[$tool_id]['miner_gold']);
+        $data = [
+          'uid' => $uid,
+          'miner_gold' => $tool[$tool_id]['miner_gold'],
+          'type' => 0,
+          'note' => '购买'.$tool[$tool_id]['name'].'花费'.$tool[$tool_id]['miner_gold'].'挖矿分',
+          'time' => time()
+        ];
+        $db_miner_gold_log->add($data);
+
+        //10%分给宝箱池
+        $db_reservoir = M('reservoir');
+        $db_reservoir_log = M('reservoir_log');
+        $final_score = intval($tool[$tool_id]['miner_gold']/10);
+        $db_reservoir->where(array('id' => 1))->setInc('coal_baoxiang', $final_score);
+        $db_reservoir->where(array('id' => 1))->save(array('tool_'.$tool_id.'usetime', time()));
+        $data1 = [
+          'uid' => $uid,
+          'reservoir' => $final_score,
+          'type' => 1,
+          'note' => '矿层升级10%回流作为宝箱红利，挖矿分'.$final_score,
+          'time' =>time()
+        ];
+        $db_reservoir_log->add($data1);
+
+        //购买道具时更新次此字段用于12点分红
+        $store->where(array('uid' => $uid))->setInc('today_buytool_minergold', $tool[$tool_id]['miner_gold']);
         $store->where(array('uid' => $uid))->setInc('last_buytool_time', time());
     }
 
+    //设置默认工具
+    public function setDefaultTool()
+    {
+
+    }
+
+    //计算挖矿分
+    public function getToolScore()
+    {
+
+    }
 }
