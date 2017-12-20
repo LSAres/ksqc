@@ -19,7 +19,6 @@ $(function () {
     });
     /*点击控制左侧控制列表的收缩*/
     $('#controDiv').click(function () {
-
         var divWidth = $('.leftControle').css('width');
         if (divWidth != '0px') {
             $(this).removeClass('leftControDiv');
@@ -55,8 +54,8 @@ $(function () {
         $('iframe').attr('src', '../UserAdministration/administrationPage.html');
     });
     //财富汇总明细
-    $('.userDetails').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/WealthDetailed/userDetails.html');
+    $('.userCapitalOffset').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/userCapitalOffset.html');
     });
 
     //公告选项
