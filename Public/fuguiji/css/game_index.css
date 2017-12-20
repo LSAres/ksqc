@@ -192,15 +192,35 @@ body {
 /*页脚*/
 .gemeFotter {
     width: 100%;
-    height: 75px;
+    height: 40px;
     display: flex;
     position: fixed;
     bottom: 0;
 }
 
 .gemeFotter div {
-    flex: 1;
+    width: 62px;
+    height: 100%;
     line-height: 43px;
+    border-radius: 5px;
+}
+.gemeFotter div:nth-child(1){
+    background: linear-gradient(to top right,#00ca41,#a9f1c0);
+}
+.gemeFotter div:nth-child(2){
+    background: linear-gradient(to top ,#00842a,#6df99a);
+}
+.gemeFotter div:nth-child(3){
+    width: 90px;
+    background: linear-gradient(to top ,#006b22,#81fda8);
+    margin: 0 5%;
+}
+.gemeFotter div:nth-child(4){
+    background: linear-gradient(to top ,#00842a,#6df99a);
+}
+.gemeFotter div:nth-child(5){
+    background: linear-gradient(to top left,#00ca41,#a9f1c0);
+
 }
 
 .gemeFotter div img {
@@ -776,14 +796,15 @@ body {
     z-index: 5;
 }
 .promptBlock{
-    width: 80%;
-    border: solid 1px #ccc;
+    width: 75%;
+    height: 35%;
     border-radius: 15px;
-    background: rgba(255,255,255,0.5);
-    margin: 70% auto;
+    background-image: url(../images/home/alertBoard.png);
+    background-repeat: no-repeat;
+    background-size: 100% 102%;
+    margin: 50% auto;
 }
 .promptBlock .promptBlock_title{
-    background: rgba(255,255,255,.8);
     border-radius: 10px 10px 0 0;
     border-bottom: solid 2px #999;
 }
@@ -795,27 +816,39 @@ body {
 }
 .promptBlock .promptBlock_message{
     color: #fff;
+    height: 63%;
+    font-size: 15px;
     text-align: center;
     text-shadow: 0 0 3px #000;
-    background: rgba(255,255,255,.5);
-    padding: 15px 0;
+    padding-top: 62px;
 }
 .promptBlock .promptBlock_foot {
     text-align: center;
-    background: rgba(255,255,255,.7);
     border-radius: 0 0 10px 10px;
-    border-top: solid 2px #999;
-    padding: 5px 0;
+    padding: 15px 0;
 }
 .promptBlock .promptBlock_foot span{
-    width: 80px;
+    width: 100px;
     color: #fff;
     text-shadow: 0 0 5px #000;
-    border: solid 1px #999;
     border-radius: 5px;
     display: inline-block;
     padding: 5px 0;
     margin: 0 5%;
+
+}
+.promptBlock .promptBlock_foot span:nth-child(1){
+    background: url(../images/home/confirm-longbtn.png);
+    background-position: center;
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+
+}
+.promptBlock .promptBlock_foot span:nth-child(2){
+    background: url(../images/home/confirm-longbtn.png);
+    background-position: center;
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
 
 }
 /*游戏 */
@@ -883,7 +916,7 @@ body {
     box-shadow: 0 0 7px #e6ef1e inset;
     position: absolute;
     right: 0;
-    top: 15%;
+    top: 40%;
 }
 .seam{
     width: 100%;
