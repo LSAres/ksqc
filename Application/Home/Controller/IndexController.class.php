@@ -123,6 +123,7 @@ class IndexController extends CommonController
         $open_status=0;
         if($res&&$rec){
             $open_status=M('user')->wehre('id='.$userId)->setField('area_'.$mine_id,1);
+
             if($open_status) {
                 msg('开启成功');
             }else{
@@ -164,11 +165,12 @@ class IndexController extends CommonController
 
     }
 
-    //开启铁矿区矿层
+    //开启矿区矿层
     public function openironlayer(){
         $userId = session('userId');
         $layer_id = I('post.layer_id');
         $storeInfo = M('store')->where('uid='.$userId)->find();
+        $userInfo = M('user')->where('uid='.$userId)->find();
         $consume_miner_gold = area1($layer_id);
         $condition['u_id']=$userId;
         $condition['layer_id']=$layer_id;
@@ -186,7 +188,20 @@ class IndexController extends CommonController
         $information['is_open']=1;
         $information['open_time']=time();
         $rcc = M('iron_layer')->where($condition)->save($information);
-        if($rcc){
+
+        //返给上级33%现金分
+        $fanli_money = $consume_miner_gold['brand_num'] * 0.33;
+        $status_f = M('store')->where(array('uid' => $userInfo['parent_id']))->setInc('money', $fanli_money);
+        $data = [
+            'uid' => $userId,
+            'money' => $fanli_money,
+            'type' => 1,
+            'note' => '开铁矿区给上级返利'.$fanli_money.'现金分',
+            'time' => time()
+        ];
+        M('money_log')->add($data);
+
+        if($rcc && $status_f){
             msg('矿层开启成功');
         }else{
             M('store')->where('uid='.$userId)->setInc('miner_gold',$consume_miner_gold);
@@ -200,6 +215,7 @@ class IndexController extends CommonController
         $userId = session('userId');
         $layer_id = I('post.layer_id');
         $storeInfo = M('store')->where('uid='.$userId)->find();
+        $userInfo = M('user')->where('uid='.$userId)->find();
         $consume_miner_gold = area1($layer_id);
         $condition['u_id']=$userId;
         $condition['layer_id']=$layer_id;
@@ -217,7 +233,20 @@ class IndexController extends CommonController
         $information['is_open']=1;
         $information['open_time']=time();
         $rcc = M('copper_layer')->where($condition)->save($information);
-        if($rcc){
+
+        //返给上级33%现金分
+        $fanli_money = $consume_miner_gold['brand_num'] * 0.33;
+        $status_f = M('store')->where(array('uid' => $userInfo['parent_id']))->setInc('money', $fanli_money);
+        $data = [
+            'uid' => $userId,
+            'money' => $fanli_money,
+            'type' => 1,
+            'note' => '开铜矿区给上级返利'.$fanli_money.'现金分',
+            'time' => time()
+        ];
+        M('money_log')->add($data);
+
+        if($rcc && $status_f){
             msg('矿层开启成功');
         }else{
             M('store')->where('uid='.$userId)->setInc('miner_gold',$consume_miner_gold);
@@ -231,6 +260,7 @@ class IndexController extends CommonController
         $userId = session('userId');
         $layer_id = I('post.layer_id');
         $storeInfo = M('store')->where('uid='.$userId)->find();
+        $userInfo = M('user')->where('uid='.$userId)->find();
         $consume_miner_gold = area1($layer_id);
         $condition['u_id']=$userId;
         $condition['layer_id']=$layer_id;
@@ -248,7 +278,20 @@ class IndexController extends CommonController
         $information['is_open']=1;
         $information['open_time']=time();
         $rcc = M('silver_layer')->where($condition)->save($information);
-        if($rcc){
+
+        //返给上级33%现金分
+        $fanli_money = $consume_miner_gold['brand_num'] * 0.33;
+        $status_f = M('store')->where(array('uid' => $userInfo['parent_id']))->setInc('money', $fanli_money);
+        $data = [
+            'uid' => $userId,
+            'money' => $fanli_money,
+            'type' => 1,
+            'note' => '开银矿区给上级返利'.$fanli_money.'现金分',
+            'time' => time()
+        ];
+        M('money_log')->add($data);
+
+        if($rcc && $status_f){
             msg('矿层开启成功');
         }else{
             M('store')->where('uid='.$userId)->setInc('miner_gold',$consume_miner_gold);
@@ -262,6 +305,7 @@ class IndexController extends CommonController
         $userId = session('userId');
         $layer_id = I('post.layer_id');
         $storeInfo = M('store')->where('uid='.$userId)->find();
+        $userInfo = M('user')->where('uid='.$userId)->find();
         $consume_miner_gold = area1($layer_id);
         $condition['u_id']=$userId;
         $condition['layer_id']=$layer_id;
@@ -279,6 +323,19 @@ class IndexController extends CommonController
         $information['is_open']=1;
         $information['open_time']=time();
         $rcc = M('gold_layer')->where($condition)->save($information);
+
+        //返给上级33%现金分
+        $fanli_money = $consume_miner_gold['brand_num'] * 0.33;
+        $status_f = M('store')->where(array('uid' => $userInfo['parent_id']))->setInc('money', $fanli_money);
+        $data = [
+            'uid' => $userId,
+            'money' => $fanli_money,
+            'type' => 1,
+            'note' => '开金矿区给上级返利'.$fanli_money.'现金分',
+            'time' => time()
+        ];
+        M('money_log')->add($data);
+
         if($rcc){
             msg('矿层开启成功');
         }else{
@@ -565,5 +622,6 @@ class IndexController extends CommonController
         'status' => 'success',
         'message' => '领取成功，领了'.$final_score.'挖矿分'
       ));
+
     }
 }
