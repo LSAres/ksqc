@@ -9,6 +9,12 @@ html , body{
     box-shadow:  0 0 20px rgba(0,0,0,.8) inset;
     position: fixed;
 }
+/*运动云彩的样式*/
+.cloud{
+    width:150px;
+    height:100px;
+    position: absolute;
+}
 /*地图页面上方*/
 .map_top{
     width: 100%;
@@ -45,6 +51,7 @@ html , body{
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
     margin-top: 13%;
     position: relative;
 }
