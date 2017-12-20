@@ -14,6 +14,14 @@ function msg($message, $url = '') {
 }
 
 /**
+ * [json格式响应ajax请求]
+ */
+function json($arr) {
+	header('Content-Type:application/json; charset=utf-8');
+	exit(json_encode($data));
+}
+
+/**
  * [getUser 获取用户信息]
  * @param  [type] $userId [userId]
  * @return [type]         [array]
@@ -74,7 +82,11 @@ function tool($index)
 		4 => ['miner_gold' => 25000, 'start' => 1, 'end' => 97, 'name' => '大型挖矿机'],		//97.2
 		5 => ['miner_gold' => 50000, 'start' => 1, 'end' => 194, 'name' => '炸药'],	//194.4
 	];
-    return $arr[$index];
+	if (empty($index)) {
+			return $arr;
+	} else {
+		return $arr[$index];
+	}
 }
 
 /**
@@ -174,6 +186,7 @@ function list_order(&$array, $orderKey, $orderType = 'asc', $orderValueType = 's
         }
         $orderType = ($orderType == 'asc') ? SORT_ASC : SORT_DESC;
         $orderValueType = ($orderValueType == 'string') ? SORT_STRING : SORT_NUMERIC;
-        array_multisort($orderArr, $orderType, $orderValueType, $array);
+        $result = array_multisort($orderArr, $orderType, $orderValueType, $array);
+				return $result;
     }
 }
