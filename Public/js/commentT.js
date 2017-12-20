@@ -57,6 +57,21 @@ $(function () {
     $('.userCapitalOffset').click(function () {
         $('iframe').attr('src', '../WealthDetailed/userCapitalOffset.html');
     });
+    $('.minerGoldRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/minerGoldRecord.html');
+    });
+    $('.diamondsRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/diamondsRecord.html');
+    });
+    $('.moneyRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/moneyRecord.html');
+    });
+    $('.minerMoneyRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/minerMoneyRecord.html');
+    });
+    $('.moneyMinerRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/moneyMinerRecord.html');
+    });
 
     //公告选项
     $(".addNoticePage").click(function () {
