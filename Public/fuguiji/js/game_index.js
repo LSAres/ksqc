@@ -225,14 +225,14 @@ $(function () {
         w: 120,
         h: 80,
         g: 5,
-        acp_x: 40,
+        acp_x: 80,
         acp_y: 72,
         max_width: 780,
         min_width: 200,
-        imgWidthLength: 2000,
-        img_SX: 40,
+        imgWidthLength: 1900,
+        img_SX: 50,
         img_SY: 72,
-        img_swidth: 410
+        img_swidth: 400
     };
     var topHumenImg_go = document.getElementById('gameTopHumen1');
     var topHumenImg_com = document.getElementById('gameTopHumen2');
@@ -287,9 +287,9 @@ $(function () {
     var seamHumen_3 = document.getElementById('gameTopHumen2'); //左位移 背包行走人物图片
     var maxRight = 750;     //人物右移动 最大宽度
     var minLeft = 160;      //人物左移动 最小宽度
-    var imgWidthLength = 2000;      //图片的最大宽度
-    var img_SX = 80;        //截取图片的 X轴坐标
-    var img_swidth = 395;   //截取图片的跨度
+    var imgWidthLength = 1900;      //图片的最大宽度
+    var img_SX = 100;        //截取图片的 X轴坐标
+    var img_swidth = 380;   //截取图片的跨度
 
     /*第一矿层 */
     /*用于接受绘制的人物图片*/
@@ -1081,6 +1081,8 @@ $(function () {
 
     /*获取电梯背景图*/
     var elevatorBlockImg = document.getElementById('elevatorBlockImg');
+    /*电梯层数数字背景图*/
+    var elevatorNum_background = document.getElementById('elevatorNumber');
     var elevatorPoint = {x: 0, y: 0, w: 1000, h: 200, g: 5};
     var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
     var leftElevator = document.getElementsByClassName('gameBody_elevator')[0];
@@ -1098,7 +1100,23 @@ $(function () {
     /*绘制电梯*/
     function elevatorAction(ctx) {
         ctx.beginPath();
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[0],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[1],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[2],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[3],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[4],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[5],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[6],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[7],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[8],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[9],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[10],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[11],600,100);     //电梯层数
+        ctx.font = '100  Arial';
+        ctx.fillText("1",300,elevatorStopPoint[0] + 60);
         ctx.drawImage(elevatorBlockImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
         ctx.stroke();
         ctx.closePath();
 
