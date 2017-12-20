@@ -189,6 +189,18 @@ body {
     margin: 15px auto;
 }
 
+/*页面滚动条切换*/
+.scrollChange {
+    width: 40px;
+    height: 100px;
+    position: fixed;
+    bottom: 8%;
+}
+.scrollChange img {
+    box-shadow: 0 0 15px #fff inset;
+    border-radius: 10px;
+}
+
 /*页脚*/
 .gemeFotter {
     width: 100%;
@@ -199,28 +211,34 @@ body {
 }
 
 .gemeFotter div {
-    width: 62px;
+    width: 50px;
     height: 100%;
     line-height: 43px;
     border-radius: 5px;
 }
-.gemeFotter div:nth-child(1){
-    background: linear-gradient(to top right,#00ca41,#a9f1c0);
-}
-.gemeFotter div:nth-child(2){
-    background: linear-gradient(to top ,#00842a,#6df99a);
-}
-.gemeFotter div:nth-child(3){
-    width: 90px;
-    background: linear-gradient(to top ,#006b22,#81fda8);
-    margin: 0 5%;
-}
-.gemeFotter div:nth-child(4){
-    background: linear-gradient(to top ,#00842a,#6df99a);
-}
-.gemeFotter div:nth-child(5){
-    background: linear-gradient(to top left,#00ca41,#a9f1c0);
 
+.gemeFotter div:nth-child(1) {
+    background: linear-gradient(to top right, #00ca41, #a9f1c0);
+    margin-right: 2%;
+}
+
+.gemeFotter div:nth-child(2) {
+    background: linear-gradient(to top, #00842a, #6df99a);
+}
+
+.gemeFotter div:nth-child(3) {
+    width: 90px;
+    background: linear-gradient(to top, #006b22, #81fda8);
+    margin: 0 9%;
+}
+
+.gemeFotter div:nth-child(4) {
+    background: linear-gradient(to top, #00842a, #6df99a);
+}
+
+.gemeFotter div:nth-child(5) {
+    background: linear-gradient(to top left, #00ca41, #a9f1c0);
+    margin-left: 2%;
 }
 
 .gemeFotter div img {
@@ -284,6 +302,7 @@ body {
     margin-right: 8%;
     vertical-align: middle;
 }
+
 /*升级商店 ： 矿层数值*/
 .upgradeHeader_rightDisplay {
     width: 55%;
@@ -487,39 +506,46 @@ body {
     background: url(../images/pop/btn-submit.png) no-repeat;
     background-size: 100% 100%;
 }
+
 /*个人中心：积分使用记录*/
-.miningHistory{
+.miningHistory {
     padding: 0 1rem;
 }
-.miningHistory .miningHistory_date{
+
+.miningHistory .miningHistory_date {
     border-bottom: solid 1px #ccc;
     padding: 5px 0;
 }
-.miningHistory .miningHistory_date span{
+
+.miningHistory .miningHistory_date span {
     font-size: 15px;
 }
-.miningHistory .miningHistory_date label{
+
+.miningHistory .miningHistory_date label {
     border-top: solid 14px #000;
     border-left: solid 7px transparent;
     border-right: solid 7px transparent;
     display: inline-block;
     float: right;
 }
-.miningHistory .miningHistory_message{
+
+.miningHistory .miningHistory_message {
     border: solid 1px #ccc;
     border-top: none;
     display: none;
 }
-.miningHistory .miningHistory_message div{
+
+.miningHistory .miningHistory_message div {
     padding: 5px;
 }
-.miningHistory .miningHistory_message div span{
-    font-size: 14px;
-}
-.miningHistory .miningHistory_message div label{
+
+.miningHistory .miningHistory_message div span {
     font-size: 14px;
 }
 
+.miningHistory .miningHistory_message div label {
+    font-size: 14px;
+}
 
 .userCenter_bottomFunctionSelect {
     height: 60px;
@@ -532,9 +558,10 @@ body {
 .userCenter_bottomFunctionSelect div {
     flex: 1;
 }
-.userCenter_bottomFunctionSelect div img{
-    width :100%;
-    height :100%;
+
+.userCenter_bottomFunctionSelect div img {
+    width: 100%;
+    height: 100%;
 }
 
 /*商店：宝箱购买*/
@@ -730,24 +757,27 @@ body {
     display: inline-block;
     margin: 8% 2%;
 }
+
 .warehouse .propsBlock .propsNumber {
     color: #fff;
     width: 50px;
     font-size: 12px;
     text-align: center;
-    background: linear-gradient(to bottom,#ffc449,#d68a00);
+    background: linear-gradient(to bottom, #ffc449, #d68a00);
     border-bottom: solid 1px #999;
     border-radius: 10px 10px 0 0;
     display: block;
     float: right;
     margin-top: -16px;
 }
+
 .warehouse .propsBlock .propsImg {
     width: 100%;
     height: 100%;
     border: solid 1px #ccc;
     display: block;
 }
+
 .warehouse .propsBlock .propsUse {
     display: block;
     width: 70px;
@@ -756,46 +786,53 @@ body {
     color: #fff;
     border-top: solid 1px #999;
     border-radius: 0 0 10px 10px;
-    background: linear-gradient(to bottom,#da9007,#fdc146);
+    background: linear-gradient(to bottom, #da9007, #fdc146);
     margin: 0 auto;
 }
+
 /*商店：宝箱购买记录*/
-.catchHistory_block{
+.catchHistory_block {
     padding: 5px 1rem;
 }
-.catchHistory_block .catchHistory_block_time{
+
+.catchHistory_block .catchHistory_block_time {
     text-align: left;
     color: #f17d16;
 }
-.catchHistory_block .catchHistory_block_message{
+
+.catchHistory_block .catchHistory_block_message {
     text-align: left;
 }
-.catchHistory_block .catchHistory_block_message span{
-    font-size:15px;
+
+.catchHistory_block .catchHistory_block_message span {
+    font-size: 15px;
 }
-.catchHistory_block .catchHistory_block_message span:nth-child(1){
+
+.catchHistory_block .catchHistory_block_message span:nth-child(1) {
     color: rebeccapurple;
 }
-.catchHistory_block .catchHistory_block_message span:nth-child(2){
+
+.catchHistory_block .catchHistory_block_message span:nth-child(2) {
     color: red;
 
 }
-.catchHistory_block .catchHistory_block_message span:nth-child(3){
+
+.catchHistory_block .catchHistory_block_message span:nth-child(3) {
     color: orange;
     float: right;
 }
 
-
 /*提示*/
-.promptDiv{
+.promptDiv {
     width: 100%;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 5;
 }
-.promptBlock{
+
+.promptBlock {
     width: 75%;
     height: 35%;
     border-radius: 15px;
@@ -804,17 +841,20 @@ body {
     background-size: 100% 102%;
     margin: 50% auto;
 }
-.promptBlock .promptBlock_title{
+
+.promptBlock .promptBlock_title {
     border-radius: 10px 10px 0 0;
     border-bottom: solid 2px #999;
 }
-.promptBlock .promptBlock_title span{
+
+.promptBlock .promptBlock_title span {
     color: #fff;
     text-shadow: 0 0 4px #000;
     margin: 2% 0 2% 10%;
     display: inline-block;
 }
-.promptBlock .promptBlock_message{
+
+.promptBlock .promptBlock_message {
     color: #fff;
     height: 63%;
     font-size: 15px;
@@ -822,12 +862,14 @@ body {
     text-shadow: 0 0 3px #000;
     padding-top: 62px;
 }
+
 .promptBlock .promptBlock_foot {
     text-align: center;
     border-radius: 0 0 10px 10px;
     padding: 15px 0;
 }
-.promptBlock .promptBlock_foot span{
+
+.promptBlock .promptBlock_foot span {
     width: 100px;
     color: #fff;
     text-shadow: 0 0 5px #000;
@@ -837,34 +879,39 @@ body {
     margin: 0 5%;
 
 }
-.promptBlock .promptBlock_foot span:nth-child(1){
+
+.promptBlock .promptBlock_foot span:nth-child(1) {
     background: url(../images/home/confirm-longbtn.png);
     background-position: center;
     background-size: 100% 120%;
     background-repeat: no-repeat;
 
 }
-.promptBlock .promptBlock_foot span:nth-child(2){
+
+.promptBlock .promptBlock_foot span:nth-child(2) {
     background: url(../images/home/confirm-longbtn.png);
     background-position: center;
     background-size: 100% 120%;
     background-repeat: no-repeat;
 
 }
+
 /*游戏 */
-.gameBody{
+.gameBody {
     width: 100%;
-    border:solid 1px peru;
+    border: solid 1px peru;
     overflow-y: auto;
 
 }
+
 /*顶部 青天白云 搬运矿工*/
-.gameBody .gameBody_top{
+.gameBody .gameBody_top {
     border: solid 1px orange;
     height: 410px;
 
 }
-.gameBody .gameBody_top .gameBody_topCanvas{
+
+.gameBody .gameBody_top .gameBody_topCanvas {
     width: 100%;
     height: 100%;
     background: url("../images/farm/gameTopBackground.png");
@@ -872,44 +919,51 @@ body {
     background-position: center 0%;
     background-size: 100% 200%;
 }
-.gameBody_bottom{
-    border-top:solid 3px green;
-    background:  url("../images/farm/gameBottomBackground.png");
+
+.gameBody_bottom {
+    border-top: solid 3px green;
+    background: url("../images/farm/gameBottomBackground.png");
     background-repeat: no-repeat;
-    background-position: center ;
+    background-position: center;
     background-size: 100% 100%;
 }
+
 /*左侧电梯*/
-.gameBody_bottomLeft{
+.gameBody_bottomLeft {
     width: 19%;
     display: inline-block;
     vertical-align: top;
 }
-.gameBody_bottomLeft .gameBody_elevator{
-    width:100%;
+
+.gameBody_bottomLeft .gameBody_elevator {
+    width: 100%;
     height: 100%;
     background: url(../images/farm/elevatorBackground.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
+
 /*右侧矿层*/
-.gameBody_bottomRight{
+.gameBody_bottomRight {
     width: 80%;
     display: inline-block;
     margin-left: -1%;
     vertical-align: top;
 }
-.gameBody_bottomRight img{
+
+.gameBody_bottomRight img {
     width: 100%;
     height: 85px;
     display: block;
 }
-.seamDiv{
+
+.seamDiv {
     height: 135px;
-    position:relative;
+    position: relative;
 }
-.seamDiv .seamUpCall{
+
+.seamDiv .seamUpCall {
     width: 50px;
     height: 50px;
     border-radius: 100%;
@@ -918,7 +972,8 @@ body {
     right: 0;
     top: 40%;
 }
-.seam{
+
+.seam {
     width: 100%;
     height: 100%;
     background: url(../images/farm/seamBackground.png);
