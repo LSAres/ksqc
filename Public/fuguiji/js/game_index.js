@@ -267,8 +267,8 @@ $(function () {
     var maxRight = 750;     //人物右移动 最大宽度
     var minLeft = 160;      //人物左移动 最小宽度
     var imgWidthLength = 2000;      //图片的最大宽度
-    var img_SX = 40;        //截取图片的 X轴坐标
-    var img_swidth = 415;   //截取图片的跨度
+    var img_SX = 80;        //截取图片的 X轴坐标
+    var img_swidth = 395;   //截取图片的跨度
 
     /*第一矿层 */
     /*用于接受绘制的人物图片*/
@@ -1042,7 +1042,7 @@ $(function () {
         seam_10_imgMove(seam_ctx[9],seamHumen_1,seam_10_DrawImg_2,seam_10_DrawImg_3);
         seam_11_imgMove(seam_ctx[10],seamHumen_1,seam_11_DrawImg_2,seam_11_DrawImg_3);
         seam_12_imgMove(seam_ctx[11],seamHumen_1,seam_12_DrawImg_2,seam_12_DrawImg_3);
-    }, 100);
+    }, 80);
 
 
     /**电梯*/
