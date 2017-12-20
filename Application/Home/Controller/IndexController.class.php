@@ -416,7 +416,7 @@ class IndexController extends CommonController
         }
 
         //如果要限制每种工具只能买一个
-        $this_tool_is_extens = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' = $tool_id, 'is_get' => ''))->find();
+        $this_tool_is_extens = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
         if (!empty($this_tool_is_extens)) {
           json(array(
             'status' => 'error',
@@ -504,7 +504,7 @@ class IndexController extends CommonController
       $db_tools = M('tools');
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->order('is_default desc, start_time asc')->select();
-      $hours = intval(time() - $tools[0]['start_time']) / 3600);
+      $hours = intval((time() - $tools[0]['start_time']) / 3600);
       $final_id_arr = [];
       for ($i = 1; $i <= count($tools); $i++) {
         if ($i <= $hours) {
@@ -548,14 +548,14 @@ class IndexController extends CommonController
       $all_tools = tool();
       $this_tool = $all_tools[$this_row['tool_id']];
       $persent = (mt_rand($this_tool['start'], $this_tool['end'])) / 100;
-      $final_score = intval(3600 * $persent);
+      $final_score = intval(3600 * ($persent + 1));
       //加分、记录
       $db_tools->where(array('id' => $this_row))->save(array('is_get' => 1, 'get_time' => time()));
 
       $store->where(array('uid' => $uid))->setInc('miner_gold', $final_score);
       $data = [
         'uid' => $uid,
-        'miner_gold' = $final_score,
+        'miner_gold' => $final_score,
         'type' => 1,
         'note' => '自动挖矿1小时,收获'.$final_score.'挖矿分'
       ];
