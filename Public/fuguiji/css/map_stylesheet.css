@@ -6,22 +6,21 @@ html , body{
 /*动态添加节点的 样式*/
 .cteatElement{
     border-radius: 100%;
-    box-shadow:  0 0 20px rgba(255,255,255,.8) inset;
+    box-shadow:  0 0 20px rgba(0,0,0,.8) inset;
     position: fixed;
 }
 /*地图页面上方*/
 .map_top{
     width: 100%;
-    border: solid 1px #000;
     text-align: center;
-    background: linear-gradient(to bottom,#337198,#144b69);
+    background: linear-gradient(to bottom,#ffcb9f,#ca5d04);
     position: fixed;
     top: 0;
     padding: 10px 0;
     z-index: 1;
 }
 .map_top span:nth-child(1){
-    color: #ccc;
+    color: #f9f8f7;
     text-shadow: 0 0 5px #31caaa;
     display: inline-block;
     vertical-align: middle;
@@ -30,8 +29,8 @@ html , body{
     color: #fff;
     width: 25%;
     font-size: 15px;
-    background: #79aff3;
-    border: solid 2px #8498de;
+    background: #fcc597;
+    border: solid 2px #f3d8c1;
     border-radius: 15px;
     box-shadow: 0 0 5px #000 inset;
     padding: 5px 0;
@@ -41,9 +40,12 @@ html , body{
 .mapDiv{
     width: 800px;
     height: 800px;
-    border: solid 1px red;
     background: linear-gradient(to bottom right,#000000,#132d46,#2f4982,#2b9cd4,#fbb670);
-    margin-top: 14%;
+    background: url(../images/farm/mapBackground.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 13%;
     position: relative;
 }
 .mapDiv div{  }

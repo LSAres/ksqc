@@ -16,6 +16,7 @@ body {
     border-bottom: solid 1px #999;
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 
 .gameTop-show {
