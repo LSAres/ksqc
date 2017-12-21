@@ -186,27 +186,20 @@ function jdRelation($son_count){
 }
 
 /**
- * 对二维数组进行排序
- * 模拟 数据表记录按字段排序
- *
- * <code>
- *  @list_order($list, $get['orderKey'], $get['orderType']);
- * </code>
- * @param array $array 要排序的数组
- * @param string $orderKey 排序关键字/字段
- * @param string $orderType 排序方式，'asc':升序，'desc':降序
- * @param string $orderValueType 排序字段值类型，'number':数字，'string':字符串
- * @link http://www.cnblogs.com/52php/p/5668809.html
+ * 二维数组根据字段进行排序
+ * @params array $array 需要排序的数组
+ * @params string $field 排序的字段
+ * @params string $sort 排序顺序标志 SORT_DESC 降序；SORT_ASC 升序
  */
-function list_order(&$array, $orderKey, $orderType = 'asc', $orderValueType = 'string') {
-    if (is_array($array)) {
-        $orderArr = array();
-        foreach ($array as $val) {
-            $orderArr[] = $val[$orderKey];
+ function arraySequence($array, $field, $sort = 'SORT_DESC')
+{
+    $arrSort = array();
+    foreach ($array as $uniqid => $row) {
+        foreach ($row as $key => $value) {
+            $arrSort[$key][$uniqid] = $value;
         }
-        $orderType = ($orderType == 'asc') ? SORT_ASC : SORT_DESC;
-        $orderValueType = ($orderValueType == 'string') ? SORT_STRING : SORT_NUMERIC;
-        $result = array_multisort($orderArr, $orderType, $orderValueType, $array);
-				return $result;
     }
+    array_multisort($arrSort[$field], constant($sort), $array);
+    return $array;
 }
+
