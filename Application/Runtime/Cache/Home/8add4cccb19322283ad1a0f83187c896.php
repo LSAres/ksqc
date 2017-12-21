@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,21 +40,21 @@
     <!-- Windows 8 磁贴颜色 -->
     <meta name="msapplication-TileImage" content="icon.png">
     <!-- Windows 8 磁贴图标 -->
-    <link rel="Shortcut Icon" href="__PUBLIC__/fuguiji/favicon.ico">
+    <link rel="Shortcut Icon" href="/ksqc/Public/fuguiji/favicon.ico">
     <!-- 浏览器tab图标 -->
-    <link rel="apple-touch-icon" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <link rel="apple-touch-icon" href="/ksqc/Public/fuguiji/images/icon.jpg">
     <!-- iPhone 和 iTouch，默认 57x57 像素，必须有 -->
-    <link rel="apple-touch-icon" sizes="72x72" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="/ksqc/Public/fuguiji/images/icon.jpg">
     <!-- iPad，72x72 像素  -->
-    <link rel="apple-touch-icon" sizes="114x114" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="/ksqc/Public/fuguiji/images/icon.jpg">
     <!-- Retina iPhone 和 Retina iTouch，114x114 像素 -->
-    <link rel="stylesheet" href="__PUBLIC__/fuguiji/css/reset.css">
-    <link rel="stylesheet" href="__PUBLIC__/fuguiji/css/style.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/loign/login.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/home/popup.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/home/home.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/shop/shop.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/map_stylesheet.css">
+    <link rel="stylesheet" href="/ksqc/Public/fuguiji/css/reset.css">
+    <link rel="stylesheet" href="/ksqc/Public/fuguiji/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/loign/login.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/home/popup.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/home/home.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/shop/shop.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/map_stylesheet.css">
 </head>
 <body>
 <!--地图上方标题DIV-->
@@ -62,28 +62,28 @@
     <span>现金:</span>
     <span>1000</span>
 </div>
-<img src="__PUBLIC__/fuguiji/images/farm/cloud_one.png" id="cloud_1" alt="" style="display: none">
-<img src="__PUBLIC__/fuguiji/images/farm/cloud_two.png" id="cloud_2" alt="" style="display: none">
-<img src="__PUBLIC__/fuguiji/images/farm/cloud_three.png" id="cloud_3" alt="" style="display: none">
+<img src="/ksqc/Public/fuguiji/images/farm/cloud_one.png" id="cloud_1" alt="" style="display: none">
+<img src="/ksqc/Public/fuguiji/images/farm/cloud_two.png" id="cloud_2" alt="" style="display: none">
+<img src="/ksqc/Public/fuguiji/images/farm/cloud_three.png" id="cloud_3" alt="" style="display: none">
 <!--地图显示区域-->
 <div class="mapDiv">
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/map_3.png" class="map_1">
+        <img src="/ksqc/Public/fuguiji/images/farm/map_5.png" class="map_1">
     </div>
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/map_3.png" class="map_2">
+        <img src="/ksqc/Public/fuguiji/images/farm/map_4.png" class="map_2">
     </div>
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/map_3.png" class="map_3">
+        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_3">
     </div>
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/map_3.png" class="map_4" >
+        <img src="/ksqc/Public/fuguiji/images/farm/map_2.png" class="map_4" >
     </div>
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/map_3.png" class="map_5">
+        <img src="/ksqc/Public/fuguiji/images/farm/map_1.png" class="map_5">
     </div>
 </div>
 </body>
-<script src="__PUBLIC__/fuguiji/js/jquery-1.7.2.min.js"></script>
-<script src="__PUBLIC__/fuguiji/js/map_comment.js"></script>
+<script src="/ksqc/Public/fuguiji/js/jquery-1.7.2.min.js"></script>
+<script src="/ksqc/Public/fuguiji/js/map_comment.js"></script>
 </html>

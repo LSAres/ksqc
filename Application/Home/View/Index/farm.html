@@ -1345,16 +1345,7 @@ $(function() {
     //点击每层的升级按钮
     $('.seamDiv img').on('click', function() {
         var layer = $(this).attr('callnumber');
-        $.ajax({
-            type: "POST",
-            url: "{:U('Index/toolsCheckOut')}",
-            data: {layer: layer},
-            dataType: "json",
-            success: function(data){
-                $('.upgradeHeader_rightDisplay').find('div').css('width', data['hours']*20+'%');
-                console.log(data);
-            }
-        });
+        gcLayer(layer);
     });
 
     //道具升级
@@ -1369,11 +1360,40 @@ $(function() {
             dataType: "json",
             success: function(data){
                 console.log(data);
+                if (data['status'] == 'success') {
+                    gcLayer(layer);
+                    alert(data['message']);
+                } else {
+                    alert(data['message']);    
+                }
             }
         });
     });
 
+    function gcLayer(layer)
+    {
+        $.ajax({
+            type: "POST",
+            url: "{:U('Index/toolsCheckOut')}",
+            data: {layer: layer},
+            dataType: "json",
+            success: function(data){
+                //console.log(data['list']);
+                $('.upgradeHeader_rightDisplay').find('div').css('width', data['hours']*20+'%');
+                $.each(data['list'], function() {
+                    //$('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(data['list']).find('span').html($('<span>已购买</span>'));
+                    if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {
 
+                    } else {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').append($('<span>已购买</span>'));
+                    }
+                    
+                    
+                });
+                
+            }
+        });
+    }
 
 
     //仅供观赏的ajax
