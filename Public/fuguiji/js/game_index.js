@@ -247,7 +247,7 @@ $(function () {
     }
     function topRightHumenAction (ctx){
         ctx.beginPath();
-        ctx.drawImage(topRightHumen,800,630,200,150);
+        ctx.drawImage(topRightHumen,800,670,200,110);
         ctx.stroke();
         ctx.closePath();
     }
@@ -1146,7 +1146,7 @@ $(function () {
     var elevatorSetInterval = setInterval(function () {
         elevatorStop(elevatorSetInterval);
         elevatorMove(leftElevator_Ctx);
-    }, 20);
+    }, 10);
 
     function elevatorStop(clearName) {
         /*判断电梯移动坐标点 是否到达相应矿层*/
