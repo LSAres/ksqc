@@ -8,23 +8,23 @@ class IndexController extends CommonController
 	//首页
     public function index()
     {
-    	$uid = session('userId');
-
-        $store = getStore($uid);
-    	$user = getUser($uid);
-
-        $this->assign('store', $store);
-    	$this->assign('user', $user);
-        $this->display();
+      $this->display();
     }
 
     //游戏主界面
     public function farm(){
-//        $userId = session('userId');
-//        $user =  getUser($userId);
-//        $storeInfo = M('store')->where('uid='.$userId)->find();
-//        $this->assign('storeInfo',$storeInfo);
-//        $this->assign('user',$userId);
+        $tool = tool();
+    	$uid = session('userId');
+        //仓库信息
+        $store = getStore($uid);
+        //用户
+    	$user = getUser($uid);
+        //兑换记录
+        //$tools_log = M('tools')->where(array('uid' => $uid))->select();
+        $this->assign('tool', $tool);
+        $this->assign('store', $store);
+    	$this->assign('user', $user);
+        $this->assign('tools_log', $tools_log);
         $this->display();
     }
 
@@ -561,6 +561,9 @@ class IndexController extends CommonController
       $db_tools = M('tools');
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->order('is_default desc, start_time asc')->select();
+      if (empty($tools)) {
+        $this->ajaxReturn(null);
+      }
       $hours = intval((time() - $tools[0]['start_time']) / 3600);
       $final_id_arr = [];
       for ($i = 1; $i <= count($tools); $i++) {
@@ -572,7 +575,10 @@ class IndexController extends CommonController
       //如果要按照工具顺序排列
       //$final_id_arr = list_order($final_id_arr, 'tool_id', 'asc', 'number');
 
-      $this->ajaxReturn($final_id_arr);
+      $this->ajaxReturn(array(
+        'list' => $final_id_arr,
+        'hours' => $hours
+      ));
     }
 
     //计时结束后领取挖矿分
