@@ -582,21 +582,21 @@ class IndexController extends CommonController
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->order('is_default desc, start_time asc')->select();
 
-      $hours = count($tools) - intval((time() - $tools[0]['start_time']) / 3600);
+      $hours = count($tools) - intval(((time() - $tools[0]['start_time']) / 3600));
       $hours = $hours ? $hours : 0;
       $final_id_arr = [];
       
       for ($i = 1; $i <= count($tools); $i++) {
         if ($i <= $hours) {
-          array_push($final_id_arr, $tools[$i - 1]['id']);
+          array_push($final_id_arr, $tools[$i-1]);
         }
       }
 
       //如果要按照工具顺序排列
-      $final_id_arr = list_order($final_id_arr, 'tool_id', 'asc', 'number');
+      $new_arr = arraySequence($final_id_arr, 'tool_id', 'SORT_ASC');
 
       $this->ajaxReturn(array(
-        'list' => $final_id_arr,
+        'list' => $new_arr,
         'hours' => $hours
       ));
     }
