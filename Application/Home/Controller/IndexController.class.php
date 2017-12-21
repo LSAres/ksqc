@@ -8,23 +8,23 @@ class IndexController extends CommonController
 	//首页
     public function index()
     {
-    	$uid = session('userId');
-
-        $store = getStore($uid);
-    	$user = getUser($uid);
-
-        $this->assign('store', $store);
-    	$this->assign('user', $user);
-        $this->display();
+      $this->display();
     }
 
     //游戏主界面
     public function farm(){
-//        $userId = session('userId');
-//        $user =  getUser($userId);
-//        $storeInfo = M('store')->where('uid='.$userId)->find();
-//        $this->assign('storeInfo',$storeInfo);
-//        $this->assign('user',$userId);
+        $tool = tool();
+    	$uid = session('userId');
+        //仓库信息
+        $store = getStore($uid);
+        //用户
+    	$user = getUser($uid);
+        //兑换记录
+        //$tools_log = M('tools')->where(array('uid' => $uid))->select();
+        $this->assign('tool', $tool);
+        $this->assign('store', $store);
+    	$this->assign('user', $user);
+        $this->assign('tools_log', $tools_log);
         $this->display();
     }
 
@@ -456,7 +456,7 @@ class IndexController extends CommonController
         $tool = tool();
         $store = getStore($uid);
         if ($store['miner_gold'] < $tool[$tool_id]['miner_gold']) {
-          json(array(
+          $this->ajaxReturn(array(
             'status' => 'error',
             'message' => '挖矿分不足'
           ));
@@ -464,9 +464,9 @@ class IndexController extends CommonController
 
         //如果要限制最多能买5个工具
         $db_tools = M('tools');
-        $tool_count = $db_tools->where(array('uid' => $uid))->count();
+        $tool_count = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->count();
         if ($tool_count >= 5) {
-          json(array(
+          $this->ajaxReturn(array(
             'status' => 'error',
             'message' => '最多能升五级'
           ));
@@ -475,7 +475,7 @@ class IndexController extends CommonController
         //如果要限制每种工具只能买一个
         $this_tool_is_extens = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
         if (!empty($this_tool_is_extens)) {
-          json(array(
+          $this->ajaxReturn(array(
             'status' => 'error',
             'message' => '每种工具只能购买一次'
           ));
@@ -484,7 +484,7 @@ class IndexController extends CommonController
         //购买
         $db_store = M('store');
         $db_miner_gold_log = M('miner_gold_log');
-        $db_store->where(array('uid' => $uid))->setDec('miner_gold', $tool[$tool_id]['miner_gold']);
+        $s1 = $db_store->where(array('uid' => $uid))->setDec('miner_gold', $tool[$tool_id]['miner_gold']);
 
         //添加记录
         $data_tools = [
@@ -495,7 +495,7 @@ class IndexController extends CommonController
           'stop_time' => 0,
           'is_get' => 0
         ];
-        $db_tools->add($data_tools);
+        $s2 = $db_tools->add($data_tools);
 
         //扣分记录
         $data = [
@@ -505,14 +505,14 @@ class IndexController extends CommonController
           'note' => '购买'.$tool[$tool_id]['name'].'花费'.$tool[$tool_id]['miner_gold'].'挖矿分',
           'time' => time()
         ];
-        $db_miner_gold_log->add($data);
+        $s3 = $db_miner_gold_log->add($data);
 
         //10%分给宝箱池
         $db_reservoir = M('reservoir');
         $db_reservoir_log = M('reservoir_log');
         $final_score = intval($tool[$tool_id]['miner_gold']/10);
-        $db_reservoir->where(array('id' => 1))->setInc('coal_baoxiang', $final_score);
-        $db_reservoir->where(array('id' => 1))->save(array('tool_'.$tool_id.'usetime', time()));
+        $s4 = $db_reservoir->where(array('id' => 1))->setInc('coal_baoxiang', $final_score);
+        $s5 = $db_reservoir->where(array('id' => 1))->save(array('coal_baoxiang_updatetime' => time()));
         $data1 = [
           'uid' => $uid,
           'reservoir' => $final_score,
@@ -520,11 +520,31 @@ class IndexController extends CommonController
           'note' => '矿层升级10%回流作为宝箱红利，挖矿分'.$final_score,
           'time' =>time()
         ];
-        $db_reservoir_log->add($data1);
+        $s6 = $db_reservoir_log->add($data1);
 
         //购买道具时更新次此字段用于12点分红
-        $store->where(array('uid' => $uid))->setInc('today_buytool_minergold', $tool[$tool_id]['miner_gold']);
-        $store->where(array('uid' => $uid))->setInc('last_buytool_time', time());
+        $s7 = $db_store->where(array('uid' => $uid))->setInc('today_buytool_minergold', $tool[$tool_id]['miner_gold']);
+        $s8 = $db_store->where(array('uid' => $uid))->save(array('last_buytool_time' => time()));
+//看看哪里没成功
+// $this->ajaxReturn(array(
+//     's1' => $s1,
+//     's2' => $s2,
+//     's3' => $s3,
+//     's4' => $s4,
+//     's5' => $s5,
+//     's6' => $s6,
+//     's7' => $s7,
+//     's8' => $s8,
+//));
+        if ($s1 && $s2 && $s3 && $s4 && $s5 && $s6 && $s7 && $s8) {
+            $this->ajaxReturn(array(
+                'status' => 'success',
+            ));
+        } else {
+            $this->ajaxReturn(array(
+                'status' => 'error',
+            ));
+        }
     }
 
     //设置默认工具
@@ -561,18 +581,24 @@ class IndexController extends CommonController
       $db_tools = M('tools');
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->order('is_default desc, start_time asc')->select();
-      $hours = intval((time() - $tools[0]['start_time']) / 3600);
+
+      $hours = count($tools) - intval((time() - $tools[0]['start_time']) / 3600);
+      $hours = $hours ? $hours : 0;
       $final_id_arr = [];
+      
       for ($i = 1; $i <= count($tools); $i++) {
         if ($i <= $hours) {
-          array_push($final_id_arr, $tools[$i]['id']);
+          array_push($final_id_arr, $tools[$i - 1]['id']);
         }
       }
 
       //如果要按照工具顺序排列
-      //$final_id_arr = list_order($final_id_arr, 'tool_id', 'asc', 'number');
+      $final_id_arr = list_order($final_id_arr, 'tool_id', 'asc', 'number');
 
-      $this->ajaxReturn($final_id_arr);
+      $this->ajaxReturn(array(
+        'list' => $final_id_arr,
+        'hours' => $hours
+      ));
     }
 
     //计时结束后领取挖矿分
@@ -588,14 +614,14 @@ class IndexController extends CommonController
 
       $second = time() - $this_row['start_time'];
       if ($second < 3600) {
-        json(array(
+        $this->ajaxReturn(array(
           'status' => 'error',
           'message' => '还没到领取时间'
         ));
       }
 
       if ($this_row['is_get']) {
-        json(array(
+        $this->ajaxReturn(array(
           'status' => 'error',
           'message' => '领取过了'
         ));
@@ -618,7 +644,7 @@ class IndexController extends CommonController
       ];
       $db_miner_gold_log->add($data);
 
-      json(array(
+      $this->ajaxReturn(array(
         'status' => 'success',
         'message' => '领取成功，领了'.$final_score.'挖矿分'
       ));
