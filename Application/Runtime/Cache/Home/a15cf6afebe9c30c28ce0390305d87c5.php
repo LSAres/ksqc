@@ -70,7 +70,7 @@
     <div class="gameTop-show">
         <div class="gameTop-showBlock">
             <img src="/ksqc/Public/fuguiji/images/farm/gameTopIcon_1.png"/>
-            <span>1411ad</span>
+            <span><?php echo ($store['miner_gold']); ?></span>
             <label style="display: none;">可操作点击</label>
             <div style="color: yellowgreen;">数值名称</div>
         </div>
@@ -1118,60 +1118,74 @@
             <!--矿层显示 -->
             <!--自定义属性 callnumber:用于JS呼出对应升级操作块-->
             <div class="seamDiv">
+                <!--升级商店呼出按钮--->
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "1">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <!--矿层数字-->
+                <span>1</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "2">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>2</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "3">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>3</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "4">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>4</span>
             </div>
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "5">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>5</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "6">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>6</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "7">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>7</span>
             </div>
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "8">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>8</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "9">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>9</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "10">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>10</span>
             </div>
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "11">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>11</span>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "12">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <span>12</span>
             </div>
 
 
@@ -1194,7 +1208,7 @@
 <div class="gemeFotter">
 
     <div>
-        <img src="" alt="" class="">
+        <img src="/ksqc/Public/fuguiji/images/farm/userTestIcon.png" alt="" class="">
     </div>
     <div>
         <img src="/ksqc/Public/fuguiji/images/farm/userFriend.png" alt="" class="friendCall">
@@ -1206,8 +1220,9 @@
         <img src="/ksqc/Public/fuguiji/images/farm/catchShopCall.png" alt="" class="catchShopCall">
     </div>
     <div>
-        <!--<img src="" />-->
-        <a href="map.html">sdfsdsd</a>
+        <a href="map.html">
+            <img src="/ksqc/Public/fuguiji/images/farm/map_icon.png" class="mapCall"/>
+        </a>
     </div>
 </div>
 

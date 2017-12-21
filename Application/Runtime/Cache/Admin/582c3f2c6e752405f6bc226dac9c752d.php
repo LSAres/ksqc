@@ -50,6 +50,12 @@
             <div class=" liTitle">财富汇总明细</div>
             <ul class="ulDiv">
                 <li class="userCapitalOffset">会员财富明细</li>
+                <li class="minerGoldRecord">挖矿分记录</li>
+                <li class="diamondsRecord">钻石分记录</li>
+                <li class="moneyRecord">现金分记录</li>
+                <li class="minerMoneyRecord">挖矿分转现金分记录</li>
+                <li class="moneyMinerRecord">现金分转挖矿分记录</li>
+                <li class="reservoirRecord">水库记录</li>
             </ul>
         </div>
         <div class="liDiv">
