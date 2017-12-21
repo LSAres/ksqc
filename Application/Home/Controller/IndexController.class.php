@@ -539,10 +539,12 @@ class IndexController extends CommonController
         if ($s1 && $s2 && $s3 && $s4 && $s5 && $s6 && $s7 && $s8) {
             $this->ajaxReturn(array(
                 'status' => 'success',
+                'message' => '购买成功'
             ));
         } else {
             $this->ajaxReturn(array(
                 'status' => 'error',
+                'message' => '购买失败'
             ));
         }
     }
@@ -564,9 +566,9 @@ class IndexController extends CommonController
       $status_2 = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->save(array('is_default' => 1));
 
       if (!empty($status_1) && !empty($status_2)) {
-        $this->ajaxReturn(array('status' => 'success'));
+        $this->ajaxReturn(array('status' => 'success', 'message' => '购买成功'));
       } else {
-        $this->ajaxReturn(array('status' => 'error'));
+        $this->ajaxReturn(array('status' => 'error', 'message' => '购买失败'));
       }
     }
 
@@ -582,8 +584,11 @@ class IndexController extends CommonController
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->order('is_default desc, start_time asc')->select();
 
-      $hours = count($tools) - intval(((time() - $tools[0]['start_time']) / 3600));
-      $hours = $hours ? $hours : 0;
+      if (!empty($tools)) {
+        $hours = count($tools) - intval(((time() - $tools[0]['start_time']) / 3600));
+      } else {
+        $hours = 0;
+      }
       $final_id_arr = [];
       
       for ($i = 1; $i <= count($tools); $i++) {
