@@ -1,0 +1,5 @@
+[ 2017-12-21T09:17:47+08:00 ] 192.168.1.115 /ksqc/index.php/Home/Login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
