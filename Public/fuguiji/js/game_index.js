@@ -40,10 +40,7 @@ $(function () {
             $('.gameBody').animate({scrollTop:$('.bottonPosition').offset().top}, 500);
         }
     });
-    /**点击跳转地图界面*/
-    $('mapCall').click(function(){
-        
-    });
+
     /**
      *充值功能
      * */
@@ -1090,6 +1087,11 @@ $(function () {
     var leftElevator = document.getElementsByClassName('gameBody_elevator')[0];
     leftElevator.width = 1024;
     leftElevator.height = 768;
+    /*电梯层数背景图  Y轴坐标 使用电梯停止的Y轴坐标*/
+    var elevatorNum = document.getElementById('elevatorNumber');
+    /*x:X轴坐标  w:图片宽度 h：图片高度 sx截取图片的起始X点 sy截取图片的y点 sw图片截取的跨度*/
+    var elevatorNum_strokePoint = {x:200,w:600,h:100,sx:750,sy:18,sw:1560,sh:1580} ;
+
     /*根据矿层数量的多少  自动更改 左侧电梯的长度 同时加上 右侧矿层的上方padding*/
     var gameBody_bottomLeftHeight = 85;
     for (var i = 0; i < seam.length; i++) {
@@ -1103,11 +1105,9 @@ $(function () {
     function elevatorAction(ctx) {
         ctx.beginPath();
 
-        ctx.font = '100  Arial';
-        ctx.fillText("1",300,elevatorStopPoint[0] + 60);
+
+
         ctx.drawImage(elevatorBlockImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
-        ctx.fillStyle = '#fff';
-        ctx.fill();
         ctx.stroke();
         ctx.closePath();
 

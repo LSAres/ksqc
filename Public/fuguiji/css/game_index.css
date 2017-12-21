@@ -211,7 +211,7 @@ body {
 }
 
 .gemeFotter div {
-    width: 50px;
+    width: 14%;
     height: 100%;
     line-height: 43px;
     border: solid 2px #ccc;
@@ -232,6 +232,9 @@ body {
     width: 90px;
     background: linear-gradient(to top , rgb(48, 80, 90), rgb(206, 243, 255));
     margin: 0 9%;
+}
+.gemeFotter div:nth-child(3) img{
+    width: 50%;
 }
 
 .gemeFotter div:nth-child(4) {
@@ -973,6 +976,22 @@ body {
     position: absolute;
     right: 0;
     top: 40%;
+}
+.seamDiv span{
+
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background: #558da0;
+    border-radius: 5px;
+    border: solid 2px #6a98a7;
+    text-shadow: 0 0 5px;
+    box-shadow: 0 0 5px #000 inset;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 0;
 }
 
 .seam {
