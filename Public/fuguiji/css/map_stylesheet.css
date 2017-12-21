@@ -19,7 +19,7 @@ html , body{
 .map_top{
     width: 100%;
     text-align: center;
-    background: linear-gradient(to bottom,#ffcb9f,#ca5d04);
+    background: linear-gradient(to bottom,#65baf7,#004c84);
     position: fixed;
     top: 0;
     padding: 10px 0;
@@ -35,8 +35,8 @@ html , body{
     color: #fff;
     width: 25%;
     font-size: 15px;
-    background: #fcc597;
-    border: solid 2px #f3d8c1;
+    background: #aed2ec;
+    border: solid 2px #b8e1ff;
     border-radius: 15px;
     box-shadow: 0 0 5px #000 inset;
     padding: 5px 0;
@@ -45,10 +45,10 @@ html , body{
 }
 .mapDiv{
     width: 800px;
-    height: 800px;
+    height: 700px;
     background: linear-gradient(to bottom right,#000000,#132d46,#2f4982,#2b9cd4,#fbb670);
-    background: url(../images/farm/mapBackground.jpg);
-    background-size: 100%;
+    background: url(../images/farm/mapBackground.png);
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     overflow: hidden;

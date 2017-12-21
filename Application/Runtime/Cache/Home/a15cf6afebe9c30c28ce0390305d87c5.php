@@ -1355,7 +1355,7 @@ $(function() {
             dataType: "json",
             success: function(data){
                 //console.log(data['list']);
-                $('.upgradeHeader_rightDisplay').find('div').css('width', data['hours']*20+'%');
+
                 $.each(data['list'], function() {
                     //$('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(data['list']).find('span').html($('<span>已购买</span>'));
                     if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {

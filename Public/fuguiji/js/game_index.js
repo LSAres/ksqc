@@ -222,17 +222,17 @@ $(function () {
     var topHumenPoint = {
         x: 205,
         y: 690,
-        w: 120,
+        w: 140,
         h: 80,
         g: 5,
-        acp_x: 80,
-        acp_y: 72,
+        acp_x: 100,
+        acp_y: 77,
         max_width: 780,
         min_width: 200,
-        imgWidthLength: 2000,
-        img_SX: 50,
-        img_SY: 72,
-        img_swidth: 395
+        imgWidthLength: 1900,
+        img_SX: 100,
+        img_SY: 77,
+        img_swidth: 375
     };
     var topHumenImg_go = document.getElementById('gameTopHumen1');
     var topHumenImg_com = document.getElementById('gameTopHumen2');
@@ -253,7 +253,7 @@ $(function () {
     }
     function topHumenAction(ctx, drawImg) {
         ctx.beginPath();
-        ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 340, 320, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
+        ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 305, 320, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
         ctx.stroke();
         ctx.closePath();
     }

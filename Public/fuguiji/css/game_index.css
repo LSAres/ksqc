@@ -330,7 +330,7 @@ body {
 }
 
 .upgradeHeader_rightDisplay div {
-    width: 15%;
+    width: 0%;
     max-width: 100%;
     height: 100%;
     background: green;
@@ -345,6 +345,7 @@ body {
 .upgradeSelect {
     height: 350px;
     overflow-y: auto;
+
 }
 
 .upgradeSelect div {
@@ -354,6 +355,8 @@ body {
     border-radius: 10px;
     margin: 5px auto;
     background: linear-gradient(to right, #f7f5f5, #eabfbf, #fff);
+    position: relative;
+
 }
 
 .upgradeSelect div:nth-child(odd) {
@@ -376,9 +379,11 @@ body {
 
 .upgradeSelect div button {
     font-size: 14px;
-    padding: 5px 15px;
-    float: right;
-    margin-top: 15px;
+    padding: 1px 15px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 /*好友界面*/
