@@ -236,8 +236,21 @@ $(function () {
     };
     var topHumenImg_go = document.getElementById('gameTopHumen1');
     var topHumenImg_com = document.getElementById('gameTopHumen2');
+    var topLeftHumen = document.getElementById('gameTopLeftHumen');
+    var topRightHumen = document.getElementById('gameTopRightHumen');
     var topHumenDraw = topHumenImg_go;
-
+    function topleftHumenAction (ctx){
+        ctx.beginPath();
+        ctx.drawImage(topLeftHumen,20,635,150,120);
+        ctx.stroke();
+        ctx.closePath();
+    }
+    function topRightHumenAction (ctx){
+        ctx.beginPath();
+        ctx.drawImage(topRightHumen,800,630,200,150);
+        ctx.stroke();
+        ctx.closePath();
+    }
     function topHumenAction(ctx, drawImg) {
         ctx.beginPath();
         ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 340, 320, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
@@ -258,9 +271,12 @@ $(function () {
         if (topHumenPoint.acp_x >= topHumenPoint.imgWidthLength) {
             topHumenPoint.acp_x = topHumenPoint.img_SX;
         }
+
         topHumenAction(ctx, drawImg);
         top_leftMachine(ctx);
         top_rightMachine(ctx);
+        topleftHumenAction(ctx);
+        topRightHumenAction(ctx);
         topHumenPoint.x += topHumenPoint.g;
         topHumenPoint.acp_x += topHumenPoint.img_swidth;
     }
@@ -289,24 +305,24 @@ $(function () {
     var minLeft = 160;      //人物左移动 最小宽度
     var imgWidthLength = 1900;      //图片的最大宽度
     var img_SX = 100;        //截取图片的 X轴坐标
-    var img_swidth = 385;   //截取图片的跨度
+    var img_swidth = 375;   //截取图片的跨度
 
     /*第一矿层 */
     /*用于接受绘制的人物图片*/
     var seam_1_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_1_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_1_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_1_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 77};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_1_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 10};  //第二个行走人物
-    var seam_1_point_3 = {x: 190, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_1_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 7};  //第二个行走人物
+    var seam_1_point_3 = {x: 190, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 5};  //第三个行走人物
     /*绘制人物方法*/
     function seam_1_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_1_point_1.acp_x, seam_1_point_1.acp_y, 340, 320, seam_1_point_1.x, seam_1_point_1.y, seam_1_point_1.w, seam_1_point_1.h);
-        ctx.drawImage(drawImg2, seam_1_point_2.acp_x, seam_1_point_2.acp_y, 340, 320, seam_1_point_2.x, seam_1_point_2.y, seam_1_point_2.w, seam_1_point_2.h);
-        ctx.drawImage(drawImg3, seam_1_point_3.acp_x, seam_1_point_3.acp_y, 340, 320, seam_1_point_3.x, seam_1_point_3.y, seam_1_point_3.w, seam_1_point_3.h);
+        ctx.drawImage(drawImg1, seam_1_point_1.acp_x, seam_1_point_1.acp_y, 305, 320, seam_1_point_1.x, seam_1_point_1.y, seam_1_point_1.w, seam_1_point_1.h);
+        ctx.drawImage(drawImg2, seam_1_point_2.acp_x, seam_1_point_2.acp_y, 305, 320, seam_1_point_2.x, seam_1_point_2.y, seam_1_point_2.w, seam_1_point_2.h);
+        ctx.drawImage(drawImg3, seam_1_point_3.acp_x, seam_1_point_3.acp_y, 305, 320, seam_1_point_3.x, seam_1_point_3.y, seam_1_point_3.w, seam_1_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -362,15 +378,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_2_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_2_point_2 = {x: 350, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 10};  //第二个行走人物
-    var seam_2_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_2_point_2 = {x: 350, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 10};  //第二个行走人物
+    var seam_2_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第三个行走人物
     /*绘制人物方法*/
     function seam_2_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_2_point_1.acp_x, seam_2_point_1.acp_y, 340, 320, seam_2_point_1.x, seam_2_point_1.y, seam_2_point_1.w, seam_2_point_1.h);
-        ctx.drawImage(drawImg2, seam_2_point_2.acp_x, seam_2_point_2.acp_y, 340, 320, seam_2_point_2.x, seam_2_point_2.y, seam_2_point_2.w, seam_2_point_2.h);
-        ctx.drawImage(drawImg3, seam_2_point_3.acp_x, seam_2_point_3.acp_y, 340, 320, seam_2_point_3.x, seam_2_point_3.y, seam_2_point_3.w, seam_2_point_3.h);
+        ctx.drawImage(drawImg1, seam_2_point_1.acp_x, seam_2_point_1.acp_y, 305, 320, seam_2_point_1.x, seam_2_point_1.y, seam_2_point_1.w, seam_2_point_1.h);
+        ctx.drawImage(drawImg2, seam_2_point_2.acp_x, seam_2_point_2.acp_y, 305, 320, seam_2_point_2.x, seam_2_point_2.y, seam_2_point_2.w, seam_2_point_2.h);
+        ctx.drawImage(drawImg3, seam_2_point_3.acp_x, seam_2_point_3.acp_y, 305, 320, seam_2_point_3.x, seam_2_point_3.y, seam_2_point_3.w, seam_2_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -426,15 +442,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_3_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_3_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -10};  //第二个行走人物
-    var seam_3_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_3_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -10};  //第二个行走人物
+    var seam_3_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第三个行走人物
     /*绘制人物方法*/
     function seam_3_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_3_point_1.acp_x, seam_3_point_1.acp_y, 340, 320, seam_3_point_1.x, seam_3_point_1.y, seam_3_point_1.w, seam_3_point_1.h);
-        ctx.drawImage(drawImg2, seam_3_point_2.acp_x, seam_3_point_2.acp_y, 340, 320, seam_3_point_2.x, seam_3_point_2.y, seam_3_point_2.w, seam_3_point_2.h);
-        ctx.drawImage(drawImg3, seam_3_point_3.acp_x, seam_3_point_3.acp_y, 340, 320, seam_3_point_3.x, seam_3_point_3.y, seam_3_point_3.w, seam_3_point_3.h);
+        ctx.drawImage(drawImg1, seam_3_point_1.acp_x, seam_3_point_1.acp_y, 305, 320, seam_3_point_1.x, seam_3_point_1.y, seam_3_point_1.w, seam_3_point_1.h);
+        ctx.drawImage(drawImg2, seam_3_point_2.acp_x, seam_3_point_2.acp_y, 305, 320, seam_3_point_2.x, seam_3_point_2.y, seam_3_point_2.w, seam_3_point_2.h);
+        ctx.drawImage(drawImg3, seam_3_point_3.acp_x, seam_3_point_3.acp_y, 305, 320, seam_3_point_3.x, seam_3_point_3.y, seam_3_point_3.w, seam_3_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -490,15 +506,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_4_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_4_point_2 = {x: 250, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 13};  //第二个行走人物
-    var seam_4_point_3 = {x: 560, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 10};  //第三个行走人物
+    var seam_4_point_2 = {x: 250, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 13};  //第二个行走人物
+    var seam_4_point_3 = {x: 560, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 10};  //第三个行走人物
     /*绘制人物方法*/
     function seam_4_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_4_point_1.acp_x, seam_4_point_1.acp_y, 340, 320, seam_4_point_1.x, seam_4_point_1.y, seam_4_point_1.w, seam_4_point_1.h);
-        ctx.drawImage(drawImg2, seam_4_point_2.acp_x, seam_4_point_2.acp_y, 340, 320, seam_4_point_2.x, seam_4_point_2.y, seam_4_point_2.w, seam_4_point_2.h);
-        ctx.drawImage(drawImg3, seam_4_point_3.acp_x, seam_4_point_3.acp_y, 340, 320, seam_4_point_3.x, seam_4_point_3.y, seam_4_point_3.w, seam_4_point_3.h);
+        ctx.drawImage(drawImg1, seam_4_point_1.acp_x, seam_4_point_1.acp_y, 305, 320, seam_4_point_1.x, seam_4_point_1.y, seam_4_point_1.w, seam_4_point_1.h);
+        ctx.drawImage(drawImg2, seam_4_point_2.acp_x, seam_4_point_2.acp_y, 305, 320, seam_4_point_2.x, seam_4_point_2.y, seam_4_point_2.w, seam_4_point_2.h);
+        ctx.drawImage(drawImg3, seam_4_point_3.acp_x, seam_4_point_3.acp_y, 305, 320, seam_4_point_3.x, seam_4_point_3.y, seam_4_point_3.w, seam_4_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -554,15 +570,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_5_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_5_point_2 = {x: 420, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 9};  //第二个行走人物
-    var seam_5_point_3 = {x: 270, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 11};  //第三个行走人物
+    var seam_5_point_2 = {x: 420, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 9};  //第二个行走人物
+    var seam_5_point_3 = {x: 270, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 11};  //第三个行走人物
     /*绘制人物方法*/
     function seam_5_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_5_point_1.acp_x, seam_5_point_1.acp_y, 340, 320, seam_5_point_1.x, seam_5_point_1.y, seam_5_point_1.w, seam_5_point_1.h);
-        ctx.drawImage(drawImg2, seam_5_point_2.acp_x, seam_5_point_2.acp_y, 340, 320, seam_5_point_2.x, seam_5_point_2.y, seam_5_point_2.w, seam_5_point_2.h);
-        ctx.drawImage(drawImg3, seam_5_point_3.acp_x, seam_5_point_3.acp_y, 340, 320, seam_5_point_3.x, seam_5_point_3.y, seam_5_point_3.w, seam_5_point_3.h);
+        ctx.drawImage(drawImg1, seam_5_point_1.acp_x, seam_5_point_1.acp_y, 305, 320, seam_5_point_1.x, seam_5_point_1.y, seam_5_point_1.w, seam_5_point_1.h);
+        ctx.drawImage(drawImg2, seam_5_point_2.acp_x, seam_5_point_2.acp_y, 305, 320, seam_5_point_2.x, seam_5_point_2.y, seam_5_point_2.w, seam_5_point_2.h);
+        ctx.drawImage(drawImg3, seam_5_point_3.acp_x, seam_5_point_3.acp_y, 305, 320, seam_5_point_3.x, seam_5_point_3.y, seam_5_point_3.w, seam_5_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -618,15 +634,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_6_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_6_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -13};  //第二个行走人物
-    var seam_6_point_3 = {x: 300, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -8};  //第三个行走人物
+    var seam_6_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -13};  //第二个行走人物
+    var seam_6_point_3 = {x: 300, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -8};  //第三个行走人物
     /*绘制人物方法*/
     function seam_6_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_6_point_1.acp_x, seam_6_point_1.acp_y, 340, 320, seam_6_point_1.x, seam_6_point_1.y, seam_6_point_1.w, seam_6_point_1.h);
-        ctx.drawImage(drawImg2, seam_6_point_2.acp_x, seam_6_point_2.acp_y, 340, 320, seam_6_point_2.x, seam_6_point_2.y, seam_6_point_2.w, seam_6_point_2.h);
-        ctx.drawImage(drawImg3, seam_6_point_3.acp_x, seam_6_point_3.acp_y, 340, 320, seam_6_point_3.x, seam_6_point_3.y, seam_6_point_3.w, seam_6_point_3.h);
+        ctx.drawImage(drawImg1, seam_6_point_1.acp_x, seam_6_point_1.acp_y, 305, 320, seam_6_point_1.x, seam_6_point_1.y, seam_6_point_1.w, seam_6_point_1.h);
+        ctx.drawImage(drawImg2, seam_6_point_2.acp_x, seam_6_point_2.acp_y, 305, 320, seam_6_point_2.x, seam_6_point_2.y, seam_6_point_2.w, seam_6_point_2.h);
+        ctx.drawImage(drawImg3, seam_6_point_3.acp_x, seam_6_point_3.acp_y, 305, 320, seam_6_point_3.x, seam_6_point_3.y, seam_6_point_3.w, seam_6_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -682,15 +698,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_7_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_7_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -10};  //第二个行走人物
-    var seam_7_point_3 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_7_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -10};  //第二个行走人物
+    var seam_7_point_3 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第三个行走人物
     /*绘制人物方法*/
     function seam_7_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_7_point_1.acp_x, seam_7_point_1.acp_y, 340, 320, seam_7_point_1.x, seam_7_point_1.y, seam_7_point_1.w, seam_7_point_1.h);
-        ctx.drawImage(drawImg2, seam_7_point_2.acp_x, seam_7_point_2.acp_y, 340, 320, seam_7_point_2.x, seam_7_point_2.y, seam_7_point_2.w, seam_7_point_2.h);
-        ctx.drawImage(drawImg3, seam_7_point_3.acp_x, seam_7_point_3.acp_y, 340, 320, seam_7_point_3.x, seam_7_point_3.y, seam_7_point_3.w, seam_7_point_3.h);
+        ctx.drawImage(drawImg1, seam_7_point_1.acp_x, seam_7_point_1.acp_y, 305, 320, seam_7_point_1.x, seam_7_point_1.y, seam_7_point_1.w, seam_7_point_1.h);
+        ctx.drawImage(drawImg2, seam_7_point_2.acp_x, seam_7_point_2.acp_y, 305, 320, seam_7_point_2.x, seam_7_point_2.y, seam_7_point_2.w, seam_7_point_2.h);
+        ctx.drawImage(drawImg3, seam_7_point_3.acp_x, seam_7_point_3.acp_y, 305, 320, seam_7_point_3.x, seam_7_point_3.y, seam_7_point_3.w, seam_7_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -746,15 +762,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_8_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_8_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -12};  //第二个行走人物
-    var seam_8_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_8_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -12};  //第二个行走人物
+    var seam_8_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第三个行走人物
     /*绘制人物方法*/
     function seam_8_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_8_point_1.acp_x, seam_8_point_1.acp_y, 340, 320, seam_8_point_1.x, seam_8_point_1.y, seam_8_point_1.w, seam_8_point_1.h);
-        ctx.drawImage(drawImg2, seam_8_point_2.acp_x, seam_8_point_2.acp_y, 340, 320, seam_8_point_2.x, seam_8_point_2.y, seam_8_point_2.w, seam_8_point_2.h);
-        ctx.drawImage(drawImg3, seam_8_point_3.acp_x, seam_8_point_3.acp_y, 340, 320, seam_8_point_3.x, seam_8_point_3.y, seam_8_point_3.w, seam_8_point_3.h);
+        ctx.drawImage(drawImg1, seam_8_point_1.acp_x, seam_8_point_1.acp_y, 305, 320, seam_8_point_1.x, seam_8_point_1.y, seam_8_point_1.w, seam_8_point_1.h);
+        ctx.drawImage(drawImg2, seam_8_point_2.acp_x, seam_8_point_2.acp_y, 305, 320, seam_8_point_2.x, seam_8_point_2.y, seam_8_point_2.w, seam_8_point_2.h);
+        ctx.drawImage(drawImg3, seam_8_point_3.acp_x, seam_8_point_3.acp_y, 305, 320, seam_8_point_3.x, seam_8_point_3.y, seam_8_point_3.w, seam_8_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -810,15 +826,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_9_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_9_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -10};  //第二个行走人物
-    var seam_9_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_9_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -10};  //第二个行走人物
+    var seam_9_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第三个行走人物
     /*绘制人物方法*/
     function seam_9_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_9_point_1.acp_x, seam_9_point_1.acp_y, 340, 320, seam_9_point_1.x, seam_9_point_1.y, seam_9_point_1.w, seam_9_point_1.h);
-        ctx.drawImage(drawImg2, seam_9_point_2.acp_x, seam_9_point_2.acp_y, 340, 320, seam_9_point_2.x, seam_9_point_2.y, seam_9_point_2.w, seam_9_point_2.h);
-        ctx.drawImage(drawImg3, seam_9_point_3.acp_x, seam_9_point_3.acp_y, 340, 320, seam_9_point_3.x, seam_9_point_3.y, seam_9_point_3.w, seam_9_point_3.h);
+        ctx.drawImage(drawImg1, seam_9_point_1.acp_x, seam_9_point_1.acp_y, 305, 320, seam_9_point_1.x, seam_9_point_1.y, seam_9_point_1.w, seam_9_point_1.h);
+        ctx.drawImage(drawImg2, seam_9_point_2.acp_x, seam_9_point_2.acp_y, 305, 320, seam_9_point_2.x, seam_9_point_2.y, seam_9_point_2.w, seam_9_point_2.h);
+        ctx.drawImage(drawImg3, seam_9_point_3.acp_x, seam_9_point_3.acp_y, 305, 320, seam_9_point_3.x, seam_9_point_3.y, seam_9_point_3.w, seam_9_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -874,15 +890,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_10_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_10_point_2 = {x: 320, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 8};  //第二个行走人物
-    var seam_10_point_3 = {x: 460, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_10_point_2 = {x: 320, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 8};  //第二个行走人物
+    var seam_10_point_3 = {x: 460, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第三个行走人物
     /*绘制人物方法*/
     function seam_10_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_10_point_1.acp_x, seam_10_point_1.acp_y, 340, 320, seam_10_point_1.x, seam_10_point_1.y, seam_10_point_1.w, seam_10_point_1.h);
-        ctx.drawImage(drawImg2, seam_10_point_2.acp_x, seam_10_point_2.acp_y, 340, 320, seam_10_point_2.x, seam_10_point_2.y, seam_10_point_2.w, seam_10_point_2.h);
-        ctx.drawImage(drawImg3, seam_10_point_3.acp_x, seam_10_point_3.acp_y, 340, 320, seam_10_point_3.x, seam_10_point_3.y, seam_10_point_3.w, seam_10_point_3.h);
+        ctx.drawImage(drawImg1, seam_10_point_1.acp_x, seam_10_point_1.acp_y, 305, 320, seam_10_point_1.x, seam_10_point_1.y, seam_10_point_1.w, seam_10_point_1.h);
+        ctx.drawImage(drawImg2, seam_10_point_2.acp_x, seam_10_point_2.acp_y, 305, 320, seam_10_point_2.x, seam_10_point_2.y, seam_10_point_2.w, seam_10_point_2.h);
+        ctx.drawImage(drawImg3, seam_10_point_3.acp_x, seam_10_point_3.acp_y, 305, 320, seam_10_point_3.x, seam_10_point_3.y, seam_10_point_3.w, seam_10_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -938,15 +954,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_11_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_11_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -8};  //第二个行走人物
-    var seam_11_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -13};  //第三个行走人物
+    var seam_11_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -8};  //第二个行走人物
+    var seam_11_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -13};  //第三个行走人物
     /*绘制人物方法*/
     function seam_11_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_11_point_1.acp_x, seam_11_point_1.acp_y, 340, 320, seam_11_point_1.x, seam_11_point_1.y, seam_11_point_1.w, seam_11_point_1.h);
-        ctx.drawImage(drawImg2, seam_11_point_2.acp_x, seam_11_point_2.acp_y, 340, 320, seam_11_point_2.x, seam_11_point_2.y, seam_11_point_2.w, seam_11_point_2.h);
-        ctx.drawImage(drawImg3, seam_11_point_3.acp_x, seam_11_point_3.acp_y, 340, 320, seam_11_point_3.x, seam_11_point_3.y, seam_11_point_3.w, seam_11_point_3.h);
+        ctx.drawImage(drawImg1, seam_11_point_1.acp_x, seam_11_point_1.acp_y, 305, 320, seam_11_point_1.x, seam_11_point_1.y, seam_11_point_1.w, seam_11_point_1.h);
+        ctx.drawImage(drawImg2, seam_11_point_2.acp_x, seam_11_point_2.acp_y, 305, 320, seam_11_point_2.x, seam_11_point_2.y, seam_11_point_2.w, seam_11_point_2.h);
+        ctx.drawImage(drawImg3, seam_11_point_3.acp_x, seam_11_point_3.acp_y, 305, 320, seam_11_point_3.x, seam_11_point_3.y, seam_11_point_3.w, seam_11_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -1002,15 +1018,15 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_12_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_12_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: -10};  //第二个行走人物
-    var seam_12_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72, g: 12};  //第三个行走人物
+    var seam_12_point_2 = {x: 450, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: -10};  //第二个行走人物
+    var seam_12_point_3 = {x: 170, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第三个行走人物
     /*绘制人物方法*/
     function seam_12_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_12_point_1.acp_x, seam_12_point_1.acp_y, 340, 320, seam_12_point_1.x, seam_12_point_1.y, seam_12_point_1.w, seam_12_point_1.h);
-        ctx.drawImage(drawImg2, seam_12_point_2.acp_x, seam_12_point_2.acp_y, 340, 320, seam_12_point_2.x, seam_12_point_2.y, seam_12_point_2.w, seam_12_point_2.h);
-        ctx.drawImage(drawImg3, seam_12_point_3.acp_x, seam_12_point_3.acp_y, 340, 320, seam_12_point_3.x, seam_12_point_3.y, seam_12_point_3.w, seam_12_point_3.h);
+        ctx.drawImage(drawImg1, seam_12_point_1.acp_x, seam_12_point_1.acp_y, 305, 320, seam_12_point_1.x, seam_12_point_1.y, seam_12_point_1.w, seam_12_point_1.h);
+        ctx.drawImage(drawImg2, seam_12_point_2.acp_x, seam_12_point_2.acp_y, 305, 320, seam_12_point_2.x, seam_12_point_2.y, seam_12_point_2.w, seam_12_point_2.h);
+        ctx.drawImage(drawImg3, seam_12_point_3.acp_x, seam_12_point_3.acp_y, 305, 320, seam_12_point_3.x, seam_12_point_3.y, seam_12_point_3.w, seam_12_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -1074,7 +1090,7 @@ $(function () {
         seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
         seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
         seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
-    }, 10);
+    }, 80);
 
 
     /**电梯*/
