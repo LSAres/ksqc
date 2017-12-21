@@ -9,6 +9,7 @@ $link = connect();
 $rowAll = fetchAll('SELECT * FROM `nb_store`');
 $all_minergold = 0;
 $start = strtotime(date('Y-m-d', time()));
+$end = $start+86400;
 foreach ($rowAll as $key => $value) {
     //今天没买道具
     if ($value['last_buytool_time'] < $start) {
@@ -19,8 +20,17 @@ foreach ($rowAll as $key => $value) {
 }
 //获得今日所有玩家购买工具的挖矿分1%
 $fenHong = intval($all_minergold/100);
-
-print_r($rowAll);
+$userAll = fetchAll('SELECT * FROM `nb_user`');
+foreach($userAll as $key=>$value){
+    $sql = 'SELECT * FROM `nb_tools` WHERE uid='.$value['id'].' and start_time between '.$start.' and '.$end.'';
+    $res=mysql_query($sql);
+    if(mysql_num_rows($res)>0){
+        $sql = "update nb_user set miner_gold = miner_gold+$fenHong where uid=".$value['id']."";
+        $rcc = mysql_query($sql);
+    }
+}
+print_r($start);
+print_r($userAll);
 
 
 
@@ -29,7 +39,7 @@ print_r($rowAll);
 function connect(){
     $host="localhost";
     $username="root";
-    $password="root";
+    $password="";
     $dbName="ksqc";
     $charset = "utf8";
     //连接mysql

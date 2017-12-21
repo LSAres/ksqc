@@ -72,6 +72,9 @@ $(function () {
     $('.moneyMinerRecord').click(function () {
         $('iframe').attr('src', '../WealthDetailed/moneyMinerRecord.html');
     });
+    $('.reservoirRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/reservoirRecord.html');
+    });
 
     //公告选项
     $(".addNoticePage").click(function () {
