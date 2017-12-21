@@ -1,238 +1,80 @@
-[ 2017-12-20T09:26:09+08:00 ] 127.0.0.1 /ksqc/index.php/Home/Login/favicon.ico
+[ 2017-12-20T09:16:15+08:00 ] 192.168.1.116 /ksqc/index.php/Home/Login/favicon.ico
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
-[ 2017-12-20T09:26:16+08:00 ] 127.0.0.1 /ksqc/index.php/Home/Login/favicon.ico
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2017-12-20T09:35:45+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/BackstageControl/websiteSwitchPage.html
+[ 2017-12-20T10:18:38+08:00 ] 192.168.1.116 /ksqc/index.php/images/farm/cloud_one.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-ERR: 无法加载模块:Super
 
-[ 2017-12-20T09:39:28+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/functionValueResetPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:39:28+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/operationLogPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:39:29+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/capitalLogPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:39:30+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/helpDocumentList.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:39:30+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/addHelpDocument.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:39:32+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/addNoticePage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:39:33+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/noticeListPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:39:34+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/addNoticePage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:41:04+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/noticeListPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:41:05+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/addNoticePage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:41:07+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/noticeListPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:41:07+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/addNoticePage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:45:31+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/noticeListPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:45:32+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/addNoticePage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:45:35+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/addNoticePage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:45:36+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/NoticControl/noticeListPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:21+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/functionValueResetPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:21+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/operationLogPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:22+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/capitalLogPage.html
+[ 2017-12-20T10:19:24+08:00 ] 192.168.1.116 /ksqc/index.php/Home/Index/__PUBLIC__/fuguiji/images/farm/cloud_one.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
-ERR: 无法加载模块:Super
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
 
-[ 2017-12-20T09:46:23+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/helpDocumentList.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:24+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/addHelpDocument.html
+[ 2017-12-20T10:19:35+08:00 ] 192.168.1.116 /ksqc/index.php/images/farm/cloud_one.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
 
-[ 2017-12-20T09:46:30+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/AdminControl/adminAppendPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:31+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/AdminControl/adminListPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:32+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/AdminControl/adminAppendPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:33+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/AdminControl/adminListPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:46:33+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/AdminControl/adminAppendPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T09:57:05+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/WealthDetailed/userDetails.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T10:01:41+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/operationLogPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T10:20:30+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/ParameterProbability/capitalLogPage.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T10:20:50+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/WealthDetailed/userDetails.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T10:20:55+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/WealthDetailed/userDetails.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T10:45:41+08:00 ] 127.0.0.1 /ksqc/index.php/Home/public/fuguiji/images/farm/cloud_one.png
+[ 2017-12-20T10:20:17+08:00 ] 192.168.1.116 /ksqc/index.php/images/farm/cloud_one.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 
-[ 2017-12-20T10:46:00+08:00 ] 127.0.0.1 /ksqc/index.php/Home/public/fuguiji/images/farm/cloud_one.png
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
-
-[ 2017-12-20T10:53:36+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/WealthDetailed/userDetails.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-ERR: 无法加载模块:Super
-
-[ 2017-12-20T13:36:51+08:00 ] 192.168.1.115 /ksqc/index.php/Home/Login/favicon.ico
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2017-12-20T13:42:52+08:00 ] 127.0.0.1 /ksqc/index.php/Home/Login/favicon.ico
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
-
-[ 2017-12-20T18:05:42+08:00 ] 192.168.1.104 /ksqc/index.php/Home/Login/favicon.ico
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
-
-[ 2017-12-20T18:09:52+08:00 ] 192.168.1.121 /ksqc/index.php/Home/Login/favicon.ico
+[ 2017-12-20T10:20:18+08:00 ] 192.168.1.116 /ksqc/index.php/images/farm/cloud_one.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-20T10:20:20+08:00 ] 192.168.1.116 /ksqc/index.php/fuguiji/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-12-20T10:23:34+08:00 ] 192.168.1.116 /ksqc/index.php/Home/fuguiji/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-12-20T10:23:45+08:00 ] 192.168.1.116 /ksqc/index.php/Home/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T10:26:20+08:00 ] 192.168.1.116 /ksqc/index.php/Home/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-20T10:26:21+08:00 ] 192.168.1.116 /ksqc/index.php/Home/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T10:26:25+08:00 ] 192.168.1.116 /ksqc/index.php/fuguiji/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-20T10:27:15+08:00 ] 192.168.1.116 /ksqc/index.php/fuguiji/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+
+[ 2017-12-20T10:27:46+08:00 ] 192.168.1.116 /ksqc/index.php/Home/Index/__PUBLIC__/fuguiji/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T10:48:16+08:00 ] 192.168.1.116 /ksqc/index.php/Home/Index/__PUBLIC__/fuguiji/images/farm/cloud_one.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T13:09:30+08:00 ] 192.168.1.112 /ksqc/index.php/Home/Login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
 

@@ -1,4 +1,5 @@
 [ 2017-12-17T10:15:42+08:00 ] 127.0.0.1 /ksqc/index.php/Home/Login/favicon.ico
+[ 2017-12-17T09:09:41+08:00 ] 192.168.1.120 /ksqc/index.php/Home/Login/favicon.ico
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
@@ -130,10 +131,22 @@ INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 ERR: 无法加载模块:Public
 
 [ 2017-12-17T14:09:50+08:00 ] 127.0.0.1 /ksqc/Public/css/__PUBLIC__/image/backTitleImg.jpg
+[ 2017-12-17T14:28:11+08:00 ] 192.168.1.120 /ksqc/Public/fuguiji/images/gameTopIcon_3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-17T14:28:11+08:00 ] 192.168.1.120 /ksqc/Public/fuguiji/images/gameTopIcon_1.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-17T14:28:12+08:00 ] 192.168.1.120 /ksqc/Public/fuguiji/images/gameTopIcon_2.png
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
+[ 2017-12-17T14:28:46+08:00 ] 192.168.1.120 /ksqc/Public/fuguiji/farm/images/gameTopIcon_3.png
 [ 2017-12-17T14:12:34+08:00 ] 127.0.0.1 /ksqc/Public/css/__PUBLIC__/image/backTitleImg.jpg
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
@@ -149,6 +162,7 @@ INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
 
+[ 2017-12-17T14:28:46+08:00 ] 192.168.1.120 /ksqc/Public/fuguiji/farm/images/gameTopIcon_2.png
 [ 2017-12-17T14:12:38+08:00 ] 127.0.0.1 /ksqc/Public/css/__PUBLIC__/image/backTitleImg.jpg
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
@@ -159,6 +173,10 @@ INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 
+[ 2017-12-17T14:28:46+08:00 ] 192.168.1.120 /ksqc/Public/fuguiji/farm/images/gameTopIcon_1.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
 [ 2017-12-17T14:24:58+08:00 ] 127.0.0.1 /ksqc/index.php/Admin/index/index.php?s=/super/UserAdministration/administrationPage.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
