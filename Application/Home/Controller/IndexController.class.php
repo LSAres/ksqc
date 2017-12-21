@@ -601,6 +601,7 @@ class IndexController extends CommonController
       ));
     }
 
+
     //计时结束后领取挖矿分
     public function getMinerGold()
     {
