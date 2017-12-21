@@ -76,11 +76,11 @@ function area($index)
 function tool($index)
 {
 	$arr = [
-		1 => ['id' => 1, 'miner_gold' => 3000, 'start' => 1, 'end' => 11, 'name' => '十字镐', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513846444807&di=e421e41458593b22c06cdbbaf3913187&imgtype=0&src=http%3A%2F%2Fimg.go007.com%2F2016%2F11%2F28%2F2319362d1cae2da6_0.jpg'],		//11.6
-		2 => ['id' => 2, 'miner_gold' => 6000, 'start' => 1, 'end' => 23, 'name' => '电钻', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//23.6
-		3 => ['id' => 3, 'miner_gold' => 12000, 'start' => 1, 'end' => 44, 'name' => '小型挖矿机', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//44.6
-		4 => ['id' => 4, 'miner_gold' => 25000, 'start' => 1, 'end' => 97, 'name' => '大型挖矿机', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//97.2
-		5 => ['id' => 5, 'miner_gold' => 50000, 'start' => 1, 'end' => 194, 'name' => '炸药', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],	//194.4
+		1 => ['id' => 1, 'miner_gold' => C('tool_1_miner_gold'), 'start' => C('tool_1_start'), 'end' => C('tool_1_end'), 'name' => C('tool_1_name'), 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513846444807&di=e421e41458593b22c06cdbbaf3913187&imgtype=0&src=http%3A%2F%2Fimg.go007.com%2F2016%2F11%2F28%2F2319362d1cae2da6_0.jpg'],		//11.6
+		2 => ['id' => 2, 'miner_gold' => C('tool_2_miner_gold'), 'start' => C('tool_2_start'), 'end' => C('tool_2_end'), 'name' => C('tool_2_name'), 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//23.6
+		3 => ['id' => 3, 'miner_gold' => C('tool_3_miner_gold'), 'start' => C('tool_3_start'), 'end' => C('tool_3_end'), 'name' => C('tool_3_name'), 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//44.6
+		4 => ['id' => 4, 'miner_gold' => C('tool_4_miner_gold'), 'start' => C('tool_4_start'), 'end' => C('tool_4_end'), 'name' => C('tool_4_name'), 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//97.2
+		5 => ['id' => 5, 'miner_gold' => C('tool_5_miner_gold'), 'start' => C('tool_5_start'), 'end' => C('tool_5_end'), 'name' => C('tool_5_name'), 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],	//194.4
 	];
 	if (empty($index)) {
 			return $arr;
@@ -88,6 +88,26 @@ function tool($index)
 		return $arr[$index];
 	}
 }
+
+/**
+ * [tool 商城衣服(衣服一号,衣服二号,衣服三号)]
+ * @param  [type] $index [key]
+ * @return [type]        [array]
+ */
+function clothes($index)
+{
+    $arr = [
+        1 => ['id' => 1, 'clothes_name' => C('clothes_1_name'), 'clothes_price' => C('clothes_1_price')],		//11.6
+        2 => ['id' => 2, 'clothes_name' => C('clothes_2_name'), 'clothes_price' => C('clothes_2_price')],		//23.6
+        3 => ['id' => 3, 'clothes_name' => C('clothes_3_name'), 'clothes_price' => C('clothes_3_price')],		//44.6
+    ];
+    if (empty($index)) {
+        return $arr;
+    } else {
+        return $arr[$index];
+    }
+}
+
 
 /**
  * [area1 矿区1 里面的12层开启所需的挖矿分]
