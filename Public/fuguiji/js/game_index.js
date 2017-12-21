@@ -40,7 +40,10 @@ $(function () {
             $('.gameBody').animate({scrollTop:$('.bottonPosition').offset().top}, 500);
         }
     });
-
+    /**点击跳转地图界面*/
+    $('mapCall').click(function(){
+        
+    });
     /**
      *充值功能
      * */
@@ -1081,9 +1084,8 @@ $(function () {
 
     /*获取电梯背景图*/
     var elevatorBlockImg = document.getElementById('elevatorBlockImg');
-    /*电梯层数数字背景图*/
-    var elevatorNum_background = document.getElementById('elevatorNumber');
     var elevatorPoint = {x: 0, y: 0, w: 1000, h: 200, g: 5};
+    /*电梯停止坐标点*/
     var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
     var leftElevator = document.getElementsByClassName('gameBody_elevator')[0];
     leftElevator.width = 1024;
@@ -1100,18 +1102,7 @@ $(function () {
     /*绘制电梯*/
     function elevatorAction(ctx) {
         ctx.beginPath();
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[0],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[1],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[2],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[3],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[4],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[5],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[6],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[7],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[8],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[9],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[10],600,100);     //电梯层数
-        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[11],600,100);     //电梯层数
+
         ctx.font = '100  Arial';
         ctx.fillText("1",300,elevatorStopPoint[0] + 60);
         ctx.drawImage(elevatorBlockImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
