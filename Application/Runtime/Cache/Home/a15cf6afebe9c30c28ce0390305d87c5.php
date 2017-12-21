@@ -1,4 +1,4 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,21 +40,21 @@
     <!-- Windows 8 磁贴颜色 -->
     <meta name="msapplication-TileImage" content="icon.png">
     <!-- Windows 8 磁贴图标 -->
-    <link rel="Shortcut Icon" href="__PUBLIC__/fuguiji/favicon.ico">
+    <link rel="Shortcut Icon" href="/ksqc/Public/fuguiji/favicon.ico">
     <!-- 浏览器tab图标 -->
-    <link rel="apple-touch-icon" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <link rel="apple-touch-icon" href="/ksqc/Public/fuguiji/images/icon.jpg">
     <!-- iPhone 和 iTouch，默认 57x57 像素，必须有 -->
-    <link rel="apple-touch-icon" sizes="72x72" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="/ksqc/Public/fuguiji/images/icon.jpg">
     <!-- iPad，72x72 像素  -->
-    <link rel="apple-touch-icon" sizes="114x114" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="/ksqc/Public/fuguiji/images/icon.jpg">
     <!-- Retina iPhone 和 Retina iTouch，114x114 像素 -->
-    <link rel="stylesheet" href="__PUBLIC__/fuguiji/css/reset.css">
-    <link rel="stylesheet" href="__PUBLIC__/fuguiji/css/style.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/loign/login.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/home/popup.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/home/home.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/shop/shop.css">
-    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/game_index.css">
+    <link rel="stylesheet" href="/ksqc/Public/fuguiji/css/reset.css">
+    <link rel="stylesheet" href="/ksqc/Public/fuguiji/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/loign/login.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/home/popup.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/home/home.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/shop/shop.css">
+    <link type="text/css" rel="stylesheet" href="/ksqc/Public/fuguiji/css/game_index.css">
     <style>
         nav {
             position: absolute;
@@ -69,19 +69,19 @@
 <div class="gameTop">
     <div class="gameTop-show">
         <div class="gameTop-showBlock">
-            <img src="__PUBLIC__/fuguiji/images/farm/gameTopIcon_1.png"/>
-            <span>{$store['miner_gold']}</span>
-            <label style="display: none;">可操作点击</label>
-            <div style="color: yellowgreen;">数值名称</div>
-        </div>
-        <div class="gameTop-showBlock">
-            <img src="__PUBLIC__/fuguiji/images/farm/gameTopIcon_2.png"/>
+            <img src="/ksqc/Public/fuguiji/images/farm/gameTopIcon_1.png"/>
             <span>1411ad</span>
             <label style="display: none;">可操作点击</label>
             <div style="color: yellowgreen;">数值名称</div>
         </div>
         <div class="gameTop-showBlock">
-            <img src="__PUBLIC__/fuguiji/images/farm/gameTopIcon_3.png"/>
+            <img src="/ksqc/Public/fuguiji/images/farm/gameTopIcon_2.png"/>
+            <span>1411ad</span>
+            <label style="display: none;">可操作点击</label>
+            <div style="color: yellowgreen;">数值名称</div>
+        </div>
+        <div class="gameTop-showBlock">
+            <img src="/ksqc/Public/fuguiji/images/farm/gameTopIcon_3.png"/>
             <span>1411ad</span>
             <label class="chargeCall"></label>
             <div style="color: #b9def0;">数值名称</div>
@@ -93,7 +93,7 @@
 <!--充值-->
 <div class="outerDiv chageDiv" style="display:none;">
     <!--关闭充值-->
-    <img src="__PUBLIC__/fuguiji/images/home/close.png" class="closeCharge">
+    <img src="/ksqc/Public/fuguiji/images/home/close.png" class="closeCharge">
     <!--充值显示-->
     <div class="chargeInputBlock">
         <!--可用余额显示-->
@@ -112,11 +112,11 @@
         <div class="chargeType">
             <h3>充值方式</h3>
             <div class="chargeTypeSelect selected">
-                <img src="__PUBLIC__/fuguiji/images/home/pay01.png" alt="">
+                <img src="/ksqc/Public/fuguiji/images/home/pay01.png" alt="">
                 <span>充值方式名称</span>
             </div>
             <div class="chargeTypeSelect">
-                <img src="__PUBLIC__/fuguiji/images/home/pay02.png" alt="">
+                <img src="/ksqc/Public/fuguiji/images/home/pay02.png" alt="">
                 <span>充值方式名称</span>
             </div>
         </div>
@@ -131,7 +131,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -140,7 +140,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -184,7 +184,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -193,7 +193,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -237,7 +237,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -246,7 +246,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -290,7 +290,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -299,7 +299,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -343,7 +343,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -352,7 +352,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -396,7 +396,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -405,7 +405,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -449,7 +449,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -458,7 +458,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -502,7 +502,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -511,7 +511,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -555,7 +555,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -564,7 +564,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -608,7 +608,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -617,7 +617,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -661,7 +661,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -670,7 +670,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -714,7 +714,7 @@
             <!--功能信息-->
             <span >升级页面</span>
             <!--关闭图片-->
-            <img  src="__PUBLIC__/fuguiji/images/home/close.png" >
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
@@ -723,7 +723,7 @@
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png" >
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
                 <label>LV_1</label>
             </div>
@@ -765,7 +765,7 @@
 <div class="outerDiv friend" style="display: none;">
     <div class="friendAll">
         <!--好友关闭-->
-        <img src="__PUBLIC__/fuguiji/images/home/close.png" class="closeFrienList">
+        <img src="/ksqc/Public/fuguiji/images/home/close.png" class="closeFrienList">
         <!---->
         <div class="friendList">
             <!--好友信息块-->
@@ -797,7 +797,7 @@
 <!--个人中心-->
 <div class="outerDiv userCenter" style="display: none;">
     <!--关闭个人设置-->
-    <img src="__PUBLIC__/fuguiji/images/pop/deal-bnt.png" alt="" class="closeUserCenter">
+    <img src="/ksqc/Public/fuguiji/images/pop/deal-bnt.png" alt="" class="closeUserCenter">
     <!---->
     <div class="userCenterControl">
         <!--显示框-->
@@ -987,19 +987,19 @@
     <!--底部功能切换-->
     <div class="userCenter_bottomFunctionSelect">
         <div>
-            <img src="__PUBLIC__/fuguiji/images/farm/usercenter_2.png" alt="">
+            <img src="/ksqc/Public/fuguiji/images/farm/usercenter_2.png" alt="">
         </div>
         <div>
-            <img src="__PUBLIC__/fuguiji/images/farm/usercenter_1.png" alt="">
+            <img src="/ksqc/Public/fuguiji/images/farm/usercenter_1.png" alt="">
         </div>
         <div>
-            <img src="__PUBLIC__/fuguiji/images/farm/usercenter_3.png" alt="">
+            <img src="/ksqc/Public/fuguiji/images/farm/usercenter_3.png" alt="">
         </div>
         <div>
-            <img src="__PUBLIC__/fuguiji/images/farm/usercenter_4.png" alt="">
+            <img src="/ksqc/Public/fuguiji/images/farm/usercenter_4.png" alt="">
         </div>
         <div>
-            <img src="__PUBLIC__/fuguiji/images/farm/usercenter_5.png" alt="">
+            <img src="/ksqc/Public/fuguiji/images/farm/usercenter_5.png" alt="">
         </div>
     </div>
 
@@ -1008,13 +1008,13 @@
 <div class="outerDiv catchShop" style="display: none;">
     <div class="catchShop_show">
         <!--关闭图片-->
-        <img src="__PUBLIC__/fuguiji/images/home/close.png" class="closeCatchShop">
+        <img src="/ksqc/Public/fuguiji/images/home/close.png" class="closeCatchShop">
         <!--左侧功能选择-->
         <div class="catchShop_leftControl">
-            <img src="__PUBLIC__/fuguiji/images/farm/catchShop_shop.png" >
-            <img src="__PUBLIC__/fuguiji/images/farm/catchShop_exchange.png" >
-            <img src="__PUBLIC__/fuguiji/images/farm/catchShop_Warehouse.png" alt="">
-            <img src="__PUBLIC__/fuguiji/images/farm/catchShop_history.png" alt="">
+            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_shop.png" >
+            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_exchange.png" >
+            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_Warehouse.png" alt="">
+            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_history.png" alt="">
         </div>
         <!--商品显示-->
         <!--宝箱模块-->
@@ -1093,12 +1093,12 @@
 <div class="gameBody" >
     <!--顶部 青天白云 搬运矿工-->
     <div class="gameBody_top">
-        <img src="__PUBLIC__/fuguiji/images/farm/gameTopLeft.png" id="gameTopLeft" style="display: none;"/>
-        <img src="__PUBLIC__/fuguiji/images/farm/gameTopRight.png" id="gameTopRight"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/gameTopLeft.png" id="gameTopLeft" style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/gameTopRight.png" id="gameTopRight"  style="display: none;"/>
         <!--蓝色-->
-        <img src="__PUBLIC__/fuguiji/images/farm/tophumen1_1.png"  id="gameTopHumen" style="display:none;"/>
-        <img src="__PUBLIC__/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;"/>
-        <img src="__PUBLIC__/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/tophumen1_1.png"  id="gameTopHumen" style="display:none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;"/>
         <canvas class="gameBody_topCanvas" width="1024" height="768">您的浏览器或手机不支持此功能！</canvas>
     </div>
     <!--下方 电梯和矿层-->
@@ -1106,78 +1106,78 @@
         <!--下方左侧电梯-->
         <div class="gameBody_bottomLeft">
             <!--电梯图片-->
-            <img src="__PUBLIC__/fuguiji/images/farm/elevatorBlock.png" id="elevatorBlockImg" style="display: none;">
+            <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock.png" id="elevatorBlockImg" style="display: none;">
             <!--矿层数字背景-->
-            <img src="__PUBLIC__/fuguiji/images/farm/elevatorNumber.png" id="elevatorNumber" style="display: none;">
+            <img src="/ksqc/Public/fuguiji/images/farm/elevatorNumber.png" id="elevatorNumber" style="display: none;">
             <canvas class="gameBody_elevator" >您的浏览器或手机不支持此功能</canvas>
         </div>
         <!--下方右侧矿层-->
         <div class="gameBody_bottomRight">
             <!--上方占位图片-->
-            <img src="__PUBLIC__/fuguiji/images/farm/game_bottom_TopImg.png" class="" />
+            <img src="/ksqc/Public/fuguiji/images/farm/game_bottom_TopImg.png" class="" />
             <!--矿层显示 -->
             <!--自定义属性 callnumber:用于JS呼出对应升级操作块-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "1">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "1">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "2">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "2">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "3">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "3">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "4">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "4">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "5">
-                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
-            </div>
-            <!--矿层显示-->
-            <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "6">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "5">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "7">
-                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
-            </div>
-            <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "8">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "6">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "9">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "7">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+            </div>
+            <div class="seamDiv">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "8">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "10">
-                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
-            </div>
-            <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "11">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "9">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "12">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "10">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+            </div>
+            <div class="seamDiv">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "11">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+            </div>
+            <!--矿层显示-->
+            <div class="seamDiv">
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "12">
                 <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
             </div>
 
 
         </div>
         <!--下方占位图片-->
-        <img src="__PUBLIC__/fuguiji/images/farm/game_bottom_TopImg.png" class="bottonPosition" style="display: block; width: 100%; height: 85px;"  />
+        <img src="/ksqc/Public/fuguiji/images/farm/game_bottom_TopImg.png" class="bottonPosition" style="display: block; width: 100%; height: 85px;"  />
 
 
     </div>
@@ -1187,8 +1187,8 @@
 
 <!--页面底部滚动条切换-->
 <div class="scrollChange">
-    <img src="__PUBLIC__/fuguiji/images/farm/scrollTop.png" alt="">
-    <img src="__PUBLIC__/fuguiji/images/farm/scrollBottom.png" alt="">
+    <img src="/ksqc/Public/fuguiji/images/farm/scrollTop.png" alt="">
+    <img src="/ksqc/Public/fuguiji/images/farm/scrollBottom.png" alt="">
 </div>
 <!--页面底部-->
 <div class="gemeFotter">
@@ -1197,13 +1197,13 @@
         <img src="" alt="" class="">
     </div>
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/userFriend.png" alt="" class="friendCall">
+        <img src="/ksqc/Public/fuguiji/images/farm/userFriend.png" alt="" class="friendCall">
     </div>
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/userCenter.png" alt="" class="userCenterCall">
+        <img src="/ksqc/Public/fuguiji/images/farm/userCenter.png" alt="" class="userCenterCall">
     </div>
     <div>
-        <img src="__PUBLIC__/fuguiji/images/farm/catchShopCall.png" alt="" class="catchShopCall">
+        <img src="/ksqc/Public/fuguiji/images/farm/catchShopCall.png" alt="" class="catchShopCall">
     </div>
     <div>
         <!--<img src="" />-->
@@ -1241,9 +1241,9 @@
     </div>
 </div>
 
-<!--<audio src="__PUBLIC__/fuguiji/music/bg.mp3" preload="" loop></audio>-->
-<script src="__PUBLIC__/fuguiji/js/jquery-1.7.2.min.js"></script>
-<script src="__PUBLIC__/fuguiji/js/game_index.js"></script>
+<!--<audio src="/ksqc/Public/fuguiji/music/bg.mp3" preload="" loop></audio>-->
+<script src="/ksqc/Public/fuguiji/js/jquery-1.7.2.min.js"></script>
+<script src="/ksqc/Public/fuguiji/js/game_index.js"></script>
 <script>
 
 </script>

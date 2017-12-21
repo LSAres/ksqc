@@ -11,8 +11,6 @@ $(function () {
         trueOrFalse = 0;
         $('.promptTrueOrFalse').fadeIn();
         $('.promptTrueOrFalse .promptBlock_message').text(msg);
-
-
     }
 
     $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').click(function () {
@@ -33,12 +31,19 @@ $(function () {
 
         $('.promptOnlyTrue').fadeOut();
     });
-
+    /**
+     * 滚动条切换*/
+    $('.scrollChange img').click(function () {
+        if($(this).index() == 0){
+            $('.gameBody').animate({scrollTop: '0px'}, 500);
+        }else{
+            $('.gameBody').animate({scrollTop:$('.bottonPosition').offset().top}, 500);
+        }
+    });
 
     /**
      *充值功能
      * */
-
     /*点击呼出充值*/
     $('.chargeCall').on('click', function () {
         $('.chageDiv').fadeIn();
@@ -74,8 +79,8 @@ $(function () {
     /*所有的 升级商店呼出按钮*/
     var seamUpCallAll = $('.seamUpCall');
     var upgradeAll = $('.upgradeShow');
-    $(seamUpCallAll).click(function(){
-        $(upgradeAll[parseInt($(this).attr('callnumber')) - 1] ).fadeIn();
+    $(seamUpCallAll).click(function () {
+        $(upgradeAll[parseInt($(this).attr('callnumber')) - 1]).fadeIn();
     });
     /**
      * 好友*/
@@ -96,7 +101,7 @@ $(function () {
         $('.userCenter').fadeOut();
     });
     /*个人中心：记录点击向下箭头 展示详细信息*/
-    $('.miningHistory_date').click(function(){
+    $('.miningHistory_date').click(function () {
         $(this).parent().find('.miningHistory_message').slideToggle();
     });
     /*底部的功能按钮*/
@@ -214,30 +219,46 @@ $(function () {
 
     /**顶部：人物绘制*/
     /**/
-    var topHumenPoint = {x:205,y:690,w:120,h:80,g:5,acp_x:40,acp_y:72,max_width:780,min_width:200,imgWidthLength:2000,img_SX:40,img_SY:72,img_swidth:410};
+    var topHumenPoint = {
+        x: 205,
+        y: 690,
+        w: 120,
+        h: 80,
+        g: 5,
+        acp_x: 80,
+        acp_y: 72,
+        max_width: 780,
+        min_width: 200,
+        imgWidthLength: 1900,
+        img_SX: 50,
+        img_SY: 72,
+        img_swidth: 400
+    };
     var topHumenImg_go = document.getElementById('gameTopHumen1');
     var topHumenImg_com = document.getElementById('gameTopHumen2');
     var topHumenDraw = topHumenImg_go;
-    function topHumenAction (ctx,drawImg){
+
+    function topHumenAction(ctx, drawImg) {
         ctx.beginPath();
-        ctx.drawImage(drawImg,topHumenPoint.acp_x, topHumenPoint.acp_y, 340, 320, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
+        ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 340, 320, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
         ctx.stroke();
         ctx.closePath();
     }
-    function topHumenMove(ctx,drawImg){
-        ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
-        if((topHumenPoint.x + topHumenPoint.w) >= topHumenPoint.max_width){
+
+    function topHumenMove(ctx, drawImg) {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        if ((topHumenPoint.x + topHumenPoint.w) >= topHumenPoint.max_width) {
             topHumenPoint.g = -topHumenPoint.g;
             topHumenDraw = topHumenImg_com;
         }
-        if(topHumenPoint.x < topHumenPoint.min_width){
+        if (topHumenPoint.x < topHumenPoint.min_width) {
             topHumenPoint.g -= (topHumenPoint.g * 2);
             topHumenDraw = topHumenImg_go;
         }
-        if(topHumenPoint.acp_x >= topHumenPoint.imgWidthLength){
+        if (topHumenPoint.acp_x >= topHumenPoint.imgWidthLength) {
             topHumenPoint.acp_x = topHumenPoint.img_SX;
         }
-        topHumenAction (ctx,drawImg);
+        topHumenAction(ctx, drawImg);
         top_leftMachine(ctx);
         top_rightMachine(ctx);
         topHumenPoint.x += topHumenPoint.g;
@@ -246,7 +267,7 @@ $(function () {
 
     /**顶部：场景绘制*/
     var topActive = setInterval(function () {
-        topHumenMove(topCtx,topHumenDraw);
+        topHumenMove(topCtx, topHumenDraw);
     }, 100);
 
 
@@ -266,9 +287,9 @@ $(function () {
     var seamHumen_3 = document.getElementById('gameTopHumen2'); //左位移 背包行走人物图片
     var maxRight = 750;     //人物右移动 最大宽度
     var minLeft = 160;      //人物左移动 最小宽度
-    var imgWidthLength = 2000;      //图片的最大宽度
-    var img_SX = 40;        //截取图片的 X轴坐标
-    var img_swidth = 415;   //截取图片的跨度
+    var imgWidthLength = 1900;      //图片的最大宽度
+    var img_SX = 100;        //截取图片的 X轴坐标
+    var img_swidth = 380;   //截取图片的跨度
 
     /*第一矿层 */
     /*用于接受绘制的人物图片*/
@@ -333,6 +354,7 @@ $(function () {
         seam_1_point_3.x += seam_1_point_3.g;                           //变更 人物移动x轴坐标
         seam_1_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第2矿层 */
     /*用于接受绘制的人物图片*/
     var seam_2_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
@@ -396,6 +418,7 @@ $(function () {
         seam_2_point_3.x += seam_2_point_3.g;                           //变更 人物移动x轴坐标
         seam_2_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第3矿层 */
     /*用于接受绘制的人物图片*/
     var seam_3_DrawImg_2 = seamHumen_3;     //第一个人物 初始图片 向左移动帧图
@@ -459,6 +482,7 @@ $(function () {
         seam_3_point_3.x += seam_3_point_3.g;                           //变更 人物移动x轴坐标
         seam_3_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第4矿层 */
     /*用于接受绘制的人物图片*/
     var seam_4_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
@@ -522,6 +546,7 @@ $(function () {
         seam_4_point_3.x += seam_4_point_3.g;                           //变更 人物移动x轴坐标
         seam_4_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第5矿层 */
     /*用于接受绘制的人物图片*/
     var seam_5_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
@@ -585,6 +610,7 @@ $(function () {
         seam_5_point_3.x += seam_5_point_3.g;                           //变更 人物移动x轴坐标
         seam_5_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第6矿层 */
     /*用于接受绘制的人物图片*/
     var seam_6_DrawImg_2 = seamHumen_3;     //第一个人物 初始图片 向左移动帧图
@@ -648,6 +674,7 @@ $(function () {
         seam_6_point_3.x += seam_6_point_3.g;                           //变更 人物移动x轴坐标
         seam_6_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第7矿层 */
     /*用于接受绘制的人物图片*/
     var seam_7_DrawImg_2 = seamHumen_3;     //第一个人物 初始图片 向左移动帧图
@@ -711,6 +738,7 @@ $(function () {
         seam_7_point_3.x += seam_7_point_3.g;                           //变更 人物移动x轴坐标
         seam_7_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第8矿层 */
     /*用于接受绘制的人物图片*/
     var seam_8_DrawImg_2 = seamHumen_3;     //第一个人物 初始图片 向左移动帧图
@@ -774,6 +802,7 @@ $(function () {
         seam_8_point_3.x += seam_8_point_3.g;                           //变更 人物移动x轴坐标
         seam_8_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第9矿层 */
     /*用于接受绘制的人物图片*/
     var seam_9_DrawImg_2 = seamHumen_3;     //第一个人物 初始图片 向左移动帧图
@@ -837,6 +866,7 @@ $(function () {
         seam_9_point_3.x += seam_9_point_3.g;                           //变更 人物移动x轴坐标
         seam_9_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第10矿层 */
     /*用于接受绘制的人物图片*/
     var seam_10_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
@@ -900,6 +930,7 @@ $(function () {
         seam_10_point_3.x += seam_10_point_3.g;                           //变更 人物移动x轴坐标
         seam_10_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第11矿层 */
     /*用于接受绘制的人物图片*/
     var seam_11_DrawImg_2 = seamHumen_3;     //第一个人物 初始图片 向左移动帧图
@@ -963,6 +994,7 @@ $(function () {
         seam_11_point_3.x += seam_11_point_3.g;                           //变更 人物移动x轴坐标
         seam_11_point_3.acp_x += img_swidth;                             //变更 图片截取X轴坐标点
     }
+
     /*第12矿层 */
     /*用于接受绘制的人物图片*/
     var seam_12_DrawImg_2 = seamHumen_3;     //第一个人物 初始图片 向左移动帧图
@@ -1031,26 +1063,28 @@ $(function () {
     /*循环调用人物绘制，判断人物坐标方法*/
     setInterval(function () {
         seam_1_imgMove(seam_ctx[0], seamHumen_1, seam_1_DrawImg_2, seam_1_DrawImg_3);
-        seam_2_imgMove(seam_ctx[1],seamHumen_1,seam_2_DrawImg_2,seam_2_DrawImg_3);
-        seam_3_imgMove(seam_ctx[2],seamHumen_1,seam_3_DrawImg_2,seam_3_DrawImg_3);
-        seam_4_imgMove(seam_ctx[3],seamHumen_1,seam_4_DrawImg_2,seam_4_DrawImg_3);
-        seam_5_imgMove(seam_ctx[4],seamHumen_1,seam_5_DrawImg_2,seam_5_DrawImg_3);
-        seam_6_imgMove(seam_ctx[5],seamHumen_1,seam_6_DrawImg_2,seam_6_DrawImg_3);
-        seam_7_imgMove(seam_ctx[6],seamHumen_1,seam_7_DrawImg_2,seam_7_DrawImg_3);
-        seam_8_imgMove(seam_ctx[7],seamHumen_1,seam_8_DrawImg_2,seam_8_DrawImg_3);
-        seam_9_imgMove(seam_ctx[8],seamHumen_1,seam_9_DrawImg_2,seam_9_DrawImg_3);
-        seam_10_imgMove(seam_ctx[9],seamHumen_1,seam_10_DrawImg_2,seam_10_DrawImg_3);
-        seam_11_imgMove(seam_ctx[10],seamHumen_1,seam_11_DrawImg_2,seam_11_DrawImg_3);
-        seam_12_imgMove(seam_ctx[11],seamHumen_1,seam_12_DrawImg_2,seam_12_DrawImg_3);
-    }, 100);
+        seam_2_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);
+        seam_3_imgMove(seam_ctx[2], seamHumen_1, seam_3_DrawImg_2, seam_3_DrawImg_3);
+        seam_4_imgMove(seam_ctx[3], seamHumen_1, seam_4_DrawImg_2, seam_4_DrawImg_3);
+        seam_5_imgMove(seam_ctx[4], seamHumen_1, seam_5_DrawImg_2, seam_5_DrawImg_3);
+        seam_6_imgMove(seam_ctx[5], seamHumen_1, seam_6_DrawImg_2, seam_6_DrawImg_3);
+        seam_7_imgMove(seam_ctx[6], seamHumen_1, seam_7_DrawImg_2, seam_7_DrawImg_3);
+        seam_8_imgMove(seam_ctx[7], seamHumen_1, seam_8_DrawImg_2, seam_8_DrawImg_3);
+        seam_9_imgMove(seam_ctx[8], seamHumen_1, seam_9_DrawImg_2, seam_9_DrawImg_3);
+        seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
+        seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
+        seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
+    }, 80);
 
 
     /**电梯*/
 
     /*获取电梯背景图*/
     var elevatorBlockImg = document.getElementById('elevatorBlockImg');
+    /*电梯层数数字背景图*/
+    var elevatorNum_background = document.getElementById('elevatorNumber');
     var elevatorPoint = {x: 0, y: 0, w: 1000, h: 200, g: 5};
-    var elevatorStopPoint = [200,450,700,950,1200,1450,1700,1950,2200,2450,2700,2950];
+    var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
     var leftElevator = document.getElementsByClassName('gameBody_elevator')[0];
     leftElevator.width = 1024;
     leftElevator.height = 768;
@@ -1066,7 +1100,23 @@ $(function () {
     /*绘制电梯*/
     function elevatorAction(ctx) {
         ctx.beginPath();
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[0],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[1],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[2],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[3],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[4],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[5],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[6],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[7],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[8],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[9],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[10],600,100);     //电梯层数
+        ctx.drawImage(elevatorNum_background,200,elevatorStopPoint[11],600,100);     //电梯层数
+        ctx.font = '100  Arial';
+        ctx.fillText("1",300,elevatorStopPoint[0] + 60);
         ctx.drawImage(elevatorBlockImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
+        ctx.fillStyle = '#fff';
+        ctx.fill();
         ctx.stroke();
         ctx.closePath();
 
@@ -1080,28 +1130,29 @@ $(function () {
             elevatorPoint.g = -elevatorPoint.g;
         }
         if (elevatorPoint.y < 0) {
-            elevatorPoint.g -=  (elevatorPoint.g * 2);
+            elevatorPoint.g -= (elevatorPoint.g * 2);
         }
         elevatorPoint.y += elevatorPoint.g;
         elevatorAction(ctx);
     };
 
-      var elevatorSetInterval = setInterval(function () {
-          elevatorStop(elevatorSetInterval);
-          elevatorMove(leftElevator_Ctx);
-      }, 20);
-    function elevatorStop(clearName){
+    var elevatorSetInterval = setInterval(function () {
+        elevatorStop(elevatorSetInterval);
+        elevatorMove(leftElevator_Ctx);
+    }, 20);
+
+    function elevatorStop(clearName) {
         /*判断电梯移动坐标点 是否到达相应矿层*/
-        if(elevatorPoint.g < 0 ){
-            for(var i=0; i < elevatorStopPoint.length ; i++){
-                if(elevatorPoint.y == elevatorStopPoint[i] ){
+        if (elevatorPoint.g < 0) {
+            for (var i = 0; i < elevatorStopPoint.length; i++) {
+                if (elevatorPoint.y == elevatorStopPoint[i]) {
                     clearInterval(clearName);
-                    setTimeout(function(){
+                    setTimeout(function () {
                         elevatorSetInterval = setInterval(function () {
                             elevatorStop(elevatorSetInterval);
                             elevatorMove(leftElevator_Ctx);
                         }, 20);
-                    },1000);
+                    }, 1000);
                     break;
                 }
             }

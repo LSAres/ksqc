@@ -19,7 +19,6 @@ $(function () {
     });
     /*点击控制左侧控制列表的收缩*/
     $('#controDiv').click(function () {
-
         var divWidth = $('.leftControle').css('width');
         if (divWidth != '0px') {
             $(this).removeClass('leftControDiv');
@@ -55,46 +54,58 @@ $(function () {
         $('iframe').attr('src', '../UserAdministration/administrationPage.html');
     });
     //财富汇总明细
-    $('.userDetails').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/WealthDetailed/userDetails.html');
+    $('.userCapitalOffset').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/userCapitalOffset.html');
+    });
+    $('.minerGoldRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/minerGoldRecord.html');
+    });
+    $('.diamondsRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/diamondsRecord.html');
+    });
+    $('.moneyRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/moneyRecord.html');
+    });
+    $('.minerMoneyRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/minerMoneyRecord.html');
+    });
+    $('.moneyMinerRecord').click(function () {
+        $('iframe').attr('src', '../WealthDetailed/moneyMinerRecord.html');
     });
 
     //公告选项
     $(".addNoticePage").click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/NoticControl/addNoticePage.html');
+        $('iframe').attr('src', '../NoticControl/addNoticePage.html');
 
     });
     $('.noticeListPage').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/NoticControl/noticeListPage.html');
+        $('iframe').attr('src', '../NoticControl/noticeListPage.html');
     });
 
     //参数概率
     $('.functionValueReset').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/ParameterProbability/functionValueResetPage.html');
-    });
-    $('.operationLog').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/ParameterProbability/operationLogPage.html');
+        $('iframe').attr('src', '../ParameterProbability/functionValueResetPage.html');
     });
 	 $('.capitalLog').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/ParameterProbability/capitalLogPage.html');
+        $('iframe').attr('src', '../ParameterProbability/capitalLogPage.html');
     });
     $('.helpDocument').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/ParameterProbability/helpDocumentList.html');
+        $('iframe').attr('src', '../ParameterProbability/helpDocumentList.html');
     });
     $('.addHelpDocument').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/ParameterProbability/addHelpDocument.html');
+        $('iframe').attr('src', '../ParameterProbability/addHelpDocument.html');
 
     })
     //后台管理
     $('.websiteSwitch').click(function () {
-        $('iframe').attr("src", "index.php?s=/super/BackstageControl/websiteSwitchPage.html");
+        $('iframe').attr("src", "../BackstageControl/websiteSwitchPage.html");
     });
     //管理员选项
     $('.adminAppend').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/AdminControl/adminAppendPage.html');
+        $('iframe').attr('src', '../AdminControl/adminAppendPage.html');
     });
     $('.adminList').click(function () {
-        $('iframe').attr('src', 'index.php?s=/super/AdminControl/adminListPage.html');
+        $('iframe').attr('src', '../AdminControl/adminListPage.html');
     });
 
 

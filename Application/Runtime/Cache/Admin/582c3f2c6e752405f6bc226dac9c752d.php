@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <Title>矿世奇财后台管理汇总页面</Title>
-    <script type="text/javascript" src="__PUBLIC__/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/js/commentT.js"></script>
-    <link rel="stylesheet" href="__PUBLIC__/css/styleSheetT.css">
+    <script type="text/javascript" src="/ksqc/Public/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/ksqc/Public/js/commentT.js"></script>
+    <link rel="stylesheet" href="/ksqc/Public/css/styleSheetT.css">
 
 	<style>
 		.contentTitelDiv{
-			<!--background: url("__PUBLIC__/image/systemTitle.jpg");-->
+			<!--background: url("/ksqc/Public/image/systemTitle.jpg");-->
 			background-size:100% 100%;
 			background-position:center;
 			background-repeat:no-repeat
 		}
 		 .leftControle{
-		 	<!--background: url("__PUBLIC__/image/systemTitle.jpg");-->
+		 	<!--background: url("/ksqc/Public/image/systemTitle.jpg");-->
 			background-size:100% 100%;
 			background-position:center;
 			background-repeat:no-repeat
@@ -31,8 +31,8 @@
             拼团后台管理
         </div>
         <div class="adminMessageDiv">
-            <span class="welcomeDiv"><span class="welcome">欢迎：</span><span class="userName">{$sp_username}</span></span>
-            <span class="loginOut"><a href="{:U(MODULE_NAME.'/Index/outlogin')}">退出</a></span>
+            <span class="welcomeDiv"><span class="welcome">欢迎：</span><span class="userName"><?php echo ($sp_username); ?></span></span>
+            <span class="loginOut"><a href="<?php echo U(MODULE_NAME.'/Index/outlogin');?>">退出</a></span>
         </div>
     </div>
     <!--左侧显示控制列表-->
@@ -50,11 +50,6 @@
             <div class=" liTitle">财富汇总明细</div>
             <ul class="ulDiv">
                 <li class="userCapitalOffset">会员财富明细</li>
-                <li class="minerGoldRecord">挖矿分记录</li>
-                <li class="diamondsRecord">钻石分记录</li>
-                <li class="moneyRecord">现金分记录</li>
-                <li class="minerMoneyRecord">挖矿分转现金分记录</li>
-                <li class="moneyMinerRecord">现金分转挖矿分记录</li>
             </ul>
         </div>
         <div class="liDiv">
@@ -95,7 +90,7 @@
     <div class="leftControDiv" id="controDiv"></div>
     <!--右方页面切换DIV-->
     <div class="rightPageChange">
-        <iframe align="center" width="100%" height="100%" src="{:U(MODULE_NAME.'/Index/gameNotice')}"
+        <iframe align="center" width="100%" height="100%" src="<?php echo U(MODULE_NAME.'/Index/gameNotice');?>"
                 style="border: none;">
 
         </iframe>
