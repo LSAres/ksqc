@@ -68,19 +68,19 @@
 <!--地图显示区域-->
 <div class="mapDiv">
     <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_5.png" class="map_1">
+        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_1">
     </div>
     <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_4.png" class="map_2">
+        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_2">
     </div>
     <div>
         <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_3">
     </div>
     <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_2.png" class="map_4" >
+        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_4" >
     </div>
     <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_1.png" class="map_5">
+        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_5">
     </div>
 </div>
 </body>

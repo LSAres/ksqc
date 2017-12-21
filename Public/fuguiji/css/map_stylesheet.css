@@ -47,7 +47,7 @@ html , body{
     width: 800px;
     height: 800px;
     background: linear-gradient(to bottom right,#000000,#132d46,#2f4982,#2b9cd4,#fbb670);
-    background: url(../images/farm/mapBackground.png);
+    background: url(../images/farm/mapBackground.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -64,28 +64,31 @@ html , body{
 .mapDiv div .map_1{
     width: 332px;
     height: 237px;
-    top: 0%;
-    left: 0%;
+    top: 10%;
+    left: 35%;
+    transform: rotateZ(-142deg);
 }
 .mapDiv div .map_2{
-    width: 200px;
+    width: 258px;
     height: 337px;
-    left: 7%;
+    left: 19%;
     top: 21%;
-    transform: rotateZ(70deg);
+    transform: rotateZ(-21deg);
 }
 .mapDiv div .map_3{
-    left: 64%;
-    top: 63%;
+    left: 11%;
+    top: 58%;
     width: 286px;
+    transform: rotateZ(110deg);
 }
 .mapDiv div .map_4{
     left: 64%;
-    top: 3%;
+    top: 25%;
     width: 200px;
     height: 307px;
 }
 .mapDiv div .map_5{
-    top: 54%;
-    left: 46%;
+    top: 50%;
+    left: 40%;
+    width: 34%;
 }
