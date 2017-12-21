@@ -18,10 +18,6 @@ class LoginController extends Controller
 
 	//登陆验证
 	public function testid(){
-	    session('userId',360);
-	    session('mobile',360);
-	    $data['success']=1;
-	    $this->ajaxReturn($data);
     	$mobile=I('post.mobile');
 	    $psw=I('post.pwd','');
 
@@ -29,7 +25,7 @@ class LoginController extends Controller
 		$udb=M('user');
 		$db_userlog = M('user_log');
 		$usinfo=$udb->where("mobile='{$mobile}' or account='{$mobile}'")->find();
-		
+	
         if ($usinfo['lockuser']) {
             $data['msg'] = "您的账号已锁定，请联系管理员";
             $data['success']=0;
@@ -51,16 +47,16 @@ class LoginController extends Controller
             $this->ajaxReturn($data);
         }
 
-		session('userId', $usinfo['userid'], 3600*3);
+		session('userId', $usinfo['id'], 3600*3);
 		session('mobile', $mobile, 3600*3);
-               	
+             	
         //记录登录时间
-		M('user')->where('userid='.$usinfo['userid'].'')->setField('last_login',time());
-		M('user')->where('userid='.$usinfo['userid'].'')->setField('login_ip',get_client_ip());
-		$uInfo = M('store')->where('uid='.$usinfo['userid'].'')->find();
+		M('user')->where('id='.$usinfo['id'].'')->setField('last_login',time());
+		M('user')->where('id='.$usinfo['id'].'')->setField('login_ip',get_client_ip());
+		$uInfo = M('store')->where('uid='.$usinfo['id'].'')->find();
 
 		$logInfo = array(
-			'uid'      => $usinfo['userid'],
+			'uid'      => $usinfo['id'],
 			'type'     => trim('Login'),
 			'time'     => time(),
 			'log_ip'   => get_client_ip(),
