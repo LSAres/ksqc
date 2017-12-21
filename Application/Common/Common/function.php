@@ -117,18 +117,18 @@ function clothes($index)
 function area1($index)
 {
 	$arr = [
-		1 => 0,
-		2 => 20000,
-		3 => 30000,
-		4 => 40000,
-		5 => 50000,
-		6 => 60000,
-		7 => 70000,
-		8 => 80000,
-		9 => 90000,
-		10 => 100000,
-		11 => 110000,
-		12 => 120000,
+		1 => C('consume_1'),
+		2 => C('consume_2'),
+		3 => C('consume_3'),
+		4 => C('consume_4'),
+		5 => C('consume_5'),
+		6 => C('consume_6'),
+		7 => C('consume_7'),
+		8 => C('consume_8'),
+		9 => C('consume_9'),
+		10 => C('consume_10'),
+		11 => C('consume_11'),
+		12 => C('consume_12'),
 	];
 	return $arr[$index];
 }
