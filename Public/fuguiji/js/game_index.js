@@ -229,10 +229,10 @@ $(function () {
         acp_y: 72,
         max_width: 780,
         min_width: 200,
-        imgWidthLength: 1900,
+        imgWidthLength: 2000,
         img_SX: 50,
         img_SY: 72,
-        img_swidth: 400
+        img_swidth: 395
     };
     var topHumenImg_go = document.getElementById('gameTopHumen1');
     var topHumenImg_com = document.getElementById('gameTopHumen2');
@@ -289,7 +289,7 @@ $(function () {
     var minLeft = 160;      //人物左移动 最小宽度
     var imgWidthLength = 1900;      //图片的最大宽度
     var img_SX = 100;        //截取图片的 X轴坐标
-    var img_swidth = 380;   //截取图片的跨度
+    var img_swidth = 385;   //截取图片的跨度
 
     /*第一矿层 */
     /*用于接受绘制的人物图片*/
@@ -1074,7 +1074,7 @@ $(function () {
         seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
         seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
         seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
-    }, 80);
+    }, 10);
 
 
     /**电梯*/
