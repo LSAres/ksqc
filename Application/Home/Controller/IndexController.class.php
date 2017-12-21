@@ -464,7 +464,7 @@ class IndexController extends CommonController
 
         //如果要限制最多能买5个工具
         $db_tools = M('tools');
-        $tool_count = $db_tools->where(array('uid' => $uid))->count();
+        $tool_count = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->count();
         if ($tool_count >= 5) {
           $this->ajaxReturn(array(
             'status' => 'error',
@@ -581,19 +581,19 @@ class IndexController extends CommonController
       $db_tools = M('tools');
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->order('is_default desc, start_time asc')->select();
-      if (empty($tools)) {
-        $this->ajaxReturn(null);
-      }
-      $hours = intval((time() - $tools[0]['start_time']) / 3600);
+
+      $hours = count($tools) - intval((time() - $tools[0]['start_time']) / 3600);
+      $hours = $hours ? $hours : 0;
       $final_id_arr = [];
+      
       for ($i = 1; $i <= count($tools); $i++) {
         if ($i <= $hours) {
-          array_push($final_id_arr, $tools[$i]['id']);
+          array_push($final_id_arr, $tools[$i - 1]['id']);
         }
       }
 
       //如果要按照工具顺序排列
-      //$final_id_arr = list_order($final_id_arr, 'tool_id', 'asc', 'number');
+      $final_id_arr = list_order($final_id_arr, 'tool_id', 'asc', 'number');
 
       $this->ajaxReturn(array(
         'list' => $final_id_arr,

@@ -76,7 +76,7 @@ function area($index)
 function tool($index)
 {
 	$arr = [
-		1 => ['id' => 1, 'miner_gold' => 3000, 'start' => 1, 'end' => 11, 'name' => '十字镐', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//11.6
+		1 => ['id' => 1, 'miner_gold' => 3000, 'start' => 1, 'end' => 11, 'name' => '十字镐', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513846444807&di=e421e41458593b22c06cdbbaf3913187&imgtype=0&src=http%3A%2F%2Fimg.go007.com%2F2016%2F11%2F28%2F2319362d1cae2da6_0.jpg'],		//11.6
 		2 => ['id' => 2, 'miner_gold' => 6000, 'start' => 1, 'end' => 23, 'name' => '电钻', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//23.6
 		3 => ['id' => 3, 'miner_gold' => 12000, 'start' => 1, 'end' => 44, 'name' => '小型挖矿机', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//44.6
 		4 => ['id' => 4, 'miner_gold' => 25000, 'start' => 1, 'end' => 97, 'name' => '大型挖矿机', 'img' => 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg'],		//97.2

@@ -152,7 +152,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -207,7 +207,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -267,7 +267,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -327,7 +327,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -387,7 +387,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -447,7 +447,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -507,7 +507,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -567,7 +567,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -627,7 +627,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -687,7 +687,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -747,7 +747,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -807,7 +807,7 @@
             <foreach name="tool" item="v">
             <div>
                 <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']}挖矿分)</span>
+                <span>{$v['name']}({$v['miner_gold']})</span>
                 <button tool_id="{$v['id']}">升级</button>
             </div>
             </foreach>
@@ -1342,12 +1342,14 @@
 $(function() {
     //点击每层的升级按钮
     $('.seamDiv img').on('click', function() {
+        var layer = $(this).attr('callnumber');
         $.ajax({
             type: "POST",
             url: "{:U('Index/toolsCheckOut')}",
-            data: {layer: 1},
+            data: {layer: layer},
             dataType: "json",
             success: function(data){
+                $('.upgradeHeader_rightDisplay').find('div').css('width', data['hours']*20+'%');
                 console.log(data);
             }
         });
