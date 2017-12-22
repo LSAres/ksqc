@@ -319,10 +319,10 @@
         <div class="upgradeSelect" layer="4">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                <img src="<?php echo ($v['img']); ?>" alt="" >
-                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-            </div><?php endforeach; endif; ?>
+                    <img src="<?php echo ($v['img']); ?>" alt="" >
+                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+                </div><?php endforeach; endif; ?>
 <!--             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
@@ -1164,9 +1164,24 @@
         <div class="gameBody_bottomLeft">
             <!--电梯图片-->
             <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock.png" id="elevatorBlockImg" style="display: none;">
+            <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock1.png" id="elevatorBlockImg1" style="display: none;">
             <!--矿层数字背景-->
             <img src="/ksqc/Public/fuguiji/images/farm/elevatorNumber.png" id="elevatorNumber" style="display: none;">
             <canvas class="gameBody_elevator" >您的浏览器或手机不支持此功能</canvas>
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralUp.gif" class="mineralUp" style="display: none; position: absolute; top: 1%; width: 100%;" >
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 7%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 14%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 23%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 31%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 38.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 46.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 54%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 62%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 70%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 78%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 86%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 94%; width: 100%;">
+
         </div>
         <!--下方右侧矿层-->
         <div class="gameBody_bottomRight">

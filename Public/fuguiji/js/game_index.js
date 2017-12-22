@@ -1096,7 +1096,9 @@ $(function () {
     /**电梯*/
 
     /*获取电梯背景图*/
-    var elevatorBlockImg = document.getElementById('elevatorBlockImg');
+    var elevatorBlockImg = document.getElementById('elevatorBlockImg');     //下降的电梯
+    var elevatorBlockImg1 = document.getElementById('elevatorBlockImg1');    //上升的电梯
+    var drawImage = elevatorBlockImg;
     var elevatorPoint = {x: 0, y: 20, w: 1000, h: 200, g: 5};
     /*电梯停止坐标点*/
     var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
@@ -1105,6 +1107,8 @@ $(function () {
     leftElevator.height = 768;
     /*右侧矿层的箱子*/
     var rightSeamCase = $('.caseImg');
+    /*左侧矿石落下动态图*/
+    var mineralDown = $('.mineral');
     /*电梯层数背景图  Y轴坐标 使用电梯停止的Y轴坐标*/
     var elevatorNum = document.getElementById('elevatorNumber');
     /*x:X轴坐标  w:图片宽度 h：图片高度 sx截取图片的起始X点 sy截取图片的y点 sw图片截取的跨度*/
@@ -1120,41 +1124,45 @@ $(function () {
     document.getElementsByClassName('gameBody_bottomLeft')[0].style.height = gameBody_bottomLeftHeight + 'px';
     var leftElevator_Ctx = leftElevator.getContext('2d');
     /*绘制电梯*/
-    function elevatorAction(ctx) {
+    function elevatorAction(ctx,dramImg) {
         ctx.beginPath();
 
 
 
-        ctx.drawImage(elevatorBlockImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
+        ctx.drawImage(dramImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
         ctx.stroke();
         ctx.closePath();
 
     }
 
     /*电梯运动坐标变化*/
-    function elevatorMove(ctx) {
+    function elevatorMove(ctx,drawImg) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
         if ((elevatorPoint.y + elevatorPoint.h ) >= ctx.canvas.height) {
+            drawImage = elevatorBlockImg1;
             elevatorPoint.g = -elevatorPoint.g;
         }
         if (elevatorPoint.y < 20) {
+            drawImage = elevatorBlockImg;
+            $('#mineralUp').show();
             elevatorPoint.g -= (elevatorPoint.g * 2);
             clearInterval(elevatorSetInterval);
             setTimeout(function () {
+                $('#mineralUp').hide();
                 elevatorSetInterval = setInterval(function () {
                     elevatorStop(elevatorSetInterval);
-                    elevatorMove(leftElevator_Ctx);
+                    elevatorMove(leftElevator_Ctx,drawImage);
                 }, 20);
             }, 3000);
         }
         elevatorPoint.y += elevatorPoint.g;
-        elevatorAction(ctx);
+        elevatorAction(ctx,drawImg);
     };
 
     var elevatorSetInterval = setInterval(function () {
         elevatorStop(elevatorSetInterval);
-        elevatorMove(leftElevator_Ctx);
+        elevatorMove(leftElevator_Ctx,drawImage);
     }, 10);
 
     function elevatorStop(clearName) {
@@ -1164,11 +1172,13 @@ $(function () {
                 if (elevatorPoint.y == elevatorStopPoint[i]) {
                     clearInterval(clearName);
                     $(rightSeamCase[i]).css('transform','rotate(-80deg)');
+                    $(mineralDown[i]).show();
                     setTimeout(function () {
                         $(rightSeamCase[i]).css('transform','rotate(-0deg)');
+                        $(mineralDown[i]).hide();
                         elevatorSetInterval = setInterval(function () {
                             elevatorStop(elevatorSetInterval);
-                            elevatorMove(leftElevator_Ctx);
+                            elevatorMove(leftElevator_Ctx,drawImage);
                         }, 20);
                     }, 2000);
                     break;

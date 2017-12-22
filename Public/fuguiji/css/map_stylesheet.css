@@ -85,36 +85,36 @@ html , body{
 .mapDiv .map_div1 {
     width: 208px;
     height: 300px;
-    top: 14%;
-    left: 17%;
+    top: 17%;
+    left: 9%;
 }
 
 .mapDiv .map_div2 {
-    width: 135px;
+    width: 214px;
     height: 221px;
-    top: 21%;
-    left: 46%;
+    top: 3%;
+    left: 35%;
 }
 
 .mapDiv .map_div3 {
-    left: 64%;
-    top: 1%;
+    left: 69%;
+    top: 5%;
     width: 100px;
     height: 188px;
 }
 
 .mapDiv .map_div4 {
-    top: 61%;
-    left: 26%;
-    width: 186px;
-    height: 133px;
+    top: 43%;
+    left: 36%;
+    width: 202px;
+    height: 333px;
 }
 
 .mapDiv .map_div5 {
-    width: 143px;
-    height: 226px;
-    left: 59%;
-    top: 52%;
+    width: 180px;
+    height: 312px;
+    left: 69%;
+    top: 38%;
 }
 .mapDiv .map_div1 img{
     top: 38%;

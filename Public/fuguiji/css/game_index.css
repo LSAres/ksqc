@@ -942,6 +942,7 @@ body {
     width: 19%;
     display: inline-block;
     vertical-align: top;
+    position: relative;
 }
 
 .gameBody_bottomLeft .gameBody_elevator {
@@ -952,7 +953,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-
+/*左侧电梯 矿石落下动态图*/
+.mineral{
+    display: none;
+}
+.mineral{}
 /*右侧矿层*/
 .gameBody_bottomRight {
     width: 80%;
