@@ -67,23 +67,107 @@
 <img src="/ksqc/Public/fuguiji/images/farm/cloud_three.png" id="cloud_3" alt="" style="display: none">
 <!--地图显示区域-->
 <div class="mapDiv">
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_1">
+    <!--点击层 -->
+    <div class="map_div map_div1">
+        <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="" >
+        <!--自定义跳转属性 用JS跳转-->
+        <a locationHref="" >点击进入</a>
     </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_2">
+    <!--点击层 -->
+    <div class="map_div map_div2">
+        <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
+        <!--自定义跳转属性 用JS跳转-->
+        <a locationHref="" >点击进入</a>
     </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_3">
+    <!--点击层 -->
+    <div class="map_div map_div3">
+        <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
+        <!--自定义跳转属性 用JS跳转-->
+        <a locationHref="" >点击进入</a>
     </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_4" >
+    <!--点击层 -->
+    <div class="map_div map_div4">
+        <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
+        <!--自定义跳转属性 用JS跳转-->
+        <a locationHref="" >点击进入</a>
     </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_5">
+    <!--点击层 -->
+    <div class="map_div map_div5">
+        <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
+        <!--自定义跳转属性 用JS跳转-->
+        <a locationHref="" >点击进入</a>
+    </div>
+</div>
+<!--提示DIV  确定 取消 两按钮-->
+<div class="outerDiv promptDiv promptTrueOrFalse" style="display: none;">
+    <div class="promptBlock">
+        <!--<div class="promptBlock_title">-->
+        <!--<span>提示！</span>-->
+        <!--</div>-->
+        <div class="promptBlock_message">
+
+        </div>
+        <div class="promptBlock_foot">
+            <span>确定</span>
+            <span>取消</span>
+        </div>
+    </div>
+</div>
+<!--提示DIV 仅有确定按钮-->
+<div class="outerDiv promptDiv promptOnlyTrue" style="display: none;">
+    <div class="promptBlock">
+        <!--<div class="promptBlock_title">-->
+        <!--<span>提示！</span>-->
+        <!--</div>-->
+        <div class="promptBlock_message">
+
+        </div>
+        <div class="promptBlock_foot">
+            <span>确定</span>
+        </div>
     </div>
 </div>
 </body>
 <script src="/ksqc/Public/fuguiji/js/jquery-1.7.2.min.js"></script>
 <script src="/ksqc/Public/fuguiji/js/map_comment.js"></script>
+<script>
+    $(function(){
+        /**
+         * 提示框  确定 取消 两按钮*/
+        /*点击确定后 更改赋值为1*/
+        var trueOrFalse = 0;
+        function promptTrueOrFalseCall(msg) {
+            trueOrFalse = 0;
+            $('.promptTrueOrFalse').fadeIn();
+            $('.promptTrueOrFalse .promptBlock_message').text(msg);
+        }
+        $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').click(function () {
+            $('.promptTrueOrFalse').fadeOut();
+            alert(11);
+        });
+        $('.promptTrueOrFalse .promptBlock_foot span:nth-child(2)').click(function () {
+            $('.promptTrueOrFalse').fadeOut();
+        });
+        /**
+         * 提示信息DIV 只有确定按钮*/
+        function promptOnlyTrue(msg) {
+            $('.promptOnlyTrue').fadeIn();
+            $('.promptOnlyTrue .promptBlock_message').text(msg);
+        }
+        $('.promptOnlyTrue .promptBlock_foot span').click(function () {
+
+            $('.promptOnlyTrue').fadeOut();
+        });
+
+        $('.map_div1').click(function(){
+            promptTrueOrFalseCall('111是否花费*****开启矿区！！');
+        });
+        $('.map_div2').click(function(){
+            promptOnlyTrue('222是否花费*****开启矿区！！');
+        });
+        $('.map_div3').click(function(){});
+        $('.map_div4').click(function(){});
+        $('.map_div5').click(function(){});
+    })
+</script>
 </html>

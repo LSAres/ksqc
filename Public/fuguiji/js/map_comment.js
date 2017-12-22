@@ -39,26 +39,28 @@ $(function () {
     }
     /*手指抬起时 生成光圈*/
     function touchEndAppend(event) {
-        var clickCreat;
-        clickCreat = document.createElement('div');     //声明要创建的节点
-        var elmentWidthAndHeight = 1;
-        clickCreat.className = 'cteatElement';                          //指定样式类
-        clickCreat.style.width = elmentWidthAndHeight + 'px';
-        clickCreat.style.height = elmentWidthAndHeight + 'px';
-        clickCreat.style.top = clickPoint_Y + 'px';
-        clickCreat.style.left = clickPoint_X + 'px';
-        clickCreat.style.zIndex = '1000000';
-        var elmentChange = setInterval(function () {                     //循环增加宽高
-            elmentWidthAndHeight++;
-            clickCreat.style.width = elmentWidthAndHeight + 'px';
-            clickCreat.style.height = elmentWidthAndHeight + 'px';
-        }, 20);
+       setTimeout(function(){
+           var clickCreat;
+           clickCreat = document.createElement('div');     //声明要创建的节点
+           var elmentWidthAndHeight = 1;
+           clickCreat.className = 'cteatElement';                          //指定样式类
+           clickCreat.style.width = elmentWidthAndHeight + 'px';
+           clickCreat.style.height = elmentWidthAndHeight + 'px';
+           clickCreat.style.top = clickPoint_Y + 'px';
+           clickCreat.style.left = clickPoint_X + 'px';
+           clickCreat.style.zIndex = '1000000';
+           var elmentChange = setInterval(function () {                     //循环增加宽高
+               elmentWidthAndHeight++;
+               clickCreat.style.width = elmentWidthAndHeight + 'px';
+               clickCreat.style.height = elmentWidthAndHeight + 'px';
+           }, 20);
 
-        document.getElementsByTagName('body')[0].appendChild(clickCreat);       //为body添加生成的节点
-        setTimeout(function () {
-            clearInterval(elmentChange);
-            document.getElementsByTagName('body')[0].removeChild(clickCreat);   //500毫秒后移除生成的节点
-        }, 500)
+           document.getElementsByTagName('body')[0].appendChild(clickCreat);       //为body添加生成的节点
+           setTimeout(function () {
+               clearInterval(elmentChange);
+               document.getElementsByTagName('body')[0].removeChild(clickCreat);   //500毫秒后移除生成的节点
+           }, 500);
+       },500);
     }
 
     window.addEventListener('touchstart', get_touchStartPoint);      //添加屏幕触摸方法
@@ -130,6 +132,7 @@ $(function () {
     createCloud_2();
     createCloud_3();
     createCloud_4();
+
 
 
 
