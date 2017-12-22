@@ -67,21 +67,21 @@
 <img src="/ksqc/Public/fuguiji/images/farm/cloud_three.png" id="cloud_3" alt="" style="display: none">
 <!--地图显示区域-->
 <div class="mapDiv">
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_1">
-    </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_2">
-    </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_3">
-    </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_4" >
-    </div>
-    <div>
-        <img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_5">
-    </div>
+    <!--<div>-->
+        <!--<img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_1">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_2">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_3">-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_4" >-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<img src="/ksqc/Public/fuguiji/images/farm/map_3.png" class="map_5">-->
+    <!--</div>-->
 </div>
 </body>
 <script src="/ksqc/Public/fuguiji/js/jquery-1.7.2.min.js"></script>
