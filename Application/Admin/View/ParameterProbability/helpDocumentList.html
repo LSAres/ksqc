@@ -14,11 +14,10 @@
         <th>添加时间</th>
         <th>操作</th>
         <th>操作</th>
-        <th>操作</th>
     </tr>
     <foreach name="helpArr" item="value" key="key">
         <tr>
-            <td>{$value.Title}</td>
+            <td>{$value.title}</td>
             <td>{$value.time|date="Y-m-d H:i:s",###}</td>
             <td>
                 <span class="documentCall documentSelect">查看文章</span>
@@ -28,16 +27,7 @@
                 <input type="button" value="关闭" class="documentButtonStyle documentClose">
             </td>
             <td>
-                <form action="{:U(MODULE_NAME.'/ParameterProbability/edithelpintroduce')}" method="post" id="myform">
-                    <span class="documentCall documentUpdata">修改文章</span>
-                    <textarea  class="documentDisplay documentRechange" name="content"   >
-                       {$value.content}
-                    </textarea>
-                    <input type="text" value="{$value.id}" class="documentButtonStyle documentChange" name="id" hidden="hidden">
-                    <input type="button" value="提交修改" class="documentButtonStyle documentChange" onClick="test()">
-                </form>
-            </td>
-            <td>
+                <a href="{:U(MODULE_NAME.'/ParameterProbability/edithelpintroduce',array('id'=>$value['id']))}" >修改文章</a><br/>
                 <a class="documentDelete" href="{:U(MODULE_NAME.'/ParameterProbability/deletehelpintroduce',array('id'=>$value['id']))}" >删除文章</a>
             </td>
 
@@ -64,5 +54,8 @@
 			location.reload();
 		}
 	});
+//    $('.documentChange').click(function(){
+//        $(this).parent().submit();
+//    })
 </script>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <Title>衣服详细信息</Title>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/css/styleSheetT.css">
+</head>
+<body>
+<!--顶部搜索DIV-->
+<!--<div class="topSearchDiv">-->
+    <!--<div class="updateTitleMessage">-->
+        <!--修改功能参数请慎重修改！！！-->
+    <!--</div>-->
+<!--</div>-->
+<form action="{:U(MODULE_NAME.'/ParameterProbability/updateClothesT')}" method="post" id="myform">
+    <div class="upadateMessageDisplay">
+        <span class="updateMessageTitle">
+            衣服名称
+        </span>
+        <input type="text" class="updateMessageInput" name="clothes_name" value="{$clothes_name}" readonly="readonly">
+    </div>
+    <div class="upadateMessageDisplay">
+        <span class="updateMessageTitle">
+           衣服价格
+        </span>
+        <input type="text" class="updateMessageInput" name="clothes_price" value="{$clothes_price}">
+    </div>
+    <input type="text" class="updateMessageInput" name="id" value="{$id}" style="display: none">
+</form>
+
+
+<div class="updateTrue" onclick="test()">
+    确认修改
+</div>
+
+
+</body>
+<script type="text/javascript" src="__PUBLIC__/js/commentT.js"></script>
+<script>
+
+    function test()
+    {
+        document.getElementById("myform").submit();
+    }
+
+
+
+</script>
+</html>

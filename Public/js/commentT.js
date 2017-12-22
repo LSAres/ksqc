@@ -101,6 +101,9 @@ $(function () {
     $('.toolList').click(function () {
         $('iframe').attr('src', '../ParameterProbability/toolList.html');
     })
+    $('.clothesList').click(function () {
+        $('iframe').attr('src', '../ParameterProbability/clothesList.html');
+    })
     //后台管理
     $('.websiteSwitch').click(function () {
         $('iframe').attr("src", "../BackstageControl/websiteSwitchPage.html");
@@ -136,6 +139,24 @@ $(function () {
 		return false;
     }				 
   });
+    //参数概率-点击查看文章
+    $('.documentSelect').click(function () {
+        $(this).parent().find(".documentReadonly").slideDown();
+        $('.documentClose').show();
+    });
+    $('.documentClose').click(function () {
+        $('.documentReadonly').slideUp();
+        $('.documentClose').hide();
+    });
+    //参数概率-点击修改文章
+    $('.documentUpdata').click(function () {
+        $(this).parent().find(".documentRechange").slideDown();
+        $('.documentChange').show();
+    });
+    $('.documentChange').click(function () {
+        $('.documentRechange').slideUp();
+        $('.documentChange').hide();
+    });
 
 
 })

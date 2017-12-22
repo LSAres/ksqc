@@ -34,7 +34,7 @@ class NoticControlController extends CommonController{
         }
         $Title = I('post.Title');
         $content = I('post.content');
-        $data['Title']=$Title;
+        $data['title']=$Title;
         $data['content']=$content;
         $data['add_time'] = time();
         $res = M('new')->data($data)->add();

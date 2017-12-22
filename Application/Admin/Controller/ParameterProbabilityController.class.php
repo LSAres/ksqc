@@ -62,7 +62,7 @@ class ParameterProbabilityController extends CommonController{
         }
         $Title = I('post.Title');
         $content = I('post.content');
-        $data['Title'] = $Title;
+        $data['title'] = $Title;
         $data['content'] = $content;
         $data['time'] = time();
         $res = M('helpintroduce')->data($data)->add();
@@ -76,15 +76,25 @@ class ParameterProbabilityController extends CommonController{
     }
 
     public function edithelpintroduce(){
-        $id = I('post.id');
-        $content = I('post.content');
-        $res = M('helpintroduce')->where('id='.$id)->setField('content',$content);
-        if($res){
-            echo "<script>alert('修改成功');</script>";
-            echo "<script>window.location.href='".U('ParameterProbability/helpdocumentList')."'</script>";
-        }else{
-            echo "<script>alert('修改失败');</script>";
-            echo "<script>javascript:history.back(-1);</script>";die;
+        if(!I('post.')){
+            $id = I('get.id');
+            $info = M('helpintroduce')->where('id='.$id)->find();
+            $this->assign('info',$info);
+            $this->display();
+        }else {
+            $id = I('post.id');
+            $title = I('post.title');
+            $content = I('post.content');
+            $res = M('helpintroduce')->where('id=' . $id)->setField('content', $content);
+            $rem = M('helpintroduce')->where('id='.$id)->setField('title',$title);
+            if ($res&&$rem) {
+                echo "<script>alert('修改成功');</script>";
+                echo "<script>window.location.href='" . U('ParameterProbability/helpdocumentList') . "'</script>";
+            } else {
+                echo "<script>alert('修改失败');</script>";
+                echo "<script>javascript:history.back(-1);</script>";
+                die;
+            }
         }
     }
     public function deletehelpintroduce(){
@@ -111,7 +121,7 @@ class ParameterProbabilityController extends CommonController{
             ->select();
 		foreach($helpArr as $k=>$v){
 			$sp_name = M('nzspuser')->where('sp_id='.$v['sp_id'])->getField('sp_username');
-			$account = M('user')->where('userid='.$v['userid'])->getField('account');
+			$account = M('user')->where('id='.$v['userid'])->getField('account');
 			$helpArr[$k]['sp_name']=$sp_name;
 			$helpArr[$k]['account']=$account;
 		}
@@ -168,9 +178,56 @@ class ParameterProbabilityController extends CommonController{
     public function updateToolT(){
         $id = I('post.id');
         $tool_miner_gold = I('post.tool_miner_gold');
-        $configs = C();//读取整个文件，格式我忘了，貌似是这个样子。
-        $configs['TOOL_'.$id.'_MINER_GOLD'] = $tool_miner_gold;//将配置值覆盖或增加
-        dump($configs);die;
-        $res=file_put_contents('__APPLICATION__/Common/Conf/config.php',var_export($configs,true));//将配置值写入文件
+        $last = C('tool_'.$id.'_miner_gold');
+        $origin_str = file_get_contents(dirname(dirname(dirname(__FILE__))).'/Common/Conf/config.php');
+        $update_str = str_replace("'tool_".$id."_miner_gold' => $last","'tool_".$id."_miner_gold' => ".$tool_miner_gold, $origin_str);
+        $res=file_put_contents(dirname(dirname(dirname(__FILE__))).'/Common/Conf/config.php', $update_str);
+        if($res){
+            echo "<script>alert('工具价格修改成功');</script>";
+            echo "<script>window.location.href='".U('ParameterProbability/toolList')."'</script>";
+        }else{
+            echo "<script>alert('修改失败');</script>";
+            echo "<script>javascript:history.back(-1);</script>";die;
+        }
+    }
+
+    public function clothesList(){
+        $arr[1]['name'] = C('clothes_1_name');
+        $arr[1]['price'] = C('clothes_1_price');
+
+        $arr[2]['name'] = C('clothes_2_name');
+        $arr[2]['price'] = C('clothes_2_price');
+
+        $arr[3]['name'] = C('clothes_3_name');
+        $arr[3]['price'] = C('clothes_3_price');
+
+        $this->assign('arr',$arr);
+        $this->display();
+    }
+
+    public function updateClothes(){
+        $id = I('get.id');
+        $clothes_name = C('clothes_'.$id.'_name');
+        $clothes_price = C('clothes_'.$id.'_price');
+        $this->assign('clothes_name',$clothes_name);
+        $this->assign('clothes_price',$clothes_price);
+        $this->assign('id',$id);
+        $this->display();
+    }
+
+    public function updateClothesT(){
+        $id = I('post.id');
+        $clothes_price = I('post.clothes_price');
+        $last = C('clothes_'.$id.'_price');
+        $origin_str = file_get_contents(dirname(dirname(dirname(__FILE__))).'/Common/Conf/config.php');
+        $update_str = str_replace("'clothes_".$id."_price' => $last","'clothes_".$id."_price' => ".$clothes_price, $origin_str);
+        $res=file_put_contents(dirname(dirname(dirname(__FILE__))).'/Common/Conf/config.php', $update_str);
+        if($res){
+            echo "<script>alert('衣服价格修改成功');</script>";
+            echo "<script>window.location.href='".U('ParameterProbability/clothesList')."'</script>";
+        }else{
+            echo "<script>alert('修改失败');</script>";
+            echo "<script>javascript:history.back(-1);</script>";die;
+        }
     }
 }
