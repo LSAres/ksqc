@@ -464,7 +464,7 @@ class IndexController extends CommonController
 
         //如果要限制最多能买5个工具
         $db_tools = M('tools');
-        $tool_count = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->count();
+        $tool_count = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->count();
         if ($tool_count >= 5) {
           $this->ajaxReturn(array(
             'status' => 'error',
@@ -537,8 +537,10 @@ class IndexController extends CommonController
 //     's8' => $s8,
 //));
         if ($s1 && $s2 && $s3 && $s4 && $s5 && $s6 && $s7 && $s8) {
+            $fathers_gold = $db_store->where(array('uid' => $uid))->getField('miner_gold');
             $this->ajaxReturn(array(
                 'status' => 'success',
+                'fathers_gold' => $fathers_gold,
                 'message' => '购买成功'
             ));
         } else {
@@ -582,23 +584,45 @@ class IndexController extends CommonController
       $uid = session('userId');
       $db_tools = M('tools');
 
-      $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->order('is_default desc, start_time asc')->select();
+      $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
 
-      if (!empty($tools)) {
-        $hours = count($tools) - intval(((time() - $tools[0]['start_time']) / 3600));
-      } else {
-        $hours = 0;
-      }
-      $final_id_arr = [];
+      //剩余几小时
+      // if (!empty($tools)) {
+      //   $hours = count($tools) - intval(((time() - $tools[0]['start_time']) / 3600));
+      //   if ($hours < 0) {
+      //       $hours = 0;
+      //   }
+      // } else {
+      //   $hours = 0;
+      // }
+
+
+      // $final_id_arr = [];
       
-      for ($i = 1; $i <= count($tools); $i++) {
-        if ($i <= $hours) {
-          array_push($final_id_arr, $tools[$i-1]);
+      // for ($i = 1; $i <= count($tools); $i++) {
+      //   if ($i <= $hours) {
+      //     array_push($final_id_arr, $tools[$i-1]);
+      //   }
+      // }
+
+      $time = time();
+      $work_time = 0;
+      $hours = 0;
+      foreach ($tools as $key => &$value) {
+        $work_time = $value['start_time'] + 3600;    
+        if ($time > $work_time && $value['is_get'] == 0) {
+            $value['is_pass'] = 1;
+        } else {
+            $value['is_pass'] = 0;
+            $hours++;
         }
       }
 
+
+
       //如果要按照工具顺序排列
-      $new_arr = arraySequence($final_id_arr, 'tool_id', 'SORT_ASC');
+      $new_arr = arraySequence($tools, 'tool_id', 'SORT_ASC');
+
 
       $this->ajaxReturn(array(
         'list' => $new_arr,
@@ -611,12 +635,16 @@ class IndexController extends CommonController
     public function getMinerGold()
     {
       $layer = I('post.layer', 0);
+      $tool_id = I('post.tool_id');;
+
       $uid = session('userId');
       $db_tools = M('tools');
       $store = M('store');
       $db_miner_gold_log = M('miner_gold_log');
 
-      $this_row = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->find();
+      if ($tool_id < 1 || $tool_id > 5) die(0);
+
+      $this_row = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id))->find();
 
       $second = time() - $this_row['start_time'];
       if ($second < 3600) {
@@ -626,7 +654,7 @@ class IndexController extends CommonController
         ));
       }
 
-      if ($this_row['is_get']) {
+      if ($this_row['is_get'] == 1) {
         $this->ajaxReturn(array(
           'status' => 'error',
           'message' => '领取过了'
@@ -639,19 +667,22 @@ class IndexController extends CommonController
       $persent = (mt_rand($this_tool['start'], $this_tool['end'])) / 100;
       $final_score = intval(3600 * ($persent + 1));
       //加分、记录
-      $db_tools->where(array('id' => $this_row))->save(array('is_get' => 1, 'get_time' => time()));
+      $db_tools->where(array('id' => $this_row['id']))->save(array('is_get' => 1, 'get_time' => time()));
 
       $store->where(array('uid' => $uid))->setInc('miner_gold', $final_score);
       $data = [
         'uid' => $uid,
         'miner_gold' => $final_score,
         'type' => 1,
-        'note' => '自动挖矿1小时,收获'.$final_score.'挖矿分'
+        'note' => '自动挖矿1小时,收获'.$final_score.'挖矿分',
+        'time' => time()
       ];
       $db_miner_gold_log->add($data);
-
+      $fathers_gold = $store->where(array('uid' => $uid))->getField('miner_gold');
       $this->ajaxReturn(array(
         'status' => 'success',
+        'miner_gold' => $final_score,
+        'fathers_gold' => $fathers_gold,
         'message' => '领取成功，领了'.$final_score.'挖矿分'
       ));
 
