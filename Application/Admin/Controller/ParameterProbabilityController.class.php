@@ -168,6 +168,9 @@ class ParameterProbabilityController extends CommonController{
     public function updateToolT(){
         $id = I('post.id');
         $tool_miner_gold = I('post.tool_miner_gold');
-        C($tool_miner_gold,'tool_'.$id.'_miner_gold');
+        $configs = C();//读取整个文件，格式我忘了，貌似是这个样子。
+        $configs['TOOL_'.$id.'_MINER_GOLD'] = $tool_miner_gold;//将配置值覆盖或增加
+        dump($configs);die;
+        $res=file_put_contents('__APPLICATION__/Common/Conf/config.php',var_export($configs,true));//将配置值写入文件
     }
 }
