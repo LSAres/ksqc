@@ -992,11 +992,10 @@ body {
     top: 40%;
 }
 .seamDiv .seamNumber{
-
     width: 30px;
     height: 30px;
-    color: #fff;
-    background: #558da0;
+    color: #bff5b6;
+    background: #3b5f6b;
     border-radius: 5px;
     border: solid 2px #6a98a7;
     text-shadow: 0 0 5px;
@@ -1015,6 +1014,7 @@ body {
     background-size: 135% 100%;
     background-position: 0;
     background-repeat: no-repeat;
+    margin-left: -2px;
 }
 
 

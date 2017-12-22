@@ -43,6 +43,7 @@ html , body{
     display: inline-block;
     vertical-align: middle;
 }
+/*地图显示DIV*/
 .mapDiv{
     width: 800px;
     height: 700px;
@@ -55,40 +56,178 @@ html , body{
     margin-top: 13%;
     position: relative;
 }
-.mapDiv div{  }
-.mapDiv div img{
-    width: 150px;
-    height: 300px;
+/*地图显示的点击层 */
+.mapDiv .map_div{
+    border-radius:30px;
     position: absolute;
 }
-.mapDiv div .map_1{
-    width: 332px;
-    height: 237px;
-    top: 10%;
-    left: 35%;
-    transform: rotateZ(-142deg);
+/*地图点击层：锁头图标*/
+.mapDiv .map_div img{
+    width: 43px;
+    height: 59px;
+    display: none;
+    position: absolute;
 }
-.mapDiv div .map_2{
-    width: 258px;
-    height: 337px;
-    left: 19%;
+/*地图点击层：点击进入图标*/
+.mapDiv .map_div a{
+    color: #fff;
+    font-size: 14px;
+    width: 115px;
+    background: linear-gradient(to bottom,#53ffd5,#4ddeb6,#6ff3b0);
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 0 0 5px #000;
+    box-shadow: 0 0 10px #ccc;
+    padding: 4% 0;
+    display: inline-block;
+    position: absolute;
+}
+.mapDiv .map_div1 {
+    width: 208px;
+    height: 300px;
+    top: 14%;
+    left: 17%;
+}
+
+.mapDiv .map_div2 {
+    width: 135px;
+    height: 221px;
     top: 21%;
-    transform: rotateZ(-21deg);
+    left: 46%;
 }
-.mapDiv div .map_3{
-    left: 11%;
-    top: 58%;
-    width: 286px;
-    transform: rotateZ(110deg);
-}
-.mapDiv div .map_4{
+
+.mapDiv .map_div3 {
     left: 64%;
-    top: 25%;
-    width: 200px;
-    height: 307px;
+    top: 1%;
+    width: 100px;
+    height: 188px;
 }
-.mapDiv div .map_5{
-    top: 50%;
-    left: 40%;
-    width: 34%;
+
+.mapDiv .map_div4 {
+    top: 61%;
+    left: 26%;
+    width: 186px;
+    height: 133px;
 }
+
+.mapDiv .map_div5 {
+    width: 143px;
+    height: 226px;
+    left: 59%;
+    top: 52%;
+}
+.mapDiv .map_div1 img{
+    top: 38%;
+    left: 39%;
+}
+.mapDiv .map_div2 img{
+    top: 32%;
+    left: 28%;
+}
+.mapDiv .map_div3 img{
+    top: 28%;
+    left: 29%;
+}
+.mapDiv .map_div4 img{
+    top: 30%;
+    left: 39%;
+}
+.mapDiv .map_div5 img{
+    top: 34%;
+    left: 41%;
+}
+.mapDiv .map_div1 a{
+    top: 46%;
+    left: 23%;
+}
+.mapDiv .map_div2 a{
+    top: 46%;
+    left: 8%;
+}
+.mapDiv .map_div3 a{
+    top: 46%;
+    left: -8%;
+}
+.mapDiv .map_div4 a{
+    top: 46%;
+    left: 23%;
+}
+.mapDiv .map_div5 a{
+    top: 46%;
+    left: 10%;
+}
+/*提示*/
+.promptDiv {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.promptBlock {
+    width: 75%;
+    height: 35%;
+    border-radius: 15px;
+    background-image: url(../images/home/alertBoard.png);
+    background-repeat: no-repeat;
+    background-size: 100% 102%;
+    margin: 50% auto;
+}
+
+.promptBlock .promptBlock_title {
+    border-radius: 10px 10px 0 0;
+    border-bottom: solid 2px #999;
+}
+
+.promptBlock .promptBlock_title span {
+    color: #fff;
+    text-shadow: 0 0 4px #000;
+    margin: 2% 0 2% 10%;
+    display: inline-block;
+}
+
+.promptBlock .promptBlock_message {
+    color: #fff;
+    height: 63%;
+    font-size: 15px;
+    text-align: center;
+    text-shadow: 0 0 3px #000;
+    padding-top: 62px;
+}
+
+.promptBlock .promptBlock_foot {
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    padding: 15px 0;
+}
+
+.promptBlock .promptBlock_foot span {
+    width: 100px;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0 5%;
+
+}
+
+.promptBlock .promptBlock_foot span:nth-child(1) {
+    background: url(../images/home/confirm-longbtn.png);
+    background-position: center;
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+
+}
+
+.promptBlock .promptBlock_foot span:nth-child(2) {
+    background: url(../images/home/confirm-longbtn.png);
+    background-position: center;
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
+
+}
+
