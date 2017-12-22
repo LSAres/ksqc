@@ -212,13 +212,10 @@ body {
 }
 
 .gemeFotter div {
-    width: 14%;
-    height: 40px;
-    line-height: 43px;
-    /*border: solid 2px #ccc;*/
-    /*box-shadow: 0 0 5px #000 inset;*/
+    width: 20%;
+    height: 49px;
     border-radius: 5px;
-    margin-top: -10px;
+    margin-top: -20px;
 }
 
 .gemeFotter div:nth-child(1) {
@@ -233,10 +230,10 @@ body {
 .gemeFotter div:nth-child(3) {
     width: 90px;
     /*background: linear-gradient(to top , rgb(48, 80, 90), rgb(206, 243, 255));*/
-    margin: -10px 9% 0 9%;
+    margin: -20px 9% 0 9%;
 }
 .gemeFotter div:nth-child(3) img{
-    width: 57%;
+    width: 85%;
 }
 
 .gemeFotter div:nth-child(4) {
@@ -974,7 +971,17 @@ body {
     height: 135px;
     position: relative;
 }
-
+.seamDiv .caseImg{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+    bottom: 4%;
+    transition: all .5s;
+    transform-origin: left bottom;
+    transform: rotateZ(-0deg);
+}
 .seamDiv .seamUpCall {
     width: 50px;
     height: 50px;
@@ -984,7 +991,7 @@ body {
     right: 0;
     top: 40%;
 }
-.seamDiv span{
+.seamDiv .seamNumber{
 
     width: 30px;
     height: 30px;
