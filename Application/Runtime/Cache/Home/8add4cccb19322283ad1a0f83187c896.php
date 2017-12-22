@@ -159,10 +159,10 @@
             $('.promptOnlyTrue').fadeOut();
         });
 
-        $('.map_div1').click(function(){
+        $('.map_div1 img').click(function(){
             promptTrueOrFalseCall('111是否花费*****开启矿区！！');
         });
-        $('.map_div2').click(function(){
+        $('.map_div2 img').click(function(){
             promptOnlyTrue('222是否花费*****开启矿区！！');
         });
         $('.map_div3').click(function(){});
