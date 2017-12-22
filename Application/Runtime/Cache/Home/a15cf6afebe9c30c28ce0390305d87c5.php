@@ -1354,16 +1354,26 @@ $(function() {
             data: {layer: layer},
             dataType: "json",
             success: function(data){
-                //console.log(data['list']);
+                console.log(data);
 
                 $.each(data['list'], function() {
-                    //$('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(data['list']).find('span').html($('<span>已购买</span>'));
+                    
+                    //买过的加上已购买
                     if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {
 
                     } else {
                         $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').append($('<span>已购买</span>'));
                     }
-                    
+                    //到时间了更换按钮
+                    if ($(this)[0]['is_pass'] == 1) {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('领取');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').addClass('getMinerGold');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').css('background', 'green');
+                    } else {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('已购买');
+                    }
                     
                 });
                 
