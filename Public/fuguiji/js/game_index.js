@@ -1097,7 +1097,7 @@ $(function () {
 
     /*获取电梯背景图*/
     var elevatorBlockImg = document.getElementById('elevatorBlockImg');
-    var elevatorPoint = {x: 0, y: 0, w: 1000, h: 200, g: 5};
+    var elevatorPoint = {x: 0, y: 20, w: 1000, h: 200, g: 5};
     /*电梯停止坐标点*/
     var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
     var leftElevator = document.getElementsByClassName('gameBody_elevator')[0];
@@ -1138,8 +1138,15 @@ $(function () {
         if ((elevatorPoint.y + elevatorPoint.h ) >= ctx.canvas.height) {
             elevatorPoint.g = -elevatorPoint.g;
         }
-        if (elevatorPoint.y < 0) {
+        if (elevatorPoint.y < 20) {
             elevatorPoint.g -= (elevatorPoint.g * 2);
+            clearInterval(elevatorSetInterval);
+            setTimeout(function () {
+                elevatorSetInterval = setInterval(function () {
+                    elevatorStop(elevatorSetInterval);
+                    elevatorMove(leftElevator_Ctx);
+                }, 20);
+            }, 3000);
         }
         elevatorPoint.y += elevatorPoint.g;
         elevatorAction(ctx);
@@ -1163,7 +1170,7 @@ $(function () {
                             elevatorStop(elevatorSetInterval);
                             elevatorMove(leftElevator_Ctx);
                         }, 20);
-                    }, 1000);
+                    }, 2000);
                     break;
                 }
             }
