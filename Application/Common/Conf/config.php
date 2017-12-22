@@ -46,4 +46,18 @@ return array(
 
     'clothes_3_name' => '衣服3号',
     'clothes_3_price' => 12000,
+
+    //煤矿区开启矿层消耗
+    'consume_1' => 0,
+    'consume_2' => 20000,
+    'consume_3' => 30000,
+    'consume_4' => 40000,
+    'consume_5' => 50000,
+    'consume_6' => 60000,
+    'consume_7' => 70000,
+    'consume_8' => 80000,
+    'consume_9' => 90000,
+    'consume_10' => 100000,
+    'consume_11' => 110000,
+    'consume_12' => 120000,
 );

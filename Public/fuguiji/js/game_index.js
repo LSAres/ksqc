@@ -247,7 +247,7 @@ $(function () {
     }
     function topRightHumenAction (ctx){
         ctx.beginPath();
-        ctx.drawImage(topRightHumen,800,670,200,110);
+        ctx.drawImage(topRightHumen,820,670,200,110);
         ctx.stroke();
         ctx.closePath();
     }
@@ -1097,12 +1097,14 @@ $(function () {
 
     /*获取电梯背景图*/
     var elevatorBlockImg = document.getElementById('elevatorBlockImg');
-    var elevatorPoint = {x: 0, y: 0, w: 1000, h: 200, g: 5};
+    var elevatorPoint = {x: 0, y: 20, w: 1000, h: 200, g: 5};
     /*电梯停止坐标点*/
     var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
     var leftElevator = document.getElementsByClassName('gameBody_elevator')[0];
     leftElevator.width = 1024;
     leftElevator.height = 768;
+    /*右侧矿层的箱子*/
+    var rightSeamCase = $('.caseImg');
     /*电梯层数背景图  Y轴坐标 使用电梯停止的Y轴坐标*/
     var elevatorNum = document.getElementById('elevatorNumber');
     /*x:X轴坐标  w:图片宽度 h：图片高度 sx截取图片的起始X点 sy截取图片的y点 sw图片截取的跨度*/
@@ -1136,8 +1138,15 @@ $(function () {
         if ((elevatorPoint.y + elevatorPoint.h ) >= ctx.canvas.height) {
             elevatorPoint.g = -elevatorPoint.g;
         }
-        if (elevatorPoint.y < 0) {
+        if (elevatorPoint.y < 20) {
             elevatorPoint.g -= (elevatorPoint.g * 2);
+            clearInterval(elevatorSetInterval);
+            setTimeout(function () {
+                elevatorSetInterval = setInterval(function () {
+                    elevatorStop(elevatorSetInterval);
+                    elevatorMove(leftElevator_Ctx);
+                }, 20);
+            }, 3000);
         }
         elevatorPoint.y += elevatorPoint.g;
         elevatorAction(ctx);
@@ -1154,12 +1163,14 @@ $(function () {
             for (var i = 0; i < elevatorStopPoint.length; i++) {
                 if (elevatorPoint.y == elevatorStopPoint[i]) {
                     clearInterval(clearName);
+                    $(rightSeamCase[i]).css('transform','rotate(-80deg)');
                     setTimeout(function () {
+                        $(rightSeamCase[i]).css('transform','rotate(-0deg)');
                         elevatorSetInterval = setInterval(function () {
                             elevatorStop(elevatorSetInterval);
                             elevatorMove(leftElevator_Ctx);
                         }, 20);
-                    }, 1000);
+                    }, 2000);
                     break;
                 }
             }

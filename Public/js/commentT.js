@@ -97,7 +97,9 @@ $(function () {
     });
     $('.addHelpDocument').click(function () {
         $('iframe').attr('src', '../ParameterProbability/addHelpDocument.html');
-
+    })
+    $('.toolList').click(function () {
+        $('iframe').attr('src', '../ParameterProbability/toolList.html');
     })
     //后台管理
     $('.websiteSwitch').click(function () {
