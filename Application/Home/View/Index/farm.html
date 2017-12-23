@@ -847,28 +847,16 @@
         <img src="__PUBLIC__/fuguiji/images/home/close.png" class="closeFrienList">
         <!---->
         <div class="friendList">
-            <!--好友信息块-->
-            <div>
-                <p>
-                    <span>好友账号</span>
-                    <label>注册时间</label>
-                </p>
-                <button>执行操作</button>
-            </div>
-            <div>
-                <p>
-                    <span>好友账号</span>
-                    <label>注册时间</label>
-                </p>
-                <button>执行操作</button>
-            </div>
-            <div>
-                <p>
-                    <span>好友账号</span>
-                    <label>注册时间</label>
-                </p>
-                <button>执行操作</button>
-            </div>
+            <foreach name="friend_list" item="v">
+                <!--好友信息块-->
+                <div>
+                    <p>
+                        <span>{$v.account}</span>
+                        <label>{$v.add_time|date="Y-m-d H:i:s",###}</label>
+                    </p>
+                    <!--<button>执行操作</button>-->
+                </div>
+            </foreach>
         </div>
     </div>
 

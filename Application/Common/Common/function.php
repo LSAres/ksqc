@@ -42,6 +42,16 @@ function getStore($userId) {
 }
 
 /**
+ * [getUser 获取好友信息]
+ * @param  [type] $userId [userId]
+ * @return [type]         [array]
+ */
+function getFriend($userId) {
+    $friend_list = M('user')->where(array('parent_id' => $userId))->select();
+    return $friend_list;
+}
+
+/**
  * [getUser 获取指定层信息]
  * @param  [type] $userId [userId]
  * @return [type] $layer [layer]

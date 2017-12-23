@@ -19,12 +19,15 @@ class IndexController extends CommonController
         $store = getStore($uid);
         //用户
     	$user = getUser($uid);
+    	//查询直系好友
+        $friend_list = getFriend($uid);
         //兑换记录
         //$tools_log = M('tools')->where(array('uid' => $uid))->select();
         $this->assign('tool', $tool);
         $this->assign('store', $store);
     	$this->assign('user', $user);
-        $this->assign('tools_log', $tools_log);
+        //$this->assign('tools_log', $tools_log);
+        $this->assign('friend_list',$friend_list);
         $this->display();
     }
 
