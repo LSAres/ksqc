@@ -434,7 +434,7 @@ body {
 }
 
 .friendList div p {
-    background: #80dcbf;
+    background: linear-gradient(to bottom,#68eae9,#43b1a7,#61e0dd);
     box-shadow: 0 0 5px #000 inset;
     padding: 10px;
 }
