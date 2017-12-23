@@ -25,6 +25,19 @@ html , body{
     padding: 10px 0;
     z-index: 1;
 }
+.backButton{
+    color: #fff;
+    width: 60px;
+    text-align: center;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: fixed;
+    font-size: 14px;
+    top: 1%;
+    left: 5%;
+    z-index: 1;
+}
 .map_top span:nth-child(1){
     color: #f9f8f7;
     text-shadow: 0 0 5px #31caaa;
