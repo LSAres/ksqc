@@ -325,11 +325,11 @@
         <div class="upgradeSelect" layer="4">
             <!--选择行-->
             <foreach name="tool" item="v">
-            <div>
-                <img src="{$v['img']}" alt="" >
-                <span>{$v['name']}({$v['miner_gold']})</span>
-                <button class="risk" tool_id="{$v['id']}">升级</button>
-            </div>
+                <div>
+                    <img src="{$v['img']}" alt="" >
+                    <span>{$v['name']}({$v['miner_gold']})</span>
+                    <button class="risk" tool_id="{$v['id']}">升级</button>
+                </div>
             </foreach>
 <!--             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
@@ -1176,11 +1176,14 @@
         <img src="__PUBLIC__/fuguiji/images/farm/gameTopRight.png" id="gameTopRight"  style="display: none;"/>
         <img src="__PUBLIC__/fuguiji/images/farm/top_leftHumen.png" id="gameTopLeftHumen"  style="display: none;"/>
         <img src="__PUBLIC__/fuguiji/images/farm/top_rightHumen.png" id="gameTopRightHumen"  style="display: none;"/>
+        <img src="__PUBLIC__/fuguiji/images/farm/topHumenCome.png" id="topHumenCome"  style="display: none;"/>
+        <img src="__PUBLIC__/fuguiji/images/farm/topHumengo.png" id="topHumengo"  style="display: none;"/>
         <!--蓝色-->
         <img src="__PUBLIC__/fuguiji/images/farm/tophumen1_1.png"  id="gameTopHumen" style="display:none;"/>
         <img src="__PUBLIC__/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;"/>
         <img src="__PUBLIC__/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;"/>
         <canvas class="gameBody_topCanvas" width="1024" height="768">您的浏览器或手机不支持此功能！</canvas>
+        <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="topMineral" >
     </div>
     <!--下方 电梯和矿层-->
     <div class="gameBody_bottom">
@@ -1188,9 +1191,22 @@
         <div class="gameBody_bottomLeft">
             <!--电梯图片-->
             <img src="__PUBLIC__/fuguiji/images/farm/elevatorBlock.png" id="elevatorBlockImg" style="display: none;">
-            <!--矿层数字背景-->
-            <img src="__PUBLIC__/fuguiji/images/farm/elevatorNumber.png" id="elevatorNumber" style="display: none;">
+            <img src="__PUBLIC__/fuguiji/images/farm/elevatorBlock1.png" id="elevatorBlockImg1" style="display: none;">
             <canvas class="gameBody_elevator" >您的浏览器或手机不支持此功能</canvas>
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralUp.gif" class="mineralUp" style="display: none; position: absolute; top: 1%; width: 100%;" >
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 6.5%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 14.5%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 22.5%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 30.5%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 38.5%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 46.5%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 54%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 62%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 70%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 78%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 86%; width: 100%;">
+            <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 94%; width: 100%;">
+
         </div>
         <!--下方右侧矿层-->
         <div class="gameBody_bottomRight">

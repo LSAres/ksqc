@@ -225,17 +225,17 @@ $(function () {
         w: 140,
         h: 80,
         g: 5,
-        acp_x: 100,
-        acp_y: 77,
-        max_width: 780,
+        acp_x: 90,
+        acp_y: 40,
+        max_width: 900,
         min_width: 200,
-        imgWidthLength: 1900,
-        img_SX: 100,
-        img_SY: 77,
-        img_swidth: 375
+        imgWidthLength: 2400,
+        img_SX: 90,
+        img_SY: 40,
+        img_swidth: 485
     };
-    var topHumenImg_go = document.getElementById('gameTopHumen1');
-    var topHumenImg_com = document.getElementById('gameTopHumen2');
+    var topHumenImg_go = document.getElementById('topHumengo');
+    var topHumenImg_com = document.getElementById('topHumenCome');
     var topLeftHumen = document.getElementById('gameTopLeftHumen');
     var topRightHumen = document.getElementById('gameTopRightHumen');
     var topHumenDraw = topHumenImg_go;
@@ -253,7 +253,7 @@ $(function () {
     }
     function topHumenAction(ctx, drawImg) {
         ctx.beginPath();
-        ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 305, 320, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
+        ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 430, 348, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -263,20 +263,35 @@ $(function () {
         if ((topHumenPoint.x + topHumenPoint.w) >= topHumenPoint.max_width) {
             topHumenPoint.g = -topHumenPoint.g;
             topHumenDraw = topHumenImg_com;
+            clearInterval(topActive);
+            setTimeout(function(){
+                topActive = setInterval(function () {
+                    topHumenMove(topCtx, topHumenDraw);
+                }, 100);
+            },2000);
         }
         if (topHumenPoint.x < topHumenPoint.min_width) {
             topHumenPoint.g -= (topHumenPoint.g * 2);
             topHumenDraw = topHumenImg_go;
+            clearInterval(topActive);
+            document.getElementsByClassName('topMineral')[0].style.display = 'block';
+            setTimeout(function(){
+                document.getElementsByClassName('topMineral')[0].style.display = 'none';
+                topActive = setInterval(function () {
+                    topHumenMove(topCtx, topHumenDraw);
+                }, 100);
+            },2000);
         }
         if (topHumenPoint.acp_x >= topHumenPoint.imgWidthLength) {
             topHumenPoint.acp_x = topHumenPoint.img_SX;
         }
 
-        topHumenAction(ctx, drawImg);
+
         top_leftMachine(ctx);
         top_rightMachine(ctx);
         topleftHumenAction(ctx);
         topRightHumenAction(ctx);
+        topHumenAction(ctx, drawImg);
         topHumenPoint.x += topHumenPoint.g;
         topHumenPoint.acp_x += topHumenPoint.img_swidth;
     }
@@ -314,8 +329,8 @@ $(function () {
     /*矿层：人物坐标点,挖矿人物 */
     var seam_1_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 77};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_1_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 7};  //第二个行走人物
-    var seam_1_point_3 = {x: 190, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 5};  //第三个行走人物
+    var seam_1_point_2 = {x: 160, y: 520, w: 170, h: 200, acp_x: 100, acp_y: 77, g: 7};  //第二个行走人物
+    var seam_1_point_3 = {x: 190, y: 520, w: 170, h: 200, acp_x: 100, acp_y: 77, g: 5};  //第三个行走人物
     /*绘制人物方法*/
     function seam_1_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -1096,7 +1111,9 @@ $(function () {
     /**电梯*/
 
     /*获取电梯背景图*/
-    var elevatorBlockImg = document.getElementById('elevatorBlockImg');
+    var elevatorBlockImg = document.getElementById('elevatorBlockImg');     //下降的电梯
+    var elevatorBlockImg1 = document.getElementById('elevatorBlockImg1');    //上升的电梯
+    var drawImage = elevatorBlockImg;
     var elevatorPoint = {x: 0, y: 20, w: 1000, h: 200, g: 5};
     /*电梯停止坐标点*/
     var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
@@ -1104,9 +1121,9 @@ $(function () {
     leftElevator.width = 1024;
     leftElevator.height = 768;
     /*右侧矿层的箱子*/
-    var rightSeamCase = $('.caseImg');
-    /*电梯层数背景图  Y轴坐标 使用电梯停止的Y轴坐标*/
-    var elevatorNum = document.getElementById('elevatorNumber');
+    var rightSeamCase = document.getElementsByClassName('caseImg');
+    /*左侧矿石落下动态图*/
+    var mineralDown = document.getElementsByClassName('mineral');
     /*x:X轴坐标  w:图片宽度 h：图片高度 sx截取图片的起始X点 sy截取图片的y点 sw图片截取的跨度*/
     var elevatorNum_strokePoint = {x:200,w:600,h:100,sx:750,sy:18,sw:1560,sh:1580} ;
 
@@ -1120,41 +1137,45 @@ $(function () {
     document.getElementsByClassName('gameBody_bottomLeft')[0].style.height = gameBody_bottomLeftHeight + 'px';
     var leftElevator_Ctx = leftElevator.getContext('2d');
     /*绘制电梯*/
-    function elevatorAction(ctx) {
+    function elevatorAction(ctx,dramImg) {
         ctx.beginPath();
 
 
 
-        ctx.drawImage(elevatorBlockImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
+        ctx.drawImage(dramImg, elevatorPoint.x, elevatorPoint.y, elevatorPoint.w, elevatorPoint.h);
         ctx.stroke();
         ctx.closePath();
 
     }
 
     /*电梯运动坐标变化*/
-    function elevatorMove(ctx) {
+    function elevatorMove(ctx,drawImg) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
         if ((elevatorPoint.y + elevatorPoint.h ) >= ctx.canvas.height) {
+            drawImage = elevatorBlockImg1;
             elevatorPoint.g = -elevatorPoint.g;
         }
         if (elevatorPoint.y < 20) {
+            drawImage = elevatorBlockImg;
+            document.getElementsByClassName('mineralUp')[0].style.display = 'block';
             elevatorPoint.g -= (elevatorPoint.g * 2);
             clearInterval(elevatorSetInterval);
             setTimeout(function () {
+                document.getElementsByClassName('mineralUp')[0].style.display = 'none';
                 elevatorSetInterval = setInterval(function () {
                     elevatorStop(elevatorSetInterval);
-                    elevatorMove(leftElevator_Ctx);
+                    elevatorMove(leftElevator_Ctx,drawImage);
                 }, 20);
             }, 3000);
         }
         elevatorPoint.y += elevatorPoint.g;
-        elevatorAction(ctx);
+        elevatorAction(ctx,drawImg);
     };
 
     var elevatorSetInterval = setInterval(function () {
         elevatorStop(elevatorSetInterval);
-        elevatorMove(leftElevator_Ctx);
+        elevatorMove(leftElevator_Ctx,drawImage);
     }, 10);
 
     function elevatorStop(clearName) {
@@ -1163,12 +1184,14 @@ $(function () {
             for (var i = 0; i < elevatorStopPoint.length; i++) {
                 if (elevatorPoint.y == elevatorStopPoint[i]) {
                     clearInterval(clearName);
-                    $(rightSeamCase[i]).css('transform','rotate(-80deg)');
+                    rightSeamCase[i].style.transform = 'rotate(-80deg)';
+                    mineralDown[i].style.display = 'block';
                     setTimeout(function () {
-                        $(rightSeamCase[i]).css('transform','rotate(-0deg)');
+                        rightSeamCase[i].style.transform = 'rotate(-0deg)';
+                        mineralDown[i].style.display = 'none';
                         elevatorSetInterval = setInterval(function () {
                             elevatorStop(elevatorSetInterval);
-                            elevatorMove(leftElevator_Ctx);
+                            elevatorMove(leftElevator_Ctx,drawImage);
                         }, 20);
                     }, 2000);
                     break;
