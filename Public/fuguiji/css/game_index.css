@@ -917,7 +917,7 @@ body {
 .gameBody .gameBody_top {
     border: solid 1px orange;
     height: 410px;
-
+    position: relative;
 }
 
 .gameBody .gameBody_top .gameBody_topCanvas {
@@ -928,7 +928,14 @@ body {
     background-position: center 0%;
     background-size: 100% 200%;
 }
-
+.gameBody .gameBody_top .topMineral{
+    width: 33px;
+    height: 78px;
+    display: none;
+    position: absolute;
+    top: 72%;
+    left: 19.5%;
+}
 .gameBody_bottom {
     border-top: solid 3px green;
     background: url("../images/farm/gameBottomBackground.png");
@@ -981,7 +988,7 @@ body {
     height: 50px;
     display: inline-block;
     position: absolute;
-    left: 5%;
+    left: 0%;
     bottom: 4%;
     transition: all .5s;
     transform-origin: left bottom;

@@ -1152,11 +1152,14 @@
         <img src="/ksqc/Public/fuguiji/images/farm/gameTopRight.png" id="gameTopRight"  style="display: none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/top_leftHumen.png" id="gameTopLeftHumen"  style="display: none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/top_rightHumen.png" id="gameTopRightHumen"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/topHumenCome.png" id="topHumenCome"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/topHumengo.png" id="topHumengo"  style="display: none;"/>
         <!--蓝色-->
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen1_1.png"  id="gameTopHumen" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;"/>
         <canvas class="gameBody_topCanvas" width="1024" height="768">您的浏览器或手机不支持此功能！</canvas>
+        <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="topMineral" >
     </div>
     <!--下方 电梯和矿层-->
     <div class="gameBody_bottom">
@@ -1165,14 +1168,12 @@
             <!--电梯图片-->
             <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock.png" id="elevatorBlockImg" style="display: none;">
             <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock1.png" id="elevatorBlockImg1" style="display: none;">
-            <!--矿层数字背景-->
-            <img src="/ksqc/Public/fuguiji/images/farm/elevatorNumber.png" id="elevatorNumber" style="display: none;">
             <canvas class="gameBody_elevator" >您的浏览器或手机不支持此功能</canvas>
             <img src="/ksqc/Public/fuguiji/images/farm/mineralUp.gif" class="mineralUp" style="display: none; position: absolute; top: 1%; width: 100%;" >
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 7%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 14%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 23%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 31%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 6.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 14.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 22.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 30.5%; width: 100%;">
             <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 38.5%; width: 100%;">
             <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 46.5%; width: 100%;">
             <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 54%; width: 100%;">
