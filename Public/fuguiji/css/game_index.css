@@ -434,7 +434,8 @@ body {
 }
 
 .friendList div p {
-    background: #d0bd6f;
+    background: #80dcbf;
+    box-shadow: 0 0 5px #000 inset;
     padding: 10px;
 }
 
@@ -446,6 +447,7 @@ body {
 .friendList div p label {
     font-size: 14px;
     color: #fff;
+    margin-top: 1%;
     float: right;
 }
 
