@@ -152,27 +152,27 @@
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
                 <img src="<?php echo ($v['img']); ?>" alt="" >
                 <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div><?php endforeach; endif; ?>
 <!--             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div>
             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div>
             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div>
             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div> -->
         </div>
 
@@ -205,32 +205,32 @@
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
                 <img src="<?php echo ($v['img']); ?>" alt="" >
                 <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div><?php endforeach; endif; ?>
 <!--             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div>
             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div>
             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div>
             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div>
             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
-                <button tool_id="<?php echo ($v['id']); ?>">升级</button>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
             </div> -->
         </div>
 
