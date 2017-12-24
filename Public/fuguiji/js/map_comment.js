@@ -1,4 +1,8 @@
 $(function () {
+    /*点击返回上一层*/
+    $('.backButton').click(function(){
+        history.back();
+    });
     /**
      *
      * 点击屏幕生成光圈*/
