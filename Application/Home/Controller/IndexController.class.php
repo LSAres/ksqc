@@ -21,6 +21,8 @@ class IndexController extends CommonController
     	$user = getUser($uid);
     	//查询直系好友
         $friend_list = getFriend($uid);
+        //获取挖矿分记录
+        $miner_list = getMinerList($uid);
         //兑换记录
         //$tools_log = M('tools')->where(array('uid' => $uid))->select();
         $this->assign('tool', $tool);
@@ -28,6 +30,7 @@ class IndexController extends CommonController
     	$this->assign('user', $user);
         //$this->assign('tools_log', $tools_log);
         $this->assign('friend_list',$friend_list);
+        $this->assign('miner_list',$miner_list);
         $this->display();
     }
 

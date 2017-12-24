@@ -52,6 +52,16 @@ function getFriend($userId) {
 }
 
 /**
+ * [getUser 获取挖矿分记录]
+ * @param  [type] $userId [userId]
+ * @return [type]         [array]
+ */
+function getMinerList($userId) {
+    $miner_list = M('miner_log')->where(array('uid' => $userId))->select();
+    return $miner_list;
+}
+
+/**
  * [getUser 获取指定层信息]
  * @param  [type] $userId [userId]
  * @return [type] $layer [layer]
