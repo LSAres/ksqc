@@ -878,7 +878,7 @@
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <div class="miningHistory">
+<!--             <div class="miningHistory">
                 <div class="miningHistory_date">
                     <span>2014-14-1411</span>
                     <label ></label>
@@ -897,28 +897,29 @@
                         <label>信息数值</label>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <foreach name="tools_log" item="v">
             <div class="miningHistory">
                 <div class="miningHistory_date">
-                    <span>2014-14-14</span>
+                    <span>{php echo date('Y-m-d');}</span>
                     <label ></label>
                 </div>
                 <div class="miningHistory_message">
                     <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+                        <span>层数:</span>
+                        <label>{$v['layer_id']}</label>
                     </div>
                     <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+                        <span>工具:</span>
+                        <label>{$v['tool_id']}</label>
                     </div>
                     <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+                        <span>挖矿金:</span>
+                        <label>{$v['miner_gold']}</label>
                     </div>
                 </div>
             </div>
-
+            </foreach>
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
