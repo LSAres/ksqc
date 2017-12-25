@@ -24,11 +24,11 @@ class IndexController extends CommonController
         //获取挖矿分记录
         $miner_list = getMinerList($uid);
         //兑换记录
-        //$tools_log = M('tools')->where(array('uid' => $uid))->select();
+        $tools_log = M('tools')->where(array('uid' => $uid))->select();
         $this->assign('tool', $tool);
         $this->assign('store', $store);
     	$this->assign('user', $user);
-        //$this->assign('tools_log', $tools_log);
+        $this->assign('tools_log', $tools_log);
         $this->assign('friend_list',$friend_list);
         $this->assign('miner_list',$miner_list);
         $this->display();
@@ -673,8 +673,7 @@ class IndexController extends CommonController
       $persent = (mt_rand($this_tool['start'], $this_tool['end'])) / 100;
       $final_score = intval(3600 * ($persent + 1));
       //加分、记录
-      $db_tools->where(array('id' => $this_row['id']))->save(array('is_get' => 1, 'get_time' => time()));
-
+      $db_tools->where(array('id' => $this_row['id']))->save(array('is_get' => 1, 'get_time' => time(), 'miner_gold' => $final_score));
       $store->where(array('uid' => $uid))->setInc('miner_gold', $final_score);
       $data = [
         'uid' => $uid,
