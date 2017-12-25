@@ -299,7 +299,7 @@ $(function () {
     /**顶部：场景绘制*/
     var topActive = setInterval(function () {
         topHumenMove(topCtx, topHumenDraw);
-    }, 100);
+    }, 80);
 
 
     /**矿层绘制*/
