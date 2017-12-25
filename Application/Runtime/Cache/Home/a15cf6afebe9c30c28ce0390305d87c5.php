@@ -319,10 +319,10 @@
         <div class="upgradeSelect" layer="4">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                <img src="<?php echo ($v['img']); ?>" alt="" >
-                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-            </div><?php endforeach; endif; ?>
+                    <img src="<?php echo ($v['img']); ?>" alt="" >
+                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+                </div><?php endforeach; endif; ?>
 <!--             <div>
                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
                 <span>升级功能的名称</span>
@@ -823,28 +823,14 @@
         <img src="/ksqc/Public/fuguiji/images/home/close.png" class="closeFrienList">
         <!---->
         <div class="friendList">
-            <!--好友信息块-->
-            <div>
-                <p>
-                    <span>好友账号</span>
-                    <label>注册时间</label>
-                </p>
-                <button>执行操作</button>
-            </div>
-            <div>
-                <p>
-                    <span>好友账号</span>
-                    <label>注册时间</label>
-                </p>
-                <button>执行操作</button>
-            </div>
-            <div>
-                <p>
-                    <span>好友账号</span>
-                    <label>注册时间</label>
-                </p>
-                <button>执行操作</button>
-            </div>
+            <?php if(is_array($friend_list)): foreach($friend_list as $key=>$v): ?><!--好友信息块-->
+                <div>
+                    <p>
+                        <span><?php echo ($v["account"]); ?></span>
+                        <label><?php echo (date("Y-m-d H:i:s",$v["add_time"])); ?></label>
+                    </p>
+                    <!--<button>执行操作</button>-->
+                </div><?php endforeach; endif; ?>
         </div>
     </div>
 
@@ -857,11 +843,11 @@
     <div class="userCenterControl">
         <!--显示框-->
         <div class="userCenter_functionDisplay">
-            <input type="text" placeholder="提示用户输入的信息">
-            <input type="text" placeholder="提示用户输入的信息">
-            <input type="text" placeholder="提示用户输入的信息">
-            <input type="text" placeholder="提示用户输入的信息">
-            <input type="text" placeholder="提示用户输入的信息">
+            <input type="text" value="<?php echo ($user["account"]); ?>">
+            <input type="text" value="<?php echo ($user["username"]); ?>">
+            <input type="text" value="<?php echo ($user["alipay"]); ?>">
+            <input type="text" value="<?php echo ($user["ip"]); ?>">
+            <!--<input type="text" placeholder="提示用户输入的信息">-->
             <input type="submit" value="">
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
@@ -912,7 +898,7 @@
             <!--积分使用记录-->
             <div class="miningHistory">
                 <div class="miningHistory_date">
-                    <span>2014-14-14</span>
+                    <span>2014-14-1422</span>
                     <label ></label>
                 </div>
                 <div class="miningHistory_message">
@@ -1152,11 +1138,14 @@
         <img src="/ksqc/Public/fuguiji/images/farm/gameTopRight.png" id="gameTopRight"  style="display: none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/top_leftHumen.png" id="gameTopLeftHumen"  style="display: none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/top_rightHumen.png" id="gameTopRightHumen"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/topHumenCome.png" id="topHumenCome"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/topHumengo.png" id="topHumengo"  style="display: none;"/>
         <!--蓝色-->
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen1_1.png"  id="gameTopHumen" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;"/>
         <canvas class="gameBody_topCanvas" width="1024" height="768">您的浏览器或手机不支持此功能！</canvas>
+        <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="topMineral" >
     </div>
     <!--下方 电梯和矿层-->
     <div class="gameBody_bottom">
@@ -1164,9 +1153,22 @@
         <div class="gameBody_bottomLeft">
             <!--电梯图片-->
             <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock.png" id="elevatorBlockImg" style="display: none;">
-            <!--矿层数字背景-->
-            <img src="/ksqc/Public/fuguiji/images/farm/elevatorNumber.png" id="elevatorNumber" style="display: none;">
+            <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock1.png" id="elevatorBlockImg1" style="display: none;">
             <canvas class="gameBody_elevator" >您的浏览器或手机不支持此功能</canvas>
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralUp.gif" class="mineralUp" style="display: none; position: absolute; top: 1%; width: 100%;" >
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 6.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 14.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 22.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 30.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 38.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 46.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 54%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 62%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 70%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 78%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 86%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 94%; width: 100%;">
+
         </div>
         <!--下方右侧矿层-->
         <div class="gameBody_bottomRight">
