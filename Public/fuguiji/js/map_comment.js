@@ -70,7 +70,7 @@ $(function () {
                clearInterval(elmentChange);
                document.getElementsByTagName('body')[0].removeChild(clickCreat);   //500毫秒后移除生成的节点
            }, 800);
-       },500);
+       },300);
     }
 
     window.addEventListener('touchstart', get_touchStartPoint);      //添加屏幕触摸方法

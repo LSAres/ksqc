@@ -12,8 +12,8 @@ body {
 .gameTop {
     height: 60px;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(204, 204, 204, .8));
-    border-bottom: solid 1px #999;
+    background: linear-gradient(to bottom, rgb(75, 152, 189), rgb(46, 84, 99));
+    border-bottom: solid 1px #003b94;
     position: fixed;
     top: 0;
     z-index: 1;
@@ -28,7 +28,8 @@ body {
 .gameTop-showBlock {
     width: 25%;
     height: 20px;
-    background: #999;
+    background: #85b9ce;
+    border: solid 1px #ccc;
     border-radius: 15px;
     display: inline-block;
     margin: 0 10px;
@@ -42,10 +43,12 @@ body {
     vertical-align: middle;
     float: left;
     margin-left: -10px;
+    margin-top: -5px;
 }
 
 .gameTop-showBlock span {
     font-size: 12px;
+    color: #fff;
     display: inline-block;
     vertical-align: middle;
 }
@@ -76,9 +79,10 @@ body {
 /*游戏充值*/
 .chageDiv {
     width: 100%;
-    background: #fff;
-    background: url(../images/pop/tack-background.png);
-    background-size: 100%;
+    /* background: #fff; */
+    /* background: url(../images/pop/tack-background.png); */
+    /* background-size: 100%; */
+    background: linear-gradient(to top,rgba(0, 109, 150, 0.8),rgba(219, 242, 253, 0.8));
     position: fixed;
     top: 0;
     z-index: 1;
@@ -86,28 +90,29 @@ body {
 }
 
 .closeCharge {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     margin: 15px 0 0 15px;
 }
 
 .chargeInputBlock {
     width: 80%;
-    border: solid 1px #999;
+    border: solid 1px #69bbe0;
     border-radius: 10px;
-    background: #f7f7f7;
+    /* background: #f7f7f7; */
+    background: linear-gradient(to bottom ,rgba(92, 206, 251, 0.8),rgba(9, 92, 150, 0.8));
     box-shadow: 0 0 3px #000 inset;
     margin: 10px auto;
 }
 
 .userWealth {
     text-align: center;
-    color: #f35000;
+    color: #c6feff;
     margin: 10px 0;
 }
 
 .userWealth span {
-    color: darkred;
+    color: #fff;
 }
 
 .chargeInput {
@@ -130,19 +135,20 @@ body {
 
 .chargeNumSelect div {
     width: 30%;
-    color: #999;
+    color: #c3f7f5;
     display: inline-block;
     text-align: center;
-    border: solid 1px orange;
+    border: solid 1px #7bcaff;
     border-radius: 15px;
     margin: 5px 0%;
     padding: 10px 0;
+    transition: all .3s;
 }
 
 .chargeNumSelect div.selected {
-    background: orange;
-    border: solid 1px transparent;
-    color: #fff;
+    background: #87cae6;
+    border: solid 1px #2890d2;
+    box-shadow: 0 0 10px #000 inset;
 }
 
 .chargeType {
@@ -151,7 +157,8 @@ body {
 }
 
 .chargeType h3 {
-    color: orange;
+    color: #9ffcfd;
+    text-shadow: 0 0 4px #000;
     font-weight: bolder;
     margin: 10px 0;
 }
@@ -159,10 +166,18 @@ body {
 .chargeType div {
     text-indent: 10%;
     padding: 10px 0;
+    border: solid 1px transparent;
+    transition: all .3s;
 }
 
-.selected, .selected span {
-    background: orange;
+.selected {
+    border: solid 1px #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #143258 inset;
+    background: #a1d7ff;
+}
+.selected span {
+
     color: #fff !important;
 }
 
@@ -176,16 +191,21 @@ body {
 }
 
 .chargeType div span {
-    color: orange;
+    color: #c0def1;
 }
 
 .chargeButton {
     width: 70%;
     height: 50px;
+    color: #fff;
+    line-height: 50px;
     text-align: center;
+    border: solid 1px #6cd7f5;
     border-radius: 15px;
-    background: url(../images/pop/btn-submit.png) no-repeat;
-    background-size: 100% 100%;
+    background: linear-gradient(to bottom right,#6ecee1,#3da0ce,#75d5e4);
+    box-shadow: 0 0 16px #fff;
+    /* background: url(../images/pop/btn-submit.png) no-repeat; */
+    /* background-size: 100% 100%; */
     margin: 15px auto;
 }
 
@@ -205,7 +225,8 @@ body {
 .gemeFotter {
     width: 100%;
     height: 30px;
-    background: #548da0;
+    background: linear-gradient(to bottom, rgb(75, 152, 189), rgb(46, 84, 99));
+    border-top: solid 2px #597d8e;
     display: flex;
     position: fixed;
     bottom: 0;
@@ -255,7 +276,7 @@ body {
 /*升级商店DIV*/
 .upgradeShow {
     width: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: linear-gradient(to top,rgba(0, 109, 150, 0.8),rgba(219, 242, 253, 0.8));
     position: fixed;
     top: 0;
     z-index: 1;
@@ -264,12 +285,11 @@ body {
 
 .upgrade {
     width: 80%;
-    border: solid 4px #ffc297;
-    background: #ccc;
+    border: solid 1px #69bbe0;
     border-radius: 10px;
-    background: url(../images/farm/grain.png) repeat-y, #fffae4;
-    background-size: 100%;
-    box-shadow: 0 0 5px #000 inset;
+    /* background: #f7f7f7; */
+    background: linear-gradient(to bottom ,rgba(92, 206, 251, 0.8),rgba(9, 92, 150, 0.8));
+    box-shadow: 0 0 3px #000 inset;
     display: block;
     margin: 0 auto;
     margin-top: 16%;
@@ -300,8 +320,9 @@ body {
     display: inline-block;
     width: 70px;
     height: 70px;
-    border: solid 2px #a07600;
+    border: solid 2px #9feeff;
     border-radius: 100%;
+    box-shadow: 0 0 10px #000;
     margin: 10px;
     margin-right: 8%;
     vertical-align: middle;
@@ -351,18 +372,19 @@ body {
     border: solid 1px #796151;
     border-radius: 10px;
     margin: 5px auto;
-    background: linear-gradient(to right, #f7f5f5, #eabfbf, #fff);
+    background: linear-gradient(to top left, #2f92a9, #8cdaee);
     position: relative;
 
 }
 
 .upgradeSelect div:nth-child(odd) {
-    background: linear-gradient(to right, #eabfbf, #fff, #eabfbf);
+    background: linear-gradient(to bottom right , #2a8ea5, #93dff3);
 }
 
 .upgradeSelect div img {
     width: 40px;
     height: 40px;
+    border-radius: 5px;
     display: inline-block;
     vertical-align: middle;
     margin: 10px 10px 10px 10px;
@@ -375,9 +397,12 @@ body {
 }
 
 .upgradeSelect div button {
+    color: #fff;
     font-size: 14px;
+    background: linear-gradient(to bottom,#4acde2,#2b97b7,#46c4fd);
     padding: 1px 15px;
-    border-radius: 10px;
+    box-shadow: 0 0 10px inset;
+    border-radius: 4px;
     position: absolute;
     top: 0;
     right: 0;
@@ -386,7 +411,7 @@ body {
 /*好友界面*/
 .friend {
     width: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: linear-gradient(to top,rgba(0, 109, 150, 0.8),rgba(219, 242, 253, 0.8));
     position: fixed;
     top: 0;
     left: 0;
@@ -396,9 +421,10 @@ body {
 .friendAll {
     width: 90%;
     height: 80%;
-    border: solid 3px #a55c03;
+    border: solid 3px #5fa3c7;
     border-radius: 15px;
-    background: url(../images/farm/grain.png) repeat-y, #fffae4;
+    /*background: url(../images/farm/backgroundImage1.png) repeat-y, #fffae4;*/
+    background: linear-gradient(to bottom right,#8ff1fb,#042b52);
     background-size: 100%;
     box-shadow: 0 0 7px #000 inset;
     margin: 0 auto;
@@ -416,9 +442,10 @@ body {
 .friendList {
     width: 90%;
     height: 70%;
-    border: solid 3px #8c6e76;
+    border: solid 3px #3871a2;
     border-radius: 10px;
-    background: #ccc;
+    background: rgba(161, 243, 232, 0.5);
+    box-shadow: 0 0 10px #0c0c0c inset;
     margin: 0 auto;
     margin-top: 20%;
     overflow-y: hidden;
@@ -465,8 +492,8 @@ body {
 /*个人中心*/
 .userCenter {
     width: 100%;
-    background: rgba(0, 0, 0, .5);
-    background: url(../images/pop/tack-background.png);
+    background: linear-gradient(to top,rgba(0, 109, 150, 0.8),rgba(219, 242, 253, 0.8));
+    /*background: url(../images/pop/tack-background.png);*/
     background-size: 100%;
     position: fixed;
     top: 0;
@@ -475,17 +502,24 @@ body {
 }
 
 .closeUserCenter {
+    width: 100px;
+    height: 35px;
+    margin-top: 12px;
+    margin-left: 2%;
     display: block;
-    width: 50px;
-    height: 50px;
+
 }
 
 .userCenterControl {
     width: 85%;
     height: 76%;
-    border: solid 1px transparent;
-    background: url(../images/pop/pop-panel2.png) no-repeat;
+    border: solid 3px #68b7e2;
+    /*background: url(../images/pop/pop-panel2.png) no-repeat;*/
+    background: linear-gradient(to bottom right,#8ff1fb,#042b52);
+    border-radius: 15px;
     background-size: 100% 100%;
+    box-shadow: 0 0 5px #000 inset;
+    overflow: hidden;
     margin: 0 auto;
     margin-top: 5%;
 }
@@ -493,9 +527,9 @@ body {
 .userCenter_functionDisplay {
     width: 90%;
     height: 85%;
-    background: #fff;
+    background: rgba(141, 236, 233, 0.5);
     border-radius: 15px;
-    box-shadow: 0 0 5px #000 inset;
+    box-shadow: 0 0 10px #000 inset;
     overflow-y: auto;
     margin: 0% auto;
     margin-top: 15%;
@@ -507,15 +541,21 @@ body {
     color: #999;
     width: 80%;
     border: solid 1px #999;
-    border-radius: 15px;
+    border-radius: 10px;
     display: block;
     margin: 10px auto;
     padding: 10px 0;
 }
 
 .userCenter_functionDisplay input[type='submit'] {
-    background: url(../images/pop/btn-submit.png) no-repeat;
-    background-size: 100% 100%;
+    /*background: url(../images/pop/btn-submit.png) no-repeat;*/
+    /*background-size: 100% 100%;*/
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    border: solid 2px #7ec4e2;
+    background: linear-gradient(to top left,#8becf7,#062e55);
+    box-shadow: 0 0 10px #fff inset;
 }
 
 /*个人中心：积分使用记录*/
@@ -530,10 +570,11 @@ body {
 
 .miningHistory .miningHistory_date span {
     font-size: 15px;
+    color: #487373;
 }
 
 .miningHistory .miningHistory_date label {
-    border-top: solid 14px #000;
+    border-top: solid 14px #dcfcff;
     border-left: solid 7px transparent;
     border-right: solid 7px transparent;
     display: inline-block;
@@ -559,7 +600,7 @@ body {
 }
 
 .userCenter_bottomFunctionSelect {
-    height: 60px;
+    height: 40px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -568,17 +609,28 @@ body {
 
 .userCenter_bottomFunctionSelect div {
     flex: 1;
+    color: #fff;
+    font-size: 14px;
+    background: linear-gradient(to bottom ,#4090d0,#24648a,#488abf);
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 0 0 4px #b2e5f5 inset;
+    transition: all 1s;
+}
+.userCenter_bottomFunctionSelect div.active{
+    box-shadow: 0 0 20px #000 inset;
 }
 
 .userCenter_bottomFunctionSelect div img {
     width: 100%;
     height: 100%;
+    display: none;
 }
 
 /*商店：宝箱购买*/
 .catchShop {
     width: 100%;
-    background: rgba(0, 25, 0, .5);
+    background: linear-gradient(to top,rgba(0, 109, 150, 0.8),rgba(219, 242, 253, 0.8));
     position: fixed;
     top: 0;
     left: 0;
@@ -597,11 +649,12 @@ body {
 .catchShop_show {
     width: 70%;
     height: 70%;
-    border: solid 3px #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 5px #4a341d inset;
-    background: url(../images/farm/grain.png) repeat-y, #fffae4;
-    background-size: 100%;
+    border: solid 3px #66a0b5;
+    /*background: url(../images/farm/grain.png) repeat-y, #fffae4;*/
+    /*background-size: 100% 100%;*/
+    background: linear-gradient(to bottom right,#8ff1fb,#042b52);
+    border-radius: 15px;
+    box-shadow: 0 0 5px #000 inset;
     margin: 25% 0% 0 20%;
 }
 
@@ -615,7 +668,6 @@ body {
     width: 100%;
     height: 80px;
     border-radius: 5px 0 0 5px;
-    box-shadow: 0 0 20px #ffb45e inset;
     margin: 5px 0;
     display: block;
 }
@@ -625,7 +677,8 @@ body {
     height: 90%;
     text-align: center;
     background: #f5f5f5;
-    border: solid 3px #ce8c29;
+    border: solid 3px #65a8b1;
+    background: rgba(141, 236, 233, 0.5);
     border-radius: 10px;
     box-shadow: 0 0 5px #000 inset;
     overflow-y: auto;
@@ -634,8 +687,8 @@ body {
 
 .catchShop_catchCatch {
     text-align: center;
-    background: #f5f5f5;
-    border: solid 3px #ce8c29;
+    border: solid 3px #65a8b1;
+    background: rgba(141, 236, 233, 0.5);
     border-radius: 10px;
     box-shadow: 0 0 5px #000 inset;
     overflow-y: auto;
@@ -650,9 +703,9 @@ body {
 
 .caseBlock {
     width: 45%;
-    border: solid 1px #999;
+    border: solid 1px #006e77;
     border-radius: 10px;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 12px #fff inset;
     display: inline-block;
     margin: 10px 0;
 }
@@ -669,8 +722,10 @@ body {
     width: 80%;
     color: #fff;
     text-shadow: 0 0 3px #000;
-    border-radius: 10px;
-    background: linear-gradient(to bottom, #f59504, #ffd58c);
+    border-radius: 3px;
+    box-shadow: 0 0 10px #fff inset;
+    background: linear-gradient(to top left,#69b2b9,#2966a2,#77c4cc);
+    border: solid 1px #7cd4d3;
     margin: 5px auto;
 }
 
@@ -688,7 +743,7 @@ body {
 .pointExchange .exchangeDiv {
     width: 95%;
     height: 40px;
-    border-bottom: solid 2px #ccc;
+    border-bottom: solid 2px #b4f8ff;
     perspective: 1000px;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
@@ -731,7 +786,6 @@ body {
     height: 70%;
     width: 100%;
     overflow-y: auto;
-    border: solid 1px;
     padding: 5px;
 }
 
@@ -748,10 +802,17 @@ body {
 }
 
 .exchange_inputForm div {
+    color: #fff;
     width: 50%;
     height: 30px;
-    background: url(../images/pop/btn-submit.png) no-repeat;
-    background-size: 100% 100%;
+    line-height: 30px;
+    text-align: center;
+    border: solid 1px #6cd7f5;
+    border-radius: 15px;
+    background: linear-gradient(to bottom right,#6ecee1,#3da0ce,#75d5e4);
+    box-shadow: 0 0 16px #fff;
+    /* background: url(../images/pop/btn-submit.png) no-repeat; */
+    /*background-size: 100% 100%;*/
     display: block;
     margin: 15px auto;
 }
@@ -764,7 +825,8 @@ body {
     width: 40%;
     height: 20%;
     border: solid 1px #999;
-    box-shadow: 0 0 5px #a95d00;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #3f96bf;
     display: inline-block;
     margin: 8% 2%;
 }
@@ -774,7 +836,7 @@ body {
     width: 50px;
     font-size: 12px;
     text-align: center;
-    background: linear-gradient(to bottom, #ffc449, #d68a00);
+    background: linear-gradient(to bottom, #72b5ef, #2b7fb1);
     border-bottom: solid 1px #999;
     border-radius: 10px 10px 0 0;
     display: block;
@@ -786,6 +848,7 @@ body {
     width: 100%;
     height: 100%;
     border: solid 1px #ccc;
+    border-radius: 5px;
     display: block;
 }
 
@@ -797,7 +860,8 @@ body {
     color: #fff;
     border-top: solid 1px #999;
     border-radius: 0 0 10px 10px;
-    background: linear-gradient(to bottom, #da9007, #fdc146);
+    background: linear-gradient(to bottom right,#59c5da,#2a83ad,#68dbec);
+    box-shadow: 0 0 5px #fff inset;
     margin: 0 auto;
 }
 
@@ -882,8 +946,10 @@ body {
 
 .promptBlock .promptBlock_foot span {
     width: 100px;
+    height: 34px;
     color: #fff;
     text-shadow: 0 0 5px #000;
+    box-shadow: 0 0 10px #634a13 inset;
     border-radius: 5px;
     display: inline-block;
     padding: 5px 0;
@@ -894,15 +960,15 @@ body {
 .promptBlock .promptBlock_foot span:nth-child(1) {
     background: url(../images/home/confirm-longbtn.png);
     background-position: center;
-    background-size: 100% 120%;
+    background-size: 210% 120%;
     background-repeat: no-repeat;
 
 }
 
 .promptBlock .promptBlock_foot span:nth-child(2) {
-    background: url(../images/home/confirm-longbtn.png);
+    background: url(../images/home/confirm-longbtn2.png);
     background-position: center;
-    background-size: 100% 120%;
+    background-size: 210% 120%;
     background-repeat: no-repeat;
 
 }

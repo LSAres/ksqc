@@ -61,7 +61,7 @@ html , body{
     width: 800px;
     height: 700px;
     background: linear-gradient(to bottom right,#000000,#132d46,#2f4982,#2b9cd4,#fbb670);
-    background: url(../images/farm/1111.jpg);
+    background: url(../images/farm/1111.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -219,8 +219,10 @@ html , body{
 
 .promptBlock .promptBlock_foot span {
     width: 100px;
+    height:34px;
     color: #fff;
     text-shadow: 0 0 5px #000;
+    box-shadow: 0 0 10px #634a13 inset;
     border-radius: 5px;
     display: inline-block;
     padding: 5px 0;
@@ -231,15 +233,15 @@ html , body{
 .promptBlock .promptBlock_foot span:nth-child(1) {
     background: url(../images/home/confirm-longbtn.png);
     background-position: center;
-    background-size: 100% 120%;
+    background-size: 210% 120%;
     background-repeat: no-repeat;
 
 }
 
 .promptBlock .promptBlock_foot span:nth-child(2) {
-    background: url(../images/home/confirm-longbtn.png);
+    background: url(../images/home/confirm-longbtn2.png);
     background-position: center;
-    background-size: 100% 120%;
+    background-size: 210% 120%;
     background-repeat: no-repeat;
 
 }

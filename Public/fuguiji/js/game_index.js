@@ -2,35 +2,7 @@ $(function () {
     $('.outerDiv').css({
         'height': $(window).outerHeight() + 'px'
     });
-    /**
-     * 提示框  确定 取消 两按钮*/
-    /*点击确定后 更改赋值为1*/
-    var trueOrFalse = 0;
 
-    function promptTrueOrFalseCall(msg) {
-        trueOrFalse = 0;
-        $('.promptTrueOrFalse').fadeIn();
-        $('.promptTrueOrFalse .promptBlock_message').text(msg);
-    }
-
-    $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').click(function () {
-        $('.promptTrueOrFalse').fadeOut();
-        alert(11);
-    });
-    $('.promptTrueOrFalse .promptBlock_foot span:nth-child(2)').click(function () {
-        $('.promptTrueOrFalse').fadeOut();
-    });
-    /**
-     * 提示信息DIV 只有确定按钮*/
-    function promptOnlyTrue(msg) {
-        $('.promptOnlyTrue').fadeIn();
-        $('.promptOnlyTrue .promptBlock_message').text(msg);
-    }
-
-    $('.promptOnlyTrue .promptBlock_foot span').click(function () {
-
-        $('.promptOnlyTrue').fadeOut();
-    });
     /**
      * 滚动条切换*/
     $('.scrollChange img').click(function () {
@@ -112,6 +84,8 @@ $(function () {
     });
     /*点击底部按钮切换对应显示块*/
     $(userCenterBottomButton).click(function () {
+        $(userCenterBottomButton).removeClass('active');
+        $(this).addClass('active');
         $(userCenterFunctionBlock).hide();
         $(userCenterFunctionBlock[$(this).index()]).fadeIn();
     });
