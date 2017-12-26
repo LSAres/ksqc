@@ -630,14 +630,20 @@ body {
     text-align: center;
 }
 .exchangeHistorySelect div{
-    display: inline-block;
-    font-size: 16px;
-    color: #fff;
     width: 40%;
-    padding: 10px 0;
-    border: solid 1px;
+    color: #fff;
+    font-size: 12px;
+    background: linear-gradient(to bottom,#5ba6e0,#24648b,#65ace2);
+    border: solid 1px #c4dcf3;
     border-radius: 5px;
+    box-shadow: 0 0 10px #fff inset;
+    padding: 10px 0;
     margin: 10px 0px;
+    display: inline-block;
+    transition: all .4s;
+}
+.exchangeHistorySelect div.active{
+    box-shadow: 0 0 15px #040404 inset;
 }
 
 /*商店：宝箱购买*/

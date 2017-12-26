@@ -74,6 +74,8 @@ $(function () {
     });
     /*个人中心：兑换记录切换*/
     $('.exchangeHistorySelect div').click(function(){
+        $('.exchangeHistorySelect div').removeClass('active');
+        $(this).addClass('active');
         var exchangeListAll = $('.exchangeHistoryList');
         $(exchangeListAll).hide();
         $(exchangeListAll[$(this).index()]).slideDown();
