@@ -890,176 +890,146 @@
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-1411</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                </div>
+            <!--兑换记录切换-->
+            <div class="exchangeHistorySelect">
+                <div>挖矿分兑现金分</div>
+                <div>现金分兑挖矿分</div>
             </div>
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-14</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+            <!--兑换记录1-->
+            <div class="exchangeHistoryList">
+                <foreach name="miner_money_list" item="v">
+                    <div class="miningHistory">
+                        <div class="miningHistory_date">
+                            <span>{$v.time|date="Y-m-d H:i:s",###}</span>
+                            <label></label>
+                        </div>
+                        <div class="miningHistory_message">
+                            <div>
+                                <span>兑换数量:</span>
+                                <label>{$v.from}</label>
+                            </div>
+                            <div>
+                                <span>获取数量:</span>
+                                <label>{$v.to}</label>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                </div>
+                </foreach>
             </div>
+            <div class="exchangeHistoryList" style="display: none;">
+                <foreach name="money_miner_list" item="v">
+                    <div class="miningHistory">
+                        <div class="miningHistory_date">
+                            <span>{$v.time|date="Y-m-d H:i:s",###}</span>
+                            <label></label>
+                        </div>
+                        <div class="miningHistory_message">
+                            <div>
+                                <span>兑换数量:</span>
+                                <label>{$v.from}</label>
+                            </div>
+                            <div>
+                                <span>获取数量:</span>
+                                <label>{$v.to}</label>
+                            </div>
+                        </div>
+                    </div>
+                </foreach>
+            </div>
+
 
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-1422</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+            <foreach name="miner_list" item="v">
+                <div class="miningHistory">
+                    <div class="miningHistory_date">
+                        <span>{$v.time|date="Y-m-d H:i:s",###}</span>
+                        <label></label>
                     </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                </div>
-            </div>
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-14</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+                    <div class="miningHistory_message">
+                        <div>
+                            <span>获取类型:</span>
+                            <label>
+                                <if condition="$v.type eq 0">
+                                        手动
+                                    <else/>
+                                        自动
+                                </if>
+                            </label>
+                        </div>
+                        <div>
+                            <span>数量:</span>
+                            <label>{$v.miner}</label>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </foreach>
+
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-14</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+            <foreach name="money_list" item="v">
+                <div class="miningHistory">
+                    <div class="miningHistory_date">
+                        <span>{$v.time|date="Y-m-d H:i:s",###}</span>
+                        <label></label>
                     </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                </div>
-            </div>
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-14</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+                    <div class="miningHistory_message">
+                        <div>
+                            <span>获取类型:</span>
+                            <label>
+                                <if condition="$v.type eq 0">
+                                    手动
+                                    <else/>
+                                    自动
+                                </if>
+                            </label>
+                        </div>
+                        <div>
+                            <span>数量:</span>
+                            <label>{$v.money}</label>
+                        </div>
+                        <div>
+                            <span>备注:</span>
+                            <label>{$v.note|default=无}</label>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </foreach>
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-14</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+            <foreach name="diamonds_list" item="v">
+                <div class="miningHistory">
+                    <div class="miningHistory_date">
+                        <span>{$v.time|date="Y-m-d H:i:s",###}</span>
+                        <label></label>
                     </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                </div>
-            </div>
-            <div class="miningHistory">
-                <div class="miningHistory_date">
-                    <span>2014-14-14</span>
-                    <label></label>
-                </div>
-                <div class="miningHistory_message">
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
-                    </div>
-                    <div>
-                        <span>信息标题:</span>
-                        <label>信息数值</label>
+                    <div class="miningHistory_message">
+                        <div>
+                            <span>获取类型:</span>
+                            <label>
+                                <label>
+                                    <if condition="$v.type eq 0">
+                                        手动
+                                        <else/>
+                                        自动
+                                    </if>
+                                </label>
+                            </label>
+                        </div>
+                        <div>
+                            <span>数量:</span>
+                            <label>{$v.diamonds}</label>
+                        </div>
+                        <div>
+                            <span>备注:</span>
+                            <label>{$v.note|default=无}</label>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </foreach>
         </div>
 
     </div>

@@ -72,6 +72,13 @@ $(function () {
     $('.closeUserCenter').click(function () {
         $('.userCenter').fadeOut();
     });
+    /*个人中心：兑换记录切换*/
+    $('.exchangeHistorySelect div').click(function(){
+        var exchangeListAll = $('.exchangeHistoryList');
+        $(exchangeListAll).hide();
+        $(exchangeListAll[$(this).index()]).slideDown();
+
+    });
     /*个人中心：记录点击向下箭头 展示详细信息*/
     $('.miningHistory_date').click(function () {
         $(this).parent().find('.miningHistory_message').slideToggle();

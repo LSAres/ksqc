@@ -626,6 +626,19 @@ body {
     height: 100%;
     display: none;
 }
+.exchangeHistorySelect{
+    text-align: center;
+}
+.exchangeHistorySelect div{
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    width: 40%;
+    padding: 10px 0;
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
 
 /*商店：宝箱购买*/
 .catchShop {

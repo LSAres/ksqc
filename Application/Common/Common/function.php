@@ -62,6 +62,26 @@ function getMinerList($userId) {
 }
 
 /**
+ * [getUser 获取现金分记录]
+ * @param  [type] $userId [userId]
+ * @return [type]         [array]
+ */
+function getMoneyList($userId) {
+    $money_list = M('money_log')->where(array('uid' => $userId))->select();
+    return $money_list;
+}
+
+/**
+ * [getUser 获取钻石分记录]
+ * @param  [type] $userId [userId]
+ * @return [type]         [array]
+ */
+function getDiamondsList($userId) {
+    $diamonds_list = M('diamonds_log')->where(array('uid' => $userId))->select();
+    return $diamonds_list;
+}
+
+/**
  * [getUser 获取指定层信息]
  * @param  [type] $userId [userId]
  * @return [type] $layer [layer]

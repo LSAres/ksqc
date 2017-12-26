@@ -23,14 +23,27 @@ class IndexController extends CommonController
         $friend_list = getFriend($uid);
         //获取挖矿分记录
         $miner_list = getMinerList($uid);
-        //兑换记录
+        //获取现金分记录
+        $money_list = getMoneyList($uid);
+        //获取钻石分记录
+        $diamonds_list = getDiamondsList($uid);
+        //兑换工具记录
         $tools_log = M('tools')->where(array('uid' => $uid))->select();
+        //挖矿分兑换现金分记录
+        $miner_money_list = M('miner_money_log')->where(array('uid' => $uid))->select();
+        //现金分兑换挖矿分记录
+        $money_miner_list = M('money_miner_log')->where(array('uid' => $uid))->select();
+
         $this->assign('tool', $tool);
         $this->assign('store', $store);
     	$this->assign('user', $user);
         $this->assign('tools_log', $tools_log);
         $this->assign('friend_list',$friend_list);
         $this->assign('miner_list',$miner_list);
+        $this->assign('money_list',$money_list);
+        $this->assign('diamonds_list',$diamonds_list);
+        $this->assign('miner_money_list',$miner_money_list);
+        $this->assign('money_miner_list',$money_miner_list);
         $this->display();
     }
 
