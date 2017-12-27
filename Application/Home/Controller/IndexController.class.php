@@ -38,6 +38,15 @@ class IndexController extends CommonController
         $baoxiang_list = $db_baoxiang->where(array('uid' => $uid, 'status' => 1))->select();
         //查询矿层
         $layer_count = M(session('area'))->where(array('uid' => $uid, 'is_open' => 1))->count();
+        //查询全部层数剩余时间
+        $second_list = array();
+        for ($i=1; $i < 13; $i++) {
+            $result = $this->syTime($i);
+            $second = $result['second'] ? $result['second'] : 0;
+            array_push($arr, $second);
+        }
+        $this->assign('second_list', json_encode($second_list));
+
         $this->assign('tool', $tool);
         $this->assign('store', $store);
         $this->assign('user', $user);
@@ -578,62 +587,7 @@ class IndexController extends CommonController
     public function toolsCheckOut()
     {
       $layer = I('post.layer', 0);
-      $uid = session('userId');
-      $db_tools = M('tools');
-      $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
-//$this->ajaxReturn($tools);
-      $time = time();
-      $work_time = 0;
-      $hours = 0;
-      $second = 0;
-
-      foreach ($tools as $key => &$value) {
-        $work_time = $value['start_time'] + (3600 * ($key + 1));
-        $value['start_time'] = $work_time;
-        //性能调优，只修改第二条数据的开始时间,减少4*12次UPDATE操作
-        if ($key == 1) {
-            $db_tools->where(array('id' => $value['id']))->save(array('start_time' => $work_time));
-        }
-        // $value['work_time'] = 3600 * ($key + 1);
-        // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
-        // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
-        if (!empty($value['stop_time'])) {
-            $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
-        } else {
-            $addtime = 3600;
-        }
-        
-        if ($time > ($value['start_time'] + $addtime) && $value['is_get'] == 0) {
-            $value['is_pass'] = 1;
-        } else {
-            $value['is_pass'] = 0;
-            $hours++;
-            if (!empty($value['stop_time'])) {
-                $second += 3600-($value['stop_time'] - $value['buy_time']);
-            } else {
-                $second += 3600;
-            }
-        }
-      }
-
-      $now = time();
-      foreach ($tools as $key => &$value) {
-          if ($value['is_pass'] == 0) {
-            if (!empty($value['stop_time'])) {
-                $final_second = $value['stop_time'] + $second - $now;
-            } else {
-                $final_second = $value['buy_time'] + $second - $now;
-            }
-            break;
-          }
-      }
-      //如果要按照工具顺序排列
-      $new_arr = arraySequence($tools, 'tool_id', 'SORT_ASC');
-      $this->ajaxReturn(array(
-        'list' => $new_arr,
-        'hours' => $hours,
-        'second' => $final_second
-      ));
+      $this->ajaxReturn($this->syTime($layer));
     }
     //计时结束后领取挖矿分
     public function getMinerGold()
@@ -682,5 +636,68 @@ class IndexController extends CommonController
         'fathers_gold' => $fathers_gold,
         'message' => '领取成功，领了'.$final_score.'挖矿分'
       ));
+    }
+
+    //获取某层剩余时间
+    public function syTime($layer)
+    {
+      $uid = session('userId');
+      $db_tools = M('tools');
+      $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
+//$this->ajaxReturn($tools);
+      $time = time();
+      $work_time = 0;
+      $hours = 0;
+      $second = 0;
+
+      foreach ($tools as $key => &$value) {
+        $work_time = $value['start_time'] + (3600 * ($key + 1));
+        $value['start_time'] = $work_time;
+        //性能调优，只修改第二条数据的开始时间,减少4*12次UPDATE操作
+        if ($key == 1) {
+            $db_tools->where(array('id' => $value['id']))->save(array('start_time' => $work_time));
+        }
+
+        // $value['work_time'] = 3600 * ($key + 1);
+        // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
+        // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
+        
+        if (!empty($value['stop_time'])) {
+            $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
+        } else {
+            $addtime = 3600;
+        }
+        
+        if ($time > ($value['start_time'] + $addtime) && $value['is_get'] == 0) {
+            $value['is_pass'] = 1;
+        } else {
+            $value['is_pass'] = 0;
+            $hours++;
+            if (!empty($value['stop_time'])) {
+                $second += 3600-($value['stop_time'] - $value['buy_time']);
+            } else {
+                $second += 3600;
+            }
+        }
+      }
+
+      $now = time();
+      foreach ($tools as $key => &$value) {
+          if ($value['is_pass'] == 0) {
+            if (!empty($value['stop_time'])) {
+                $final_second = $value['stop_time'] + $second - $now;
+            } else {
+                $final_second = $value['buy_time'] + $second - $now;
+            }
+            break;
+          }
+      }
+      //如果要按照工具顺序排列
+      $new_arr = arraySequence($tools, 'tool_id', 'SORT_ASC');
+      return array(
+        'list' => $new_arr,
+        'hours' => $hours,
+        'second' => $final_second
+      );
     }
 }
