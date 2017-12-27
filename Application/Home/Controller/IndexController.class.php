@@ -605,47 +605,45 @@ class IndexController extends CommonController
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
 
-      //剩余几小时
-      // if (!empty($tools)) {
-      //   $hours = count($tools) - intval(((time() - $tools[0]['start_time']) / 3600));
-      //   if ($hours < 0) {
-      //       $hours = 0;
-      //   }
-      // } else {
-      //   $hours = 0;
-      // }
-
-
-      // $final_id_arr = [];
-      
-      // for ($i = 1; $i <= count($tools); $i++) {
-      //   if ($i <= $hours) {
-      //     array_push($final_id_arr, $tools[$i-1]);
-      //   }
-      // }
-
       $time = time();
       $work_time = 0;
       $hours = 0;
+      $second = 0;
       foreach ($tools as $key => &$value) {
-        $work_time = $value['start_time'] + 3600;    
+        $work_time = $value['start_time'] + 3600;
         if ($time > $work_time && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
             $value['is_pass'] = 0;
             $hours++;
+
+            if (!empty($value['stop_time'])) {
+                $second += 3600-($value['stop_time'] - $start_time);
+            } else {
+                $second += 3600;
+            }
         }
       }
-
-
+      $now = time();
+      foreach ($tools as $key => &$value) {
+          if ($value['is_pass'] == 0) {
+            $value['aa'] = 1;
+            if (!empty($value['stop_time'])) {
+                $final_second = $value['stop_time'] + $second - $now;
+            } else {
+                $final_second = $value['start_time'] + $second - $now;
+            }
+            break;
+          }
+      }
 
       //如果要按照工具顺序排列
       $new_arr = arraySequence($tools, 'tool_id', 'SORT_ASC');
 
-
       $this->ajaxReturn(array(
         'list' => $new_arr,
-        'hours' => $hours
+        'hours' => $hours,
+        'second' => $final_second
       ));
     }
 
@@ -663,7 +661,7 @@ class IndexController extends CommonController
 
       if ($tool_id < 1 || $tool_id > 5) die(0);
 
-      $this_row = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id))->find();
+      $this_row = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
 
       $second = time() - $this_row['start_time'];
       if ($second < 3600) {
