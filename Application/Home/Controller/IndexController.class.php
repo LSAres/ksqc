@@ -33,6 +33,8 @@ class IndexController extends CommonController
         $miner_money_list = M('miner_money_log')->where(array('uid' => $uid))->select();
         //现金分兑换挖矿分记录
         $money_miner_list = M('money_miner_log')->where(array('uid' => $uid))->select();
+        //查询矿层
+        $layer_list = M('coal_layer')->field('layer_id, is_open')->where(array('uid' => $uid))->order('layer_id asc')->select();
 
         $this->assign('tool', $tool);
         $this->assign('store', $store);
@@ -44,6 +46,7 @@ class IndexController extends CommonController
         $this->assign('diamonds_list',$diamonds_list);
         $this->assign('miner_money_list',$miner_money_list);
         $this->assign('money_miner_list',$money_miner_list);
+        $this->assign('layer_list', $layer_list);
         $this->display();
     }
 
@@ -633,7 +636,9 @@ class IndexController extends CommonController
       $second = 0;
       foreach ($tools as $key => &$value) {
         $work_time = $value['start_time'] + (3600 * ($key + 1));
-        $value['work_time'] = 3600 * ($key + 1);
+        // $value['work_time'] = 3600 * ($key + 1);
+        // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
+        // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
         if ($time > $work_time && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
