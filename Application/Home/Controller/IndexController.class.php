@@ -420,20 +420,42 @@ class IndexController extends CommonController
     public function Manual()
     {
         $uid = session('userId');
+        $layer = I('post.layer', 0);
+        $layer = I('post.tool_id', 0);
         $db_store = M('store');
         $db_miner_log = M('miner_log');
         $db_miner_gold_log = M('miner_gold_log');
 
-
+        if ($layer < 1 || $layer > 12) die(0);
+        if ($tool_id < 1 || $tool_id > 5) die(0);
 
         //正在自动挖矿中禁止手动挖矿
-
+        $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
+        $time = time();
+        $work_time = 0;
+        $s = 0;
+        foreach ($tools as $key => &$value) {
+            $work_time = $value['start_time'] + 3600;
+            if ($time < $work_time && $value['is_get'] == 0) {
+                $s = 1;
+                break;
+            }
+        }
+        if ($s) {
+            $this->ajaxReturn(array(
+                'status' => 'error',
+                'message' => '请等待自动挖矿完成'
+            ));
+        }
 
         //正在挖矿中禁止再次挖矿
         $max_record_id = $db_miner_gold_log->max('id');
         $last_record = $db_miner_gold_log->where(array('id' => $max_record_id))->find();
         if (!empty($last_record) && ($last_record - time()) < -10) {
-            msg('您正在挖矿中，请等待本次挖矿完毕');
+            $this->ajaxReturn(array(
+                'status' => 'error',
+                'message' => '您正在挖矿中，请等待本次挖矿完毕'
+            ));
         }
 
         //挖矿
@@ -682,7 +704,7 @@ class IndexController extends CommonController
       $all_tools = tool();
       $this_tool = $all_tools[$this_row['tool_id']];
       $persent = (mt_rand($this_tool['start'], $this_tool['end'])) / 100;
-      $final_score = intval(3600 * ($persent + 1));
+      $final_score = intval(1200 * ($persent + 1));
       //加分、记录
       $db_tools->where(array('id' => $this_row['id']))->save(array('is_get' => 1, 'get_time' => time(), 'miner_gold' => $final_score));
       $store->where(array('uid' => $uid))->setInc('miner_gold', $final_score);
