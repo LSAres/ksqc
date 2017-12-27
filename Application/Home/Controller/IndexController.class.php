@@ -37,6 +37,8 @@ class IndexController extends CommonController
         $money_miner_list = M('money_miner_log')->where(array('uid' => $uid))->select();
         //获取可开启宝箱数量
         $baoxiang_count = $db_baoxiang->where(array('uid' => $uid, 'status' => 0))->count();
+        //获取可开启宝箱数量
+        $baoxiang_list = $db_baoxiang->where(array('uid' => $uid, 'status' => 1))->select();
         //查询矿层
         $layer_list = M(session('area'))->field('layer_id, is_open')->where(array('uid' => $uid))->order('layer_id asc')->select();
 
@@ -51,6 +53,7 @@ class IndexController extends CommonController
         $this->assign('miner_money_list',$miner_money_list);
         $this->assign('money_miner_list',$money_miner_list);
         $this->assign('baoxiang_count', $baoxiang_count);
+        $this->assign('baoxiang_list', $baoxiang_list);
         $this->assign('layer_list', $layer_list);
         $this->display();
     }
@@ -536,12 +539,14 @@ class IndexController extends CommonController
         $s1 = $db_store->where(array('uid' => $uid))->setDec('miner_gold', $tool[$tool_id]['miner_gold']);
 
         //添加记录
+        $now = time()
         $data_tools = [
           'uid' => $uid,
           'area' => session('area'),
           'layer_id' => $layer,
           'tool_id' => $tool_id,
-          'start_time' => time(),
+          'start_time' => $now,
+          'buy_time' => $now,
           'stop_time' => 0,
           'is_get' => 0
         ];
@@ -642,9 +647,13 @@ class IndexController extends CommonController
       $second = 0;
       foreach ($tools as $key => &$value) {
         $work_time = $value['start_time'] + (3600 * ($key + 1));
-        // $value['work_time'] = 3600 * ($key + 1);
-        // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
-        // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
+        $value['start_time'] = $work_time;
+        ///////////////////////////////////////////
+
+        $value['work_time'] = 3600 * ($key + 1);
+        $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
+        $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
+
         if ($time > $work_time && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
