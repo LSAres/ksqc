@@ -1296,7 +1296,7 @@ $(function () {
                     clearInterval(automatic_2);
                     minerActionImg[1].style.display = 'block';
                 }
-                seam_1_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);   //要执行的循环操作
+                seam_2_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);   //要执行的循环操作
             },80);
 
         }else{
