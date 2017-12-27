@@ -1070,6 +1070,16 @@ body {
     height: 135px;
     position: relative;
 }
+.seamDiv .minerAction {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px #efd852;
+    padding: 5px;
+    position: absolute;
+    top: 32%;
+    left: 12%;
+}
 .seamDiv .caseImg{
     width: 50px;
     height: 50px;

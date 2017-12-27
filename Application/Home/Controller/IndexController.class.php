@@ -5,7 +5,7 @@ use Think\Controller;
 
 class IndexController extends CommonController
 {
-	//首页
+    //首页
     public function index()
     {
       $this->display();
@@ -14,14 +14,14 @@ class IndexController extends CommonController
     //游戏主界面
     public function farm(){
         $tool = tool();
-    	$uid = session('userId');
+        $uid = session('userId');
         //用户
         $user = getUser($uid);
         //仓库信息
         $store = getStore($uid);
         //宝箱
         $db_baoxiang = M('baoxiang');
-    	//查询直系好友
+        //查询直系好友
         $friend_list = getFriend($uid);
         //获取挖矿分记录
         $miner_list = getMinerList($uid);
@@ -44,7 +44,7 @@ class IndexController extends CommonController
 
         $this->assign('tool', $tool);
         $this->assign('store', $store);
-    	$this->assign('user', $user);
+        $this->assign('user', $user);
         $this->assign('tools_log', $tools_log);
         $this->assign('friend_list',$friend_list);
         $this->assign('miner_list',$miner_list);
@@ -539,7 +539,7 @@ class IndexController extends CommonController
         $s1 = $db_store->where(array('uid' => $uid))->setDec('miner_gold', $tool[$tool_id]['miner_gold']);
 
         //添加记录
-        $now = time()
+        $now = time();
         $data_tools = [
           'uid' => $uid,
           'area' => session('area'),
@@ -648,13 +648,23 @@ class IndexController extends CommonController
       foreach ($tools as $key => &$value) {
         $work_time = $value['start_time'] + (3600 * ($key + 1));
         $value['start_time'] = $work_time;
-        ///////////////////////////////////////////
 
-        $value['work_time'] = 3600 * ($key + 1);
-        $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
-        $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
+        //性能调优，只修改第二条数据的开始时间,减少4*12次UPDATE操作
+        if ($key == 1) {
+            $db_tools->where(array('id' => $value['id']))->save(array('start_time' => $work_time));
+        }
 
-        if ($time > $work_time && $value['is_get'] == 0) {
+        // $value['work_time'] = 3600 * ($key + 1);
+        // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
+        // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
+
+        if (!empty($value['stop_time'])) {
+            $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
+        } else {
+            $addtime = 3600;
+        }
+        
+        if ($time > ($value['start_time'] + $addtime) && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
             $value['is_pass'] = 0;
