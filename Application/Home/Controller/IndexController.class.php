@@ -34,7 +34,7 @@ class IndexController extends CommonController
         //现金分兑换挖矿分记录
         $money_miner_list = M('money_miner_log')->where(array('uid' => $uid))->select();
         //查询矿层
-        $layer_list = M('coal_layer')->field('layer_id, is_open')->where(array('uid' => $uid))->order('layer_id asc')->select();
+        $layer_list = M(session('area'))->field('layer_id, is_open')->where(array('uid' => $uid))->order('layer_id asc')->select();
 
         $this->assign('tool', $tool);
         $this->assign('store', $store);
@@ -433,7 +433,7 @@ class IndexController extends CommonController
         if ($tool_id < 1 || $tool_id > 5) die(0);
 
         //正在自动挖矿中禁止手动挖矿
-        $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
+        $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
         $time = time();
         $work_time = 0;
         $s = 0;
@@ -508,7 +508,7 @@ class IndexController extends CommonController
 
         //如果要限制最多能买5个工具
         $db_tools = M('tools');
-        $tool_count = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->count();
+        $tool_count = $db_tools->where(array('uid' => $uid, 'area' => session('area') ,'layer_id' => $layer, 'is_get' => 0))->count();
         if ($tool_count >= 5) {
           $this->ajaxReturn(array(
             'status' => 'error',
@@ -517,7 +517,7 @@ class IndexController extends CommonController
         }
 
         //如果要限制每种工具只能买一个
-        $this_tool_is_extens = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
+        $this_tool_is_extens = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
         if (!empty($this_tool_is_extens)) {
           $this->ajaxReturn(array(
             'status' => 'error',
@@ -533,6 +533,7 @@ class IndexController extends CommonController
         //添加记录
         $data_tools = [
           'uid' => $uid,
+          'area' => session('area'),
           'layer_id' => $layer,
           'tool_id' => $tool_id,
           'start_time' => time(),
@@ -606,7 +607,7 @@ class IndexController extends CommonController
       $uid = session('userId');
       $db_tools = M('tools');
       //移除其他默认工具
-      $last_default = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_defaule' => 1))->getField('id');
+      $last_default = $db_tools->where(array('uid' => $uid, 'area' => session('area') ,'layer_id' => $layer, 'is_defaule' => 1))->getField('id');
       $status_1 = $db_tools->where(array('id' => $last_default['id']))->save(array('is_default' => 0));
       //更改当前工具为默认工具
       $status_2 = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->save(array('is_default' => 1));
@@ -628,7 +629,7 @@ class IndexController extends CommonController
       $uid = session('userId');
       $db_tools = M('tools');
 
-      $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
+      $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
 //$this->ajaxReturn($tools);
       $time = time();
       $work_time = 0;
@@ -689,7 +690,7 @@ class IndexController extends CommonController
 
       if ($tool_id < 1 || $tool_id > 5) die(0);
 
-      $this_row = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
+      $this_row = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
 
       $second = time() - $this_row['start_time'];
       if ($second < 3600) {
