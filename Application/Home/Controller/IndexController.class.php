@@ -626,13 +626,14 @@ class IndexController extends CommonController
       $db_tools = M('tools');
 
       $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
-
+//$this->ajaxReturn($tools);
       $time = time();
       $work_time = 0;
       $hours = 0;
       $second = 0;
       foreach ($tools as $key => &$value) {
-        $work_time = $value['start_time'] + 3600;
+        $work_time = $value['start_time'] + (3600 * ($key + 1));
+        $value['work_time'] = 3600 * ($key + 1);
         if ($time > $work_time && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
