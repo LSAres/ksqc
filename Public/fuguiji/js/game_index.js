@@ -1102,29 +1102,21 @@ $(function () {
     }
 
 
-    /*循环调用人物绘制，判断人物坐标方法*/
-    // setInterval(function () {
-        seam_1_imgMove(seam_ctx[0], seamHumen_1, seam_1_DrawImg_2, seam_1_DrawImg_3);
-        seam_2_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);
-        seam_3_imgMove(seam_ctx[2], seamHumen_1, seam_3_DrawImg_2, seam_3_DrawImg_3);
-        seam_4_imgMove(seam_ctx[3], seamHumen_1, seam_4_DrawImg_2, seam_4_DrawImg_3);
-        seam_5_imgMove(seam_ctx[4], seamHumen_1, seam_5_DrawImg_2, seam_5_DrawImg_3);
-        seam_6_imgMove(seam_ctx[5], seamHumen_1, seam_6_DrawImg_2, seam_6_DrawImg_3);
-        seam_7_imgMove(seam_ctx[6], seamHumen_1, seam_7_DrawImg_2, seam_7_DrawImg_3);
-        seam_8_imgMove(seam_ctx[7], seamHumen_1, seam_8_DrawImg_2, seam_8_DrawImg_3);
-        seam_9_imgMove(seam_ctx[8], seamHumen_1, seam_9_DrawImg_2, seam_9_DrawImg_3);
-        seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
-        seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
-        seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
-    // }, 80);
+
 
     /**
      * 手动点击挖矿 10秒*/
-    var minerActionImg = document.getElementsByClassName('minerAction');
+    var minerActionImg = document.getElementsByClassName('minerAction');       //获取所有手动挖矿的点击按钮
     for(var i = 0; i < minerActionImg.length; i ++){
 
        minerActionImg[i].onclick = function(){
-           var controlNum = this.getAttribute('controlSeam');
+           var controlNum = this.getAttribute('controlSeam');   //获取元素内的自定义 属性 判断控制的矿层
+           var thisElement =  this;     //获取当前点击的图片元素
+           thisElement.style.display = 'none';  //点击后隐藏当前图标
+           /*10秒后 显示已经隐藏的当前的图片*/
+           setTimeout(function(){
+               thisElement.style.display = 'block';
+           },10000);
 
            if(controlNum == 1){
                var timeCount = 10000; //一万毫秒 = 10秒
@@ -1260,6 +1252,208 @@ $(function () {
            }
        }
     }
+    /*升级点击后 自动挖矿*/
+    // setInterval(function () {
+    //     seam_1_imgMove(seam_ctx[0], seamHumen_1, seam_1_DrawImg_2, seam_1_DrawImg_3);
+    //     seam_2_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);
+    //     seam_3_imgMove(seam_ctx[2], seamHumen_1, seam_3_DrawImg_2, seam_3_DrawImg_3);
+    //     seam_4_imgMove(seam_ctx[3], seamHumen_1, seam_4_DrawImg_2, seam_4_DrawImg_3);
+    //     seam_5_imgMove(seam_ctx[4], seamHumen_1, seam_5_DrawImg_2, seam_5_DrawImg_3);
+    //     seam_6_imgMove(seam_ctx[5], seamHumen_1, seam_6_DrawImg_2, seam_6_DrawImg_3);
+    //     seam_7_imgMove(seam_ctx[6], seamHumen_1, seam_7_DrawImg_2, seam_7_DrawImg_3);
+    //     seam_8_imgMove(seam_ctx[7], seamHumen_1, seam_8_DrawImg_2, seam_8_DrawImg_3);
+    //     seam_9_imgMove(seam_ctx[8], seamHumen_1, seam_9_DrawImg_2, seam_9_DrawImg_3);
+    //     seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
+    //     seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
+    //     seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
+    // }, 80);
+    //自动挖矿的时间数组 如果为0 则不执行自动操作
+    var timeArray = [0,10000,10000,0,0,0,0,0,0,0,0,0];
+    //判断时间数组的的值 如果不为0 隐藏手动挖矿按钮
+    autoMaticFunction();
+    function autoMaticFunction(){
+        /*** 1 **/
+        if(timeArray[0] > 0){
+            minerActionImg[0].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_1 = setInterval(function(){
+                timeArray[0] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[0] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_1);
+                    minerActionImg[0].style.display = 'block';
+                }
+                seam_1_imgMove(seam_ctx[0], seamHumen_1, seam_1_DrawImg_2, seam_1_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[0].style.display = 'block';
+        }
+        /*** 2 **/
+        if(timeArray[1] > 0){
+            minerActionImg[1].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_2 = setInterval(function(){
+                timeArray[1] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[1] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_2);
+                    minerActionImg[1].style.display = 'block';
+                }
+                seam_1_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[1].style.display = 'block';
+        }
+        /*** 3 **/
+        if(timeArray[2] > 0){
+            minerActionImg[2].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_3 = setInterval(function(){
+                timeArray[2] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[2] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_3);
+                    minerActionImg[2].style.display = 'block';
+                }
+                seam_3_imgMove(seam_ctx[2], seamHumen_1, seam_3_DrawImg_2, seam_3_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[2].style.display = 'block';
+        }
+        /*** 4 **/
+        if(timeArray[3] > 0){
+            minerActionImg[3].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_4 = setInterval(function(){
+                timeArray[3] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[3] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_4);
+                    minerActionImg[3].style.display = 'block';
+                }
+                seam_4_imgMove(seam_ctx[3], seamHumen_1, seam_4_DrawImg_2, seam_4_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[3].style.display = 'block';
+        }
+        /*** 5 **/
+        if(timeArray[4] > 0){
+            minerActionImg[4].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_5 = setInterval(function(){
+                timeArray[4] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[4] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_5);
+                    minerActionImg[4].style.display = 'block';
+                }
+                seam_5_imgMove(seam_ctx[4], seamHumen_1, seam_5_DrawImg_2, seam_5_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[4].style.display = 'block';
+        }
+        /*** 6 **/
+        if(timeArray[5] > 0){
+            minerActionImg[5].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_6 = setInterval(function(){
+                timeArray[5] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[5] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_6);
+                    minerActionImg[5].style.display = 'block';
+                }
+                seam_6_imgMove(seam_ctx[5], seamHumen_1, seam_6_DrawImg_2, seam_6_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[5].style.display = 'block';
+        }
+        /*** 7 **/
+        if(timeArray[6] > 0){
+            minerActionImg[6].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_7 = setInterval(function(){
+                timeArray[6] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[6] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_7);
+                    minerActionImg[6].style.display = 'block';
+                }
+                seam_7_imgMove(seam_ctx[6], seamHumen_1, seam_7_DrawImg_2, seam_7_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[6].style.display = 'block';
+        }
+        /*** 8 **/
+        if(timeArray[7] > 0){
+            minerActionImg[7].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_8 = setInterval(function(){
+                timeArray[7] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[7] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_8);
+                    minerActionImg[7].style.display = 'block';
+                }
+                seam_8_imgMove(seam_ctx[7], seamHumen_1, seam_8_DrawImg_2, seam_8_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[7].style.display = 'block';
+        }
+        /*** 9 **/
+        if(timeArray[8] > 0){
+            minerActionImg[8].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_9 = setInterval(function(){
+                timeArray[8] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[8] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_9);
+                    minerActionImg[8].style.display = 'block';
+                }
+                seam_9_imgMove(seam_ctx[8], seamHumen_1, seam_9_DrawImg_2, seam_9_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[8].style.display = 'block';
+        }
+        /*** 10 **/
+        if(timeArray[9] > 0){
+            minerActionImg[9].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_10 = setInterval(function(){
+                timeArray[9] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[9] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_10);
+                    minerActionImg[9].style.display = 'block';
+                }
+                seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[9].style.display = 'block';
+        }
+        /*** 11 **/
+        if(timeArray[10] > 0){
+            minerActionImg[10].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_11 = setInterval(function(){
+                timeArray[10] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[10] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_11);
+                    minerActionImg[10].style.display = 'block';
+                }
+                seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[10].style.display = 'block';
+        }
+        /*** 12 **/
+        if(timeArray[11] > 0){
+            minerActionImg[11].style.display = 'none';   //隐藏手动挖矿按钮
+            var automatic_12 = setInterval(function(){
+                timeArray[11] -= 80;                     //时间每次减少80毫秒
+                if(timeArray[11] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
+                    clearInterval(automatic_12);
+                    minerActionImg[11].style.display = 'block';
+                }
+                seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);   //要执行的循环操作
+            },80);
+
+        }else{
+            minerActionImg[11].style.display = 'block';
+        }
+    }
+
 
 
 
@@ -1304,7 +1498,6 @@ $(function () {
         ctx.closePath();
 
     }
-    alert(leftElevator_Ctx.canvas.height);
     /*电梯运动坐标变化*/
     function elevatorMove(ctx,drawImg) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
