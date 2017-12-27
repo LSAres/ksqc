@@ -15,10 +15,12 @@ class IndexController extends CommonController
     public function farm(){
         $tool = tool();
     	$uid = session('userId');
+        //用户
+        $user = getUser($uid);
         //仓库信息
         $store = getStore($uid);
-        //用户
-    	$user = getUser($uid);
+        //宝箱
+        $db_baoxiang = M('baoxiang');
     	//查询直系好友
         $friend_list = getFriend($uid);
         //获取挖矿分记录
@@ -33,6 +35,8 @@ class IndexController extends CommonController
         $miner_money_list = M('miner_money_log')->where(array('uid' => $uid))->select();
         //现金分兑换挖矿分记录
         $money_miner_list = M('money_miner_log')->where(array('uid' => $uid))->select();
+        //获取可开启宝箱数量
+        $baoxiang_count = $db_baoxiang->where(array('uid' => $uid, 'status' => 0))->count();
         //查询矿层
         $layer_list = M(session('area'))->field('layer_id, is_open')->where(array('uid' => $uid))->order('layer_id asc')->select();
 
@@ -46,6 +50,7 @@ class IndexController extends CommonController
         $this->assign('diamonds_list',$diamonds_list);
         $this->assign('miner_money_list',$miner_money_list);
         $this->assign('money_miner_list',$money_miner_list);
+        $this->assign('baoxiang_count', $baoxiang_count);
         $this->assign('layer_list', $layer_list);
         $this->display();
     }
