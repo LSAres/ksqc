@@ -5,7 +5,7 @@ use Think\Controller;
 
 class IndexController extends CommonController
 {
-	//首页
+    //首页
     public function index()
     {
       $this->display();
@@ -14,12 +14,14 @@ class IndexController extends CommonController
     //游戏主界面
     public function farm(){
         $tool = tool();
-    	$uid = session('userId');
+        $uid = session('userId');
+        //用户
+        $user = getUser($uid);
         //仓库信息
         $store = getStore($uid);
-        //用户
-    	$user = getUser($uid);
-    	//查询直系好友
+        //宝箱
+        $db_baoxiang = M('baoxiang');
+        //查询直系好友
         $friend_list = getFriend($uid);
         //获取挖矿分记录
         $miner_list = getMinerList($uid);
@@ -33,10 +35,16 @@ class IndexController extends CommonController
         $miner_money_list = M('miner_money_log')->where(array('uid' => $uid))->select();
         //现金分兑换挖矿分记录
         $money_miner_list = M('money_miner_log')->where(array('uid' => $uid))->select();
+        //获取可开启宝箱数量
+        $baoxiang_count = $db_baoxiang->where(array('uid' => $uid, 'status' => 0))->count();
+        //获取可开启宝箱数量
+        $baoxiang_list = $db_baoxiang->where(array('uid' => $uid, 'status' => 1))->select();
+        //查询矿层
+        $layer_list = M(session('area'))->field('layer_id, is_open')->where(array('uid' => $uid))->order('layer_id asc')->select();
 
         $this->assign('tool', $tool);
         $this->assign('store', $store);
-    	$this->assign('user', $user);
+        $this->assign('user', $user);
         $this->assign('tools_log', $tools_log);
         $this->assign('friend_list',$friend_list);
         $this->assign('miner_list',$miner_list);
@@ -44,6 +52,9 @@ class IndexController extends CommonController
         $this->assign('diamonds_list',$diamonds_list);
         $this->assign('miner_money_list',$miner_money_list);
         $this->assign('money_miner_list',$money_miner_list);
+        $this->assign('baoxiang_count', $baoxiang_count);
+        $this->assign('baoxiang_list', $baoxiang_list);
+        $this->assign('layer_list', $layer_list);
         $this->display();
     }
 
@@ -420,20 +431,42 @@ class IndexController extends CommonController
     public function Manual()
     {
         $uid = session('userId');
+        $layer = I('post.layer', 0);
+        $layer = I('post.tool_id', 0);
         $db_store = M('store');
         $db_miner_log = M('miner_log');
         $db_miner_gold_log = M('miner_gold_log');
 
-
+        if ($layer < 1 || $layer > 12) die(0);
+        if ($tool_id < 1 || $tool_id > 5) die(0);
 
         //正在自动挖矿中禁止手动挖矿
-
+        $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
+        $time = time();
+        $work_time = 0;
+        $s = 0;
+        foreach ($tools as $key => &$value) {
+            $work_time = $value['start_time'] + 3600;
+            if ($time < $work_time && $value['is_get'] == 0) {
+                $s = 1;
+                break;
+            }
+        }
+        if ($s) {
+            $this->ajaxReturn(array(
+                'status' => 'error',
+                'message' => '请等待自动挖矿完成'
+            ));
+        }
 
         //正在挖矿中禁止再次挖矿
         $max_record_id = $db_miner_gold_log->max('id');
         $last_record = $db_miner_gold_log->where(array('id' => $max_record_id))->find();
         if (!empty($last_record) && ($last_record - time()) < -10) {
-            msg('您正在挖矿中，请等待本次挖矿完毕');
+            $this->ajaxReturn(array(
+                'status' => 'error',
+                'message' => '您正在挖矿中，请等待本次挖矿完毕'
+            ));
         }
 
         //挖矿
@@ -483,7 +516,7 @@ class IndexController extends CommonController
 
         //如果要限制最多能买5个工具
         $db_tools = M('tools');
-        $tool_count = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->count();
+        $tool_count = $db_tools->where(array('uid' => $uid, 'area' => session('area') ,'layer_id' => $layer, 'is_get' => 0))->count();
         if ($tool_count >= 5) {
           $this->ajaxReturn(array(
             'status' => 'error',
@@ -492,7 +525,7 @@ class IndexController extends CommonController
         }
 
         //如果要限制每种工具只能买一个
-        $this_tool_is_extens = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
+        $this_tool_is_extens = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
         if (!empty($this_tool_is_extens)) {
           $this->ajaxReturn(array(
             'status' => 'error',
@@ -506,11 +539,14 @@ class IndexController extends CommonController
         $s1 = $db_store->where(array('uid' => $uid))->setDec('miner_gold', $tool[$tool_id]['miner_gold']);
 
         //添加记录
+        $now = time();
         $data_tools = [
           'uid' => $uid,
+          'area' => session('area'),
           'layer_id' => $layer,
           'tool_id' => $tool_id,
-          'start_time' => time(),
+          'start_time' => $now,
+          'buy_time' => $now,
           'stop_time' => 0,
           'is_get' => 0
         ];
@@ -581,7 +617,7 @@ class IndexController extends CommonController
       $uid = session('userId');
       $db_tools = M('tools');
       //移除其他默认工具
-      $last_default = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_defaule' => 1))->getField('id');
+      $last_default = $db_tools->where(array('uid' => $uid, 'area' => session('area') ,'layer_id' => $layer, 'is_defaule' => 1))->getField('id');
       $status_1 = $db_tools->where(array('id' => $last_default['id']))->save(array('is_default' => 0));
       //更改当前工具为默认工具
       $status_2 = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer))->save(array('is_default' => 1));
@@ -603,15 +639,32 @@ class IndexController extends CommonController
       $uid = session('userId');
       $db_tools = M('tools');
 
-      $tools = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
-
+      $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
+//$this->ajaxReturn($tools);
       $time = time();
       $work_time = 0;
       $hours = 0;
       $second = 0;
       foreach ($tools as $key => &$value) {
-        $work_time = $value['start_time'] + 3600;
-        if ($time > $work_time && $value['is_get'] == 0) {
+        $work_time = $value['start_time'] + (3600 * ($key + 1));
+        $value['start_time'] = $work_time;
+
+        //性能调优，只修改第二条数据的开始时间,减少4*12次UPDATE操作
+        if ($key == 1) {
+            $db_tools->where(array('id' => $value['id']))->save(array('start_time' => $work_time));
+        }
+
+        // $value['work_time'] = 3600 * ($key + 1);
+        // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
+        // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
+
+        if (!empty($value['stop_time'])) {
+            $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
+        } else {
+            $addtime = 3600;
+        }
+        
+        if ($time > ($value['start_time'] + $addtime) && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
             $value['is_pass'] = 0;
@@ -661,7 +714,7 @@ class IndexController extends CommonController
 
       if ($tool_id < 1 || $tool_id > 5) die(0);
 
-      $this_row = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
+      $this_row = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
 
       $second = time() - $this_row['start_time'];
       if ($second < 3600) {
@@ -682,7 +735,7 @@ class IndexController extends CommonController
       $all_tools = tool();
       $this_tool = $all_tools[$this_row['tool_id']];
       $persent = (mt_rand($this_tool['start'], $this_tool['end'])) / 100;
-      $final_score = intval(3600 * ($persent + 1));
+      $final_score = intval(1200 * ($persent + 1));
       //加分、记录
       $db_tools->where(array('id' => $this_row['id']))->save(array('is_get' => 1, 'get_time' => time(), 'miner_gold' => $final_score));
       $store->where(array('uid' => $uid))->setInc('miner_gold', $final_score);
