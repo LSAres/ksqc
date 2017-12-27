@@ -1400,11 +1400,17 @@
     </div>
 </div>
 
-<!--<audio src="__PUBLIC__/fuguiji/music/bg.mp3" preload="" loop></audio>-->
 <script src="__PUBLIC__/fuguiji/js/jquery-1.7.2.min.js"></script>
+<script>
+    //开启矿层数
+    var openLayerCount = {$layer_count};
+    //console.log(timeResultArray);
+</script>
+<!--<audio src="__PUBLIC__/fuguiji/music/bg.mp3" preload="" loop></audio>-->
 <script src="__PUBLIC__/fuguiji/js/game_index.js"></script>
 <script>
     $(function () {
+
         //点击每层的升级按钮
         $('.seamDiv img').on('click', function () {
             var layer = $(this).attr('callnumber');

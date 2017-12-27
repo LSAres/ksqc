@@ -1466,7 +1466,7 @@ $(function () {
     var drawImage = elevatorBlockImg;
     var elevatorPoint = {x: 0, y: 20, w: 1000, h: 200, g: 5};
     /*电梯停止坐标点*/
-    var seamSum =5; //接受已经开启的矿层数 结合电梯停止的坐标点  应用于电梯的停止判断
+    var seamSum = openLayerCount; //接受已经开启的矿层数 结合电梯停止的坐标点  应用于电梯的停止判断
     var elevatorStopPoint = [200, 450, 700, 950, 1200, 1450, 1700, 1950, 2200, 2450, 2700, 2950];
 
     /*获取绘制电梯的上下文环境*/
