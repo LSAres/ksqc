@@ -513,7 +513,7 @@ body {
     position: absolute;
     top: 101%;
     left: 10%;
-    transition: top 2s ;
+    transition: top 1s ;
 }
 .giveIntegral .intergralInputDiv.showAction{
     top: 19%;
@@ -557,7 +557,7 @@ body {
     position: absolute;
     top: 19%;
     left: 101%;
-    transition: left 2s;
+    transition: left 1s;
 }
 .integralType.integralTypeShow{
     left: 10%;
@@ -1204,6 +1204,7 @@ body {
     display: inline-block;
     position: absolute;
     top: 0;
+    left: 0;
 }
 
 .seam {

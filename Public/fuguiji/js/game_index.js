@@ -112,7 +112,7 @@ $(function () {
                }
 
            },100);
-       },1500);
+       },1000);
     });
     $('.integralType div').click(function(){
         $('.intergralSelect').val($(this).text());
@@ -216,7 +216,7 @@ $(function () {
 
     });
     /*点击兑换确定按钮 提示信息*/
-    $('.exchange_inputForm').click(function () {
+    $('.exchange_inputForm div').click(function () {
         promptTrueOrFalseCall('是否兑换？');
     });
     /**
@@ -265,14 +265,14 @@ $(function () {
         w: 140,
         h: 80,
         g: 5,
-        acp_x: 90,
-        acp_y: 40,
+        acp_x: 70,
+        acp_y: 55,
         max_width: 900,
         min_width: 200,
-        imgWidthLength: 2400,
-        img_SX: 90,
-        img_SY: 40,
-        img_swidth: 485
+        imgWidthLength: 2220,
+        img_SX: 70,
+        img_SY: 55,
+        img_swidth: 430
     };
     var topHumenImg_go = document.getElementById('topHumengo');
     var topHumenImg_com = document.getElementById('topHumenCome');
@@ -293,7 +293,7 @@ $(function () {
     }
     function topHumenAction(ctx, drawImg) {
         ctx.beginPath();
-        ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 430, 348, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
+        ctx.drawImage(drawImg, topHumenPoint.acp_x, topHumenPoint.acp_y, 420, 345, topHumenPoint.x, topHumenPoint.y, topHumenPoint.w, topHumenPoint.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -375,9 +375,9 @@ $(function () {
     function seam_1_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_1_point_1.acp_x, seam_1_point_1.acp_y, 310, 356, seam_1_point_1.x, seam_1_point_1.y, seam_1_point_1.w, seam_1_point_1.h);
-        ctx.drawImage(drawImg2, seam_1_point_2.acp_x, seam_1_point_2.acp_y, 310, 356, seam_1_point_2.x, seam_1_point_2.y, seam_1_point_2.w, seam_1_point_2.h);
-        ctx.drawImage(drawImg3, seam_1_point_3.acp_x, seam_1_point_3.acp_y, 310, 356, seam_1_point_3.x, seam_1_point_3.y, seam_1_point_3.w, seam_1_point_3.h);
+        ctx.drawImage(drawImg1, seam_1_point_1.acp_x, seam_1_point_1.acp_y, 305, 320, seam_1_point_1.x, seam_1_point_1.y, seam_1_point_1.w, seam_1_point_1.h);
+        ctx.drawImage(drawImg2, seam_1_point_2.acp_x, seam_1_point_2.acp_y, 305, 320, seam_1_point_2.x, seam_1_point_2.y, seam_1_point_2.w, seam_1_point_2.h);
+        ctx.drawImage(drawImg3, seam_1_point_3.acp_x, seam_1_point_3.acp_y, 305, 320, seam_1_point_3.x, seam_1_point_3.y, seam_1_point_3.w, seam_1_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
