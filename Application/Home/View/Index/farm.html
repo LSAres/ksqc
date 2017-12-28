@@ -1414,12 +1414,30 @@
     $(function () {
 
         //点击每层的升级按钮
-        $('.seamDiv img').on('click', function () {
+        $('.seamUpCall').on('click', function () {
             var layer = $(this).attr('callnumber');
             gcLayer(layer);
         });
 
-        //道具升级
+        //手动挖矿
+        $(document.body).on('click', '.minerAction', function() {
+            var layer = $(this).attr('controlSeam');
+            $.ajax({
+                type: "POST",
+                url: "{:U('Index/Manual')}",
+                data: {layer: layer},
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    //暂定ajax响应1000ms,9000ms后加分
+                    setTimeout(function() {
+                        $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);    
+                    }, 9000);
+                }
+            });
+        });
+
+        //自动挖矿
         $(document.body).on('click', '.risk', function () {
             var layer = $(this).parents('.upgradeSelect').attr('layer');
             var tool_id = $(this).attr('tool_id');

@@ -43,7 +43,7 @@ class IndexController extends CommonController
         for ($i=1; $i < 13; $i++) {
             $result = $this->syTime($i);
             $second = $result['second'] ? $result['second'] : 0;
-            array_push($second_list, $second);
+            array_push($second_list, $second * 1000);
         }
         $this->assign('second_list', json_encode($second_list));
 
@@ -398,44 +398,50 @@ class IndexController extends CommonController
         $data['time'] = time();
         $reservoir_log->add($data);
     }
+
     //手动挖矿
     public function Manual()
     {
         $uid = session('userId');
         $layer = I('post.layer', 0);
-        $layer = I('post.tool_id', 0);
+        $db_tools = M('tools');
         $db_store = M('store');
         $db_miner_log = M('miner_log');
         $db_miner_gold_log = M('miner_gold_log');
         if ($layer < 1 || $layer > 12) die(0);
-        if ($tool_id < 1 || $tool_id > 5) die(0);
         //正在自动挖矿中禁止手动挖矿
-        $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
+        $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, end_time asc')->select();
         $time = time();
         $work_time = 0;
         $s = 0;
         foreach ($tools as $key => &$value) {
-            $work_time = $value['start_time'] + 3600;
-            if ($time < $work_time && $value['is_get'] == 0) {
+            if ($time < $value['end_time'] && $value['is_get'] == 0) {
                 $s = 1;
                 break;
             }
         }
-        if ($s) {
-            $this->ajaxReturn(array(
-                'status' => 'error',
-                'message' => '请等待自动挖矿完成'
-            ));
-        }
+        
+        // if ($s) {
+        //     $this->ajaxReturn(array(
+        //         'status' => 'error',
+        //         'message' => '请等待自动挖矿完成'
+        //     ));
+        // }
+
         //正在挖矿中禁止再次挖矿
-        $max_record_id = $db_miner_gold_log->max('id');
-        $last_record = $db_miner_gold_log->where(array('id' => $max_record_id))->find();
-        if (!empty($last_record) && ($last_record - time()) < -10) {
-            $this->ajaxReturn(array(
-                'status' => 'error',
-                'message' => '您正在挖矿中，请等待本次挖矿完毕'
-            ));
+        $max_record_id = $db_miner_log->max('id');
+        $last_record = $db_miner_log->where(array('id' => $max_record_id))->find();
+
+        if (!empty($last_record)) {
+            if (time() - $last_record['time'] < 10) {
+                $this->ajaxReturn(array(
+                    'status' => 'error',
+                    'message' => '请等待本次挖矿完毕'
+                ));
+            }
         }
+
+
         //挖矿
         $score = mt_rand(0, 3);
         $db_store->where(array('uid' => $uid))->setInc('miner_gold', $score);
@@ -446,7 +452,7 @@ class IndexController extends CommonController
             'note' => '手动挖矿,获得'.$score.'挖矿分',
             'time' => time()
         ];
-        $store->add($data);
+        $db_miner_gold_log->add($data);
         $data1 = [
             'uid' => $uid,
             'miner' => $score,
@@ -454,12 +460,15 @@ class IndexController extends CommonController
             'note' => '手动挖矿,获得'.$score.'挖矿分',
             'time' => time()
         ];
-        $miner_log->add($data1);
+        $db_miner_log->add($data1);
+        $fathers_gold = $db_store->where(array('uid' => $uid))->getField('miner_gold');
         $this->ajaxReturn(array(
             'status' => 'success',
+            'fathers_gold' => $fathers_gold,
             'score' => $score
         ));
     }
+
     //购买道具 升级
     public function buyTool()
     {
@@ -501,7 +510,7 @@ class IndexController extends CommonController
         if (empty($last_tool)) {
             $this_time = time() + 3600;
         } else {
-            if ($last_tool[0]['buy_time'] + 3600 > time()) {
+            if ($last_tool[0]['end_time'] > time()) {
                 $this_time = $last_tool[0]['end_time'] + 3600;
             } else {
                 $this_time = time() + 3600;
@@ -591,6 +600,7 @@ class IndexController extends CommonController
         $this->ajaxReturn(array('status' => 'error', 'message' => '购买失败'));
       }
     }
+
     /**查询本层哪些计时结束了可以领取
      * @return id(array)
      */
@@ -599,6 +609,7 @@ class IndexController extends CommonController
       $layer = I('post.layer', 0);
       $this->ajaxReturn($this->syTime($layer));
     }
+
     //计时结束后领取挖矿分
     public function getMinerGold()
     {
@@ -662,9 +673,8 @@ class IndexController extends CommonController
 
       foreach ($tools as $key => &$value) {
 
-        // $value['work_time'] = 3600 * ($key + 1);
-        // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
-        // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
+        // $value['buy_time'] = date('Y-m-d H:i:s', $value['buy_time']);
+        // $value['end_time'] = date('Y-m-d H:i:s', $value['end_time']);
         
         // if (!empty($value['stop_time'])) {
         //     $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
