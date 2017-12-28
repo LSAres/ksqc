@@ -146,4 +146,83 @@ class TransactionController extends CommonController
             ));
         }
     }
+
+    //积分赠送
+    public function scoreGiveAway()
+    {
+      $uid = session('userId');
+      $db_store = M('store');
+      $db_user = M('user');
+      $db_zhuanzhang = M('zhuanzhang');
+      $score_number = I('post.score_number');
+      $score_account = I('post.score_account');
+      $score_type = I('post.score_type');
+      foreach (I('post.') as $key => $value) {
+        if (empty(trim($value))) {
+          $this->ajaxReturn(array(
+            'status' => 'error',
+            'message' => '请输入全部内容'
+          ));
+        }
+      }
+//$this->ajaxReturn($score_account);
+      $friend_id = $db_user->where(array('account' => $score_account))->getField('id');
+      if (empty($friend_id)) {
+        $this->ajaxReturn(array(
+          'status' => 'error',
+          'message' => '该用户不存在'
+        ));
+      }
+      if ($uid == $friend_id) {
+        $this->ajaxReturn(array(
+          'status' => 'error',
+          'message' => '不能转给自己'
+        ));
+      }
+
+      if ($score_type == '挖矿分') {
+        $db = 'miner_gold';
+      } else if ($score_type == '现金分') {
+        $db = 'money';
+      }
+
+      $my_score = $db_store->where(array('uid' => $uid))->getField($db);
+      if ($my_score < $score_number) {
+        $this->ajaxReturn(array(
+          'status' => 'error',
+          'message' => '积分不足'
+        ));
+      }
+
+      $decreaseStatus = $db_store->where(array('uid' => $uid))->setDec($db, $score_number);
+      $data = [
+        'uid' => $uid,
+      ];
+      $increaseStatus = $db_store->where(array('uid' => $friend_id))->setInc($db, $score_number);
+
+      $data3 = [
+        'from' => $uid,
+        'to' => $friend_id,
+        'number' => $score_number,
+        'type' => $score_type
+      ];
+      $addStatus = $db_zhuanzhang->add($data3);
+
+      $fathers_gold = $db_store->where(array('uid' => $uid))->getField($db);
+      if ($addStatus && $decreaseStatus && $increaseStatus) {
+          $this->ajaxReturn(array(
+            'status' => 'success',
+            'fathers_gold' => $fathers_gold,
+            'score_type' => $score_type,
+            'message' => '转账成功'
+          ));
+      } else {
+        $this->ajaxReturn(array(
+          'status' => 'error',
+          'message' => '转账失败'
+        ));
+      }
+
+    }
+
 }
