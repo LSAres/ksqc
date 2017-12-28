@@ -1159,16 +1159,16 @@
         <!--宝箱购买记录-->
         <div class="catchShopDisplay catchHistory" style="display: none;">
             <!--记录块-->
-            <div class="catchHistory_block">
+            <!-- <div class="catchHistory_block">
                 <div class="catchHistory_block_time"> 2041-11-30</div>
                 <div class="catchHistory_block_message"><span>宝箱名称</span> * <span>1</span> <span>$100</span></div>
-            </div>
-            <!--记录块-->
+            </div> -->
+            <foreach name="baoxiang_list" item="v">
             <div class="catchHistory_block">
-                <div class="catchHistory_block_time"> 2041-11-30</div>
-                <div class="catchHistory_block_message"><span>宝箱名称</span> * <span>1</span> <span>$100</span></div>
+                <div class="catchHistory_block_time"><?php echo date('Y-m-d H:i', $v['open_time']);?></div>
+                <div class="catchHistory_block_message"><span>宝箱名称</span> * <span>1</span> <span>{$v['miner_gold']}</span></div>
             </div>
-
+            </foreach>
         </div>
     </div>
 
@@ -1437,12 +1437,30 @@
     $(function () {
 
         //点击每层的升级按钮
-        $('.seamDiv img').on('click', function () {
+        $('.seamUpCall').on('click', function () {
             var layer = $(this).attr('callnumber');
             gcLayer(layer);
         });
 
-        //道具升级
+        //手动挖矿
+        $(document.body).on('click', '.minerAction', function() {
+            var layer = $(this).attr('controlSeam');
+            $.ajax({
+                type: "POST",
+                url: "{:U('Index/Manual')}",
+                data: {layer: layer},
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    //暂定ajax响应1000ms,9000ms后加分
+                    setTimeout(function() {
+                        $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
+                    }, 9000);
+                }
+            });
+        });
+
+        //自动挖矿
         $(document.body).on('click', '.risk', function () {
             var layer = $(this).parents('.upgradeSelect').attr('layer');
             var tool_id = $(this).attr('tool_id');
@@ -1492,6 +1510,39 @@
                 }
             });
 
+        });
+
+        //获取两只猫的区别
+        var url, number, type;
+        $('.exchange_inputForm div').on('click', function() {
+          $.each($('.exchange_inputForm'), function(index, element) {
+            var s = $(this).is(':visible');
+            if (index == 0 && s == true) {
+              console.log('胖猫在前, 现金分转挖矿分');
+              url = "{:U('Transaction/moneyChangeMiner')}";
+              number = $('.exchange_1').find('input').val();
+              type = 1;
+            }
+            if (index == 1 && s == true) {
+              console.log('瘦猫在前, 挖矿分转现金分');
+              url = "{:U('Transaction/minerChangeMoney')}";
+              number = $('.exchange_2').find('input').val();
+              type = 2;
+            }
+
+          });
+        });
+        //点击确定
+        $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').on('click', function () {
+          $.ajax({
+              type: "POST",
+              url: url,
+              data: {number: number},
+              dataType: "json",
+              success: function (data) {
+                console.log(data);
+              }
+          });
         });
 
         //更新本层数据
