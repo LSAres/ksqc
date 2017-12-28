@@ -43,7 +43,7 @@ class IndexController extends CommonController
         for ($i=1; $i < 13; $i++) {
             $result = $this->syTime($i);
             $second = $result['second'] ? $result['second'] : 0;
-            array_push($arr, $second);
+            array_push($second_list, $second);
         }
         $this->assign('second_list', json_encode($second_list));
 
@@ -497,6 +497,16 @@ class IndexController extends CommonController
         $db_store = M('store');
         $db_miner_gold_log = M('miner_gold_log');
         $s1 = $db_store->where(array('uid' => $uid))->setDec('miner_gold', $tool[$tool_id]['miner_gold']);
+        $last_tool = $db_tools->where(array('uid' => $uid, 'layer_id' => $layer, 'is_get' => 0))->order('end_time desc')->select();
+        if (empty($last_tool)) {
+            $this_time = time() + 3600;
+        } else {
+            if ($last_tool[0]['buy_time'] + 3600 > time()) {
+                $this_time = $last_tool[0]['end_time'] + 3600;
+            } else {
+                $this_time = time() + 3600;
+            }
+        }
         //添加记录
         $now = time();
         $data_tools = [
@@ -504,7 +514,7 @@ class IndexController extends CommonController
           'area' => session('area'),
           'layer_id' => $layer,
           'tool_id' => $tool_id,
-          'start_time' => $now,
+          'end_time' => $this_time,
           'buy_time' => $now,
           'stop_time' => 0,
           'is_get' => 0
@@ -600,7 +610,7 @@ class IndexController extends CommonController
       $db_miner_gold_log = M('miner_gold_log');
       if ($tool_id < 1 || $tool_id > 5) die(0);
       $this_row = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
-      $second = time() - $this_row['start_time'];
+      $second = time() - $this_row['buy_time'];
       if ($second < 3600) {
         $this->ajaxReturn(array(
           'status' => 'error',
@@ -643,38 +653,32 @@ class IndexController extends CommonController
     {
       $uid = session('userId');
       $db_tools = M('tools');
-      $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, start_time asc')->select();
-//$this->ajaxReturn($tools);
+      $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, end_time asc')->select();
+
       $time = time();
       $work_time = 0;
       $hours = 0;
       $second = 0;
 
       foreach ($tools as $key => &$value) {
-        $work_time = $value['start_time'] + (3600 * ($key + 1));
-        $value['start_time'] = $work_time;
-        //性能调优，只修改第二条数据的开始时间,减少4*12次UPDATE操作
-        if ($key == 1) {
-            $db_tools->where(array('id' => $value['id']))->save(array('start_time' => $work_time));
-        }
 
         // $value['work_time'] = 3600 * ($key + 1);
         // $value['start_time_ch'] = date('Y-m-d H:i:s', $value['start_time']);
         // $value['work_time_ch'] = date('Y-m-d H:i:s', $work_time);
         
-        if (!empty($value['stop_time'])) {
-            $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
-        } else {
-            $addtime = 3600;
-        }
+        // if (!empty($value['stop_time'])) {
+        //     $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
+        // } else {
+        //     $addtime = 3600;
+        // }
         
-        if ($time > ($value['start_time'] + $addtime) && $value['is_get'] == 0) {
+        if ($time > $value['end_time'] && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
             $value['is_pass'] = 0;
             $hours++;
             if (!empty($value['stop_time'])) {
-                $second += 3600-($value['stop_time'] - $value['buy_time']);
+                $second += 3600 - ($value['stop_time'] - $value['buy_time']);
             } else {
                 $second += 3600;
             }

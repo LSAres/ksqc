@@ -1268,7 +1268,8 @@ $(function () {
     //     seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
     // }, 80);
     //自动挖矿的时间数组 如果为0 则不执行自动操作
-    var timeArray = [0,10000,10000,0,0,0,0,0,0,0,0,0];
+    //var timeArray = [0,10000,10000,0,0,0,0,0,0,0,0,0];
+    var timeArray = allLayerSecond;
     //判断时间数组的的值 如果不为0 隐藏手动挖矿按钮
     autoMaticFunction();
     function autoMaticFunction(){
