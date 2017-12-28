@@ -876,21 +876,23 @@
             <div class="intergralBtn">赠送积分</div>
             <!--赠送积分输入框-->
             <div class="intergralInputDiv">
-                <input type="number" placeholder="输入赠送的积分数量" class="intergralMessage">
-                <input type="number" placeholder="请输入好友账号" class="intergralMessage">
-                <input type="text" value="请选择要赠送的积分类型" readonly="readonly" class="intergralMessage intergralSelect">
+                <input type="number" id="score_number" placeholder="输入赠送的积分数量" class="intergralMessage">
+                <input type="text" id="score_account" placeholder="请输入好友账号" class="intergralMessage">
+                <input type="text" id="score_type" value="请选择要赠送的积分类型" readonly="readonly" class="intergralMessage intergralSelect">
                 <button class="giveAction giveStart">确认赠送</button>
                 <button class="giveAction giveStop">取消</button>
             </div>
             <!--积分类型选择-->
             <div class="integralType">
-                <div>老人与海鲜</div>
+                <div>挖矿分</div>
+                <div>现金分</div>
+                <!-- <div>老人与海鲜</div>
                 <div>步步高惊心</div>
                 <div>死神不来了</div>
                 <div>还珠格格巫</div>
                 <div>暮光之城管</div>
                 <div>我的兄弟叫顺口溜</div>
-                <div>满城尽是黄金甲鱼</div>
+                <div>满城尽是黄金甲鱼</div> -->
             </div>
         </div>
     </div>
@@ -1540,6 +1542,40 @@
               data: {number: number},
               dataType: "json",
               success: function (data) {
+                console.log(data);
+              }
+          });
+        });
+
+        //赠送积分
+        $('.giveStart').on('click', function() {
+          var score_number = $('#score_number').val();
+          var score_account = $('#score_account').val();
+          var score_type = $('#score_type').val();
+          if ($.trim(score_number) == '') {
+            alert('请输入赠送数量');
+            return false;
+          }
+          if ($.trim(score_account) == '') {
+            alert('请输入好友帐号');
+            return false;
+          }
+          if ($.trim(score_type) == '请选择要赠送的积分类型') {
+            alert('请选择要赠送的积分类型');
+            return false;
+          }
+          $.ajax({
+              type: "POST",
+              url: "{:U('Transaction/scoreGiveAway')}",
+              data: {score_number: score_number, score_account: score_account, score_type: score_type},
+              dataType: "json",
+              success: function (data) {
+                alert(data.message);
+                if (data.score_type == '挖矿分') {
+                  $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
+                } else if (data.score_type == '现金分') {
+                  $('.gameTop-showBlock').eq(2).find('span').text(data['fathers_gold']);
+                }
                 console.log(data);
               }
           });
