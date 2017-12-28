@@ -420,7 +420,7 @@ class IndexController extends CommonController
                 break;
             }
         }
-        
+
         // if ($s) {
         //     $this->ajaxReturn(array(
         //         'status' => 'error',
@@ -429,7 +429,7 @@ class IndexController extends CommonController
         // }
 
         //正在挖矿中禁止再次挖矿
-        $max_record_id = $db_miner_log->max('id');
+        $max_record_id = $db_miner_log->where(array('uid' => $uid, 'layer_id' => $layer))->max('id');
         $last_record = $db_miner_log->where(array('id' => $max_record_id))->find();
 
         if (!empty($last_record)) {
@@ -455,6 +455,7 @@ class IndexController extends CommonController
         $db_miner_gold_log->add($data);
         $data1 = [
             'uid' => $uid,
+            'layer_id' => $layer,
             'miner' => $score,
             'type' => 0,    //0手动 1自动
             'note' => '手动挖矿,获得'.$score.'挖矿分',
@@ -675,13 +676,13 @@ class IndexController extends CommonController
 
         // $value['buy_time'] = date('Y-m-d H:i:s', $value['buy_time']);
         // $value['end_time'] = date('Y-m-d H:i:s', $value['end_time']);
-        
+
         // if (!empty($value['stop_time'])) {
         //     $addtime = 3600 - ($value['stop_time'] - $value['start_time']);
         // } else {
         //     $addtime = 3600;
         // }
-        
+
         if ($time > $value['end_time'] && $value['is_get'] == 0) {
             $value['is_pass'] = 1;
         } else {
