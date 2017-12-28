@@ -90,6 +90,35 @@ $(function () {
     $('.closeFrienList').click(function () {
         $('.friend').fadeOut();
     });
+    /*好友：赠送积分界面呼出*/
+    $('.intergralBtn').click(function(){
+        $('.intergralInputDiv').addClass('showAction');
+    });
+    $('.giveStop').click(function(){
+        $('.intergralInputDiv').removeClass('showAction');
+    });
+    /*好友：赠送类型选择*/
+    $('.intergralSelect').click(function(){
+        $('.integralType').addClass('integralTypeShow');
+       setTimeout(function(){
+           var typeMessageAll = $('.integralType div');
+           var showIndex = 0;
+           var typeMessageShow = setInterval(function(){
+               $(typeMessageAll[showIndex]).fadeIn(1000);
+               if(showIndex >= typeMessageAll.length){
+                   clearInterval(typeMessageShow);
+               }else{
+                   showIndex++;
+               }
+
+           },100);
+       },1500);
+    });
+    $('.integralType div').click(function(){
+        $('.intergralSelect').val($(this).text());
+        $('.integralType div').fadeOut();
+        $('.integralType').removeClass('integralTypeShow');
+    });
     /**
      * 个人中心*/
     /*呼出个人中心*/
@@ -330,25 +359,25 @@ $(function () {
     var maxRight = 750;     //人物右移动 最大宽度
     var minLeft = 160;      //人物左移动 最小宽度
     var imgWidthLength = 1900;      //图片的最大宽度
-    var img_SX = 100;        //截取图片的 X轴坐标
-    var img_swidth = 375;   //截取图片的跨度
+    var img_SX = 170;        //截取图片的 X轴坐标
+    var img_swidth = 370;   //截取图片的跨度
 
     /*第一矿层 */
     /*用于接受绘制的人物图片*/
     var seam_1_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_1_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_1_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 77};       //固定挖矿人物的坐标点对象
+    var seam_1_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_1_point_2 = {x: 160, y: 520, w: 170, h: 200, acp_x: 100, acp_y: 77, g: 8};  //第二个行走人物
-    var seam_1_point_3 = {x: 160, y: 520, w: 170, h: 200, acp_x: 100, acp_y: 77, g: 5};  //第三个行走人物
+    var seam_1_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 150, acp_y: 60, g: 8};  //第二个行走人物
+    var seam_1_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 150, acp_y: 60, g: 5};  //第三个行走人物
     /*绘制人物方法*/
     function seam_1_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
         //绘制挖矿人物
-        ctx.drawImage(drawImg1, seam_1_point_1.acp_x, seam_1_point_1.acp_y, 305, 320, seam_1_point_1.x, seam_1_point_1.y, seam_1_point_1.w, seam_1_point_1.h);
-        ctx.drawImage(drawImg2, seam_1_point_2.acp_x, seam_1_point_2.acp_y, 305, 320, seam_1_point_2.x, seam_1_point_2.y, seam_1_point_2.w, seam_1_point_2.h);
-        ctx.drawImage(drawImg3, seam_1_point_3.acp_x, seam_1_point_3.acp_y, 305, 320, seam_1_point_3.x, seam_1_point_3.y, seam_1_point_3.w, seam_1_point_3.h);
+        ctx.drawImage(drawImg1, seam_1_point_1.acp_x, seam_1_point_1.acp_y, 310, 356, seam_1_point_1.x, seam_1_point_1.y, seam_1_point_1.w, seam_1_point_1.h);
+        ctx.drawImage(drawImg2, seam_1_point_2.acp_x, seam_1_point_2.acp_y, 310, 356, seam_1_point_2.x, seam_1_point_2.y, seam_1_point_2.w, seam_1_point_2.h);
+        ctx.drawImage(drawImg3, seam_1_point_3.acp_x, seam_1_point_3.acp_y, 310, 356, seam_1_point_3.x, seam_1_point_3.y, seam_1_point_3.w, seam_1_point_3.h);
         ctx.stroke();
         ctx.closePath();
     }
@@ -1252,25 +1281,25 @@ $(function () {
            }
        }
     }
-    /*升级点击后 自动挖矿*/
-    // setInterval(function () {
-    //     seam_1_imgMove(seam_ctx[0], seamHumen_1, seam_1_DrawImg_2, seam_1_DrawImg_3);
-    //     seam_2_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);
-    //     seam_3_imgMove(seam_ctx[2], seamHumen_1, seam_3_DrawImg_2, seam_3_DrawImg_3);
-    //     seam_4_imgMove(seam_ctx[3], seamHumen_1, seam_4_DrawImg_2, seam_4_DrawImg_3);
-    //     seam_5_imgMove(seam_ctx[4], seamHumen_1, seam_5_DrawImg_2, seam_5_DrawImg_3);
-    //     seam_6_imgMove(seam_ctx[5], seamHumen_1, seam_6_DrawImg_2, seam_6_DrawImg_3);
-    //     seam_7_imgMove(seam_ctx[6], seamHumen_1, seam_7_DrawImg_2, seam_7_DrawImg_3);
-    //     seam_8_imgMove(seam_ctx[7], seamHumen_1, seam_8_DrawImg_2, seam_8_DrawImg_3);
-    //     seam_9_imgMove(seam_ctx[8], seamHumen_1, seam_9_DrawImg_2, seam_9_DrawImg_3);
-    //     seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
-    //     seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
-    //     seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
-    // }, 80);
+    /*无条件 自动挖矿 用于执行动画测试*/
+    setInterval(function () {
+        seam_1_imgMove(seam_ctx[0], seamHumen_1, seam_1_DrawImg_2, seam_1_DrawImg_3);
+        seam_2_imgMove(seam_ctx[1], seamHumen_1, seam_2_DrawImg_2, seam_2_DrawImg_3);
+        seam_3_imgMove(seam_ctx[2], seamHumen_1, seam_3_DrawImg_2, seam_3_DrawImg_3);
+        seam_4_imgMove(seam_ctx[3], seamHumen_1, seam_4_DrawImg_2, seam_4_DrawImg_3);
+        seam_5_imgMove(seam_ctx[4], seamHumen_1, seam_5_DrawImg_2, seam_5_DrawImg_3);
+        seam_6_imgMove(seam_ctx[5], seamHumen_1, seam_6_DrawImg_2, seam_6_DrawImg_3);
+        seam_7_imgMove(seam_ctx[6], seamHumen_1, seam_7_DrawImg_2, seam_7_DrawImg_3);
+        seam_8_imgMove(seam_ctx[7], seamHumen_1, seam_8_DrawImg_2, seam_8_DrawImg_3);
+        seam_9_imgMove(seam_ctx[8], seamHumen_1, seam_9_DrawImg_2, seam_9_DrawImg_3);
+        seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
+        seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
+        seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
+    }, 80);
     //自动挖矿的时间数组 如果为0 则不执行自动操作
     var timeArray = [0,10000,10000,0,0,0,0,0,0,0,0,0];
     //判断时间数组的的值 如果不为0 隐藏手动挖矿按钮
-    autoMaticFunction();
+    // autoMaticFunction();
     function autoMaticFunction(){
         /*** 1 **/
         if(timeArray[0] > 0){

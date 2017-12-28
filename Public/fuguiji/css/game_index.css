@@ -488,6 +488,95 @@ body {
     padding: 10px 0;
     display: block;
 }
+/*好友中心：向好友赠送积分*/
+.giveIntegral{}
+
+.giveIntegral .intergralBtn{
+    width: 200px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background: linear-gradient(to bottom,#5dd5d2,#43b1a7,#5bd7d3);
+    border: solid 1px #fff;
+    box-shadow: 0 0 10px #000 inset;
+    border-radius: 9px;
+    margin: 10px auto;
+    padding: 10px 0;
+}
+.giveIntegral .intergralInputDiv{
+    width: 80%;
+    height: 64%;
+    background: rgba(161, 243, 232, .9);
+    border: solid 3px #3871a2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0c0c0c inset;
+    position: absolute;
+    top: 101%;
+    left: 10%;
+    transition: top 2s ;
+}
+.giveIntegral .intergralInputDiv.showAction{
+    top: 19%;
+}
+.giveIntegral .intergralInputDiv .intergralMessage{
+    width: 70%;
+    color: #fff;
+    border-bottom: solid 1px #666;
+    text-shadow: 0 0 5px #000;
+    text-align: center;
+    background: none;
+    padding: 5px 0;
+    margin: 5px auto;
+    display: block;
+}
+.giveIntegral .intergralInputDiv .giveAction{
+    width: 49%;
+    color: #fff;
+    font-size: 16px;
+    background: linear-gradient(to bottom , #5ff7c6,#2e9e85,#45bbab);
+    box-shadow: 0 0 5px #000;
+    text-align: center;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    padding: 5px 0;
+    margin: 10px auto;
+    display: block;
+}
+::placeholder{
+    color: #fff;
+}
+/*向好友赠送积分：积分类型选择*/
+.integralType{
+    width: 80%;
+    height: 64%;
+    background: rgba(161, 243, 232, .9);
+    border: solid 3px #3871a2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0c0c0c inset;
+    overflow-y: auto;
+    position: absolute;
+    top: 19%;
+    left: 101%;
+    transition: left 2s;
+}
+.integralType.integralTypeShow{
+    left: 10%;
+}
+.integralType div{
+    width: 70%;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    background: linear-gradient(to bottom,#8bebf6,#093258,#89e9f4);
+    text-shadow: 0 0 5px #000;
+    box-shadow: 0 0 10px #fff inset;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 5px 0;
+    display: none;
+}
+
 
 /*个人中心*/
 .userCenter {
@@ -562,6 +651,7 @@ body {
 .miningHistory {
     padding: 0 1rem;
 }
+
 
 .miningHistory .miningHistory_date {
     border-bottom: solid 1px #ccc;
