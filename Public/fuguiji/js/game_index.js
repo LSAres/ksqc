@@ -356,21 +356,21 @@ $(function () {
     var seamHumen_1 = document.getElementById('gameTopHumen');  //无位移 挖矿人物图片
     var seamHumen_2 = document.getElementById('gameTopHumen1'); //右位移 空手行走人物图片
     var seamHumen_3 = document.getElementById('gameTopHumen2'); //左位移 背包行走人物图片
-    var maxRight = 750;     //人物右移动 最大宽度
-    var minLeft = 160;      //人物左移动 最小宽度
+    var maxRight = 490;     //人物右移动 最大宽度
+    var minLeft = 100;      //人物左移动 最小宽度
     var imgWidthLength = 1900;      //图片的最大宽度
-    var img_SX = 170;        //截取图片的 X轴坐标
-    var img_swidth = 370;   //截取图片的跨度
+    var img_SX = 150;        //截取图片的初始 X轴坐标
+    var img_swidth = 375;   //截取图片的跨度
 
     /*第一矿层 */
     /*用于接受绘制的人物图片*/
     var seam_1_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_1_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_1_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
+    var seam_1_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_1_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 150, acp_y: 60, g: 8};  //第二个行走人物
-    var seam_1_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 150, acp_y: 60, g: 5};  //第三个行走人物
+    var seam_1_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_1_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 5};  //第三个行走人物
     /*绘制人物方法*/
     function seam_1_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -431,10 +431,10 @@ $(function () {
     var seam_2_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_2_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_2_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_2_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_2_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 11};  //第二个行走人物
-    var seam_2_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 9};  //第三个行走人物
+    var seam_2_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_2_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 7};  //第三个行走人物
     /*绘制人物方法*/
     function seam_2_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -495,10 +495,10 @@ $(function () {
     var seam_3_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_3_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_3_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_3_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_3_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第二个行走人物
-    var seam_3_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 11};  //第三个行走人物
+    var seam_3_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_3_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 6};  //第三个行走人物
     /*绘制人物方法*/
     function seam_3_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -559,10 +559,10 @@ $(function () {
     var seam_4_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_4_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_4_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_4_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_4_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 13};  //第二个行走人物
-    var seam_4_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 10};  //第三个行走人物
+    var seam_4_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_4_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 7};  //第三个行走人物
     /*绘制人物方法*/
     function seam_4_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -623,10 +623,10 @@ $(function () {
     var seam_5_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_5_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_5_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_5_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_5_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 11};  //第二个行走人物
-    var seam_5_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 9};  //第三个行走人物
+    var seam_5_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_5_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 5};  //第三个行走人物
     /*绘制人物方法*/
     function seam_5_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -687,10 +687,10 @@ $(function () {
     var seam_6_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_6_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_6_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_6_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_6_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 13};  //第二个行走人物
-    var seam_6_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 8};  //第三个行走人物
+    var seam_6_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_6_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 7};  //第三个行走人物
     /*绘制人物方法*/
     function seam_6_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -751,10 +751,10 @@ $(function () {
     var seam_7_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_7_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_7_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_7_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_7_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第二个行走人物
-    var seam_7_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 10};  //第三个行走人物
+    var seam_7_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_7_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 6};  //第三个行走人物
     /*绘制人物方法*/
     function seam_7_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -815,10 +815,10 @@ $(function () {
     var seam_8_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_8_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_8_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_8_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_8_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 11};  //第二个行走人物
-    var seam_8_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 8};  //第三个行走人物
+    var seam_8_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_8_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 7};  //第三个行走人物
     /*绘制人物方法*/
     function seam_8_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -879,10 +879,10 @@ $(function () {
     var seam_9_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_9_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_9_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_9_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_9_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 11};  //第二个行走人物
-    var seam_9_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 9};  //第三个行走人物
+    var seam_9_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_9_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 6};  //第三个行走人物
     /*绘制人物方法*/
     function seam_9_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -943,10 +943,10 @@ $(function () {
     var seam_10_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_10_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_10_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_10_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_10_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第二个行走人物
-    var seam_10_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 8};  //第三个行走人物
+    var seam_10_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_10_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 6};  //第三个行走人物
     /*绘制人物方法*/
     function seam_10_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -1007,10 +1007,10 @@ $(function () {
     var seam_11_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_11_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_11_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_11_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_11_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 13};  //第二个行走人物
-    var seam_11_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 8};  //第三个行走人物
+    var seam_11_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_11_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 7};  //第三个行走人物
     /*绘制人物方法*/
     function seam_11_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
@@ -1071,10 +1071,10 @@ $(function () {
     var seam_12_DrawImg_2 = seamHumen_2;     //第一个人物 初始图片 向左移动帧图
     var seam_12_DrawImg_3 = seamHumen_2;     //第二个人物 初始图片 向左移动帧图
     /*矿层：人物坐标点,挖矿人物 */
-    var seam_12_point_1 = {x: 700, y: 520, w: 150, h: 200, acp_x: 40, acp_y: 72};       //固定挖矿人物的坐标点对象
+    var seam_12_point_1 = {x: 420, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60};       //固定挖矿人物的坐标点对象
     /*矿层：空手/背包 行走人物 1*/
-    var seam_12_point_2 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 12};  //第二个行走人物
-    var seam_12_point_3 = {x: 160, y: 520, w: 150, h: 200, acp_x: 100, acp_y: 77, g: 10};  //第三个行走人物
+    var seam_12_point_2 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 4};  //第二个行走人物
+    var seam_12_point_3 = {x: 100, y: 230, w: 80, h: 120, acp_x: 150, acp_y: 60, g: 6};  //第三个行走人物
     /*绘制人物方法*/
     function seam_12_drawImg(ctx, drawImg1, drawImg2, drawImg3) {
         ctx.beginPath();
