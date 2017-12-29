@@ -619,6 +619,7 @@ class IndexController extends CommonController
       $uid = session('userId');
       $db_tools = M('tools');
       $store = M('store');
+      $db_miner_log = M('miner_log');
       $db_miner_gold_log = M('miner_gold_log');
       if ($tool_id < 1 || $tool_id > 5) die(0);
       $this_row = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'tool_id' => $tool_id, 'is_get' => 0))->find();
@@ -651,6 +652,16 @@ class IndexController extends CommonController
         'time' => time()
       ];
       $db_miner_gold_log->add($data);
+      //挖矿记录
+      $data1 = [
+        'uid' => $uid,
+        'type' => 1,
+        'miner' => $final_score,
+        'time' => time(),
+        'layer_id' => $layer
+      ];
+      $db_miner_log->add($data1);
+
       $fathers_gold = $store->where(array('uid' => $uid))->getField('miner_gold');
       $this->ajaxReturn(array(
         'status' => 'success',
