@@ -421,12 +421,12 @@ class IndexController extends CommonController
             }
         }
 
-        // if ($s) {
-        //     $this->ajaxReturn(array(
-        //         'status' => 'error',
-        //         'message' => '请等待自动挖矿完成'
-        //     ));
-        // }
+        if ($s) {
+            $this->ajaxReturn(array(
+                'status' => 'error',
+                'message' => '请等待自动挖矿完成'
+            ));
+        }
 
         //正在挖矿中禁止再次挖矿
         $max_record_id = $db_miner_log->where(array('uid' => $uid, 'layer_id' => $layer))->max('id');
@@ -639,8 +639,15 @@ class IndexController extends CommonController
       //计算可以领取多少分
       $all_tools = tool();
       $this_tool = $all_tools[$this_row['tool_id']];
-      $persent = (mt_rand($this_tool['start'], $this_tool['end'])) / 100;
-      $final_score = intval(1200 * ($persent + 1));
+      
+      $persent = mt_rand($this_tool['start'], $this_tool['end']);
+      $final_score = intval(350 * $persent);
+      for ($i=1; $i < 11; $i++) {
+           $persent = mt_rand($this_tool['start'], $this_tool['end']);
+           $final_score += $persent;
+      }
+
+//$this->ajaxReturn($final_score);die;
       //加分、记录
       $db_tools->where(array('id' => $this_row['id']))->save(array('is_get' => 1, 'get_time' => time(), 'miner_gold' => $final_score));
       $store->where(array('uid' => $uid))->setInc('miner_gold', $final_score);
@@ -707,17 +714,23 @@ class IndexController extends CommonController
         }
       }
 
-      $now = time();
-      foreach ($tools as $key => &$value) {
-          if ($value['is_pass'] == 0) {
-            if (!empty($value['stop_time'])) {
-                $final_second = $value['stop_time'] + $second - $now;
-            } else {
-                $final_second = $value['buy_time'] + $second - $now;
-            }
-            break;
-          }
-      }
+      // $now = time();
+      // foreach ($tools as $key => &$value) {
+      //     if ($value['is_pass'] == 0) {
+      //       if (!empty($value['stop_time'])) {
+      //           $final_second = $value['stop_time'] + $second - $now;
+      //       } else {
+      //           $final_second = $value['buy_time'] + $second - $now;
+      //       }
+      //       break;
+      //     }
+      // }
+      $second_arr = arraySequence($tools, 'end_time', 'SORT_DESC');
+      $final_second = 0;
+      if ($second_arr[0]['end_time'] > time()) {
+        $final_second = $second_arr[0]['end_time'] - time();
+      } 
+
       //如果要按照工具顺序排列
       $new_arr = arraySequence($tools, 'tool_id', 'SORT_ASC');
       return array(
