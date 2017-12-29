@@ -143,7 +143,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -199,7 +199,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -260,7 +260,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -321,7 +321,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -382,7 +382,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -443,7 +443,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -504,7 +504,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -565,7 +565,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -626,7 +626,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -687,7 +687,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -748,7 +748,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -809,7 +809,7 @@
             <div class="upgradeHeader_rightDisplay">
                 <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
                 <div></div>
-                <label>LV_1</label>
+                <label></label>
             </div>
 
         </div>
@@ -1455,9 +1455,13 @@
                 success: function (data) {
                     console.log(data);
                     //暂定ajax响应1000ms,9000ms后加分
-                    setTimeout(function() {
-                        $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
-                    }, 9000);
+                    if (data.status == 'success') {
+                        setTimeout(function() {
+                            $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
+                        }, 9000);
+                    } else {
+                        alert(data.message);
+                    }
                 }
             });
         });
@@ -1591,6 +1595,7 @@
                 success: function (data) {
                     console.log(data);
                     $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('div').css('width', (data['hours'] * 20) + '%');
+                    $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('label').text('LV_'+data['hours']);
                     $.each(data['list'], function () {
 
                         //买过的加上已购买
