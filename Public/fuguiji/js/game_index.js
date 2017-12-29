@@ -281,13 +281,13 @@ $(function () {
     var topHumenDraw = topHumenImg_go;
     function topleftHumenAction (ctx){
         ctx.beginPath();
-        ctx.drawImage(topLeftHumen,20,635,150,120);
+        ctx.drawImage(topLeftHumen,0,655,200,100);
         ctx.stroke();
         ctx.closePath();
     }
     function topRightHumenAction (ctx){
         ctx.beginPath();
-        ctx.drawImage(topRightHumen,820,670,200,110);
+        ctx.drawImage(topRightHumen,850,670,120,110);
         ctx.stroke();
         ctx.closePath();
     }
@@ -299,7 +299,7 @@ $(function () {
     }
 
     function topHumenMove(ctx, drawImg) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.clearRect(0, 368, ctx.canvas.width, ctx.canvas.height - 368);
         if ((topHumenPoint.x + topHumenPoint.w) >= topHumenPoint.max_width) {
             topHumenPoint.g = -topHumenPoint.g;
             topHumenDraw = topHumenImg_com;
@@ -384,7 +384,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_1_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_1_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_1_point_1.y);      //清空画布
 
         if (seam_1_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_1_point_1.acp_x = img_SX;
@@ -448,7 +448,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_2_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_2_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_2_point_1.y);      //清空画布
 
         if (seam_2_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_2_point_1.acp_x = img_SX;
@@ -512,7 +512,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_3_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_3_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_3_point_1.y);     //清空画布
 
         if (seam_3_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_3_point_1.acp_x = img_SX;
@@ -576,7 +576,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_4_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_4_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_4_point_1.y);     //清空画布
 
         if (seam_4_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_4_point_1.acp_x = img_SX;
@@ -640,7 +640,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_5_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_5_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_5_point_1.y);     //清空画布
 
         if (seam_5_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_5_point_1.acp_x = img_SX;
@@ -704,7 +704,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_6_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_6_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_6_point_1.y);      //清空画布
 
         if (seam_6_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_6_point_1.acp_x = img_SX;
@@ -768,7 +768,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_7_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_7_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_7_point_1.y);      //清空画布
 
         if (seam_7_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_7_point_1.acp_x = img_SX;
@@ -832,7 +832,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_8_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_8_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_8_point_1.y);      //清空画布
 
         if (seam_8_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_8_point_1.acp_x = img_SX;
@@ -896,7 +896,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_9_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_9_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_9_point_1.y);      //清空画布
 
         if (seam_9_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_9_point_1.acp_x = img_SX;
@@ -960,7 +960,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_10_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_10_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_10_point_1.y);      //清空画布
 
         if (seam_10_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_10_point_1.acp_x = img_SX;
@@ -1024,7 +1024,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_11_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_11_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_11_point_1.y);      //清空画布
 
         if (seam_11_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_11_point_1.acp_x = img_SX;
@@ -1088,7 +1088,7 @@ $(function () {
 
     /*修改人物 移动坐标点，判断到达相应坐标点 变更绘制图片*/
     function seam_12_imgMove(ctx, drawImg1, drawImg2, drawImg3) {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);      //清空画布
+        ctx.clearRect(0, seam_12_point_1.y, ctx.canvas.width, ctx.canvas.height - seam_12_point_1.y);      //清空画布
 
         if (seam_12_point_1.acp_x >= imgWidthLength) {                 //固定挖矿人物 如果截取的X轴坐标超过图片长度 变更为初始坐标
             seam_12_point_1.acp_x = img_SX;
@@ -1295,7 +1295,7 @@ $(function () {
         seam_10_imgMove(seam_ctx[9], seamHumen_1, seam_10_DrawImg_2, seam_10_DrawImg_3);
         seam_11_imgMove(seam_ctx[10], seamHumen_1, seam_11_DrawImg_2, seam_11_DrawImg_3);
         seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
-    }, 80);
+    }, 100);
     //自动挖矿的时间数组 如果为0 则不执行自动操作
     //var timeArray = [0,10000,10000,0,0,0,0,0,0,0,0,0];
     var timeArray = allLayerSecond;
