@@ -1,0 +1,1495 @@
+[ 2017-12-29T10:55:57+08:00 ] ::1 /ksqc/index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T10:55:57+08:00 ] ::1 /ksqc/index.php/Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.135008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.145008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T10:55:58+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012001s ]
+
+[ 2017-12-29T10:56:09+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T10:56:29+08:00 ] ::1 /ksqc/index.php/Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.097006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.102006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2017-12-29T10:56:29+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T10:56:43+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify/0.6871656555383081
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T10:56:49+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2017-12-29T10:57:03+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-29T10:57:04+08:00 ] ::1 /ksqc/index.php/Admin/login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.105006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.023001s ]
+
+[ 2017-12-29T10:57:04+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014001s ]
+
+[ 2017-12-29T10:57:14+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T10:57:29+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2017-12-29T10:57:30+08:00 ] ::1 /ksqc/index.php/Admin/login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.106006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.111006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2017-12-29T10:57:30+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012001s ]
+
+[ 2017-12-29T10:57:41+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T10:57:49+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify/0.30292633018735526
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-29T10:57:55+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T10:57:57+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T12:56:02+08:00 ] ::1 /ksqc/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-29T12:56:02+08:00 ] ::1 /ksqc/index.php/Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.014001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.145008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.151008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011000s ]
+
+[ 2017-12-29T12:56:03+08:00 ] ::1 /ksqc/index.php/Admin/Login/verify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018001s ]
+
+[ 2017-12-29T12:56:13+08:00 ] ::1 /ksqc/index.php/Admin/login/idcheck
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_nzspuser` WHERE ( sp_username='admin' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `nb_nzspuser` SET `sp_logintime`='1514523373',`sp_loginip`='0.0.0.0' WHERE ( sp_id ='14' ) [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2017-12-29T12:56:15+08:00 ] ::1 /ksqc/index.php/Admin/index/backstageSammaryPage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0060s ]
+SQL: SELECT `power` FROM `nb_nzspuser` WHERE ( sp_id=14 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.006000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.011000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.099006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.105006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2017-12-29T12:56:15+08:00 ] ::1 /ksqc/index.php/Admin/Index/gameNotice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.177010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.184011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T12:56:22+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/reservoirRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+SQL: SHOW COLUMNS FROM `nb_reservoir_log` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_reservoir_log` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_reservoir_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `nb_user` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.221012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.228013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T12:56:23+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/reservoirRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `nb_reservoir_log` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_reservoir_log` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_reservoir_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `nb_user` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.006000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.014001s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.237014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.246014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-29T12:56:25+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/reservoirRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `nb_reservoir_log` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_reservoir_log` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_reservoir_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `nb_user` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010000s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.236013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.241014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011001s ]
+
+[ 2017-12-29T12:56:26+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/reservoirRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `nb_reservoir_log` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_reservoir_log` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_reservoir_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `nb_user` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0040s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.014001s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.249014s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.258015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-29T12:56:28+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/moneyMinerRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `nb_money_miner_log` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_money_miner_log` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_money_miner_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.164010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.170010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010001s ]
+
+[ 2017-12-29T12:56:29+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/moneyMinerRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `nb_money_miner_log` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_money_miner_log` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_money_miner_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.157009s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.163009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2017-12-29T12:56:31+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/minerMoneyRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016001s ]
+SQL: SHOW COLUMNS FROM `nb_miner_money_log` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_miner_money_log` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_miner_money_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.171010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.178010s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014001s ]
+
+[ 2017-12-29T12:56:32+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/moneyRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013000s ]
+SQL: SHOW COLUMNS FROM `nb_money_log` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_money_log` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_money_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.013001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.212012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.218012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-29T12:56:33+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/reservoirRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `nb_reservoir_log` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_reservoir_log` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_reservoir_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `nb_user` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.177011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.182011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T12:56:34+08:00 ] ::1 /ksqc/index.php/Admin/NoticControl/addNoticePage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.076005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008001s ]
+
+[ 2017-12-29T12:56:35+08:00 ] ::1 /ksqc/index.php/Admin/NoticControl/noticeListPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `nb_new` [ RunTime:0.0320s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_new` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT `id`,`Title`,`content`,`add_time` FROM `nb_new` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.128007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.134008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-29T12:56:36+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/functionValueResetPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+
+[ 2017-12-29T12:56:37+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/functionValueResetPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+
+[ 2017-12-29T12:56:38+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/capitalLogPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015001s ]
+SQL: SHOW COLUMNS FROM `nb_capital` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_capital` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_capital` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.120007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.126007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015001s ]
+
+[ 2017-12-29T12:56:40+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/helpDocumentList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `nb_helpintroduce` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_helpintroduce` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT `id`,`Title`,`content`,`time` FROM `nb_helpintroduce` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.125008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.130008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010001s ]
+
+[ 2017-12-29T12:56:41+08:00 ] ::1 /ksqc/index.php/Admin/index/backstageSammaryPage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT `power` FROM `nb_nzspuser` WHERE ( sp_id=14 ) LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.013000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.104006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.111007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
+[ 2017-12-29T12:56:42+08:00 ] ::1 /ksqc/index.php/Admin/index/backstageSammaryPage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0090s ]
+SQL: SELECT `power` FROM `nb_nzspuser` WHERE ( sp_id=14 ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.103005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.110007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012000s ]
+
+[ 2017-12-29T12:56:43+08:00 ] ::1 /ksqc/index.php/Admin/index/backstageSammaryPage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `nb_nzspuser` [ RunTime:0.0070s ]
+SQL: SELECT `power` FROM `nb_nzspuser` WHERE ( sp_id=14 ) LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.094006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.100006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T12:56:44+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/functionValueResetPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+
+[ 2017-12-29T12:56:45+08:00 ] ::1 /ksqc/index.php/Admin/Index/gameNotice
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.182011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.187011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.016001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2017-12-29T12:56:47+08:00 ] ::1 /ksqc/index.php/Admin/UserAdministration/administrationPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `nb_user` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\ksqc\Application\Admin\Controller\UserAdministrationController.class.php 第 25 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_user` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\ksqc\Application\Admin\Controller\UserAdministrationController.class.php 第 28 行.
+SQL: SELECT `id`,`account`,`username`,`lockuser`,`add_time`,`parent_id` FROM `nb_user` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+NOTIC: [8] Undefined index: userid D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\a183f0c95c5f8ca5e3ac551def68d39b.php 第 52 行.
+NOTIC: [8] Undefined index: userid D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\a183f0c95c5f8ca5e3ac551def68d39b.php 第 52 行.
+NOTIC: [8] Undefined index: userid D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\a183f0c95c5f8ca5e3ac551def68d39b.php 第 52 行.
+NOTIC: [8] Undefined index: userid D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\a183f0c95c5f8ca5e3ac551def68d39b.php 第 52 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.370021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.375022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011000s ]
+
+[ 2017-12-29T12:56:52+08:00 ] ::1 /ksqc/index.php/Admin/WealthDetailed/reservoirRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `nb_reservoir_log` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_reservoir_log` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_reservoir_log` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `nb_user` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `nb_user` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007000s ]
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+NOTIC: [2] date() expects parameter 2 to be long, string given D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\71d777f5387f9df630b01772e78054c8.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.182010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.187011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008001s ]
+
+[ 2017-12-29T12:57:12+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/functionValueResetPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+
+[ 2017-12-29T12:57:15+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/capitalLogPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `nb_capital` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_capital` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_capital` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.113007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.117007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T12:57:18+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/helpDocumentList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `nb_helpintroduce` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_helpintroduce` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT `id`,`Title`,`content`,`time` FROM `nb_helpintroduce` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.135008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T12:57:18+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/addHelpDocument.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2017-12-29T12:57:19+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/toolList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\5b8ee4f784998907521702608611a879.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.194011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.201011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011001s ]
+
+[ 2017-12-29T14:24:54+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/functionValueResetPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013502s ]
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+
+[ 2017-12-29T14:24:57+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/capitalLogPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `nb_capital` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_capital` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_capital` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009501s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.146518s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.152520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011501s ]
+
+[ 2017-12-29T14:24:59+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/helpDocumentList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.008501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016502s ]
+SQL: SHOW COLUMNS FROM `nb_helpintroduce` [ RunTime:0.0075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_helpintroduce` LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT `id`,`Title`,`content`,`time` FROM `nb_helpintroduce` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.164521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.171522s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.008501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.017502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010501s ]
+
+[ 2017-12-29T14:25:00+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/addHelpDocument.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002501s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087511s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012502s ]
+
+[ 2017-12-29T14:25:01+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/toolList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.016002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009501s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\5b8ee4f784998907521702608611a879.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.215528s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.222528s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012001s ]
+
+[ 2017-12-29T14:25:03+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/clothesList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013502s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.007001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.017502s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\a8c7d17c84728a32bce657d0d03fb64b.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.191525s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.198025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009501s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012001s ]
+
+[ 2017-12-29T14:25:06+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/functionValueResetPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014001s ]
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+ERR: 1146:Table 'ksqc.nb_function_parameters' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nb_function_parameters`
+
+[ 2017-12-29T14:25:15+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/toolList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010501s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\5b8ee4f784998907521702608611a879.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.213027s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.220028s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010002s ]
+
+[ 2017-12-29T14:25:18+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/clothesList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009502s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010002s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\a8c7d17c84728a32bce657d0d03fb64b.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.159521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.165021s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012502s ]
+
+[ 2017-12-29T14:25:22+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/toolList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002501s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010501s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\5b8ee4f784998907521702608611a879.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.213027s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.224028s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010002s ]
+
+[ 2017-12-29T14:25:23+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/addHelpDocument.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002501s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008501s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.102513s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.110014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009501s ]
+
+[ 2017-12-29T14:25:25+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/helpDocumentList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014502s ]
+SQL: SHOW COLUMNS FROM `nb_helpintroduce` [ RunTime:0.0075s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_helpintroduce` LIMIT 1   [ RunTime:0.0015s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT `id`,`Title`,`content`,`time` FROM `nb_helpintroduce` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0025s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.007001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.017002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.160520s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.167021s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015002s ]
+
+[ 2017-12-29T14:25:27+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/capitalLogPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012502s ]
+SQL: SHOW COLUMNS FROM `nb_capital` [ RunTime:0.0065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_capital` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_capital` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.131516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.137518s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012502s ]
+
+[ 2017-12-29T14:52:58+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/capitalLogPage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008001s ]
+SQL: SHOW COLUMNS FROM `nb_capital` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_capital` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT * FROM `nb_capital` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.141008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.148009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011001s ]
+
+[ 2017-12-29T14:53:00+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/helpDocumentList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `nb_helpintroduce` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `nb_helpintroduce` LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Think\Page::setConfig(), called in D:\phpStudy\WWW\ksqc\Application\Common\Common\function.php on line 200 and defined D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 59 行.
+NOTIC: [2] Illegal offset type in isset or empty D:\phpStudy\WWW\ksqc\ThinkPHP\Library\Think\Page.class.php 第 61 行.
+SQL: SELECT `id`,`Title`,`content`,`time` FROM `nb_helpintroduce` ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.008001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.023503s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.162011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.167012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012000s ]
+
+[ 2017-12-29T14:53:00+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/addHelpDocument.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.013502s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.142017s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.151018s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.031004s ]
+
+[ 2017-12-29T14:53:00+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/toolList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.003001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008001s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\5b8ee4f784998907521702608611a879.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.204012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.213012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010001s ]
+
+[ 2017-12-29T14:53:01+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/toolList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004501s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010000s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\5b8ee4f784998907521702608611a879.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.201011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.209011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011001s ]
+
+[ 2017-12-29T14:53:01+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/toolList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\5b8ee4f784998907521702608611a879.php 第 35 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.201012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.208012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012001s ]
+
+[ 2017-12-29T14:53:02+08:00 ] ::1 /ksqc/index.php/Admin/ParameterProbability/clothesList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.004000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.003000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+NOTIC: [8] Undefined variable: pageshow D:\phpStudy\WWW\ksqc\Application\Runtime\Cache\Admin\a8c7d17c84728a32bce657d0d03fb64b.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.186011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.192011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011001s ]
+

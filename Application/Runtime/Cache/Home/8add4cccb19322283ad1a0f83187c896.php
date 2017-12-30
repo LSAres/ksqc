@@ -62,6 +62,8 @@
     <span>现金:</span>
     <span>1000</span>
 </div>
+<!--返回按钮-->
+<div class="backButton">返回</div>
 <img src="/ksqc/Public/fuguiji/images/farm/cloud_one.png" id="cloud_1" alt="" style="display: none">
 <img src="/ksqc/Public/fuguiji/images/farm/cloud_two.png" id="cloud_2" alt="" style="display: none">
 <img src="/ksqc/Public/fuguiji/images/farm/cloud_three.png" id="cloud_3" alt="" style="display: none">
@@ -71,31 +73,31 @@
     <div class="map_div map_div1" style="display: none">
         <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="" >
         <!--自定义跳转属性 用JS跳转-->
-        <a locationHref="" >点击进入</a>
+        <a locationHref="www.baidu.com" >点击进入</a>
     </div>
     <!--点击层 -->
     <div class="map_div map_div2"  style="display: none">
         <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
         <!--自定义跳转属性 用JS跳转-->
-        <a locationHref="" >点击进入</a>
+        <a locationHref="www.baidu.com" >点击进入</a>
     </div>
     <!--点击层 -->
     <div class="map_div map_div3"  style="display: none">
         <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
         <!--自定义跳转属性 用JS跳转-->
-        <a locationHref="" >点击进入</a>
+        <a locationHref="www.baidu.com" >点击进入</a>
     </div>
     <!--点击层 -->
     <div class="map_div map_div4"  style="display: none">
         <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
         <!--自定义跳转属性 用JS跳转-->
-        <a locationHref="" >点击进入</a>
+        <a locationHref="www.baidu.com" >点击进入</a>
     </div>
     <!--点击层 -->
     <div class="map_div map_div5"  style="display: none">
         <img src="/ksqc/Public/fuguiji/images/farm/lockIcon.png" alt="">
         <!--自定义跳转属性 用JS跳转-->
-        <a locationHref="" >点击进入</a>
+        <a locationHref="www.baidu.com" >点击进入</a>
     </div>
 </div>
 <!--提示DIV  确定 取消 两按钮-->
@@ -108,8 +110,9 @@
 
         </div>
         <div class="promptBlock_foot">
-            <span>确定</span>
-            <span>取消</span>
+            <!--确认取消按钮-->
+            <span></span>
+            <span></span>
         </div>
     </div>
 </div>
@@ -123,7 +126,8 @@
 
         </div>
         <div class="promptBlock_foot">
-            <span>确定</span>
+            <!--确认按钮-->
+            <span></span>
         </div>
     </div>
 </div>
@@ -168,6 +172,11 @@
         $('.map_div3').click(function(){});
         $('.map_div4').click(function(){});
         $('.map_div5').click(function(){});
+        /*点击进入 按钮点击后跳转地址*/
+        $('.map_div a ').click(function(){
+            var locationHref = $(this).attr('locationHref');
+            alert('将要跳转到：' + locationHref);
+        });
     })
 </script>
 </html>
