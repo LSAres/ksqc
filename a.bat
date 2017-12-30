@@ -1,1 +1,1 @@
-"D:\phpStudy\php\php-5.5.38\php.exe" -f "D:\phpStudy\WWW\midnight\test.php"
+"D:\phpStudy\php\php-5.5.38\php.exe" -f "D:\phpStudy\WWW\ksqc\test.php"

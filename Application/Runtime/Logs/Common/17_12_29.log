@@ -1,0 +1,25 @@
+[ 2017-12-29T09:04:32+08:00 ] ::1 /ksqc/index.php/Home/Login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+
+[ 2017-12-29T12:55:59+08:00 ] ::1 /ksqc/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+
+[ 2017-12-29T13:25:21+08:00 ] ::1 /ksqc/index.php/Home/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+
+[ 2017-12-29T18:04:47+08:00 ] 192.168.1.111 /ksqc/index.php/Home/Login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+
+[ 2017-12-29T18:13:34+08:00 ] ::1 /ksqc/index.php/Home/Login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+
