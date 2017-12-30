@@ -1182,13 +1182,14 @@ body {
     transform: rotateZ(-0deg);
 }
 .seamDiv .seamUpCall {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 100%;
-    box-shadow: 0 0 7px #e6ef1e inset;
+    box-shadow: 0 0 7px #fefff0 inset;
     position: absolute;
     right: 0;
     top: 40%;
+    padding: 5px;
 }
 .seamDiv .seamNumber{
     width: 30px;

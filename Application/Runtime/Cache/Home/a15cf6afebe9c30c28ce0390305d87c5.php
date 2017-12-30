@@ -1146,7 +1146,7 @@
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen1_1.png" id="gameTopHumen" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;"/>
-        <canvas class="gameBody_topCanvas" width="1024" height="768">您的浏览器或手机不支持此功能！</canvas>
+        <canvas class="gameBody_topCanvas" width="369" height="408" >您的浏览器或手机不支持此功能！</canvas>
         <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="topMineral">
     </div>
     <!--下方 电梯和矿层-->
@@ -1196,7 +1196,7 @@
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="1">
                 <!--升级商店呼出按钮--->
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="1">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <!--矿层数字-->
                 <span class="seamNumber">1</span>
                 <!--箱子-->
@@ -1211,7 +1211,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="2" >
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="2">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">2</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1221,7 +1221,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="3">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="3">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">3</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1231,7 +1231,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="4">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="4">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">4</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1240,7 +1240,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="5">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="5">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">5</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1250,7 +1250,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="6">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="6">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">6</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1260,7 +1260,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="7">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="7">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">7</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1269,7 +1269,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="8" >
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="8">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">8</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1279,7 +1279,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="9">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="9">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">9</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1289,7 +1289,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="10">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="10">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">10</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1298,7 +1298,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="11">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="11">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">11</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1308,7 +1308,7 @@
                 <!--手动挖矿触发按钮-->
                 <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="12">
                 <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="12">
-                <canvas width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">12</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">

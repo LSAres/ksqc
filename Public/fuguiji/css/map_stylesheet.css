@@ -75,100 +75,65 @@ html , body{
     position: absolute;
 }
 /*地图点击层：锁头图标*/
-.mapDiv .map_div img{
+.mapDiv .map_div .clock{
     width: 43px;
-    height: 59px;
-    display: none;
+    height: 43px;
     position: absolute;
+    top: 38%;
+    left: 39%;
 }
-/*地图点击层：点击进入图标*/
-.mapDiv .map_div a{
+/*地图点击层：点选图标*/
+.mapDiv .map_div .mapClick{
+    width: 70%;
     color: #fff;
     font-size: 14px;
-    width: 115px;
-    background: linear-gradient(to bottom,#53ffd5,#4ddeb6,#6ff3b0);
-    border-radius: 5px;
     text-align: center;
-    text-shadow: 0 0 5px #000;
-    box-shadow: 0 0 10px #ccc;
-    padding: 4% 0;
-    display: inline-block;
-    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #fff inset;
+    background: linear-gradient(to bottom,#8cfbf6,#348394,#87f2ed);
+    margin: 35% auto;
+    padding: 5px 0;
+    display: none;
+
+
+
 }
 .mapDiv .map_div1 {
-    width: 208px;
-    height: 300px;
-    top: 17%;
-    left: 9%;
+    width: 160px;
+    height: 160px;
+    top: 9%;
+    left: 10%;
 }
 
 .mapDiv .map_div2 {
-    width: 214px;
-    height: 221px;
-    top: 3%;
-    left: 35%;
+    width: 160px;
+    height: 160px;
+    top: 6%;
+    left: 59%;
 }
 
 .mapDiv .map_div3 {
-    left: 69%;
-    top: 5%;
-    width: 100px;
-    height: 188px;
+    left: 38%;
+    top: 38%;
+    width: 160px;
+    height: 160px;
 }
 
 .mapDiv .map_div4 {
-    top: 43%;
-    left: 36%;
-    width: 202px;
-    height: 333px;
+    top: 64%;
+    left: 9%;
+    width: 160px;
+    height: 160px;
 }
 
 .mapDiv .map_div5 {
-    width: 180px;
-    height: 312px;
-    left: 69%;
-    top: 38%;
+    width: 160px;
+    height: 160px;
+    left: 57%;
+    top: 60%;
 }
-.mapDiv .map_div1 img{
-    top: 38%;
-    left: 39%;
-}
-.mapDiv .map_div2 img{
-    top: 32%;
-    left: 28%;
-}
-.mapDiv .map_div3 img{
-    top: 28%;
-    left: 29%;
-}
-.mapDiv .map_div4 img{
-    top: 30%;
-    left: 39%;
-}
-.mapDiv .map_div5 img{
-    top: 34%;
-    left: 41%;
-}
-.mapDiv .map_div1 a{
-    top: 46%;
-    left: 23%;
-}
-.mapDiv .map_div2 a{
-    top: 46%;
-    left: 8%;
-}
-.mapDiv .map_div3 a{
-    top: 46%;
-    left: -8%;
-}
-.mapDiv .map_div4 a{
-    top: 46%;
-    left: 23%;
-}
-.mapDiv .map_div5 a{
-    top: 46%;
-    left: 10%;
-}
+
+
 /*提示*/
 .promptDiv {
     width: 100%;
@@ -227,6 +192,7 @@ html , body{
     display: inline-block;
     padding: 5px 0;
     margin: 0 5%;
+
 
 }
 
