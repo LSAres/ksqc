@@ -1435,6 +1435,12 @@
     var openLayerCount = {$layer_count};
     //全层秒数
     var allLayerSecond = {$second_list};
+    //手动挖矿
+    var manual_url= "{:U('Index/Manual')}";
+    //自动挖矿
+    var buyTool_url = "{:U('Index/buyTool')}";
+    //check
+    var toolsCheckOut = "{:U('Index/toolsCheckOut')}";
     //console.log(timeResultArray);
 </script>
 <!--<audio src="__PUBLIC__/fuguiji/music/bg.mp3" preload="" loop></audio>-->
@@ -1442,57 +1448,37 @@
 <script>
     $(function () {
 
-        //点击每层的升级按钮
-        $('.seamUpCall').on('click', function () {
-            var layer = $(this).attr('callnumber');
-            gcLayer(layer);
-        });
+        //已经开启自动挖矿的矿层隐藏手动挖矿按钮
+        var minerActionImg = document.getElementsByClassName('minerAction');
+        // $.each(allLayerSecond, function(index, element) {
+        //     //console.log(allLayerSecond);
+        //     if ($(this)[0] != 0) {
+        //         minerActionImg[index].style.display = 'none';
+        //     }
+        // });
+
 
         //手动挖矿
-        $(document.body).on('click', '.minerAction', function() {
-            var layer = $(this).attr('controlSeam');
-            $.ajax({
-                type: "POST",
-                url: "{:U('Index/Manual')}",
-                data: {layer: layer},
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    //暂定ajax响应1000ms,9000ms后加分
-                    if (data.status == 'success') {
-                        setTimeout(function() {
-                            $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
-                        }, 9000);
-                    } else {
-                        alert(data.message);
-                    }
-                }
-            });
-        });
-
-        //自动挖矿
-        $(document.body).on('click', '.risk', function () {
-            var layer = $(this).parents('.upgradeSelect').attr('layer');
-            var tool_id = $(this).attr('tool_id');
-            console.log(layer + '---' + tool_id);
-            $.ajax({
-                type: "POST",
-                url: "{:U('Index/buyTool')}",
-                data: {layer: layer, tool_id: tool_id},
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    if (data['status'] == 'success') {
-                        //更新钱
-                        $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
-                        gcLayer(layer);
-                        alert(data['message']);
-                    } else {
-                        alert(data['message']);
-                    }
-                }
-            });
-        });
+        // $(document.body).on('click', '.minerAction', function() {
+        //     var layer = $(this).attr('controlSeam');
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "{:U('Index/Manual')}",
+        //         data: {layer: layer},
+        //         dataType: "json",
+        //         success: function (data) {
+        //             console.log(data);
+        //             //暂定ajax响应1000ms,9000ms后加分
+        //             if (data.status == 'success') {
+        //                 setTimeout(function() {
+        //                     $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
+        //                 }, 9000);
+        //             } else {
+        //                 alert(data.message);
+        //             }
+        //         }
+        //     });
+        // });
 
         //领取 动态绑定click时间
         $(document.body).on('click', '.getMinerGold', function () {
@@ -1589,43 +1575,6 @@
           });
         });
 
-        //更新本层数据
-        function gcLayer(layer) {
-            $.ajax({
-                type: "POST",
-                url: "{:U('Index/toolsCheckOut')}",
-                data: {layer: layer},
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('div').css('width', (data['hours'] * 20) + '%');
-                    $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('label').text('LV_'+data['hours']);
-                    $.each(data['list'], function () {
-
-                        //买过的加上已购买
-                        if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {
-
-                        } else {
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').append($('<span>已购买</span>'));
-                        }
-                        //到时间了更换按钮
-                        if ($(this)[0]['is_pass'] == 1) {
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('领取');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').addClass('getMinerGold');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').css('background', 'green');
-                        } else {
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('已购买');
-                        }
-
-                    });
-
-                }
-            });
-        }
 
 
         //仅供观赏的ajax
