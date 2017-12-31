@@ -475,6 +475,7 @@ class IndexController extends CommonController
     {
         $layer = I('post.layer', 0);
         $tool_id = I('post.tool_id');
+        $db_miner_log = M('miner_log');
         if ($layer < 1 || $layer > 12) die(0);
         if ($tool_id < 1 || $tool_id > 5) die(0);
         $uid = session('userId');
@@ -486,6 +487,21 @@ class IndexController extends CommonController
             'message' => '挖矿分不足'
           ));
         }
+
+        //正在挖矿中禁止再次挖矿
+        $max_record_id = $db_miner_log->where(array('uid' => $uid, 'layer_id' => $layer))->max('id');
+        $last_record = $db_miner_log->where(array('id' => $max_record_id))->find();
+
+        if (!empty($last_record)) {
+            if (time() - $last_record['time'] < 10) {
+                $this->ajaxReturn(array(
+                    'status' => 'error',
+                    'message' => '请等待本次挖矿完毕'
+                ));
+            }
+        }
+
+
         //如果要限制最多能买5个工具
         $db_tools = M('tools');
         $tool_count = $db_tools->where(array('uid' => $uid, 'area' => session('area') ,'layer_id' => $layer, 'is_get' => 0))->count();
