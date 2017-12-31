@@ -75,6 +75,20 @@ $(function () {
     //关闭升级商店
     $('.upgradeTitle img').click(function () {
         $('.upgradeShow').fadeOut();
+        window.location.reload();
+        // function reloadAbleJSFn()
+        // {
+        //     var oldjs = null;
+        //     var t = null;
+        //     var oldjs = document.getElementById('gameIndexControl');
+        //     if(oldjs) oldjs.parentNode.removeChild(oldjs);
+        //     var scriptObj = document.createElement("script");
+        //     scriptObj.src = "../../../../Public/fuguiji/js/game_index.js";
+        //     scriptObj.type = "text/javascript";
+        //     scriptObj.id   = 'gameIndexControl';
+        //     document.getElementsByTagName("head")[0].appendChild(scriptObj);
+        // }
+        // reloadAbleJSFn()
     });
     /*所有的 升级商店呼出按钮*/
     var seamUpCallAll = $('.seamUpCall');
@@ -1376,9 +1390,19 @@ $(function () {
                     timeArray[layer - 1] = layerInfo['second'];
                     
                     console.log(timeArray);
-                    clearInterval('automatic_' + (layer - 1));
-                    alert(11);
-                    autoMaticFunction();
+                    timeArray = allLayerSecond;
+                    clearInterval(automatic_1);
+                    clearInterval(automatic_2);
+                    clearInterval(automatic_3);
+                    clearInterval(automatic_4);
+                    clearInterval(automatic_5);
+                    clearInterval(automatic_6);
+                    clearInterval(automatic_7);
+                    clearInterval(automatic_8);
+                    clearInterval(automatic_9);
+                    clearInterval(automatic_10);
+                    clearInterval(automatic_11);
+                    clearInterval(automatic_12);
 
                     
                     alert(data['message']);
@@ -1438,7 +1462,20 @@ $(function () {
 
     //判断时间数组的的值 如果不为0 隐藏手动挖矿按钮
     autoMaticFunction();
+    var automatic_1;
+    var automatic_2;
+    var automatic_3;
+    var automatic_4;
+    var automatic_5;
+    var automatic_6;
+    var automatic_7;
+    var automatic_8;
+    var automatic_9;
+    var automatic_10;
+    var automatic_11;
+    var automatic_12;
     function autoMaticFunction(){
+
         /*** 1 **/
         if(timeArray[0] > 0){
             minerActionImg[0].style.display = 'none';   //隐藏手动挖矿按钮
@@ -1452,6 +1489,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_1);
             minerActionImg[0].style.display = 'block';
         }
         /*** 2 **/
@@ -1467,6 +1505,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_2);
             minerActionImg[1].style.display = 'block';
         }
         /*** 3 **/
@@ -1482,6 +1521,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_3);
             minerActionImg[2].style.display = 'block';
         }
         /*** 4 **/
@@ -1497,6 +1537,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_4);
             minerActionImg[3].style.display = 'block';
         }
         /*** 5 **/
@@ -1512,6 +1553,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_5);
             minerActionImg[4].style.display = 'block';
         }
         /*** 6 **/
@@ -1527,6 +1569,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_6);
             minerActionImg[5].style.display = 'block';
         }
         /*** 7 **/
@@ -1542,6 +1585,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_7);
             minerActionImg[6].style.display = 'block';
         }
         /*** 8 **/
@@ -1557,6 +1601,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_8);
             minerActionImg[7].style.display = 'block';
         }
         /*** 9 **/
@@ -1572,6 +1617,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_9);
             minerActionImg[8].style.display = 'block';
         }
         /*** 10 **/
@@ -1587,6 +1633,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_10);
             minerActionImg[9].style.display = 'block';
         }
         /*** 11 **/
@@ -1602,6 +1649,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_11);
             minerActionImg[10].style.display = 'block';
         }
         /*** 12 **/
@@ -1617,6 +1665,7 @@ $(function () {
             },80);
 
         }else{
+            clearInterval(automatic_12);
             minerActionImg[11].style.display = 'block';
         }
     }
