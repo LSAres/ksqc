@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>旷世奇财</title>
+    <title>富贵鸡</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
     <!-- viewport 后面加上 minimal-ui 在safri 体现效果 -->
@@ -72,19 +72,19 @@
             <img src="/ksqc/Public/fuguiji/images/farm/gameTopIcon_1.png"/>
             <span><?php echo ($store['miner_gold']); ?></span>
             <label style="display: none;">可操作点击</label>
-            <!--<div style="color: yellowgreen;">数值名称</div>-->
+            <div style="color: yellowgreen;">数值名称</div>
         </div>
         <div class="gameTop-showBlock">
             <img src="/ksqc/Public/fuguiji/images/farm/gameTopIcon_2.png"/>
             <span><?php echo ($store['diamonds']); ?></span>
             <label style="display: none;">可操作点击</label>
-            <!--<div style="color: yellowgreen;">数值名称</div>-->
+            <div style="color: yellowgreen;">数值名称</div>
         </div>
         <div class="gameTop-showBlock">
             <img src="/ksqc/Public/fuguiji/images/farm/gameTopIcon_3.png"/>
             <span><?php echo ($store['money']); ?></span>
             <label class="chargeCall"></label>
-            <!--<div style="color: #b9def0;">数值名称</div>-->
+            <div style="color: #b9def0;">数值名称</div>
         </div>
     </div>
 </div>
@@ -93,7 +93,7 @@
 <!--充值-->
 <div class="outerDiv chageDiv" style="display:none;">
     <!--关闭充值-->
-    <img src="/ksqc/Public/fuguiji/images/farm/backGameBtn.png" class="closeCharge">
+    <img src="/ksqc/Public/fuguiji/images/home/close.png" class="closeCharge">
     <!--充值显示-->
     <div class="chargeInputBlock">
         <!--可用余额显示-->
@@ -111,17 +111,17 @@
         <!--充值方式-->
         <div class="chargeType">
             <h3>充值方式</h3>
-<!--             <div class="chargeTypeSelect selected">
+            <div class="chargeTypeSelect selected">
                 <img src="/ksqc/Public/fuguiji/images/home/pay01.png" alt="">
                 <span>充值方式名称</span>
-            </div> -->
+            </div>
             <div class="chargeTypeSelect">
                 <img src="/ksqc/Public/fuguiji/images/home/pay02.png" alt="">
                 <span>充值方式名称</span>
             </div>
         </div>
         <!--确认充值按钮-->
-        <div class="chargeButton">确认充值</div>
+        <div class="chargeButton"></div>
     </div>
 </div>
 <!--升级商店DIV 对应12矿层 共12个-->
@@ -129,21 +129,20 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
@@ -151,30 +150,30 @@
         <div class="upgradeSelect" layer="1">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -183,21 +182,20 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
@@ -205,35 +203,35 @@
         <div class="upgradeSelect" layer="2">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -242,21 +240,20 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
@@ -264,35 +261,35 @@
         <div class="upgradeSelect" layer="3">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -301,21 +298,20 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
@@ -323,35 +319,35 @@
         <div class="upgradeSelect" layer="4">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
+                    <img src="<?php echo ($v['img']); ?>" alt="" >
                     <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
                     <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
                 </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -360,21 +356,20 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
@@ -382,35 +377,35 @@
         <div class="upgradeSelect" layer="5">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -419,21 +414,20 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
@@ -441,35 +435,35 @@
         <div class="upgradeSelect" layer="6">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -478,21 +472,20 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
@@ -500,35 +493,35 @@
         <div class="upgradeSelect" layer="7">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -537,57 +530,56 @@
     <div class="upgrade">
         <div class="upgradeTitle" layer="8">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
         <!--升级选择-->
-        <div class="upgradeSelect" layer="8">
+        <div class="upgradeSelect">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -596,57 +588,56 @@
     <div class="upgrade">
         <div class="upgradeTitle" layer="9">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
         <!--升级选择-->
-        <div class="upgradeSelect" layer="9">
+        <div class="upgradeSelect">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -655,57 +646,56 @@
     <div class="upgrade">
         <div class="upgradeTitle" layer="10">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
         <!--升级选择-->
-        <div class="upgradeSelect" layer="10">
+        <div class="upgradeSelect">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -714,57 +704,56 @@
     <div class="upgrade">
         <div class="upgradeTitle" layer="11">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
         <!--升级选择-->
-        <div class="upgradeSelect" layer="11">
+        <div class="upgradeSelect">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -773,57 +762,56 @@
     <div class="upgrade">
         <div class="upgradeTitle">
             <!--功能信息-->
-            <span>升级页面</span>
+            <span >升级页面</span>
             <!--关闭图片-->
-            <img src="/ksqc/Public/fuguiji/images/home/close.png">
+            <img  src="/ksqc/Public/fuguiji/images/home/close.png" >
         </div>
         <!--商店头部信息-->
         <div class="upgradeHeader" layer="12">
             <!--左侧图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg"
-                 class="upgradeHeader_left">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
             <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
             <!--矿层数值条-->
             <div class="upgradeHeader_rightDisplay">
-                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png">
+                <img src="/ksqc/Public/fuguiji/images/farm/lv_up_icon.png" >
                 <div></div>
-                <label></label>
+                <label>LV_1</label>
             </div>
 
         </div>
         <!--升级选择-->
-        <div class="upgradeSelect" layer="12">
+        <div class="upgradeSelect">
             <!--选择行-->
             <?php if(is_array($tool)): foreach($tool as $key=>$v): ?><div>
-                    <img src="<?php echo ($v['img']); ?>" alt="">
-                    <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
-                    <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                </div><?php endforeach; endif; ?>
-            <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
-                        </div> -->
+                <img src="<?php echo ($v['img']); ?>" alt="" >
+                <span><?php echo ($v['name']); ?>(<?php echo ($v['miner_gold']); ?>)</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div><?php endforeach; endif; ?>
+<!--             <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div>
+            <div>
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
+                <span>升级功能的名称</span>
+                <button class="risk" tool_id="<?php echo ($v['id']); ?>">升级</button>
+            </div> -->
         </div>
 
     </div>
@@ -844,38 +832,13 @@
                     <!--<button>执行操作</button>-->
                 </div><?php endforeach; endif; ?>
         </div>
-        <!--向好友赠送积分-->
-        <div class="giveIntegral">
-            <!--增送按钮-->
-            <div class="intergralBtn">赠送积分</div>
-            <!--赠送积分输入框-->
-            <div class="intergralInputDiv">
-                <input type="number" id="score_number" placeholder="输入赠送的积分数量" class="intergralMessage">
-                <input type="text" id="score_account" placeholder="请输入好友账号" class="intergralMessage">
-                <input type="text" id="score_type" value="请选择要赠送的积分类型" readonly="readonly" class="intergralMessage intergralSelect">
-                <button class="giveAction giveStart">确认赠送</button>
-                <button class="giveAction giveStop">取消</button>
-            </div>
-            <!--积分类型选择-->
-            <div class="integralType">
-                <div>挖矿分</div>
-                <div>现金分</div>
-                <!-- <div>老人与海鲜</div>
-                <div>步步高惊心</div>
-                <div>死神不来了</div>
-                <div>还珠格格巫</div>
-                <div>暮光之城管</div>
-                <div>我的兄弟叫顺口溜</div>
-                <div>满城尽是黄金甲鱼</div> -->
-            </div>
-        </div>
     </div>
 
 </div>
 <!--个人中心-->
 <div class="outerDiv userCenter" style="display: none;">
     <!--关闭个人设置-->
-    <img src="/ksqc/Public/fuguiji/images/farm/backGameBtn.png" alt="" class="closeUserCenter">
+    <img src="/ksqc/Public/fuguiji/images/pop/deal-bnt.png" alt="" class="closeUserCenter">
     <!---->
     <div class="userCenterControl">
         <!--显示框-->
@@ -885,157 +848,198 @@
             <input type="text" value="<?php echo ($user["alipay"]); ?>">
             <input type="text" value="<?php echo ($user["ip"]); ?>">
             <!--<input type="text" placeholder="提示用户输入的信息">-->
-            <input type="submit" value="确定">
+            <input type="submit" value="">
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <!--兑换记录切换-->
-            <div class="exchangeHistorySelect">
-                <div class="active">挖矿分兑现金分</div>
-                <div>现金分兑挖矿分</div>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-1411</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
             </div>
-            <!--兑换记录1-->
-            <div class="exchangeHistoryList">
-                <?php if(is_array($miner_money_list)): foreach($miner_money_list as $key=>$v): ?><div class="miningHistory">
-                        <div class="miningHistory_date">
-                            <span><?php echo (date("Y-m-d H:i:s",$v["time"])); ?></span>
-                            <label></label>
-                        </div>
-                        <div class="miningHistory_message">
-                            <div>
-                                <span>兑换数量:</span>
-                                <label><?php echo ($v["from"]); ?></label>
-                            </div>
-                            <div>
-                                <span>获取数量:</span>
-                                <label><?php echo ($v["to"]); ?></label>
-                            </div>
-                        </div>
-                    </div><?php endforeach; endif; ?>
-            </div>
-            <div class="exchangeHistoryList" style="display: none;">
-                <?php if(is_array($money_miner_list)): foreach($money_miner_list as $key=>$v): ?><div class="miningHistory">
-                        <div class="miningHistory_date">
-                            <span><?php echo (date("Y-m-d H:i:s",$v["time"])); ?></span>
-                            <label></label>
-                        </div>
-                        <div class="miningHistory_message">
-                            <div>
-                                <span>兑换数量:</span>
-                                <label><?php echo ($v["from"]); ?></label>
-                            </div>
-                            <div>
-                                <span>获取数量:</span>
-                                <label><?php echo ($v["to"]); ?></label>
-                            </div>
-                        </div>
-                    </div><?php endforeach; endif; ?>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-14</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
             </div>
 
-
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <?php if(is_array($miner_list)): foreach($miner_list as $key=>$v): ?><div class="miningHistory">
-                    <div class="miningHistory_date">
-                        <span><?php echo (date("Y-m-d H:i:s",$v["time"])); ?></span>
-                        <label></label>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-1422</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
                     </div>
-                    <div class="miningHistory_message">
-                        <div>
-                            <span>获取类型:</span>
-                            <label>
-                                <?php if($v["type"] == 0): ?>手动
-                                    <?php else: ?>
-                                        自动<?php endif; ?>
-                            </label>
-                        </div>
-                        <div>
-                            <span>数量:</span>
-                            <label><?php echo ($v["miner"]); ?></label>
-                        </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
                     </div>
-                </div><?php endforeach; endif; ?>
-
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
+            </div>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-14</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <?php if(is_array($money_list)): foreach($money_list as $key=>$v): ?><div class="miningHistory">
-                    <div class="miningHistory_date">
-                        <span><?php echo (date("Y-m-d H:i:s",$v["time"])); ?></span>
-                        <label></label>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-14</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
                     </div>
-                    <div class="miningHistory_message">
-                        <div>
-                            <span>获取类型:</span>
-                            <label>
-                                <?php if($v["type"] == 0): ?>手动
-                                    <?php else: ?>
-                                    自动<?php endif; ?>
-                            </label>
-                        </div>
-                        <div>
-                            <span>数量:</span>
-                            <label><?php echo ($v["money"]); ?></label>
-                        </div>
-                        <div>
-                            <span>备注:</span>
-                            <label><?php echo ((isset($v["note"]) && ($v["note"] !== ""))?($v["note"]):无); ?></label>
-                        </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
                     </div>
-                </div><?php endforeach; endif; ?>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
+            </div>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-14</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="userCenter_functionDisplay" style="display: none;">
             <!--积分使用记录-->
-            <?php if(is_array($diamonds_list)): foreach($diamonds_list as $key=>$v): ?><div class="miningHistory">
-                    <div class="miningHistory_date">
-                        <span><?php echo (date("Y-m-d H:i:s",$v["time"])); ?></span>
-                        <label></label>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-14</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
                     </div>
-                    <div class="miningHistory_message">
-                        <div>
-                            <span>获取类型:</span>
-                            <label>
-                                <label>
-                                    <?php if($v["type"] == 0): ?>手动
-                                        <?php else: ?>
-                                        自动<?php endif; ?>
-                                </label>
-                            </label>
-                        </div>
-                        <div>
-                            <span>数量:</span>
-                            <label><?php echo ($v["diamonds"]); ?></label>
-                        </div>
-                        <div>
-                            <span>备注:</span>
-                            <label><?php echo ((isset($v["note"]) && ($v["note"] !== ""))?($v["note"]):无); ?></label>
-                        </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
                     </div>
-                </div><?php endforeach; endif; ?>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
+            </div>
+            <div class="miningHistory">
+                <div class="miningHistory_date">
+                    <span>2014-14-14</span>
+                    <label ></label>
+                </div>
+                <div class="miningHistory_message">
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                    <div>
+                        <span>信息标题:</span>
+                        <label>信息数值</label>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
     <!--底部功能切换-->
     <div class="userCenter_bottomFunctionSelect">
-        <div class="active">
-            个人设置
+        <div>
             <img src="/ksqc/Public/fuguiji/images/farm/usercenter_2.png" alt="">
         </div>
         <div>
-            兑换记录
             <img src="/ksqc/Public/fuguiji/images/farm/usercenter_1.png" alt="">
         </div>
         <div>
-            挖矿记录
             <img src="/ksqc/Public/fuguiji/images/farm/usercenter_3.png" alt="">
         </div>
         <div>
-            现金记录
             <img src="/ksqc/Public/fuguiji/images/farm/usercenter_4.png" alt="">
         </div>
         <div>
-            钻石记录
             <img src="/ksqc/Public/fuguiji/images/farm/usercenter_5.png" alt="">
         </div>
     </div>
@@ -1048,8 +1052,8 @@
         <img src="/ksqc/Public/fuguiji/images/home/close.png" class="closeCatchShop">
         <!--左侧功能选择-->
         <div class="catchShop_leftControl">
-            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_shop.png">
-            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_exchange.png">
+            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_shop.png" >
+            <img src="/ksqc/Public/fuguiji/images/farm/catchShop_exchange.png" >
             <img src="/ksqc/Public/fuguiji/images/farm/catchShop_Warehouse.png" alt="">
             <img src="/ksqc/Public/fuguiji/images/farm/catchShop_history.png" alt="">
         </div>
@@ -1057,97 +1061,91 @@
         <!--宝箱模块-->
         <div class="catchShopDisplay catchShop_catchCatch">
             <!--宝箱顶部展示图片-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513244719437&di=89f01bb8c22a51d49251d23ae519a42d&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fd62a6059252dd42a19eb2379093b5bb5c8eab805.jpg"
-                 alt="" class="catchShop_catchCatch_top">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513244719437&di=89f01bb8c22a51d49251d23ae519a42d&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fd62a6059252dd42a19eb2379093b5bb5c8eab805.jpg" alt="" class="catchShop_catchCatch_top">
             <!--宝箱-->
             <div class="caseBlock">
                 <img src="http://img1.qq.com/gamezone/pics/3899/3899503.jpg" alt="">
-                <div> $100</div>
+                <div> $100 </div>
             </div>
             <div class="caseBlock">
                 <img src="http://img1.qq.com/gamezone/pics/3899/3899503.jpg" alt="">
-                <div> $100</div>
+                <div> $100 </div>
             </div>
         </div>
         <!--积分兑换-->
         <div class="catchShopDisplay pointExchange" style="display: none;">
             <!--积分互换标题-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513244719437&di=89f01bb8c22a51d49251d23ae519a42d&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fd62a6059252dd42a19eb2379093b5bb5c8eab805.jpg"
-                 alt="" class="pointExchange_title">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513244719437&di=89f01bb8c22a51d49251d23ae519a42d&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fd62a6059252dd42a19eb2379093b5bb5c8eab805.jpg" alt="" class="pointExchange_title">
             <!--互换选择 -->
             <div class="exchangeDiv">
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513835295&di=4eaeed685c925eb5d7aed6acc8fdb90e&imgtype=jpg&er=1&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201408%2F02%2F20140802201903_CVyxc.jpeg"
-                     alt="">
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513240610106&di=3b23fafd8b561df6ce2c0b444b4e4d76&imgtype=0&src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1510%2F651-151006192532950.jpg"
-                     alt="">
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513835313&di=7f4f19c63012bd36db5e58b0ea8cca01&imgtype=jpg&er=1&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201409%2F04%2F20140904185012_mzf5L.jpeg"
-                     alt="">
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513835295&di=4eaeed685c925eb5d7aed6acc8fdb90e&imgtype=jpg&er=1&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201408%2F02%2F20140802201903_CVyxc.jpeg" alt="">
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513240610106&di=3b23fafd8b561df6ce2c0b444b4e4d76&imgtype=0&src=http%3A%2F%2Fuploads.xuexila.com%2Fallimg%2F1510%2F651-151006192532950.jpg" alt="">
+                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513835313&di=7f4f19c63012bd36db5e58b0ea8cca01&imgtype=jpg&er=1&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201409%2F04%2F20140904185012_mzf5L.jpeg" alt="">
             </div>
             <!--图标/输入表单切换按钮-->
-            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513835118&di=f5c64659251f2376ea348fc340e822eb&imgtype=jpg&er=1&src=http%3A%2F%2Fwenwen.soso.com%2Fp%2F20100724%2F20100724181115-560148952.jpg"
-                 alt="" class="exchange_inputChange">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513835118&di=f5c64659251f2376ea348fc340e822eb&imgtype=jpg&er=1&src=http%3A%2F%2Fwenwen.soso.com%2Fp%2F20100724%2F20100724181115-560148952.jpg" alt="" class="exchange_inputChange">
             <!--兑换输入表单-->
             <form action="" method="post" class="exchange_inputForm exchange_1">
                 <input type="text" placeholder="请输入兑换数量1">
                 <!---->
-                <div>兑换</div>
+                <div></div>
             </form>
             <form action="" method="post" class="exchange_inputForm exchange_2" style="display: none;">
                 <input type="text" placeholder="请输入兑换数量2">
                 <!---->
-                <div>兑换</div>
+                <div></div>
             </form>
         </div>
         <!--仓库模块-->
-        <div class="catchShopDisplay warehouse" style="display: none;">
-            <!--物品块-->
-            <div class="propsBlock">
-                <span class="propsNumber">x10</span>
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513243634458&di=c86673820a598af4b7e3c284529aed78&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D764082391%2C695664485%26fm%3D214%26gp%3D0.jpg"
-                     alt="" class="propsImg">
-                <div class="propsUse">使用</div>
-            </div>
-            <div class="propsBlock">
-                <span class="propsNumber">x10</span>
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513243634458&di=c86673820a598af4b7e3c284529aed78&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D764082391%2C695664485%26fm%3D214%26gp%3D0.jpg"
-                     alt="" class="propsImg">
-                <div class="propsUse">使用</div>
-            </div>
+         <div class="catchShopDisplay warehouse" style="display: none;">
+             <!--物品块-->
+             <div class="propsBlock">
+                 <span class="propsNumber">x10</span>
+                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513243634458&di=c86673820a598af4b7e3c284529aed78&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D764082391%2C695664485%26fm%3D214%26gp%3D0.jpg" alt="" class="propsImg">
+                 <div class="propsUse">使用</div>
+             </div>
+             <div class="propsBlock">
+                 <span class="propsNumber">x10</span>
+                 <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513243634458&di=c86673820a598af4b7e3c284529aed78&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D764082391%2C695664485%26fm%3D214%26gp%3D0.jpg" alt="" class="propsImg">
+                 <div class="propsUse">使用</div>
+             </div>
 
 
-        </div>
+         </div>
         <!--宝箱购买记录-->
         <div class="catchShopDisplay catchHistory" style="display: none;">
             <!--记录块-->
-            <!-- <div class="catchHistory_block">
-                <div class="catchHistory_block_time"> 2041-11-30</div>
-                <div class="catchHistory_block_message"><span>宝箱名称</span> * <span>1</span> <span>$100</span></div>
-            </div> -->
-            <?php if(is_array($baoxiang_list)): foreach($baoxiang_list as $key=>$v): ?><div class="catchHistory_block">
-                <div class="catchHistory_block_time"><?php echo date('Y-m-d H:i', $v['open_time']);?></div>
-                <div class="catchHistory_block_message"><span>宝箱名称</span> * <span>1</span> <span><?php echo ($v['miner_gold']); ?></span></div>
-            </div><?php endforeach; endif; ?>
+            <div class="catchHistory_block">
+                <div class="catchHistory_block_time"> 2041-11-30 </div>
+                <div class="catchHistory_block_message"><span>宝箱名称</span> * <span>1</span> <span>$100</span> </div>
+            </div>
+            <!--记录块-->
+            <div class="catchHistory_block">
+                <div class="catchHistory_block_time"> 2041-11-30 </div>
+                <div class="catchHistory_block_message"><span>宝箱名称</span> * <span>1</span> <span>$100</span> </div>
+            </div>
+
         </div>
     </div>
 
 </div>
 
 <!--游戏主页-->
-<div class="gameBody">
+<div class="gameBody" >
     <!--顶部 青天白云 搬运矿工-->
     <div class="gameBody_top">
         <img src="/ksqc/Public/fuguiji/images/farm/gameTopLeft.png" id="gameTopLeft" style="display: none;"/>
-        <img src="/ksqc/Public/fuguiji/images/farm/gameTopRight.png" id="gameTopRight" style="display: none;"/>
-        <img src="/ksqc/Public/fuguiji/images/farm/top_leftHumen.png" id="gameTopLeftHumen" style="display: none;"/>
-        <img src="/ksqc/Public/fuguiji/images/farm/top_rightHumen.png" id="gameTopRightHumen" style="display: none;"/>
-        <img src="/ksqc/Public/fuguiji/images/farm/topHumenCome.png" id="topHumenCome" style="display: none;"/>
-        <img src="/ksqc/Public/fuguiji/images/farm/topHumengo.png" id="topHumengo" style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/gameTopRight.png" id="gameTopRight"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/top_leftHumen.png" id="gameTopLeftHumen"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/top_rightHumen.png" id="gameTopRightHumen"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/topHumenCome.png" id="topHumenCome"  style="display: none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/topHumengo.png" id="topHumengo"  style="display: none;"/>
         <!--蓝色-->
-        <img src="/ksqc/Public/fuguiji/images/farm/tophumen1_1.png" id="gameTopHumen" style="display:none;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/tophumen1_1.png"  id="gameTopHumen" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;"/>
         <img src="/ksqc/Public/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;"/>
-        <canvas class="gameBody_topCanvas" width="369" height="408" >您的浏览器或手机不支持此功能！</canvas>
-        <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="topMineral">
+        <canvas class="gameBody_topCanvas" width="1024" height="768">您的浏览器或手机不支持此功能！</canvas>
+        <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="topMineral" >
     </div>
     <!--下方 电梯和矿层-->
     <div class="gameBody_bottom">
@@ -1156,159 +1154,118 @@
             <!--电梯图片-->
             <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock.png" id="elevatorBlockImg" style="display: none;">
             <img src="/ksqc/Public/fuguiji/images/farm/elevatorBlock1.png" id="elevatorBlockImg1" style="display: none;">
-            <canvas class="gameBody_elevator">您的浏览器或手机不支持此功能</canvas>
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralUp.gif" class="mineralUp"
-                 style="display: none; position: absolute; top: 1%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 6.5%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 14.5%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 22.5%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 30.5%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 38.5%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 46.5%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 54%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 62%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 70%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 78%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 86%; width: 100%;">
-            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral"
-                 style="position: absolute; top: 94%; width: 100%;">
+            <canvas class="gameBody_elevator" >您的浏览器或手机不支持此功能</canvas>
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralUp.gif" class="mineralUp" style="display: none; position: absolute; top: 1%; width: 100%;" >
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 6.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 14.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 22.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 30.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 38.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 46.5%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 54%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 62%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 70%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 78%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 86%; width: 100%;">
+            <img src="/ksqc/Public/fuguiji/images/farm/mineralDown.gif" class="mineral" style="position: absolute; top: 94%; width: 100%;">
 
         </div>
         <!--下方右侧矿层-->
         <div class="gameBody_bottomRight">
             <!--上方占位图片-->
-            <img src="/ksqc/Public/fuguiji/images/farm/game_bottom_TopImg.png" class=""/>
+            <img src="/ksqc/Public/fuguiji/images/farm/game_bottom_TopImg.png" class="" />
             <!--矿层显示 -->
             <!--自定义属性 callnumber:用于JS呼出对应升级操作块-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="1">
                 <!--升级商店呼出按钮--->
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="1">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "1">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <!--矿层数字-->
                 <span class="seamNumber">1</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
-                <!--未开启矿层时候的遮罩层 点击开启矿层-->
-                <div class="seamMask" style="display:none;">
-                    <div class="seamOpen">点击开启</div>
-                </div>
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="2" >
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="2">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "2">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">2</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="3">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="3">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "3">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">3</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="4">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="4">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "4">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">4</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="5">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="5">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "5">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">5</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="6">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="6">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "6">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">6</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="7">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="7">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "7">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">7</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="8" >
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="8">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "8">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">8</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="9">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="9">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "9">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">9</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="10">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="10">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "10">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">10</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="11">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="11">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "11">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">11</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
             </div>
             <!--矿层显示-->
             <div class="seamDiv">
-                <!--手动挖矿触发按钮-->
-                <img src="/ksqc/Public/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="12">
-                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="12">
-                <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
+                <img src="/ksqc/Public/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber = "12">
+                <canvas  width="1024" height="768" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                 <span class="seamNumber">12</span>
                 <!--箱子-->
                 <img src="/ksqc/Public/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
@@ -1317,8 +1274,7 @@
 
         </div>
         <!--下方占位图片-->
-        <img src="/ksqc/Public/fuguiji/images/farm/game_bottom_TopImg.png" class="bottonPosition"
-             style="display: block; width: 100%; height: 85px;"/>
+        <img src="/ksqc/Public/fuguiji/images/farm/game_bottom_TopImg.png" class="bottonPosition" style="display: block; width: 100%; height: 85px;"  />
 
 
     </div>
@@ -1357,15 +1313,14 @@
 <div class="outerDiv promptDiv promptTrueOrFalse" style="display: none;">
     <div class="promptBlock">
         <!--<div class="promptBlock_title">-->
-        <!--<span>提示！</span>-->
+            <!--<span>提示！</span>-->
         <!--</div>-->
         <div class="promptBlock_message">
 
         </div>
         <div class="promptBlock_foot">
-            <!--确认取消按钮-->
-            <span></span>
-            <span></span>
+            <span>确定</span>
+            <span>取消</span>
         </div>
     </div>
 </div>
@@ -1373,229 +1328,130 @@
 <div class="outerDiv promptDiv promptOnlyTrue" style="display: none;">
     <div class="promptBlock">
         <!--<div class="promptBlock_title">-->
-        <!--<span>提示！</span>-->
+            <!--<span>提示！</span>-->
         <!--</div>-->
         <div class="promptBlock_message">
 
         </div>
         <div class="promptBlock_foot">
-            <!--确认按钮-->
-            <span></span>
+            <span>确定</span>
         </div>
     </div>
 </div>
 
-<script src="/ksqc/Public/fuguiji/js/jquery-1.7.2.min.js"></script>
-<script>
-    //开启矿层数
-    var openLayerCount = <?php echo ($layer_count); ?>;
-    //全层秒数
-    var allLayerSecond = <?php echo ($second_list); ?>;
-    //console.log(timeResultArray);
-</script>
 <!--<audio src="/ksqc/Public/fuguiji/music/bg.mp3" preload="" loop></audio>-->
+<script src="/ksqc/Public/fuguiji/js/jquery-1.7.2.min.js"></script>
 <script src="/ksqc/Public/fuguiji/js/game_index.js"></script>
 <script>
-    $(function () {
+$(function() {
+    //点击每层的升级按钮
+    $('.seamDiv img').on('click', function() {
+        var layer = $(this).attr('callnumber');
+        gcLayer(layer);
+    });
 
-        //点击每层的升级按钮
-        $('.seamUpCall').on('click', function () {
-            var layer = $(this).attr('callnumber');
-            gcLayer(layer);
-        });
-
-        //手动挖矿
-        $(document.body).on('click', '.minerAction', function() {
-            var layer = $(this).attr('controlSeam');
-            $.ajax({
-                type: "POST",
-                url: "<?php echo U('Index/Manual');?>",
-                data: {layer: layer},
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    //暂定ajax响应1000ms,9000ms后加分
-                    if (data.status == 'success') {
-                        setTimeout(function() {
-                            $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
-                        }, 9000);
-                    } else {
-                        alert(data.message);
-                    }
-                }
-            });
-        });
-
-        //自动挖矿
-        $(document.body).on('click', '.risk', function () {
-            var layer = $(this).parents('.upgradeSelect').attr('layer');
-            var tool_id = $(this).attr('tool_id');
-            console.log(layer + '---' + tool_id);
-            $.ajax({
-                type: "POST",
-                url: "<?php echo U('Index/buyTool');?>",
-                data: {layer: layer, tool_id: tool_id},
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    if (data['status'] == 'success') {
-                        //更新钱
-                        $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
-                        gcLayer(layer);
-                        alert(data['message']);
-                    } else {
-                        alert(data['message']);
-                    }
-                }
-            });
-        });
-
-        //领取 动态绑定click时间
-        $(document.body).on('click', '.getMinerGold', function () {
-            var layer = $(this).parents('.upgradeSelect').attr('layer');
-            var tool_id = $(this).attr('tool_id');
-            //alert(layer+'---'+tool_id);
-            $.ajax({
-                type: "POST",
-                url: "<?php echo U('Index/getMinerGold');?>",
-                data: {layer: layer, tool_id: tool_id},
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    if (data['status'] == 'success') {
-                        alert('领取成功，领取了' + data['miner_gold'] + '挖矿分');
-                        //更新钱
-                        $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
-                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').removeClass('getMinerGold');
-                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').addClass('risk');
-                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').text('升级');
-                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').css('background', '');
-                    } else {
-                        alert(data['message']);
-                    }
-                }
-            });
-
-        });
-
-        //获取两只猫的区别
-        var url, number, type;
-        $('.exchange_inputForm div').on('click', function() {
-          $.each($('.exchange_inputForm'), function(index, element) {
-            var s = $(this).is(':visible');
-            if (index == 0 && s == true) {
-              console.log('胖猫在前, 现金分转挖矿分');
-              url = "<?php echo U('Transaction/moneyChangeMiner');?>";
-              number = $('.exchange_1').find('input').val();
-              type = 1;
-            }
-            if (index == 1 && s == true) {
-              console.log('瘦猫在前, 挖矿分转现金分');
-              url = "<?php echo U('Transaction/minerChangeMoney');?>";
-              number = $('.exchange_2').find('input').val();
-              type = 2;
-            }
-
-          });
-        });
-        //点击确定
-        $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').on('click', function () {
-          $.ajax({
-              type: "POST",
-              url: url,
-              data: {number: number},
-              dataType: "json",
-              success: function (data) {
-                console.log(data);
-              }
-          });
-        });
-
-        //赠送积分
-        $('.giveStart').on('click', function() {
-          var score_number = $('#score_number').val();
-          var score_account = $('#score_account').val();
-          var score_type = $('#score_type').val();
-          if ($.trim(score_number) == '') {
-            alert('请输入赠送数量');
-            return false;
-          }
-          if ($.trim(score_account) == '') {
-            alert('请输入好友帐号');
-            return false;
-          }
-          if ($.trim(score_type) == '请选择要赠送的积分类型') {
-            alert('请选择要赠送的积分类型');
-            return false;
-          }
-          $.ajax({
-              type: "POST",
-              url: "<?php echo U('Transaction/scoreGiveAway');?>",
-              data: {score_number: score_number, score_account: score_account, score_type: score_type},
-              dataType: "json",
-              success: function (data) {
-                alert(data.message);
-                if (data.score_type == '挖矿分') {
-                  $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
-                } else if (data.score_type == '现金分') {
-                  $('.gameTop-showBlock').eq(2).find('span').text(data['fathers_gold']);
-                }
-                console.log(data);
-              }
-          });
-        });
-
-        //更新本层数据
-        function gcLayer(layer) {
-            $.ajax({
-                type: "POST",
-                url: "<?php echo U('Index/toolsCheckOut');?>",
-                data: {layer: layer},
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('div').css('width', (data['hours'] * 20) + '%');
-                    $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('label').text('LV_'+data['hours']);
-                    $.each(data['list'], function () {
-
-                        //买过的加上已购买
-                        if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {
-
-                        } else {
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').append($('<span>已购买</span>'));
-                        }
-                        //到时间了更换按钮
-                        if ($(this)[0]['is_pass'] == 1) {
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('领取');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').addClass('getMinerGold');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').css('background', 'green');
-                        } else {
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
-                            $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('已购买');
-                        }
-
-                    });
-
-                }
-            });
-        }
-
-
-        //仅供观赏的ajax
+    //道具升级
+    $(document.body).on('click', '.risk', function() {
+        var layer = $(this).parents('.upgradeSelect').attr('layer');
+        var tool_id = $(this).attr('tool_id');
+        console.log(layer+'---'+tool_id);
         $.ajax({
             type: "POST",
-            url: "<?php echo U('Index/index');?>",
-            data: {},
+            url: "<?php echo U('Index/buyTool');?>",
+            data: {layer: layer, tool_id: tool_id},
             dataType: "json",
-            success: function (data) {
-
+            success: function(data){
+                console.log(data);
+                if (data['status'] == 'success') {
+                    //更新钱
+                    $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
+                    gcLayer(layer);
+                    alert(data['message']);
+                } else {
+                    alert(data['message']);    
+                }
             }
         });
+    });
 
-    })
+    //领取 动态绑定click时间
+    $(document.body).on('click', '.getMinerGold', function() {
+        var layer = $(this).parents('.upgradeSelect').attr('layer');
+        var tool_id = $(this).attr('tool_id');
+        //alert(layer+'---'+tool_id);
+        $.ajax({
+            type: "POST",
+            url: "<?php echo U('Index/getMinerGold');?>",
+            data: {layer: layer, tool_id: tool_id},
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+                if (data['status'] == 'success') {
+                    alert('领取成功，领取了'+data['miner_gold']+'挖矿分');
+                    //更新钱
+                    $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
+                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').removeClass('getMinerGold');
+                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').addClass('risk');
+                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').text('升级');
+                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq(tool_id - 1).find('button').css('background', '');
+                } else {
+                    alert(data['message']);
+                }
+            }
+        });
+        
+    });
+
+    //更新本层数据
+    function gcLayer(layer)
+    {
+        $.ajax({
+            type: "POST",
+            url: "<?php echo U('Index/toolsCheckOut');?>",
+            data: {layer: layer},
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+                $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('div').css('width', (data['hours']*20)+'%');
+                $.each(data['list'], function() {
+                    
+                    //买过的加上已购买
+                    if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {
+
+                    } else {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').append($('<span>已购买</span>'));
+                    }
+                    //到时间了更换按钮
+                    if ($(this)[0]['is_pass'] == 1) {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('领取');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').addClass('getMinerGold');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').css('background', 'green');
+                    } else {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('已购买');
+                    }
+                    
+                });
+                
+            }
+        });
+    }
+
+
+    //仅供观赏的ajax
+    $.ajax({
+        type: "POST",
+        url: "<?php echo U('Index/index');?>",
+        data: {},
+        dataType: "json",
+        success: function(data){
+
+        }
+    });
+})
 </script>
 </body>
 </html>
