@@ -1140,6 +1140,18 @@ $(function () {
 
        minerActionImg[i].onclick = function(){
            var controlNum = this.getAttribute('controlSeam');   //获取元素内的自定义 属性 判断控制的矿层
+
+           $.ajax({
+                //async: false,
+                type: "POST",
+                url: manual_url,
+                data: {layer: controlNum},
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+
            var thisElement =  this;     //获取当前点击的图片元素
            thisElement.style.display = 'none';  //点击后隐藏当前图标
            /*10秒后 显示已经隐藏的当前的图片*/
@@ -1297,15 +1309,140 @@ $(function () {
     //     seam_12_imgMove(seam_ctx[11], seamHumen_1, seam_12_DrawImg_2, seam_12_DrawImg_3);
     // }, 100);
     //自动挖矿的时间数组 如果为0 则不执行自动操作
-    var timeArray = [0,10000,10000,0,0,0,0,0,0,0,0,0];
-    // var timeArray = allLayerSecond;
+    // var timeArray = [20000,10000,10000,0,0,0,0,0,0,0,0,0];
+    var timeArray = allLayerSecond;
+
+    //自动挖矿
+    $(document.body).on('click', '.risk', function () {
+        var layer = $(this).parents('.upgradeSelect').attr('layer');
+        var tool_id = $(this).attr('tool_id');
+        console.log(layer + '---' + tool_id);
+        $.ajax({
+            type: "POST",
+            url: buyTool_url,
+            data: {layer: layer, tool_id: tool_id},
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                if (data['status'] == 'success') {
+                    //更新钱
+                    $('.gameTop-showBlock').eq(0).find('span').text(data['fathers_gold']);
+                    minerActionImg[layer - 1].style.display = 'none';
+
+
+                    var layerInfo;
+                    $.ajax({
+                        async: false,
+                        type: "POST",
+                        url: toolsCheckOut,
+                        data: {layer: layer},
+                        dataType: "json",
+                        success: function (data) {
+                            //console.log(data);
+                            $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('div').css('width', (data['hours'] * 20) + '%');
+                            $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('label').text('LV_'+data['hours']);
+                            $.each(data['list'], function () {
+
+                                //买过的加上已购买
+                                if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {
+
+                                } else {
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').append($('<span>已购买</span>'));
+                                }
+                                //到时间了更换按钮
+                                if ($(this)[0]['is_pass'] == 1) {
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('领取');
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').addClass('getMinerGold');
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').css('background', 'green');
+                                } else {
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
+                                    $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('已购买');
+                                }
+
+                            });
+                            layerInfo = data;
+
+                        }
+                    });
+
+
+
+
+                    //var layerInfo = gcLayer(layer);
+                    //console.log(layerInfo);return false;
+                    timeArray[layer - 1] = layerInfo['second'];
+                    
+                    console.log(timeArray);
+                    clearInterval('automatic_' + (layer - 1));
+                    alert(11);
+                    autoMaticFunction();
+
+                    
+                    alert(data['message']);
+                } else {
+                    alert(data['message']);
+                }
+            }
+        });
+    });
+
+    //点击每层的升级按钮
+    $('.seamUpCall').on('click', function () {
+        var layer = $(this).attr('callnumber');
+        gcLayer(layer);
+    });
+
+
+    //更新本层数据
+    function gcLayer(layer) {
+        $.ajax({
+            type: "POST",
+            url: toolsCheckOut,
+            data: {layer: layer},
+            dataType: "json",
+            success: function (data) {
+                //console.log(data);
+                $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('div').css('width', (data['hours'] * 20) + '%');
+                $('.upgradeShow').eq(layer - 1).find('.upgradeHeader_rightDisplay').find('label').text('LV_'+data['hours']);
+                $.each(data['list'], function () {
+
+                    //买过的加上已购买
+                    if ($('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').find('span').length > 0) {
+
+                    } else {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('span').append($('<span>已购买</span>'));
+                    }
+                    //到时间了更换按钮
+                    if ($(this)[0]['is_pass'] == 1) {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('领取');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').addClass('getMinerGold');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').css('background', 'green');
+                    } else {
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').off('click');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').removeClass('risk');
+                        $('.upgradeShow').eq(layer - 1).find('.upgradeSelect').find('div').eq($(this)[0]['tool_id'] - 1).find('button').text('已购买');
+                    }
+
+                });
+                return data;
+
+            }
+        });
+    }
+
+
     //判断时间数组的的值 如果不为0 隐藏手动挖矿按钮
-    // autoMaticFunction();
+    autoMaticFunction();
     function autoMaticFunction(){
         /*** 1 **/
         if(timeArray[0] > 0){
             minerActionImg[0].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_1 = setInterval(function(){
+            automatic_1 = setInterval(function(){
                 timeArray[0] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[0] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_1);
@@ -1319,9 +1456,8 @@ $(function () {
         }
         /*** 2 **/
         if(timeArray[1] > 0){
-            alert(1);
             minerActionImg[1].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_2 = setInterval(function(){
+            automatic_2= setInterval(function(){
                 timeArray[1] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[1] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_2);
@@ -1336,7 +1472,7 @@ $(function () {
         /*** 3 **/
         if(timeArray[2] > 0){
             minerActionImg[2].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_3 = setInterval(function(){
+             automatic_3 = setInterval(function(){
                 timeArray[2] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[2] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_3);
@@ -1351,7 +1487,7 @@ $(function () {
         /*** 4 **/
         if(timeArray[3] > 0){
             minerActionImg[3].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_4 = setInterval(function(){
+            automatic_4 = setInterval(function(){
                 timeArray[3] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[3] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_4);
@@ -1366,7 +1502,7 @@ $(function () {
         /*** 5 **/
         if(timeArray[4] > 0){
             minerActionImg[4].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_5 = setInterval(function(){
+            automatic_5 = setInterval(function(){
                 timeArray[4] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[4] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_5);
@@ -1381,7 +1517,7 @@ $(function () {
         /*** 6 **/
         if(timeArray[5] > 0){
             minerActionImg[5].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_6 = setInterval(function(){
+            automatic_6 = setInterval(function(){
                 timeArray[5] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[5] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_6);
@@ -1396,7 +1532,7 @@ $(function () {
         /*** 7 **/
         if(timeArray[6] > 0){
             minerActionImg[6].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_7 = setInterval(function(){
+            automatic_7 = setInterval(function(){
                 timeArray[6] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[6] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_7);
@@ -1411,7 +1547,7 @@ $(function () {
         /*** 8 **/
         if(timeArray[7] > 0){
             minerActionImg[7].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_8 = setInterval(function(){
+            automatic_8 = setInterval(function(){
                 timeArray[7] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[7] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_8);
@@ -1426,7 +1562,7 @@ $(function () {
         /*** 9 **/
         if(timeArray[8] > 0){
             minerActionImg[8].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_9 = setInterval(function(){
+            automatic_9 = setInterval(function(){
                 timeArray[8] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[8] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_9);
@@ -1441,7 +1577,7 @@ $(function () {
         /*** 10 **/
         if(timeArray[9] > 0){
             minerActionImg[9].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_10 = setInterval(function(){
+            automatic_10 = setInterval(function(){
                 timeArray[9] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[9] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_10);
@@ -1456,7 +1592,7 @@ $(function () {
         /*** 11 **/
         if(timeArray[10] > 0){
             minerActionImg[10].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_11 = setInterval(function(){
+            automatic_11 = setInterval(function(){
                 timeArray[10] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[10] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_11);
@@ -1471,7 +1607,7 @@ $(function () {
         /*** 12 **/
         if(timeArray[11] > 0){
             minerActionImg[11].style.display = 'none';   //隐藏手动挖矿按钮
-            var automatic_12 = setInterval(function(){
+            automatic_12 = setInterval(function(){
                 timeArray[11] -= 80;                     //时间每次减少80毫秒
                 if(timeArray[11] <= 0){                  //如果时间小于或者等于0 终止执行 并显示手动按钮
                     clearInterval(automatic_12);
