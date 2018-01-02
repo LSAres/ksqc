@@ -752,7 +752,7 @@ class IndexController extends CommonController
       return array(
         'list' => $new_arr,
         'hours' => $hours,
-        'second' => $final_second
+        'second' => $final_second * 1000
       );
     }
 }
