@@ -76,19 +76,19 @@ $(function () {
     $('.upgradeTitle img').click(function () {
         $('.upgradeShow').fadeOut();
         window.location.reload();
-        // function reloadAbleJSFn()
-        // {
-        //     var oldjs = null;
-        //     var t = null;
-        //     var oldjs = document.getElementById('gameIndexControl');
-        //     if(oldjs) oldjs.parentNode.removeChild(oldjs);
-        //     var scriptObj = document.createElement("script");
-        //     scriptObj.src = "../../../../Public/fuguiji/js/game_index.js";
-        //     scriptObj.type = "text/javascript";
-        //     scriptObj.id   = 'gameIndexControl';
-        //     document.getElementsByTagName("head")[0].appendChild(scriptObj);
-        // }
-        // reloadAbleJSFn()
+        clearInterval(automatic_1);
+        clearInterval(automatic_2);
+        clearInterval(automatic_3);
+        clearInterval(automatic_4);
+        clearInterval(automatic_5);
+        clearInterval(automatic_6);
+        clearInterval(automatic_7);
+        clearInterval(automatic_8);
+        clearInterval(automatic_9);
+        clearInterval(automatic_10);
+        clearInterval(automatic_11);
+        clearInterval(automatic_12);
+        autoMaticFunction();
     });
     /*所有的 升级商店呼出按钮*/
     var seamUpCallAll = $('.seamUpCall');
@@ -1391,18 +1391,6 @@ $(function () {
                     
                     console.log(timeArray);
                     timeArray = allLayerSecond;
-                    clearInterval(automatic_1);
-                    clearInterval(automatic_2);
-                    clearInterval(automatic_3);
-                    clearInterval(automatic_4);
-                    clearInterval(automatic_5);
-                    clearInterval(automatic_6);
-                    clearInterval(automatic_7);
-                    clearInterval(automatic_8);
-                    clearInterval(automatic_9);
-                    clearInterval(automatic_10);
-                    clearInterval(automatic_11);
-                    clearInterval(automatic_12);
 
                     
                     alert(data['message']);
@@ -1412,11 +1400,12 @@ $(function () {
             }
         });
     });
-
+    var ttt =$('embe');
     //点击每层的升级按钮
     $('.seamUpCall').on('click', function () {
         var layer = $(this).attr('callnumber');
         gcLayer(layer);
+        alert(ttt.length);
     });
 
 
