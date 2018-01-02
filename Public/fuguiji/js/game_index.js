@@ -75,7 +75,6 @@ $(function () {
     //关闭升级商店
     $('.upgradeTitle img').click(function () {
         $('.upgradeShow').fadeOut();
-        window.location.reload();
         clearInterval(automatic_1);
         clearInterval(automatic_2);
         clearInterval(automatic_3);
