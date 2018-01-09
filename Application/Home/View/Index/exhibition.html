@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展示页面</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui">
+    <!-- viewport 后面加上 minimal-ui 在safri 体现效果 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- iphone safri 全屏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- iphone safri 状态栏的背景颜色 -->
+    <meta name="apple-mobile-web-app-title" content="一文鸡">
+    <!-- iphone safri 添加到主屏界面的显示标题 -->
+    <meta name="format-detection" content="telphone=no, email=no">
+    <!-- 禁止数字识自动别为电话号码 -->
+    <meta name="renderer" content="webkit">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="true">
+    <!-- 是针对一些老的不识别viewport的浏览器，列如黑莓 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- 微软的老式浏览器 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- 禁止百度转码 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- uc强制竖屏 -->
+    <meta name="browsermode" content="application">
+    <!-- UC应用模式 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC强制全屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- QQ应用模式 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-TileColor" content="#000">
+    <!-- Windows 8 磁贴颜色 -->
+    <meta name="msapplication-TileImage" content="icon.png">
+    <!-- Windows 8 磁贴图标 -->
+    <link rel="Shortcut Icon" href="__PUBLIC__/fuguiji/favicon.ico">
+    <!-- 浏览器tab图标 -->
+    <link rel="apple-touch-icon" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <!-- iPhone 和 iTouch，默认 57x57 像素，必须有 -->
+    <link rel="apple-touch-icon" sizes="72x72" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <!-- iPad，72x72 像素  -->
+    <link rel="apple-touch-icon" sizes="114x114" href="__PUBLIC__/fuguiji/images/icon.jpg">
+    <!-- Retina iPhone 和 Retina iTouch，114x114 像素 -->
+    <link rel="stylesheet" href="__PUBLIC__/fuguiji/css/reset.css">
+    <link rel="stylesheet" href="__PUBLIC__/fuguiji/css/style.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/loign/login.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/home/popup.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/home/home.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/shop/shop.css">
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/map_stylesheet.css">
+
+</head>
+<body>
+<!--展示页面-->
+<div class="exhibitionPage">
+    <!--上方-->
+    <div class="exhibition_Top">
+        <video  autoplay="autoplay" >
+            <source src="http://minkbooks.com/content/trailer.mp4">
+        </video>
+    </div>
+    <!--下方-->
+    <div class="exhibition_Bottom">
+        <!--游戏进入按钮-->
+        <div class="gameStart">点击进入</div>
+        <!--二维码生成-->
+        <div class="QR_code" ></div>
+        <p style="text-align: center;">二维码进入</p>
+    </div>
+
+</div>
+
+</body>
+<script src="__PUBLIC__/fuguiji/js/jquery-1.7.2.min.js"></script>
+<script src="__PUBLIC__/fuguiji/js/jquery.qrcode.min.js"></script>
+
+<script>
+$(function(){
+    $(".QR_code").qrcode({
+        render: "canvas", //table方式
+        width: 200, //宽度
+        height:200, //高度
+        text: "1111" //任意内容
+    });
+    var codeControl = 0;
+    $('.QR_code canvas').click(function(){
+
+        if(codeControl == 0){
+            $('.QR_code canvas').css('opacity','.7');
+            codeControl = 1;
+        }else{
+            $('.QR_code canvas').css('opacity','.1');
+            codeControl = 0;
+        }
+    });
+
+
+
+})
+</script>
+</html>

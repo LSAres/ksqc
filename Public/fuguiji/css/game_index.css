@@ -1013,6 +1013,7 @@ html,body {
 /*提示*/
 .promptDiv {
     width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, .5);
     position: fixed;
     top: 0;
@@ -1022,17 +1023,15 @@ html,body {
 
 .promptBlock {
     width: 75%;
-    height: 35%;
+    height: 27%;
     border-radius: 15px;
-    background-image: url(../images/home/alertBoard.png);
-    background-repeat: no-repeat;
-    background-size: 100% 102%;
+    background: linear-gradient(to bottom,#5de3f9 ,#63bbd6,#4b899c);
     margin: 50% auto;
 }
 
 .promptBlock .promptBlock_title {
     border-radius: 10px 10px 0 0;
-    border-bottom: solid 2px #999;
+    border-bottom: solid 1px #ccc;
 }
 
 .promptBlock .promptBlock_title span {
@@ -1044,11 +1043,11 @@ html,body {
 
 .promptBlock .promptBlock_message {
     color: #fff;
-    height: 63%;
+    height: 43%;
     font-size: 15px;
     text-align: center;
     text-shadow: 0 0 3px #000;
-    padding-top: 62px;
+    padding-top: 25px;
 }
 
 .promptBlock .promptBlock_foot {
@@ -1071,17 +1070,17 @@ html,body {
 }
 
 .promptBlock .promptBlock_foot span:nth-child(1) {
-    background: url(../images/home/confirm-longbtn.png);
+    background: url(../images/farm/prompt_TrueButton.png);
     background-position: center;
-    background-size: 210% 120%;
+    background-size:100% 100%;;
     background-repeat: no-repeat;
 
 }
 
 .promptBlock .promptBlock_foot span:nth-child(2) {
-    background: url(../images/home/confirm-longbtn2.png);
+    background: url(../images/farm/prompt_FalseButton.png);
     background-position: center;
-    background-size: 210% 120%;
+    background-size: 100% 100%;;
     background-repeat: no-repeat;
 
 }
@@ -1154,7 +1153,7 @@ html,body {
     vertical-align: top;
 }
 
-.gameBody_bottomRight img {
+.gameBody_bottomRight .bottom_TopImg {
     width: 100%;
     height: 85px;
     display: block;
@@ -1211,7 +1210,20 @@ html,body {
     top: 0;
     left: 0;
 }
-
+.seamDiv .continuedTime {
+    width: 80%;
+    position: absolute;
+    top: 0%;
+    left: 15%;
+}
+.seamDiv .continuedTime img{
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    box-shadow: 0 0 5px yellow inset;
+    border-radius: 100%;
+    display: inline-block;
+}
 .seam {
     width: 100%;
     height: 100%;

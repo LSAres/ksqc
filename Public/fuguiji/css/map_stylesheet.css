@@ -133,7 +133,6 @@ html , body{
     top: 60%;
 }
 
-
 /*提示*/
 .promptDiv {
     width: 100%;
@@ -147,17 +146,15 @@ html , body{
 
 .promptBlock {
     width: 75%;
-    height: 35%;
+    height: 27%;
     border-radius: 15px;
-    background-image: url(../images/home/alertBoard.png);
-    background-repeat: no-repeat;
-    background-size: 100% 102%;
+    background: linear-gradient(to bottom,#5de3f9 ,#63bbd6,#4b899c);
     margin: 50% auto;
 }
 
 .promptBlock .promptBlock_title {
     border-radius: 10px 10px 0 0;
-    border-bottom: solid 2px #999;
+    border-bottom: solid 1px #ccc;
 }
 
 .promptBlock .promptBlock_title span {
@@ -169,11 +166,11 @@ html , body{
 
 .promptBlock .promptBlock_message {
     color: #fff;
-    height: 63%;
+    height: 26%;
     font-size: 15px;
     text-align: center;
     text-shadow: 0 0 3px #000;
-    padding-top: 62px;
+    padding-top: 25px;
 }
 
 .promptBlock .promptBlock_foot {
@@ -184,7 +181,7 @@ html , body{
 
 .promptBlock .promptBlock_foot span {
     width: 100px;
-    height:34px;
+    height: 34px;
     color: #fff;
     text-shadow: 0 0 5px #000;
     box-shadow: 0 0 10px #634a13 inset;
@@ -193,22 +190,76 @@ html , body{
     padding: 5px 0;
     margin: 0 5%;
 
-
 }
 
 .promptBlock .promptBlock_foot span:nth-child(1) {
-    background: url(../images/home/confirm-longbtn.png);
+    background: url(../images/farm/prompt_TrueButton.png);
     background-position: center;
-    background-size: 210% 120%;
+    background-size:100% 100%;;
     background-repeat: no-repeat;
 
 }
 
 .promptBlock .promptBlock_foot span:nth-child(2) {
-    background: url(../images/home/confirm-longbtn2.png);
+    background: url(../images/farm/prompt_FalseButton.png);
     background-position: center;
-    background-size: 210% 120%;
+    background-size: 100% 100%;;
     background-repeat: no-repeat;
 
+}
+/*视频展示页面*/
+.exhibitionPage{
+    height: 100%;
+    width: 100%;
+}
+.exhibitionPage .exhibition_Top{
+    width: 100%;
+    height: 30%;
+    border: solid 1px transparent;
+    background: url(../images/farm/testImg4.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.exhibitionPage .exhibition_Top video{
+    width: 90%;
+    height: 170px;
+    border: solid 1px red;
+    margin: 15px auto;
+    display: block;
+}
+.exhibitionPage .exhibition_Bottom{
+    height: 69.5%;
+    background: url(../images/farm/testImg3.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: solid 1px transparent;
+}
+.exhibitionPage .exhibition_Bottom .gameStart{
+    display: block;
+    width: 70%;
+    text-align: center;
+    font-size: 14px;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    padding: 5px 0px;
+    margin: 25px auto;
+}
+.exhibitionPage .exhibition_Bottom .QR_code{
+    width: 70%;
+    height: 230px;
+    text-align: center;
+    margin: 0 auto;
+}
+.exhibitionPage .exhibition_Bottom .QR_code canvas{
+    border: solid 2px #000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000 inset;
+    padding: 10px;
+    margin: 0 auto;
+    display: block;
+    opacity: .1;
+    transition: all 5s;
 }
 
