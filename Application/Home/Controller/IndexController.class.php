@@ -87,6 +87,116 @@ class IndexController extends CommonController
             msg('签到失败');
         }
     }
+
+    //内部注册
+    public function register() {
+        $userId=session('userId');
+        $store = getStore($userId);
+        if ($store['people_money'] < 300) {
+            $return['msg'] = "注册账号基金不足";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+        }
+
+
+        if (empty( I('post.'))) die();
+        $userId=session('userId');
+        $udb=M('user');
+        $data['account'] = I('post.reg_account');
+        $data['password'] = I('post.reg_password');
+
+        //========判断新的账号名是否已经存在============
+        $data2=$udb->where("account='".$data['account']."'")->find(); 
+        if(!empty($data2)){
+            $return['msg'] = "账号名已经存在，请重新输入";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+        }
+
+        // 姓名是否填写
+        $username=trim($arr['realname']);
+        if(!empty($data2)){
+            $return['msg']="忘记填写姓名啦";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            // msg('忘记填写姓名啦');
+        }
+        
+       //========判断两次输入的一级密码是否一致============
+        if(trim($data['password'])!== trim(I('post.reg_password_1'))){
+            $return['msg'] = "两次密码不一样";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('两次一级密码不一样');
+        }
+
+        $salt= substr(md5(time()),0,3);
+        $password=md5(md5(trim($data['password'])).$salt);
+
+       $registerInfo=array(
+            'account'        => trim($data['account']),
+            'parent_id'      => $userId,
+            'username'       => '',
+            'sex'            => 1,//trim($arr['sex']),
+            'mobile'         => '',
+            'alipay'         => '', 
+            'password'       => $password,
+            'salt'           => $salt,
+            'lockuser'       => 0,
+            'add_time'       => time(),
+            'ip'             => get_client_ip(), 
+            'last_login'     => 0,
+        );
+  
+        //========向user表添加信息=======
+        $zhuce=$udb->data($registerInfo)->add();
+        //=========检查刚才添加的是否有值============
+        $check_zhuce=$udb->where("account='".$registerInfo['account']."'")->find();
+        if(!$check_zhuce){
+            $return['msg'] = "注册失败，请重新注册";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('注册失败，请重新注册');
+        }
+        $userid=$check_zhuce['id'];
+        $information['uid'] = $userid;
+        $information['diamonds']=300;
+        $information['is_pay']= 1;
+        $res = M('store')->data($information)->add();
+        if(!$res){
+            $return['msg'] = "仓库创建出错，请联系管理员";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+            //msg('仓库创建出错，请联系管理员');
+        }
+        for($i=1;$i<=12;$i++){
+            $informationT['uid']=$userid;
+            $informationT['layer_id'] = $i;
+            $informationT['tool_id'] = 0;
+            $informationT['tool_count']= 0;
+            $informationT['tool_user_time']= 0;
+            $informationT['is_open']= 0;
+            $informationT['open_time'] = 0;
+            M('coal_layer')->data($informationT)->add();
+        }
+
+        M('store')->where(array('uid' => $userId))->setDec('people_money', 300);
+        $reg_data['uid'] = $userId;
+        $reg_data['reg_uid'] = $zhuce;
+        $reg_data['note'] = '注册帐号'.$data['account'];
+        $reg_data['time'] = time();
+        M('people_money_log')->add($reg_data);
+
+        if(!empty($zhuce)){
+            $return['msg'] = "注册成功";
+            $return['errcode'] = 10000;
+            $return['url'] = U('Login/login');
+            $this->ajaxReturn($return);
+            //msg('注册成功', U('Regus/login'));
+        }
+    }
+
+
     //推荐人
     public function tuijian()
     {

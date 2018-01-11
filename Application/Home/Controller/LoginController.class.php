@@ -170,11 +170,11 @@ class LoginController extends Controller
             'add_time'		 => time(),
             'ip'			 => get_client_ip(), 
 			'last_login'	 => 0,
-			'area_1' 		 => 1,
-			'area_2' 		 => 0,
-			'area_3' 		 => 0,
-			'area_4' 		 => 0,
-			'area_5' 		 => 0,
+			// 'area_1' 		 => 1,
+			// 'area_2' 		 => 0,
+			// 'area_3' 		 => 0,
+			// 'area_4' 		 => 0,
+			// 'area_5' 		 => 0,
         );
   
         //========向user表添加信息=======
@@ -218,16 +218,16 @@ class LoginController extends Controller
 
 	//用户退出 
 	public function logout(){
-        $userid=session('userid');
+        $userid=session('userId');
         if (empty($userid)) {
-            redirect(U('Mobile/Index/login'));
+            redirect(U('Login/login'));
 		}
 
 		session('userid',null);
 		session('mobile',null);
 
 		//if ($browser == 'pc') {
-		redirect(U('Pc/Index/login'));
+		redirect(U('Login/login'));
 		// } else {
 		// 	redirect(U('Mobile/Index/login'));
 		// }

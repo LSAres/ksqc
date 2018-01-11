@@ -87,6 +87,11 @@
                 <label class="chargeCall"></label>
                 <!--<div style="color: #b9def0;">数值名称</div>-->
             </div>
+
+            <div class="gameTop-showBlock">
+                <img src="__PUBLIC__/fuguiji/images/farm/gameTopIcon_3.png" />
+                <span>{$store['people_money']}</span>
+            </div>
         </div>
     </div>
 
@@ -101,19 +106,34 @@
             <div class="userWealth">可用金额 <span>500</span></div>
             <!--充值类型选择-->
             <div class="chageTypeSelect">
-                <div class="active">充值类型1</div>
-                <div> 充值类型2</div>
+                <div class="active btn-type1">充值类型1</div>
+                <div class="btn-type2"> 充值类型2</div>
 
             </div>
             <input type="text" placeholder="请输入充值金额为50倍数" class="chargeInput">
             <!--充值金额选择-->
-            <div class="chargeNumSelect">
+            <div class="chargeNumSelect pay1">
                 <div class="chargeNumBlock selected">50</div>
                 <div class="chargeNumBlock">100</div>
                 <div class="chargeNumBlock">500</div>
                 <div class="chargeNumBlock">1000</div>
                 <div class="chargeNumBlock">20000</div>
                 <div class="chargeNumBlock">100000</div>
+            </div>
+            <div class="chargeNumSelect pay2" hidden>
+                <div class="chargeNumBlock selected">300</div>
+                <div class="chargeNumBlock">600</div>
+                <div class="chargeNumBlock">900</div>
+                <div class="chargeNumBlock">1200</div>
+                <div class="chargeNumBlock">1500</div>
+                <div class="chargeNumBlock">1800</div>
+                <div class="chargeNumBlock">2100</div>
+                <div class="chargeNumBlock">2400</div>
+                <div class="chargeNumBlock">2700</div>
+                <div class="chargeNumBlock">3000</div>
+                <div class="chargeNumBlock">3300</div>
+                <div class="chargeNumBlock">3600</div>
+                <div class="chargeNumBlock">3900</div>
             </div>
             <!--充值方式-->
             <div class="chargeType">
@@ -946,11 +966,11 @@
             </div>
             <!--用户注册显示框-->
             <div class="userCenter_functionDisplay" style="dispaly:none;">
-                <input type="text" value="用户注册显示块" >
-                <input type="text" value="">
-                <input type="text" value="">
-                <input type="text" value="">
-                <input type="submit" value="确定注册">
+                <p>注册账户并入金(扣除我充值的入金数)</p>
+                <input class="reg_account" type="text" value="" placeholder="用户名">
+                <input class="reg_password" type="text" value="" placeholder="密码">
+                <input class="reg_password_1" type="text" value="" placeholder="确认密码">
+                <input class="reg_button" type="button" value="确定注册">
             </div>
             <div class="userCenter_functionDisplay" style="display: none;">
                 <!--积分使用记录-->
@@ -1583,7 +1603,12 @@
             // promptOnlyTrue is not defined  暂时使用alert
             if (is_pay == 0) {
                 //promptOnlyTrue('请先入金 300 RMB');
-                alert('请先入金 300 RMB');
+                alert('请先入金');
+                $('.chageTypeSelect').hide();
+                $('.chargeInput').hide();
+                $('.pay2').show();
+                $('.pay1').hide();
+
                 $('.closeCharge').hide();   //隐藏充值界面的关闭按钮，不充值无法进入。 呸流氓
                 $('.chageDiv').fadeIn();    //显示充值界面,此时应只显示充值300元选项
                 return false;
@@ -1735,18 +1760,67 @@
                 });
             });
 
+            //内部注册帐号
+            $('.reg_button').on('click', function() {
+                var reg_account = $('.reg_account').val();
+                var reg_password = $('.reg_password').val();
+                var reg_password_1 = $('.reg_password_1').val();
+
+                if ($.trim(reg_account) == ''|| $.trim(reg_password) == ''|| $.trim(reg_password_1) == '') {
+                    alert('请输入全部注册信息');
+                    return false;
+                }
+                if (reg_password != reg_password_1) {
+                    alert('两次输入的密码不正确');
+                    return false;
+                }
+                if (reg_password.length < 6) {
+                    alert('密码过短');
+                    return false;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "{:U('Index/register')}",
+                    data: {reg_account: reg_account, reg_password: reg_password, reg_password_1: reg_password_1},
+                    datatype: "JSON",
+                    success: function(data) {
+                        console.log(data);
+                        alert(data.msg);
+                    }, error: function(data) {
+                        console.log('错误');
+                    }
+
+                });
+            });
+
+            //充值部分切换充值类型
+            $('.btn-type1').on('click', function() {
+                $('.chargeInput').show();
+                $('.pay1').show();
+                $('.pay2').hide();
+            });
+            $('.btn-type2').on('click', function() {
+                $('.chargeInput').hide();
+                $('.pay2').show();
+                $('.pay1').hide();
+            });
+
+            //退出登录
+            $('.gemeFotter').find('div').eq(0).on('click', function() {
+                window.location.href = "{:U('Login/logout')}";
+            });
 
 
             //仅供观赏的ajax
-            $.ajax({
-                type: "POST",
-                url: "{:U('Index/index')}",
-                data: {},
-                dataType: "json",
-                success: function(data) {
+            // $.ajax({
+            //     type: "POST",
+            //     url: "{:U('Index/index')}",
+            //     data: {},
+            //     dataType: "json",
+            //     success: function(data) {
 
-                }
-            });
+            //     }
+            // });
 
         })
     </script>
