@@ -7,10 +7,9 @@ class TransactionController extends CommonController
 {
     //挖矿分转现金分
     public function minerChangeMoney(){
-      $this->ajaxReturn(I('post.number'));
+      //$this->ajaxReturn(I('post.number'));
         $id = session('userId');
-        $miner_gold = I('post.miner_gold');
-        $paypassword = I('post.paypassword');
+        $miner_gold = I('post.number');
         $userInfo = M('user')->where('id='.$id)->find();
         $storeInfo = M('store')->where('uid='.$id)->find();
         if(!is_numeric($miner_gold)){
@@ -29,13 +28,6 @@ class TransactionController extends CommonController
             $this->ajaxReturn(array(
               'status' => 'error',
               'message' => '挖矿分不足'
-            ));
-        }
-        $paypasswordT=md5(md5($paypassword).$userInfo['safety_salt']);
-        if($paypasswordT!=$userInfo['safety_pw']){
-            $this->ajaxReturn(array(
-              'status' => 'error',
-              'message' => '二级密码错误'
             ));
         }
         $yu=$miner_gold%1000;
@@ -66,8 +58,12 @@ class TransactionController extends CommonController
         $data['to'] = $changeNum;
         $data['time'] = time();
         $rmm = M('miner_money_log')->data($data)->add();
+
+        $store = getStore($id);
         if($rmm){
             $this->ajaxReturn(array(
+              'miner_gold' => $store['miner_gold'],
+              'money' => $store['money'],
               'status' => 'success',
               'message' => '转换成功'
             ));
@@ -81,11 +77,10 @@ class TransactionController extends CommonController
 
     //现金分转挖矿分
     public function moneyChangeMiner(){
-      $this->ajaxReturn(I('post.number'));
+      //$this->ajaxReturn(I('post.number'));
         $id = session('userId');
-        $money = I('post.money');
+        $money = I('post.number');
         $paypassword = I('post.paypassword');
-        $userInfo = M('user')->where('id='.$id)->find();
         $storeInfo = M('store')->where('uid='.$id)->find();
         if(!is_numeric($money)){
             $this->ajaxReturn(array(
@@ -105,14 +100,6 @@ class TransactionController extends CommonController
               'message' => '现金分不足'
             ));
         }
-        $paypasswordT=md5(md5($paypassword).$userInfo['safety_salt']);
-        if($paypasswordT!=$userInfo['safety_pw']){
-            $this->ajaxReturn(array(
-              'status' => 'error',
-              'message' => '二级密码错误'
-            ));
-        }
-
         $res = M('store')->where('uid='.$id)->setDec('money',$money);
         if(!$res){
             $this->ajaxReturn(array(
@@ -134,8 +121,12 @@ class TransactionController extends CommonController
         $data['to'] = $changeNum;
         $data['time'] = time();
         $rmm = M('money_miner_log')->data($data)->add();
+
+        $store = getStore($id);
         if($rmm){
             $this->ajaxReturn(array(
+              'miner_gold' => $store['miner_gold'],
+              'money' => $store['money'],
               'status' => 'success',
               'message' => '转换成功'
             ));

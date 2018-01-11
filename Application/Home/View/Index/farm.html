@@ -1634,6 +1634,11 @@
                     dataType: "json",
                     success: function(data) {
                         console.log(data);
+                        alert(data.message);
+                        if (data.status == 'success') {
+                            $('.gameTop-showBlock').eq(0).find('span').text(data.miner_gold);
+                            $('.gameTop-showBlock').eq(2).find('span').text(data.money);
+                        }
                     }
                 });
             });

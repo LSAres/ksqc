@@ -25,7 +25,7 @@ $(function () {
 
     $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').click(function () {
         $('.promptTrueOrFalse').fadeOut();
-        alert(11);
+        //alert(11);
     });
     $('.promptTrueOrFalse .promptBlock_foot span:nth-child(2)').click(function () {
         $('.promptTrueOrFalse').fadeOut();
