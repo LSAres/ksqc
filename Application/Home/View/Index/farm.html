@@ -1498,26 +1498,47 @@
 
     <script src="__PUBLIC__/fuguiji/js/jquery-1.7.2.min.js"></script>
     <script>
+        //用户
+        var user = <?php echo json_encode($user)?>;
+        //console.log(user);
+        //仓库
+        var store = <?php echo json_encode($store)?>;
+        //console.log(store);
         //开启矿层数
-        var openLayerCount = {
-            $layer_count
-        };
+        var openLayerCount = {$layer_count};
         //全层秒数
-        var allLayerSecond = {
-            $second_list
-        };
+        var allLayerSecond = {$second_list};
         //手动挖矿
         var manual_url = "{:U('Index/Manual')}";
         //自动挖矿
         var buyTool_url = "{:U('Index/buyTool')}";
         //check
         var toolsCheckOut = "{:U('Index/toolsCheckOut')}";
-        //console.log(timeResultArray);
+        //支付状态
+        var is_pay = "{$store['is_pay']}";
+        //升级矿层条件
+        var nextGrage = {$nextGrage};
+        //console.log(nextGrage);
     </script>
     <!--<audio src="__PUBLIC__/fuguiji/music/bg.mp3" preload="" loop></audio>-->
     <script id="gameIndexControl" src="__PUBLIC__/fuguiji/js/game_index.js"></script>
     <script>
         $(function() {
+
+            //没入金(客户叫法),不能玩游戏,需先支付
+            // promptOnlyTrue is not defined  暂时使用alert
+            if (is_pay == 0) {
+                //promptOnlyTrue('请先入金 300 RMB');
+                alert('请先入金 300 RMB');
+                $('.closeCharge').hide();   //隐藏充值界面的关闭按钮，不充值无法进入。 呸流氓
+                $('.chageDiv').fadeIn();    //显示充值界面,此时应只显示充值300元选项
+                return false;
+            }
+            
+            //达到升级矿区资格提示升级
+            if (store.miner_gold >= nextGrage.miner_num && user.son_count >= nextGrage.erect) {
+                alert('恭喜您获得开启新矿区资格');
+            }
 
             //已经开启自动挖矿的矿层隐藏手动挖矿按钮
             var minerActionImg = document.getElementsByClassName('minerAction');

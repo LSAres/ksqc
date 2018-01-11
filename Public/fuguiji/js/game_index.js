@@ -1155,13 +1155,17 @@ $(function () {
            var controlNum = this.getAttribute('controlSeam');   //获取元素内的自定义 属性 判断控制的矿层
 
            $.ajax({
-                //async: false,
+                async: false,
                 type: "POST",
                 url: manual_url,
                 data: {layer: controlNum},
                 dataType: "json",
                 success: function (data) {
                     console.log(data);
+                    if (data.status == 'error') {
+                        promptOnlyTrue(data.message);
+                        return false;
+                    }
                 }
             });
 

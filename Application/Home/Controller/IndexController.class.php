@@ -39,6 +39,9 @@ class IndexController extends CommonController
         //查询矿层
         $layer_count = M(session('area'))->where(array('uid' => $uid, 'is_open' => 1))->count();
 
+        //查询开启下级矿层需要的材料
+        $this->assign('nextGrage', json_encode(area_check(session('area'))));
+
         //查询全部层数剩余时间
         $second_list = array();
         for ($i=1; $i < 13; $i++) {
@@ -410,6 +413,11 @@ class IndexController extends CommonController
         $db_miner_log = M('miner_log');
         $db_miner_gold_log = M('miner_gold_log');
         if ($layer < 1 || $layer > 12) die(0);
+
+        //不充钱不准挖
+        $is_pay = $db_store->where(array('uid' => $uid))->getField('is_pay');
+        if (empty($is_pay)) $this->ajaxReturn(array('status' => 'error', 'message' => '请先入金后再游戏'));
+
         //正在自动挖矿中禁止手动挖矿
         $tools = $db_tools->where(array('uid' => $uid, 'area' => session('area'), 'layer_id' => $layer, 'is_get' => 0))->order('is_default desc, end_time asc')->select();
         $time = time();
