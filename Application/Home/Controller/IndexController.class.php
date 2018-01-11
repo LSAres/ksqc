@@ -38,6 +38,7 @@ class IndexController extends CommonController
         $baoxiang_list = $db_baoxiang->where(array('uid' => $uid, 'status' => 1))->select();
         //查询矿层
         $layer_count = M(session('area'))->where(array('uid' => $uid, 'is_open' => 1))->count();
+
         //查询全部层数剩余时间
         $second_list = array();
         for ($i=1; $i < 13; $i++) {
@@ -656,12 +657,19 @@ class IndexController extends CommonController
       $all_tools = tool();
       $this_tool = $all_tools[$this_row['tool_id']];
       
-      $persent = mt_rand($this_tool['start'], $this_tool['end']);
-      $final_score = intval(350 * $persent);
-      for ($i=1; $i < 11; $i++) {
-           $persent = mt_rand($this_tool['start'], $this_tool['end']);
-           $final_score += $persent;
-      }
+    //   score version 1.0
+    //   $persent = mt_rand($this_tool['start'], $this_tool['end']);
+    //   $final_score = intval(350 * $persent);
+    //   for ($i=1; $i < 11; $i++) {
+    //        $persent = mt_rand($this_tool['start'], $this_tool['end']);
+    //        $final_score += $persent;
+    //   }
+
+    //score 2.0
+    for ($i = 1; $i < 361; $i++) {
+        $final_score += mt_rand(0, 3) + mt_rand($this_tool['start'], $this_tool['end']);
+    }
+
 
 //$this->ajaxReturn($final_score);die;
       //加分、记录

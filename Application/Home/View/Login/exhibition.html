@@ -87,7 +87,7 @@ $(function(){
         render: "canvas", //table方式
         width: 200, //宽度
         height:200, //高度
-        text: "1111" //任意内容
+        text: "{$registUrl}" //任意内容
     });
     var codeControl = 0;
     $('.QR_code canvas').click(function(){
@@ -99,6 +99,10 @@ $(function(){
             $('.QR_code canvas').css('opacity','.1');
             codeControl = 0;
         }
+    });
+
+    $('.gameStart').on('click', function() {
+        window.location.href = "{$registUrl}";
     });
 
 

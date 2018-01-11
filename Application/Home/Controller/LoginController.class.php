@@ -7,13 +7,22 @@ class LoginController extends Controller
 {
     //用户登陆
 	public function login(){
+        $zhuce = I('get.zhuce') ? I('get.zhuce') : 0;
+        $fMobile = I('get.fMobile');
+        $this->assign('zhuce', $zhuce);
+        $this->assign('fMobile', $fMobile);
 		$this->display();
 	}
 
-	//用户注册
-	public function regist(){
-		$this->display();
-	}
+    //视频，二维码
+    public function exhibition(){
+        $zhuce = I('get.zhuce') ? I('get.zhuce') : 0;
+        $fMobile = I('get.fMobile');
+        // $this->assign('zhuce', $zhuce);
+        // $this->assign('fMobile', $fMobile);
+        $this->assign('registUrl', U('Login/login', array('zhuce' => $zhuce, 'fMobile' => $fMobile)));
+        $this->display();
+    }
 
 
 	//登陆验证
@@ -80,7 +89,7 @@ class LoginController extends Controller
         $data=$udb->where("account='".$recommend_ren."'")->find();
 
         if(empty($data)){
-            $return['msg']="上级账号不存在";
+            $return['msg']="注册链接不正确，请勿更改";
             $return['errcode'] = 2;
             $this->ajaxReturn($return);
             //msg('上级不存在');
@@ -201,6 +210,7 @@ class LoginController extends Controller
         if(!empty($zhuce)){
             $return['msg'] = "注册成功";
             $return['errcode'] = 10000;
+            $return['url'] = U('Login/login');
             $this->ajaxReturn($return);
             //msg('注册成功', U('Regus/login'));
         }
