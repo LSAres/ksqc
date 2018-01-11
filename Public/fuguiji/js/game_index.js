@@ -52,6 +52,11 @@ $(function () {
     $('.closeCharge').click(function () {
         $(this).parent().fadeOut();
     });
+    /*充值类型选择*/
+    $('.chageTypeSelect div').click(function(){
+        $('.chageTypeSelect div').removeClass('active');
+        $(this).addClass('active');
+     });
     /*充值方式点击切换*/
     $('.chargeTypeSelect ').click(function () {
         $('.chargeTypeSelect').removeClass('selected');
@@ -132,6 +137,14 @@ $(function () {
         $('.integralType div').fadeOut();
         $('.integralType').removeClass('integralTypeShow');
     });
+    /*点击呼出结构列表*/
+    $('.structureBtn').click(function(){
+        $('.friendStructure').addClass('structureShow');
+    });
+    $('.friendStructure label').click(function(){
+        $('.friendStructure').removeClass('structureShow');
+    });
+
     /**
      * 个人中心*/
     /*呼出个人中心*/

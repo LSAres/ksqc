@@ -99,6 +99,12 @@
         <div class="chargeInputBlock">
             <!--可用余额显示-->
             <div class="userWealth">可用金额 <span>500</span></div>
+            <!--充值类型选择-->
+            <div class="chageTypeSelect">
+                <div class="active">充值类型1</div>
+                <div> 充值类型2</div>
+
+            </div>
             <input type="text" placeholder="请输入充值金额为50倍数" class="chargeInput">
             <!--充值金额选择-->
             <div class="chargeNumSelect">
@@ -861,8 +867,12 @@
             </div>
             <!--向好友赠送积分-->
             <div class="giveIntegral">
-                <!--增送按钮-->
-                <div class="intergralBtn">赠送积分</div>
+                <!--增送按钮 与好友结构列表-->
+                <div class="frientListAndIntergral">
+                    <div class="intergralBtn ListAndIntergral-select">赠送积分</div>
+                    <div class="structureBtn ListAndIntergral-select">查看结构</div>
+                </div>
+
                 <!--赠送积分输入框-->
                 <div class="intergralInputDiv">
                     <input type="number" id="score_number" placeholder="输入赠送的积分数量" class="intergralMessage">
@@ -883,6 +893,37 @@
                 <div>我的兄弟叫顺口溜</div>
                 <div>满城尽是黄金甲鱼</div> -->
                 </div>
+                <!--好友结构图-->
+                <div class="friendStructure">
+                    <label>关闭</label>
+                   <div class="structureDisplay">
+                       <div>
+                           <span>13111111111</span>
+                       </div>
+                       <div>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                       </div>
+                       <div>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                       </div>
+                       <div>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                       </div>
+                       <div>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                           <span>13222222222</span>
+                       </div>
+                   </div>
+                </div>
             </div>
         </div>
 
@@ -902,6 +943,14 @@
                 <!--<input type="text" placeholder="提示用户输入的信息">-->
                 <input type="submit" value="确定">
                 <a href="{:U('Login/exhibition', array('fMobile' => $user['mobile'], 'zhuce' => 1))}">注册链接：{:U('Login/login', array('fMobile' => $user['mobile'], 'zhuce' => 1))}</a>
+            </div>
+            <!--用户注册显示框-->
+            <div class="userCenter_functionDisplay" style="dispaly:none;">
+                <input type="text" value="用户注册显示块" >
+                <input type="text" value="">
+                <input type="text" value="">
+                <input type="text" value="">
+                <input type="submit" value="确定注册">
             </div>
             <div class="userCenter_functionDisplay" style="display: none;">
                 <!--积分使用记录-->
@@ -1050,8 +1099,13 @@
         </div>
         <!--底部功能切换-->
         <div class="userCenter_bottomFunctionSelect">
+
             <div class="active">
                 个人设置
+                <img src="__PUBLIC__/fuguiji/images/farm/usercenter_2.png" alt="">
+            </div>
+            <div>
+                用户注册
                 <img src="__PUBLIC__/fuguiji/images/farm/usercenter_2.png" alt="">
             </div>
             <div>
