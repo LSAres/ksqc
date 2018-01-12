@@ -51,6 +51,10 @@ class IndexController extends CommonController
         }
         $this->assign('second_list', json_encode($second_list));
 
+        $da = M('user')->where(array('id' => array('egt', $uid)))->select();
+        // echo $this->getTree($da, $uid);
+        // exit;
+        $this->assign('tree', $this->getTree($da, $uid));
         $this->assign('tool', $tool);
         $this->assign('store', $store);
         $this->assign('user', $user);
@@ -66,6 +70,63 @@ class IndexController extends CommonController
         $this->assign('layer_count', $layer_count);
         $this->display();
     }
+
+    //树结构
+    function getTree($data, $uid){
+        $tree = $this->dg($data, $uid);
+        $html = $this->procHtml($tree);
+        return $html;
+    }
+
+
+    function dg($data, $pId)
+    {
+        $tree = '';
+        foreach($data as $k => $v)
+        {
+          if($v['parent_id'] == $pId)
+          {        //父亲找到儿子
+           $v['parent'] = $this->dg($data, $v['id']);
+           $tree[] = $v;
+           //unset($data[$k]);
+          }
+        }
+        return $tree;
+    }
+
+    // function procHtml($tree)
+    // {
+    //     $html = '';
+    //     foreach($tree as $t)
+    //     {
+    //         if($t['parent_id'] == '') {
+    //             $html .= "<li>{$t['id']}</li>";
+    //         } else {
+    //             $html .= "<li>".$t['id'];
+    //             $html .= $this->procHtml($t['parent']);
+    //             $html = $html."</li>";
+    //         }
+    //     }
+    //     return $html ? '<ul>'.$html.'</ul>' : $html ;
+    // }
+    
+    function procHtml($tree)
+    {
+        $html = '';
+        foreach($tree as $t)
+        {
+            if($t['parent_id'] == '') {
+                $html .= "<span>{$t['id']}</span>";
+            } else {
+                $html .= "<span>".$t['id'];
+                $html .= $this->procHtml($t['parent']);
+                $html = $html."</span>";
+            }
+        }
+        return $html ? '<div>'.$html.'</div>' : $html ;
+    }
+
+
     //签到，每天奖励1钻石分
     public function sign(){
         $userId=session('userId');
@@ -92,12 +153,21 @@ class IndexController extends CommonController
     public function register() {
         $userId=session('userId');
         $store = getStore($userId);
+
+        $userInfo = getUser($userId);
+        $son_count = M('user')->where(array('zhuce_parent_id' => $userId))->count();
+        
+        if ($son_count >= 12) {
+            $return['msg'] = "您已达到注册帐号上限";
+            $return['errcode'] = 2;
+            $this->ajaxReturn($return);
+        }
+
         if ($store['people_money'] < 300) {
             $return['msg'] = "注册账号基金不足";
             $return['errcode'] = 2;
             $this->ajaxReturn($return);
         }
-
 
         if (empty( I('post.'))) die();
         $userId=session('userId');
@@ -133,7 +203,7 @@ class IndexController extends CommonController
         $salt= substr(md5(time()),0,3);
         $password=md5(md5(trim($data['password'])).$salt);
 
-       $registerInfo=array(
+        $registerInfo=array(
             'account'        => trim($data['account']),
             'parent_id'      => $userId,
             'username'       => '',
@@ -146,6 +216,7 @@ class IndexController extends CommonController
             'add_time'       => time(),
             'ip'             => get_client_ip(), 
             'last_login'     => 0,
+            'zhuce_parent_id'=> $userId
         );
   
         //========向user表添加信息=======

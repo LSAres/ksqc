@@ -93,8 +93,8 @@
         <div class="login">
             <div class="login-input" style="margin-top:15px;">
                 <div>
-                    <label for="phone">手机</label>
-                    <input type="text" name="phone" maxlength="20">
+                    <label for="account">手机</label>
+                    <input type="text" name="account" maxlength="20">
                 </div>
                 <div style="padding:0;margin-top:9px;">
                     <label for="password">密码</label>
@@ -128,14 +128,15 @@
         <div class="login-alert" id="Regsiter" style="display:none;">
             <div class="login-alert-board fgpw-board">
                 <div class="fgpw-context">
-                    <div><input type="text" name="realname" required placeholder="真实姓名" /></div>
+<!--                     <div><input type="text" name="realname" required placeholder="真实姓名" /></div> -->
+                    <div><input type="text" name="account" required placeholder="请输入你要注册帐号" maxlength="20" /></div>
                     <div><input type="text" name="mobile" required placeholder="请输入你要注册的手机号" maxlength="20" /></div>
                     <!--<div class="fcaptcha"><input type="text" required name="code" placeholder="验证码" maxlength="6"/></div>-->
                     <div><input type="password" name="pwd" required placeholder="设置密码" /></div>
                     <div><input type="password" name="payPwd" required placeholder="确认密码" /></div>
-                    <div><input type="password" name="two_pwd" required placeholder="设置二级密码" /></div>
+<!--                     <div><input type="password" name="two_pwd" required placeholder="设置二级密码" /></div>
                     <div><input type="password" name="two_paypwd" required placeholder="确认二级密码" /></div>
-                    <div><input type="text" name="alipay" required placeholder="支付宝" /></div>
+                    <div><input type="text" name="alipay" required placeholder="支付宝" /></div> -->
                     <!-- <div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div> -->
                     <!--<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>-->
                     <!--<div><input type="text" name="leadMobile" required placeholder="上级手机号"/></div>-->
@@ -206,10 +207,10 @@
                     $('#alertMsg').hide();
                 },
                 login: function() {
-                    var phone = $.trim($('input[name="phone"]').val()),
+                    var account = $.trim($('input[name="account"]').val()),
                         password = $.trim($('input[name="password"]').val());
                     //			var reg = /^[1][0-9]{10}$/;	//1开头11位数字
-                    if (!phone) {
+                    if (!account) {
                         this.alertMsg('请输入手机号');
                         return;
                     }
@@ -441,10 +442,16 @@
              * 找回密码
              */
             $('.fgpwBtn').click(function() {
+                var account = $('input[name=account]').val();
                 var fphone = $('input[name=fphone]').val();
                 var fcaptcha = $('input[name=fcaptcha]').val();
                 var newPassword = $('input[name=newPassword]').val();
                 var confirmPassword = $('input[name=confirmPassword]').val();
+
+                if (!account) {
+                    alertMsg('请输入帐号');
+                    return false;
+                }
 
                 if (!fphone) {
                     alertMsg('请输入手机号');
@@ -546,6 +553,7 @@
             $(".reg").on('touchstart', function() {
                 //alert(1)
                 var leadMobile = "{$fMobile}";
+                var account = $('input[name=account]').val();
                 var mobile = $('input[name=mobile]').val();
                 var pwd = $('input[name=pwd]').val();
                 var payPwd = $('input[name=payPwd]').val();
@@ -575,6 +583,10 @@
                 //     alertMsg("请填写上级手机号");
                 //     return false;
                 // }
+                if (!account) {
+                    alertMsg('请输入帐号');
+                    return false;
+                }
                 if (!mobile) {
                     alertMsg("请填写手机号");
                     return false;
@@ -587,22 +599,22 @@
                     alertMsg("请填写确认密码");
                     return false;
                 }
-                if (!realname) {
-                    alertMsg("请填写名字");
-                    return false;
-                }
-                if (!two_pwd) {
-                    alertMsg("请填写二级密码");
-                    return false;
-                }
-                if (!two_payPwd) {
-                    alertMsg("请填写确认二级密码");
-                    return false;
-                }
-                if (!alipay) {
-                    alertMsg("请填写支付宝");
-                    return false;
-                }
+                // if (!realname) {
+                //     alertMsg("请填写名字");
+                //     return false;
+                // }
+                // if (!two_pwd) {
+                //     alertMsg("请填写二级密码");
+                //     return false;
+                // }
+                // if (!two_payPwd) {
+                //     alertMsg("请填写确认二级密码");
+                //     return false;
+                // }
+                // if (!alipay) {
+                //     alertMsg("请填写支付宝");
+                //     return false;
+                // }
                 //            if(!code){
                 //                alertMsg("请填写验证码");
                 //                return false;
@@ -611,10 +623,10 @@
                     alertMsg("两次密码不一致");
                     return false;
                 }
-                if (two_payPwd != two_pwd) {
-                    alertMsg("两次二级密码不一致");
-                    return false;
-                }
+                // if (two_payPwd != two_pwd) {
+                //     alertMsg("两次二级密码不一致");
+                //     return false;
+                // }
                 $.ajax({
                     url: "{:U('Login/zhuce')}",
                     type: "post",
@@ -637,13 +649,14 @@
             });
 
             $('.loginBtn').click(function() {
-                var phone = $('input[name=phone]').val();
+                var account = $('input[name=account]').val();
                 var password = $('input[name=password]').val();
 
-                if (!phone) {
+                if ($.trim(account) == '') {
                     alertMsg('请输入手机号');
                     return false;
                 }
+                
                 if (!password) {
                     alertMsg('请输入密码');
                     return false;
@@ -653,7 +666,7 @@
                     url: "{:U('Login/testid')}",
                     type: "post",
                     data: {
-                        mobile: phone,
+                        account: account,
                         pwd: password
                     },
                     dataType: "json",

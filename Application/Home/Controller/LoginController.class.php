@@ -27,14 +27,14 @@ class LoginController extends Controller
 
 	//登陆验证
 	public function testid(){
-    	$mobile=I('post.mobile');
-	    $psw=I('post.pwd','');
+    	$account=trim(I('post.account'));
+	    $pwd=trim(I('post.pwd'));
 
 	   	$code=I('verify');
 		$udb=M('user');
 		$db_userlog = M('user_log');
-		$usinfo=$udb->where("mobile='{$mobile}' or account='{$mobile}'")->find();
-	
+
+		$usinfo=$udb->where("account='{$account}'")->find();
         if ($usinfo['lockuser']) {
             $data['msg'] = "您的账号已锁定，请联系管理员";
             $data['success']=0;
@@ -42,13 +42,14 @@ class LoginController extends Controller
         	//msg('你账号已锁定，请联系管理员');
         }
 
-		$us_old=md5(md5($psw).$usinfo['salt']);
+		$us_old=md5(md5($pwd).$usinfo['salt']);
 		if (empty($usinfo)){
             //msg("账号错误", U('Login/login'));
             $data['msg']="账号错误";
             $data['success']=0;
             $this->ajaxReturn($data);
         }
+
 		if ($us_old != $usinfo['password']){
             //msg("密码错误", U('Login/login'));
             $data['msg']="密码错误";
@@ -57,7 +58,7 @@ class LoginController extends Controller
         }
 
 		session('userId', $usinfo['id'], 3600*3);
-		session('mobile', $mobile, 3600*3);
+		session('account', $account, 3600*3);
              	
         //记录登录时间
 		M('user')->where('id='.$usinfo['id'].'')->setField('last_login',time());
