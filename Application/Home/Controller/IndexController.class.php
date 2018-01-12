@@ -8,6 +8,7 @@ class IndexController extends CommonController
     {
       $this->display();
     }
+
     //游戏主界面
     public function farm(){
         $tool = tool();
@@ -50,6 +51,32 @@ class IndexController extends CommonController
             array_push($second_list, $second * 1000);
         }
         $this->assign('second_list', json_encode($second_list));
+
+        //排行
+        $rank_list = M('user')
+            ->alias('user')
+            ->field('user.mobile, store.today_get_miner_gold')
+            ->join('__STORE__ as store ON user.id = store.uid')
+            ->where('user.mobile <> ""')
+            ->order('store.today_get_miner_gold desc')
+            ->limit(20)
+            ->select();
+        foreach ($rank_list as &$value) {
+            $value['mobile'] = substr_replace($value['mobile'], '****', 3, 4);
+        }
+        //我的排名
+        $my_rank_place = M('user')
+            ->alias('user')
+            ->field('user.mobile, store.today_get_miner_gold')
+            ->join('__STORE__ as store ON user.id = store.uid')
+            //->where('user.mobile <> "" AND store.today_get_miner_gold > $store["today_get_miner_gold"]')
+            ->where(array('user.mobile' => array('neq', ''), 'store.today_get_miner_gold' => array('gt', $store["today_get_miner_gold"])))
+            ->order('store.today_get_miner_gold desc')
+            ->count();
+
+        $this->assign('rank_list', $rank_list);
+        $this->assign('my_rank_place', $my_rank_place);
+
 
         $da = M('user')->where(array('id' => array('egt', $uid)))->select();
         // echo $this->getTree($da, $uid);
@@ -302,6 +329,7 @@ class IndexController extends CommonController
             $next_id = $nextUser['parent_id'];
         }
     }
+
     //开启矿区
     public function open_mine_area(){
         $userId = session('userId');
@@ -330,6 +358,7 @@ class IndexController extends CommonController
             msg('开启失败');
         }
     }
+
     //开启煤矿区矿层
     public function opencoallayer(){
         $userId = session('userId');
@@ -552,6 +581,7 @@ class IndexController extends CommonController
             msg('领取失败');
         }
     }
+    
     //新用户提拨70元进入水库
     public function newsTibo()
     {
@@ -616,6 +646,16 @@ class IndexController extends CommonController
         }
 
 
+        //检测每日手动挖矿次数
+        $manual_count = $db_miner_log->where(array('uid' => $uid))->count();
+        if ($manual_count >= 100) {
+            $this->ajaxReturn(array(
+                'status' => 'error',
+                'message' => '每天手动挖矿次数上限100次'
+            ));
+        }
+
+
         //挖矿
         $score = mt_rand(0, 3);
         $db_store->where(array('uid' => $uid))->setInc('miner_gold', $score);
@@ -635,6 +675,17 @@ class IndexController extends CommonController
             'note' => '手动挖矿,获得'.$score.'挖矿分',
             'time' => time()
         ];
+
+        //今日挖矿分
+        $storeInfo = $db_store->where(array('uid' => $uid))->find();
+        $today = today();
+        if ($storeInfo['last_get_miner_gold_time'] < $today['start']) {
+            $db_store->where(array('uid' => $uid))->save(array('today_get_miner_gold' => $score, 'last_get_miner_gold_time' => time()));
+        } else {
+            $db_store->where(array('uid' => $uid))->setInc('today_get_miner_gold', $score);
+        } 
+
+
         $db_miner_log->add($data1);
         $fathers_gold = $db_store->where(array('uid' => $uid))->getField('miner_gold');
         $this->ajaxReturn(array(
@@ -771,6 +822,7 @@ class IndexController extends CommonController
             ));
         }
     }
+
     //设置默认工具
     public function setDefaultTool()
     {
@@ -856,6 +908,15 @@ class IndexController extends CommonController
         'time' => time()
       ];
       $db_miner_gold_log->add($data);
+
+      $storeInfo = $store->where(array('uid' => $uid))->find();
+      $today = today();
+      if ($storeInfo['last_get_miner_gold_time'] < $today['start']) {
+        $store->where(array('uid' => $uid))->save(array('today_get_miner_gold' => $final_score, 'last_get_miner_gold_time' => time()));
+      } else {
+        $store->where(array('uid' => $uid))->setInc('today_get_miner_gold', $final_score);
+      }
+
       //挖矿记录
       $data1 = [
         'uid' => $uid,

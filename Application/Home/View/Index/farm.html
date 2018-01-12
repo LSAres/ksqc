@@ -1571,6 +1571,18 @@
         </div>
     </div>
 
+    <!-- 排行榜开始 -->
+    <div style="position: absolute;top: 98px;left: 50px;">
+        <ul>
+                <li>排行榜</li>
+            <foreach name="rank_list" item="v" key="k">
+                <li>{$k+1}---{$v['mobile']}</li>
+            </foreach>
+                <li>我是第 {$my_rank_place + 1} 名</li>
+        </ul>
+    </div>
+    <!-- 排行榜结束 -->
+
     <script src="__PUBLIC__/fuguiji/js/jquery-1.7.2.min.js"></script>
     <script>
         //用户
