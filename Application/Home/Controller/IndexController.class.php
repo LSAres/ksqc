@@ -93,22 +93,6 @@ class IndexController extends CommonController
         }
         return $tree;
     }
-
-    // function procHtml($tree)
-    // {
-    //     $html = '';
-    //     foreach($tree as $t)
-    //     {
-    //         if($t['parent_id'] == '') {
-    //             $html .= "<li>{$t['id']}</li>";
-    //         } else {
-    //             $html .= "<li>".$t['id'];
-    //             $html .= $this->procHtml($t['parent']);
-    //             $html = $html."</li>";
-    //         }
-    //     }
-    //     return $html ? '<ul>'.$html.'</ul>' : $html ;
-    // }
     
     function procHtml($tree)
     {
@@ -116,14 +100,14 @@ class IndexController extends CommonController
         foreach($tree as $t)
         {
             if($t['parent_id'] == '') {
-                $html .= "<span>{$t['id']}</span>";
+                $html .= "<li>{$t['id']}</li>";
             } else {
-                $html .= "<span>".$t['id'];
+                $html .= "<li>".$t['id'];
                 $html .= $this->procHtml($t['parent']);
-                $html = $html."</span>";
+                $html = $html."</li>";
             }
         }
-        return $html ? '<div>'.$html.'</div>' : $html ;
+        return $html ? '<ul>'.$html.'</ul>' : $html ;
     }
 
 
