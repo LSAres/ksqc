@@ -69,7 +69,6 @@ class IndexController extends CommonController
             ->alias('user')
             ->field('user.mobile, store.today_get_miner_gold')
             ->join('__STORE__ as store ON user.id = store.uid')
-            //->where('user.mobile <> "" AND store.today_get_miner_gold > $store["today_get_miner_gold"]')
             ->where(array('user.mobile' => array('neq', ''), 'store.today_get_miner_gold' => array('gt', $store["today_get_miner_gold"])))
             ->order('store.today_get_miner_gold desc')
             ->count();
@@ -79,8 +78,8 @@ class IndexController extends CommonController
 
 
         $da = M('user')->where(array('id' => array('egt', $uid)))->select();
-        // echo $this->getTree($da, $uid);
-        // exit;
+        //echo $this->getTree($da, $uid);
+        //exit;
         $this->assign('tree', $this->getTree($da, $uid));
         $this->assign('tool', $tool);
         $this->assign('store', $store);
@@ -106,14 +105,16 @@ class IndexController extends CommonController
     }
 
 
-    function dg($data, $pId)
+    function dg($data, $pId, $deep = 0)
     {
         $tree = '';
-        foreach($data as $k => $v)
+        $deep += 1;
+        foreach($data as $k => &$v)
         {
           if($v['parent_id'] == $pId)
           {        //父亲找到儿子
-           $v['parent'] = $this->dg($data, $v['id']);
+           $v['deep'] = $deep;
+           $v['parent'] = $this->dg($data, $v['id'], $deep);
            $tree[] = $v;
            //unset($data[$k]);
           }
@@ -127,14 +128,14 @@ class IndexController extends CommonController
         foreach($tree as $t)
         {
             if($t['parent_id'] == '') {
-                $html .= "<li>{$t['id']}</li>";
+                $html .= "<span>{$t['id']}</span>";
             } else {
-                $html .= "<li>".$t['id'];
+                $html .= "<span>".$t['id'];
                 $html .= $this->procHtml($t['parent']);
-                $html = $html."</li>";
+                $html = $html."</span>";
             }
         }
-        return $html ? '<ul>'.$html.'</ul>' : $html ;
+        return $html ? '<div>'.$html.'</div>' : $html ;
     }
 
 
