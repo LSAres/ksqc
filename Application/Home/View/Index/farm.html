@@ -1585,6 +1585,10 @@
 
     <script src="__PUBLIC__/fuguiji/js/jquery-1.7.2.min.js"></script>
     <script>
+        $('li').click(function(){
+            var rankingListCall = $(this).find('ul');
+            $(rankingListCall[0]).slideToggle();
+        });
         //用户
         var user = <?php echo json_encode($user)?>;
         //console.log(user);
