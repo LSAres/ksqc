@@ -9,33 +9,63 @@
 }
 
 .login .login-input {
-    width: 215px;
-    height: 102px;
+    width: 317px;
+    height: 341px;
     text-align: -webkit-center;
     text-align: -moz-center;
     border: solid 1px transparent;
     background: url(../../images/login/login-back.png) no-repeat;
-    border-radius: 20px;
-    box-shadow: 4px 4px 11px #82591e;
+   /* border-radius: 20px;*/
+    box-shadow: 0px 0px 1px #82591e;
     background-size: 100% 100%;
-    margin-left: 14%;
+    margin:0 auto;
     position: relative;
-    top: 44%;
+    top: 37%;
     /* left: 18%; */
     box-sizing: border-box;
 }
+.zhanghao{
+    position: absolute;
+    width: 79px;
+    height: 40px;
+    /* border: solid 1px red; */
+    top: 7%;
+    left: 4%;
+    background: url(../../images/login/zhanghao.png) no-repeat;
+    background-size: 100% 100%;
+}
+.mima{
+    position: absolute;
+    width: 79px;
+    height: 40px;
+    /* border: solid 1px red; */
+    top: 24%;
+    left: 4%;
+    background: url(../../images/login/mima.png) no-repeat;
+    background-size: 100% 100%;
 
+}
+.yanzhengma{
+    position: absolute;
+    width: 79px;
+    height: 40px;
+    /* border: solid 1px red; */
+    top: 39%;
+    left: 4%;
+    background: url(../../images/login/yanzhengma.png) no-repeat;
+    background-size: 100% 100%;
+}
 .login .login-input > div{
-    background: url("../../images/login/input-back.png") no-repeat;
+    background: url(../../images/login/input-back.png) no-repeat;
     background-size: 100% 100%;
     margin: 0 auto;
-    margin-top:9px;
+    margin-top: 30px;
     width: 196px;
     height: 31px;
-/*	background-image: url(../../images/login/input.png) no-repeat ;
-    background-color: rgba(255,255,255,.08); */
-    border-radius: 8px;
     text-align: left;
+    border: solid 1px #8a5830;
+    margin-left: 29%;
+    border-radius: 10px;
 }
 
 .login .login-input > div label{
@@ -47,13 +77,14 @@
 }
 
 .login .login-input > div input{
-    width: 8rem;
     width: calc(100% - 4rem);
-    height: 1rem;
     font-size: 0.8rem;
-    background-color: rgba(255,255,255,.08); 
-    color: orange;
-    margin-top: 0.6rem;
+    background-color: #48260d;
+    color: #f9f6f5;
+    /* margin-top: 0.6rem; */
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
 }
 
 .login .login-input > div .captcha-input{
@@ -79,27 +110,23 @@
 }
 
 .login .loginBtn {
-    text-align: center;
-    margin-right: -73px;
-    margin-top: -56px;
     background-image: url(../../images/login/btn.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    color: #fff;
-    width: 50px;
+    width: 147px;
     height: 50px;
-    float: right;
     display: block;
-    font-size: 1.2rem;
-    line-height: 2.5rem;
-    text-shadow: 0 0 2px #694b21, 0 0 2px #694b21, 0 0 2px #694b21;
+    margin: 33% auto;
+
+
+
 }
 
 .login .forgetBtn,.login .regBtn {
-    right: 0.5rem;
+    right: 2rem;
     background-image: url(../../images/login/forget.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-position: center;
     width: 76px;
     height: 30px;
@@ -109,10 +136,10 @@
 }
 .login .regBtn {
     right: auto;
-    left: 1rem;
+    left: 2rem;
     background-image: url(../../images/login/reg.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     float: left;
 }
 
