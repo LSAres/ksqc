@@ -93,8 +93,16 @@ html,body {
 
 .closeCharge {
     width: 100px;
-    height: 40px;
-    margin: 15px 0 0 15px;
+    height: 30px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    margin: 15px 0 0 44px;
+    border: solid 1px #6cd7f5;
+    border-radius: 7px;
+    background: linear-gradient(to bottom right,#6ecee1,#3da0ce,#75d5e4);
+    box-shadow: 0 0 5px #666;
 }
 
 .chargeInputBlock {
@@ -250,20 +258,22 @@ html,body {
     background: linear-gradient(to bottom, rgb(75, 152, 189), rgb(46, 84, 99));
     border-top: solid 2px #597d8e;
     display: flex;
+    flex-direction: row;
     position: fixed;
     bottom: 0;
 }
 
 .gemeFotter div {
-    width: 20%;
-    height: 49px;
+    width: 60px;
+    height: 60px;
     border-radius: 5px;
-    margin-top: -20px;
+    margin: 0 auto;
+    margin-top: -31px;
 }
 
 .gemeFotter div:nth-child(1) {
     /*background: linear-gradient(to top right, rgb(48, 80, 90), rgb(206, 243, 255));*/
-    margin-right: 2%;
+    /*margin-right: 2%;*/
 }
 
 .gemeFotter div:nth-child(2) {
@@ -271,12 +281,12 @@ html,body {
 }
 
 .gemeFotter div:nth-child(3) {
-    width: 90px;
+    /*width: 90px;*/
     /*background: linear-gradient(to top , rgb(48, 80, 90), rgb(206, 243, 255));*/
-    margin: -20px 9% 0 9%;
+    /*margin: -20px 9% 0 9%;*/
 }
 .gemeFotter div:nth-child(3) img{
-    width: 85%;
+    /*width: 85%;*/
 }
 
 .gemeFotter div:nth-child(4) {
@@ -285,7 +295,7 @@ html,body {
 
 .gemeFotter div:nth-child(5) {
     /*background: linear-gradient(to top left, rgb(48, 80, 90), rgb(206, 243, 255));*/
-    margin-left: 2%;
+    /*margin-left: 2%;*/
 }
 
 .gemeFotter div img {
@@ -671,11 +681,17 @@ html,body {
 }
 
 .closeUserCenter {
-    width: 100px;
-    height: 35px;
-    margin-top: 12px;
-    margin-left: 2%;
-    display: block;
+    width: 150px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    margin: 15px 0 0 44px;
+    border: solid 1px #6cd7f5;
+    border-radius: 7px;
+    background: linear-gradient(to bottom right,#6ecee1,#3da0ce,#75d5e4);
+    box-shadow: 0 0 5px #666;
+    padding: 5px 0;
 
 }
 
@@ -702,18 +718,21 @@ html,body {
     overflow-y: auto;
     margin: 0% auto;
     margin-top: 15%;
+    position: relative;
 }
 
 .userCenter_functionDisplay input {
     font-size: 14px;
     text-align: center;
-    color: #999;
+    color: #666;
     width: 80%;
-    border: solid 1px #999;
+    border: solid 1px #efffff;
+    box-shadow: 0 0 5px #000 inset;
     border-radius: 10px;
     display: block;
     margin: 10px auto;
     padding: 10px 0;
+    background: linear-gradient(to bottom,rgba(171, 233, 232, .8),rgba(165, 255, 252, .8),rgba(172, 232, 231, .8));
 }
 
 .userCenter_functionDisplay input[type='submit'] {
@@ -726,7 +745,67 @@ html,body {
     background: linear-gradient(to top left,#8becf7,#062e55);
     box-shadow: 0 0 10px #fff inset;
 }
-
+.userCenter_functionDisplay input[type='button'] {
+    /*background: url(../images/pop/btn-submit.png) no-repeat;*/
+    /*background-size: 100% 100%;*/
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    border: solid 2px #7ec4e2;
+    background: linear-gradient(to top right,#8becf7,#062e55);
+    box-shadow: 0 0 10px #fff inset;
+}
+.userCenter_functionDisplay .userCodeSelect{
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+    width: 80%;
+    border: solid 1px #efffff;
+    box-shadow: 0 0 5px #000 inset;
+    border-radius: 10px;
+    display: block;
+    position: relative;
+    margin: 10px auto;
+    padding: 10px 0;
+    background: linear-gradient(to bottom,rgba(171, 233, 232, .8),rgba(165, 255, 252, .8),rgba(172, 232, 231, .8));
+}
+.userCenter_functionDisplay .userCodeSelect .downArrow{
+    display: inline-block;
+    border-top: solid 13px #666;
+    border-left: solid 5px transparent;
+    border-right: solid 5px transparent;
+    position: absolute;
+    right: 5%;
+}
+.userCenter_functionDisplay .userCodeList{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(141, 236, 233, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000 inset;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-y: auto;
+    margin-left: -100%;
+    transition: margin-left 1s;
+}
+.userCenter_functionDisplay .userCodeList label{
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+    width: 80%;
+    border: solid 1px #efffff;
+    box-shadow: 0 0 5px #000 inset;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 0;
+    background: linear-gradient(to bottom,rgba(171, 233, 232, .8),rgba(165, 255, 252, .8),rgba(172, 232, 231, .8));
+}
 /*个人中心：积分使用记录*/
 .miningHistory {
     padding: 0 1rem;
@@ -815,7 +894,60 @@ html,body {
 .exchangeHistorySelect div.active{
     box-shadow: 0 0 15px #040404 inset;
 }
-
+/*切换登录*/
+.userChange{
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.userLogin{
+    width: 75%;
+    height: 27%;
+    border-radius: 15px;
+    background: linear-gradient(to bottom,#5de3f9 ,#63bbd6,#4b899c);
+    margin: 50% auto;
+    padding-top: 7%;
+    display: flex;
+    flex-direction: column;
+}
+.userLogin input{
+    width: 80%;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    margin: 5px auto;
+    border-radius: 5px;
+    padding: 5px 0;
+    text-align: center;
+    background: linear-gradient(to bottom,#b2f7f3,#64c1b0,#9ce7e0);
+    border: solid 1px #bdfffe;
+    box-shadow: 0 0 5px #999 inset;
+}
+.userLogin div{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+.userLogin div span{
+    display: inline-block;
+    width: 40%;
+    color: #fff;
+    text-shadow: 0 0 5px #666;
+    box-shadow: 0 0 5px #666;
+    text-align: center;
+    border: solid 1px #a3fff5;
+    border-radius: 10px;
+    padding: 5px 0;
+    margin: 0 auto;
+}
+.userLogin div span:nth-child(1){
+    background: linear-gradient(to bottom right,#0096b1,#01c2d6,#c7fffc);
+}
+.userLogin div span:nth-child(2){
+    background: linear-gradient(to bottom left,#0096b1,#01c2d6,#c7fffc);
+}
 /*商店：宝箱购买*/
 .catchShop {
     width: 100%;
@@ -1130,36 +1262,41 @@ html,body {
     text-align: center;
     border-radius: 0 0 10px 10px;
     padding: 15px 0;
+    isplay: flex;
+    flex-direction: row;
 }
 
 .promptBlock .promptBlock_foot span {
     width: 100px;
     height: 34px;
-    color: #fff;
     text-shadow: 0 0 5px #000;
-    box-shadow: 0 0 10px #634a13 inset;
-    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    margin: auto;
+    border: solid 1px #6cd7f5;
+    border-radius: 7px;
+    background: linear-gradient(to bottom right,#6ecee1,#3da0ce,#75d5e4);
+    box-shadow: 0 0 5px #666;
     display: inline-block;
-    padding: 5px 0;
-    margin: 0 5%;
 
 }
 
-.promptBlock .promptBlock_foot span:nth-child(1) {
-    background: url(../images/farm/prompt_TrueButton.png);
-    background-position: center;
-    background-size:100% 100%;;
-    background-repeat: no-repeat;
+/*.promptBlock .promptBlock_foot span:nth-child(1) {*/
+    /*background: url(../images/farm/prompt_TrueButton.png);*/
+    /*background-position: center;*/
+    /*background-size:100% 100%;;*/
+    /*background-repeat: no-repeat;*/
 
-}
+/*}*/
 
-.promptBlock .promptBlock_foot span:nth-child(2) {
-    background: url(../images/farm/prompt_FalseButton.png);
-    background-position: center;
-    background-size: 100% 100%;;
-    background-repeat: no-repeat;
+/*.promptBlock .promptBlock_foot span:nth-child(2) {*/
+    /*background: url(../images/farm/prompt_FalseButton.png);*/
+    /*background-position: center;*/
+    /*background-size: 100% 100%;;*/
+    /*background-repeat: no-repeat;*/
 
-}
+/*}*/
 
 /*游戏 */
 .gameBody {
@@ -1182,7 +1319,7 @@ html,body {
     background: url("../images/farm/gameTopBackground.png");
     background-repeat: no-repeat;
     background-position: center 0%;
-    background-size: 100% 200%;
+    background-size: 100% 100%;
 }
 .gameBody .gameBody_top .topMineral{
     width: 33px;
@@ -1194,7 +1331,7 @@ html,body {
 }
 .gameBody_bottom {
     border-top: solid 3px green;
-    background: url("../images/farm/gameBottomBackground.png");
+    background: url("../images/farm/game_bottom_TopImg.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -1230,7 +1367,7 @@ html,body {
 }
 
 .gameBody_bottomRight .bottom_TopImg {
-    width: 100%;
+    width: 101%;
     height: 85px;
     display: block;
 }
@@ -1259,6 +1396,13 @@ html,body {
     transition: all .5s;
     transform-origin: left bottom;
     transform: rotateZ(-0deg);
+}
+.seamDiv .seamFire{
+    width: 35px;
+    height: 60px;
+    position: absolute;
+    top: 25%;
+    left: 39%;
 }
 .seamDiv .seamUpCall {
     width: 45px;

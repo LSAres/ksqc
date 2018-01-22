@@ -155,6 +155,21 @@ $(function () {
     $('.closeUserCenter').click(function () {
         $('.userCenter').fadeOut();
     });
+    /*个人中心：账号切换*/
+    $('.userCodeSelect').click(function(){
+        $('.userCodeList').css('margin-left','0%');
+    });
+    /*个人中心：点击账号列表 呼出登录切换*/
+    $('.userCodeList label').click(function(){
+        $('.userCodeList').css('margin-left','-100%');
+        $('.userCenter').fadeOut();
+        $('.userChange').fadeIn();
+        $('.userLogin-codeNumber').val($(this).text());
+    });
+    /*个人中心：登录切换关闭*/
+    $('.userChangeClose').click(function(){
+        $('.userChange').fadeOut();
+    });
     /*个人中心：兑换记录切换*/
     $('.exchangeHistorySelect div').click(function(){
         $('.exchangeHistorySelect div').removeClass('active');
@@ -273,7 +288,7 @@ $(function () {
     top_leftMachine(topCtx);
 
     /**顶部：右侧机器*/
-    var top_rightMachinePoint = {x: (topCtx.canvas.width - 80), y: 208, w: 80, h: 200};
+    var top_rightMachinePoint = {x: (topCtx.canvas.width - 90), y: 208, w: 90, h: 200};
     var topRightMachineImg = document.getElementById('gameTopRight');
 
     function top_rightMachine(ctx) {

@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+html{
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+.page{
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+}
+.login{
+
+    position: absolute;
+}
+.loginbg{
+    background-size: 100% 100%;
+    position: absolute;
+}
+.canvas{
+    position: absolute;
+}
+#loadingbg{
+    position: absolute;
+}
+.login-alert-board{
+    width: 80%;
+    height: 200px;
+    border-radius: 15px;
+    border: solid 2px #7dd1ff;
+    position: relative;
+    background: linear-gradient(to bottom,#9af9f7,#7cd9e8,#5898d0);
+}
+.fgpw-board {
+    height: 50% !important;
+    margin-top: 47%;
+}

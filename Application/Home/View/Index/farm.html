@@ -55,6 +55,8 @@
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/home/home.css">
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/shop/shop.css">
     <link type="text/css" rel="stylesheet" href="__PUBLIC__/fuguiji/css/game_index.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width:450px)" href="__PUBLIC__/fuguiji/css/game_index_pc.css">
+
     <style>
         nav {
             position: absolute;
@@ -99,15 +101,16 @@
     <!--充值-->
     <div class="outerDiv chageDiv" style="display:none;">
         <!--关闭充值-->
-        <img src="__PUBLIC__/fuguiji/images/farm/backGameBtn.png" class="closeCharge">
+        <!--<img src="__PUBLIC__/fuguiji/images/farm/backGameBtn.png" class="closeCharge">-->
+        <div class="closeCharge">关闭充值</div>
         <!--充值显示-->
         <div class="chargeInputBlock">
             <!--可用余额显示-->
             <div class="userWealth">可用金额 <span>500</span></div>
             <!--充值类型选择-->
             <div class="chageTypeSelect">
-                <div class="active btn-type1">充值类型1</div>
-                <div class="btn-type2"> 充值类型2</div>
+                <div class="active btn-type1">一般充值</div>
+                <div class="btn-type2"> 启动充值</div>
 
             </div>
             <input type="text" placeholder="请输入充值金额为50倍数" class="chargeInput">
@@ -144,7 +147,11 @@
             </div> -->
                 <div class="chargeTypeSelect">
                     <img src="__PUBLIC__/fuguiji/images/home/pay02.png" alt="">
-                    <span>充值方式名称</span>
+                    <span>微信</span>
+                </div>
+                <div class="chargeTypeSelect">
+                    <img src="__PUBLIC__/fuguiji/images/home/pay02.png" alt="">
+                    <span>支付宝</span>
                 </div>
             </div>
             <!--确认充值按钮-->
@@ -952,18 +959,33 @@
     <!--个人中心-->
     <div class="outerDiv userCenter" style="display: none;">
         <!--关闭个人设置-->
-        <img src="__PUBLIC__/fuguiji/images/farm/backGameBtn.png" alt="" class="closeUserCenter">
+        <!--<img src="__PUBLIC__/fuguiji/images/farm/backGameBtn.png" alt="" class="closeUserCenter">-->
+        <div class="closeUserCenter">关闭个人设置</div>
         <!---->
         <div class="userCenterControl">
             <!--显示框-->
             <div class="userCenter_functionDisplay">
-                <input type="text" value="{$user.account}">
-                <input type="text" value="{$user.username}">
-                <input type="text" value="{$user.alipay}">
-                <input type="text" value="{$user.ip}">
+                <div class="userCodeSelect">
+                    <!--用户账号-->
+                    <span class="userCode">{$user.account}</span>
+                    <!--向下箭头-->
+                    <span class="downArrow"></span>
+                </div>
+                <!--<input type="text" value="{$user.account}" readonly="readonly">-->
+                <input type="text" value="{$user.username}" readonly="readonly">
+                <input type="text" value="{$user.alipay}" readonly="readonly">
+                <input type="text" value="{$user.ip}" readonly="readonly">
                 <!--<input type="text" placeholder="提示用户输入的信息">-->
-                <input type="submit" value="确定">
+
+                <input type="button" value="注销登录" class="loginOut">
+                <input type="submit" value="保存修改">
                 <a href="{:U('Login/exhibition', array('fMobile' => $user['mobile'], 'zhuce' => 1))}">注册链接：{:U('Login/login', array('fMobile' => $user['mobile'], 'zhuce' => 1))}</a>
+                <!--账号选择列表-->
+                <div class="userCodeList">
+                    <label >13111111111</label>
+                    <label >13J43Q56AAA</label>
+                    <label >13333333333</label>
+                </div>
             </div>
             <!--用户注册显示框-->
             <div class="userCenter_functionDisplay" style="dispaly:none;">
@@ -1300,6 +1322,9 @@
                     <span class="seamNumber">1</span>
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
+                   
                     <!--未开启矿层时候的遮罩层 点击开启矿层-->
                     <div class="seamMask" style="display:none;">
                         <div class="seamOpen">点击开启</div>
@@ -1322,6 +1347,8 @@
                     <span class="seamNumber">2</span>
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                 </div>
                 <!--矿层显示-->
                 <div class="seamDiv">
@@ -1340,6 +1367,8 @@
                     <span class="seamNumber">3</span>
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                 </div>
                 <!--矿层显示-->
                 <div class="seamDiv">
@@ -1356,6 +1385,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">4</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1373,6 +1404,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">5</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1391,6 +1424,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">6</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1409,6 +1444,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">7</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1426,6 +1463,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">8</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1444,6 +1483,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">9</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1462,6 +1503,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">10</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1479,6 +1522,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">11</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1497,6 +1542,8 @@
                     </div>
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">12</span>
+                    <!--燃烧的火把-->
+                    <img src="__PUBLIC__/fuguiji/images/farm/seamFire.gif" alt="" class="seamFire">
                     <!--箱子-->
                     <img src="__PUBLIC__/fuguiji/images/farm/caseIcon.png" alt="" class="caseImg ">
                 </div>
@@ -1504,7 +1551,7 @@
 
             </div>
             <!--下方占位图片-->
-            <img src="__PUBLIC__/fuguiji/images/farm/game_bottom_TopImg.png" class="bottonPosition" style="display: block; width: 100%; height: 85px;" />
+            <img src="__PUBLIC__/fuguiji/images/farm/game_bottom_bottomImg.png" class="bottonPosition" style="display: block; width: 100%; height: 405px;" />
 
 
         </div>
@@ -1520,18 +1567,20 @@
     <!--页面底部-->
     <div class="gemeFotter">
 
+        <!--<div>-->
+            <!--<img src="__PUBLIC__/fuguiji/images/farm/loginOut.png" alt="" class="">-->
+        <!--</div>-->
         <div>
-            <img src="__PUBLIC__/fuguiji/images/farm/userTestIcon.png" alt="" class="">
+            <img src="__PUBLIC__/fuguiji/images/farm/userCenter.png" alt="" class="userCenterCall">
         </div>
+
         <div>
             <img src="__PUBLIC__/fuguiji/images/farm/userFriend.png" alt="" class="friendCall">
         </div>
         <div>
-            <img src="__PUBLIC__/fuguiji/images/farm/userCenter.png" alt="" class="userCenterCall">
-        </div>
-        <div>
             <img src="__PUBLIC__/fuguiji/images/farm/catchShopCall.png" alt="" class="catchShopCall">
         </div>
+
         <div>
             <a href="map.html">
                 <img src="__PUBLIC__/fuguiji/images/farm/map_icon.png" class="mapCall" />
@@ -1550,8 +1599,8 @@
             </div>
             <div class="promptBlock_foot">
                 <!--确认取消按钮-->
-                <span></span>
-                <span></span>
+                <span>确定</span>
+                <span>取消</span>
             </div>
         </div>
     </div>
@@ -1566,20 +1615,32 @@
             </div>
             <div class="promptBlock_foot">
                 <!--确认按钮-->
-                <span></span>
+                <span>确定</span>
             </div>
         </div>
     </div>
-
+    <!--登录切换-->
+    <div class="outerDiv userChange" style="display:none;">
+        <div class="userLogin">
+            <input type="text" value="13111111111" class="userLogin-codeNumber">
+            <input type="password" value="111111">
+            <div >
+                <span class="userChangeClose">取消</span>
+                <span>登录并保存</span>
+            </div>
+        </div>
+    </div>
     <!-- 排行榜开始 -->
-    <div style="position: absolute;top: 98px;left: 50px;">
-        <ul>
-                <li>排行榜</li>
-            <foreach name="rank_list" item="v" key="k">
-                <li>{$k+1}---{$v['mobile']}</li>
-            </foreach>
-                <li>我是第 {$my_rank_place + 1} 名</li>
-        </ul>
+    <div style="position: absolute;top: 98px; left: 32%; height: 30px;">
+       <marquee direction="up" scrollamount="2" style="height:30px;">
+           <ul>
+               <li>排行榜</li>
+               <foreach name="rank_list" item="v" key="k">
+                   <li>{$k+1}---{$v['mobile']}</li>
+               </foreach>
+               <li>我是第 {$my_rank_place + 1} 名</li>
+           </ul>
+       </marquee>
     </div>
     <!-- 排行榜结束 -->
 
@@ -1588,6 +1649,7 @@
         $('li').click(function(){
             var rankingListCall = $(this).find('ul');
             $(rankingListCall[0]).slideToggle();
+            event.stopPropagation();
         });
         //用户
         var user = <?php echo json_encode($user)?>;
@@ -1823,9 +1885,9 @@
             });
 
             //退出登录
-            $('.gemeFotter').find('div').eq(0).on('click', function() {
-                window.location.href = "{:U('Login/logout')}";
-            });
+            $('.loginOut').on('click', function() {
+                 window.location.href = "{:U('Login/logout')}";
+             });
 
 
             //仅供观赏的ajax
