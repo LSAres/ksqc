@@ -341,3 +341,24 @@
 #Regsiter .only-confirm {
     top: 79%;
 }
+.regionSelectDiv {
+    height: 36px;
+    position: relative;
+}
+.regionSelectDiv input{
+    padding:0 !important;
+}
+.regionSelectDiv .regionList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.regionSelectDiv .regionList span{
+    color: #864714;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    background: linear-gradient(to bottom,#d3f8ff, #77d8d8 ,#c1f9ff);
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 5px #000 inset;
+    border: 2px solid #c6fffd;
+}
