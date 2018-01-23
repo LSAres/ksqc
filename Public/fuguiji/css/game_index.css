@@ -651,21 +651,21 @@ html,body {
     overflow: auto;
     padding: 10px;
 }
-.friendStructure .structureDisplay div{
-    display: block;
-    white-space: nowrap;
-}
-.friendStructure .structureDisplay div span {
-    display: inline-block;
-    font-size: 14px;
-    padding: 5px 10px;
-    background: linear-gradient(to bottom,#b0f0ff,#39b0d4,#8fdef3);
-    color: #fff;
-    border: solid 1px #018bdc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #666 inset;
+/*.friendStructure .structureDisplay div{*/
+    /*display: block;*/
+    /*white-space: nowrap;*/
+/*}*/
+/*.friendStructure .structureDisplay div span {*/
+    /*display: inline-block;*/
+    /*font-size: 14px;*/
+    /*padding: 5px 10px;*/
+    /*background: linear-gradient(to bottom,#b0f0ff,#39b0d4,#8fdef3);*/
+    /*color: #fff;*/
+    /*border: solid 1px #018bdc;*/
+    /*border-radius: 5px;*/
+    /*box-shadow: 0 0 5px #666 inset;*/
 
-}
+/*}*/
 
 
 /*个人中心*/
