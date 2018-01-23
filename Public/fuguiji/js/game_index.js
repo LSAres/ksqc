@@ -2,7 +2,6 @@ $(function () {
     $('.outerDiv').css({
         'height': $(window).outerHeight() + 'px'
     });
-
     /**
      * 滚动条切换*/
     $('.scrollChange img').click(function () {
@@ -25,7 +24,6 @@ $(function () {
 
     $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').click(function () {
         $('.promptTrueOrFalse').fadeOut();
-        //alert(11);
     });
     $('.promptTrueOrFalse .promptBlock_foot span:nth-child(2)').click(function () {
         $('.promptTrueOrFalse').fadeOut();
@@ -1436,7 +1434,6 @@ $(function () {
     $('.seamUpCall').on('click', function () {
         var layer = $(this).attr('callnumber');
         gcLayer(layer);
-        alert(ttt.length);
     });
 
 

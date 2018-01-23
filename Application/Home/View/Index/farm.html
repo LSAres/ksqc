@@ -158,7 +158,7 @@
             <div class="chargeButton">确认充值</div>
         </div>
     </div>
-    <!--升级商店DIV 对应12矿层 共12个-->
+    <!--升级商店DIV-->
     <div class=" outerDiv upgradeShow" style="display: none;">
         <div class="upgrade">
             <div class="upgradeTitle">
@@ -214,666 +214,7 @@
 
         </div>
     </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
 
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="2">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="3">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="4">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="5">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="6">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="7">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle" layer="8">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="8">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle" layer="9">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="9">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle" layer="10">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="10">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle" layer="11">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="11">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
-    <div class=" outerDiv upgradeShow" style="display: none;">
-        <div class="upgrade">
-            <div class="upgradeTitle">
-                <!--功能信息-->
-                <span>升级页面</span>
-                <!--关闭图片-->
-                <img src="__PUBLIC__/fuguiji/images/home/close.png">
-            </div>
-            <!--商店头部信息-->
-            <div class="upgradeHeader" layer="12">
-                <!--左侧图片-->
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" class="upgradeHeader_left">
-                <!--右侧显示框  分为数值条 和 矿层选择 看情况启用-->
-                <!--矿层数值条-->
-                <div class="upgradeHeader_rightDisplay">
-                    <img src="__PUBLIC__/fuguiji/images/farm/lv_up_icon.png">
-                    <div></div>
-                    <label></label>
-                </div>
-
-            </div>
-            <!--升级选择-->
-            <div class="upgradeSelect" layer="12">
-                <!--选择行-->
-                <foreach name="tool" item="v">
-                    <div>
-                        <img src="{$v['img']}" alt="">
-                        <span>{$v['name']}({$v['miner_gold']})</span>
-                        <button class="risk" tool_id="{$v['id']}">升级</button>
-                    </div>
-                </foreach>
-                <!--             <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div>
-                        <div>
-                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513753946&di=53688a070cf6fd319cfe131f7536677b&imgtype=jpg&er=1&src=http%3A%2F%2Fjoymepic.joyme.com%2Farticle%2Fuploads%2F20174%2F181495090990669871.jpeg" alt="" >
-                            <span>升级功能的名称</span>
-                            <button class="risk" tool_id="{$v['id']}">升级</button>
-                        </div> -->
-            </div>
-
-        </div>
-    </div>
     <!--好友-->
     <div class="outerDiv friend" style="display: none;">
         <div class="friendAll">
@@ -1262,21 +603,28 @@
     <div class="gameBody">
         <!--顶部 青天白云 搬运矿工-->
         <div class="gameBody_top">
+            <!--顶部左右机器 运动人物所需图片-->
             <img src="__PUBLIC__/fuguiji/images/farm/gameTopLeft.png" id="gameTopLeft" style="display: none;" />
             <img src="__PUBLIC__/fuguiji/images/farm/gameTopRight.png" id="gameTopRight" style="display: none;" />
             <img src="__PUBLIC__/fuguiji/images/farm/top_leftHumen.png" id="gameTopLeftHumen" style="display: none;" />
             <img src="__PUBLIC__/fuguiji/images/farm/top_rightHumen.png" id="gameTopRightHumen" style="display: none;" />
             <img src="__PUBLIC__/fuguiji/images/farm/topHumenCome.png" id="topHumenCome" style="display: none;" />
             <img src="__PUBLIC__/fuguiji/images/farm/topHumengo.png" id="topHumengo" style="display: none;" />
-            <!--蓝色-->
-            <img src="__PUBLIC__/fuguiji/images/farm/tophumen1_1.png" id="gameTopHumen" style="display:none;" />
-            <img src="__PUBLIC__/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;" />
-            <img src="__PUBLIC__/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;" />
+            <!--矿区标示牌-->
+            <img src="__PUBLIC__/fuguiji/images/farm/goldSeam.png" alt="" class="seamIdentification" >
+            <img src="__PUBLIC__/fuguiji/images/farm/silverSeam.png" alt="" class="seamIdentification" style="display:none;">
+            <img src="__PUBLIC__/fuguiji/images/farm/copperSeam.png" alt="" class="seamIdentification" style="display:none;">
+            <img src="__PUBLIC__/fuguiji/images/farm/ironSeam.png" alt="" class="seamIdentification" style="display:none;">
+            <img src="__PUBLIC__/fuguiji/images/farm/diamondSeam.png" alt="" class="seamIdentification" style="display:none;">
             <canvas class="gameBody_topCanvas" width="369" height="408">您的浏览器或手机不支持此功能！</canvas>
             <img src="__PUBLIC__/fuguiji/images/farm/mineralDown.gif" class="topMineral">
         </div>
         <!--下方 电梯和矿层-->
         <div class="gameBody_bottom">
+            <!--矿层运动人物-->
+            <img src="__PUBLIC__/fuguiji/images/farm/tophumen1_1.png" id="gameTopHumen" style="display:none;" />
+            <img src="__PUBLIC__/fuguiji/images/farm/tophumen2_1.png" id="gameTopHumen1" style="display:none;" />
+            <img src="__PUBLIC__/fuguiji/images/farm/tophumen3_1.png" id="gameTopHumen2" style="display:none;" />
             <!--下方左侧电梯-->
             <div class="gameBody_bottomLeft">
                 <!--电梯图片-->
@@ -1302,21 +650,22 @@
             <div class="gameBody_bottomRight">
                 <!--上方占位图片-->
                 <img src="__PUBLIC__/fuguiji/images/farm/game_bottom_TopImg.png" class="bottom_TopImg" />
+                <!--升级商店呼出按钮--->
+                <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="1">
+                <!--五个持续图标-->
+                <div class="continuedTime">
+                    <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
+                    <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
+                    <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
+                    <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
+                    <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
+                </div>
                 <!--矿层显示 -->
                 <!--自定义属性 callnumber:用于JS呼出对应升级操作块-->
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="1">
-                    <!--升级商店呼出按钮--->
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="1">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <!--矿层数字-->
                     <span class="seamNumber">1</span>
@@ -1334,15 +683,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="2">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="2">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">2</span>
                     <!--箱子-->
@@ -1354,15 +695,8 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="3">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="3">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">3</span>
                     <!--箱子-->
@@ -1374,15 +708,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="4">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="4">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">4</span>
                     <!--燃烧的火把-->
@@ -1393,15 +719,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="5">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="5">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">5</span>
                     <!--燃烧的火把-->
@@ -1413,15 +731,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="6">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="6">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">6</span>
                     <!--燃烧的火把-->
@@ -1433,15 +743,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="7">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="7">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">7</span>
                     <!--燃烧的火把-->
@@ -1452,15 +754,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="8">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="8">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">8</span>
                     <!--燃烧的火把-->
@@ -1472,15 +766,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="9">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="9">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">9</span>
                     <!--燃烧的火把-->
@@ -1492,15 +778,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="10">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="10">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">10</span>
                     <!--燃烧的火把-->
@@ -1511,15 +789,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="11">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="11">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">11</span>
                     <!--燃烧的火把-->
@@ -1531,15 +801,7 @@
                 <div class="seamDiv">
                     <!--手动挖矿触发按钮-->
                     <img src="__PUBLIC__/fuguiji/images/farm/minerActionIcon.png" class="minerAction" controlSeam="12">
-                    <img src="__PUBLIC__/fuguiji/images/farm/userSeamUp.png" class="seamUpCall" callnumber="12">
-                    <!--五个持续图标-->
-                    <div class="continuedTime">
-                        <img src="__PUBLIC__/fuguiji/images/farm/pickaxe.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/electricDrills.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/small_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/big_Forklift.png" alt="">
-                        <img src="__PUBLIC__/fuguiji/images/farm/explosive.png" alt="">
-                    </div>
+
                     <canvas width="300" height="140" class="seam seamCanvas1">您的浏览器或手机不支持此功能</canvas>
                     <span class="seamNumber">12</span>
                     <!--燃烧的火把-->
@@ -1885,8 +1147,20 @@
 
             //退出登录
             $('.loginOut').on('click', function() {
-                 window.location.href = "{:U('Login/logout')}";
-             });
+                //window.location.href = "{:U('Login/logout')}";
+                $.ajax({
+                    type: "POST",
+                    url: "{:U('Index/getout')}",
+                    data: {1:1},
+                    datatype: "JSON",
+                    success: function(data) {
+                        window.location.href = "{:U('Login/logout')}";
+                    }, error: function(data) {
+                        console.log('错误');
+                    }
+
+                });
+            });
 
 
             //仅供观赏的ajax

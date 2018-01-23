@@ -1312,7 +1312,13 @@ html,body {
     height: 410px;
     position: relative;
 }
-
+.seamIdentification{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 51%;
+    left: 86%;
+}
 .gameBody .gameBody_top .gameBody_topCanvas {
     width: 100%;
     height: 100%;
@@ -1364,6 +1370,7 @@ html,body {
     display: inline-block;
     margin-left: -1%;
     vertical-align: top;
+    position: relative;
 }
 
 .gameBody_bottomRight .bottom_TopImg {
@@ -1404,14 +1411,14 @@ html,body {
     top: 25%;
     left: 39%;
 }
-.seamDiv .seamUpCall {
+.seamUpCall {
     width: 45px;
     height: 45px;
     border-radius: 100%;
     box-shadow: 0 0 7px #fefff0 inset;
     position: absolute;
     right: 0;
-    top: 40%;
+    top: 2%;
     padding: 5px;
 }
 .seamDiv .seamNumber{
@@ -1430,13 +1437,13 @@ html,body {
     top: 0;
     left: 0;
 }
-.seamDiv .continuedTime {
-    width: 80%;
+.continuedTime {
+    width: 65%;
     position: absolute;
     top: 0%;
-    left: 15%;
+    left: 5%;
 }
-.seamDiv .continuedTime img{
+.continuedTime img{
     width: 35px;
     height: 35px;
     padding: 5px;

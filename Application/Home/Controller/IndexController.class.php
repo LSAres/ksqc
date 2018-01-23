@@ -6,7 +6,7 @@ class IndexController extends CommonController
     //首页
     public function index()
     {
-      $this->display();
+      $this->display('farm');
     }
 
     //游戏主界面
@@ -996,5 +996,11 @@ class IndexController extends CommonController
         'hours' => $hours,
         'second' => $final_second * 1000
       );
+    }
+    public function getout(){
+        session(null);
+        $data['success'] = 1;
+        $this->ajaxReturn($data);
+        return;
     }
 }
