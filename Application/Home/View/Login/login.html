@@ -202,13 +202,7 @@
     <script src="__PUBLIC__/fuguiji/js/function.js"></script>
     <script>
         $(function() {
-            $('.regionSelectDiv input').click(function(){
-                $('.regionSelectDiv .regionList ').slideToggle();
-            });
-            $('.regionList span').click(function(){
-                $('.regionSelectDiv input').val($(this).text());
-                $('.regionSelectDiv .regionList ').slideUp();
-            });
+
             var zhuce = {$zhuce};
             var fMobile = "{$fMobile}";
             if (zhuce == 1) {
