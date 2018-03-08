@@ -2,7 +2,6 @@ $(function () {
     $('.outerDiv').css({
         'height': $(window).outerHeight() + 'px'
     });
-
     /**
      * 滚动条切换*/
     $('.scrollChange img').click(function () {
@@ -25,7 +24,6 @@ $(function () {
 
     $('.promptTrueOrFalse .promptBlock_foot span:nth-child(1)').click(function () {
         $('.promptTrueOrFalse').fadeOut();
-        alert(11);
     });
     $('.promptTrueOrFalse .promptBlock_foot span:nth-child(2)').click(function () {
         $('.promptTrueOrFalse').fadeOut();
@@ -52,6 +50,11 @@ $(function () {
     $('.closeCharge').click(function () {
         $(this).parent().fadeOut();
     });
+    /*充值类型选择*/
+    $('.chageTypeSelect div').click(function(){
+        $('.chageTypeSelect div').removeClass('active');
+        $(this).addClass('active');
+     });
     /*充值方式点击切换*/
     $('.chargeTypeSelect ').click(function () {
         $('.chargeTypeSelect').removeClass('selected');
@@ -132,6 +135,14 @@ $(function () {
         $('.integralType div').fadeOut();
         $('.integralType').removeClass('integralTypeShow');
     });
+    /*点击呼出结构列表*/
+    $('.structureBtn').click(function(){
+        $('.friendStructure').addClass('structureShow');
+    });
+    $('.friendStructure label').click(function(){
+        $('.friendStructure').removeClass('structureShow');
+    });
+
     /**
      * 个人中心*/
     /*呼出个人中心*/
@@ -141,6 +152,21 @@ $(function () {
     /*关闭个人中心*/
     $('.closeUserCenter').click(function () {
         $('.userCenter').fadeOut();
+    });
+    /*个人中心：账号切换*/
+    $('.userCodeSelect').click(function(){
+        $('.userCodeList').css('margin-left','0%');
+    });
+    /*个人中心：点击账号列表 呼出登录切换*/
+    $('.userCodeList label').click(function(){
+        $('.userCodeList').css('margin-left','-100%');
+        $('.userCenter').fadeOut();
+        $('.userChange').fadeIn();
+        $('.userLogin-codeNumber').val($(this).text());
+    });
+    /*个人中心：登录切换关闭*/
+    $('.userChangeClose').click(function(){
+        $('.userChange').fadeOut();
     });
     /*个人中心：兑换记录切换*/
     $('.exchangeHistorySelect div').click(function(){
@@ -260,7 +286,7 @@ $(function () {
     top_leftMachine(topCtx);
 
     /**顶部：右侧机器*/
-    var top_rightMachinePoint = {x: (topCtx.canvas.width - 80), y: 208, w: 80, h: 200};
+    var top_rightMachinePoint = {x: (topCtx.canvas.width - 90), y: 208, w: 90, h: 200};
     var topRightMachineImg = document.getElementById('gameTopRight');
 
     function top_rightMachine(ctx) {
@@ -1155,13 +1181,17 @@ $(function () {
            var controlNum = this.getAttribute('controlSeam');   //获取元素内的自定义 属性 判断控制的矿层
 
            $.ajax({
-                //async: false,
+                async: false,
                 type: "POST",
                 url: manual_url,
                 data: {layer: controlNum},
                 dataType: "json",
                 success: function (data) {
                     console.log(data);
+                    if (data.status == 'error') {
+                        promptOnlyTrue(data.message);
+                        return false;
+                    }
                 }
             });
 
@@ -1404,7 +1434,6 @@ $(function () {
     $('.seamUpCall').on('click', function () {
         var layer = $(this).attr('callnumber');
         gcLayer(layer);
-        alert(ttt.length);
     });
 
 

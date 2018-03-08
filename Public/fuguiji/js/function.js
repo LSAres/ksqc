@@ -283,3 +283,10 @@ function getRewardLog() {
     });
     return result;
 }
+$('.regionSelectDiv input').click(function(){
+    $('.regionSelectDiv .regionList ').slideToggle();
+});
+$('.regionList span').click(function(){
+    $('.regionSelectDiv input').val($(this).text());
+    $('.regionSelectDiv .regionList ').slideUp();
+});

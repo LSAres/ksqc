@@ -14,6 +14,23 @@ function msg($message, $url = '') {
 }
 
 /**
+ * [根据矿层字段获取键]
+ * @param [string] 矿层字段
+ * @param [int] 矿层字段
+ */
+function getLayerIndex($string)
+{
+	$arr = [
+		'coal_layer' => 1,
+		'irol_layer' => 2,
+		'copper_layer' => 3,
+		'silver_layer' => 4,
+		'gold_layer' => 5
+	];
+	return $arr[$string];
+}
+
+/**
  * [json格式响应ajax请求]
  */
 function json($arr) {
@@ -92,6 +109,28 @@ function getLayer($userId, $layer) {
 }
 
 /**
+ * [area 检测开发新矿区最低条件]
+ * 共5大区，煤矿自动开启，所有只有四条
+ * @return [type] [array]
+ */
+function area_check($index)
+{
+	$arr = [
+		1 => ['miner_num' => 0,'erect' =>0,'brand_num' => 0],
+		2 => ['miner_num' => 500000,'erect' =>10],
+		3 => ['miner_num' => 2000000,'erect' =>12],
+		4 => ['miner_num' => 5000000,'erect' =>15],
+		5 => ['miner_num' => 10000000,'erect' =>20],
+	];
+	if (is_string($index)) {
+		$index_str = getLayerIndex($index);
+		return $arr[$index_str + 1];
+	} else {
+    	return $arr[$index];
+    }
+}
+
+/**
  * [area 开发新矿区所需消耗物品]
  * 共5大区，煤矿自动开启，所有只有四条
  * @return [type] [array]
@@ -100,10 +139,10 @@ function area($index)
 {
 	$arr = [
 		1 => ['miner_num' => 0,'erect' =>0,'brand_num' => 0],
-		2 => ['miner_num' => 5000000,'erect' =>10,'brand_num' => 800],
-		3 => ['miner_num' => 20000000,'erect' =>12,'brand_num' => 2000],
-		4 => ['miner_num' => 50000000,'erect' =>15,'brand_num' => 5000],
-		5 => ['miner_num' => 100000000,'erect' =>20,'brand_num' => 10000],
+		2 => ['miner_num' => 900000,'erect' =>10,'brand_num' => 900],
+		3 => ['miner_num' => 2700000,'erect' =>12,'brand_num' => 2700],
+		4 => ['miner_num' => 8100000,'erect' =>15,'brand_num' => 8100],
+		5 => ['miner_num' => 24300000,'erect' =>20,'brand_num' => 24300],
 	];
     return $arr[$index];
 }

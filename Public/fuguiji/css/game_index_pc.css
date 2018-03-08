@@ -1,0 +1,41 @@
+/*游戏页面的最外围*/
+html {
+    max-width: 500px;
+    margin: 0 auto;
+
+    position: relative;
+}
+/*页面顶部的资金栏*/
+.gameTop {
+    position: absolute;
+}
+/*页面底部按钮栏*/
+.gemeFotter {
+    position: absolute;
+}
+
+/*所有的菜单*/
+.outerDiv{
+    overflow: hidden;
+    position: absolute;
+}
+/*用户个人中心底部的选择栏*/
+.userCenter_bottomFunctionSelect{
+    position: absolute;
+}
+/*用户个人中心关闭按钮*/
+.closeUserCenter {
+    margin-top: 30%;
+}
+/*用户个人中心 显示框*/
+.userCenterControl{
+    height: 51%;
+}
+/*充值关闭按钮的位置*/
+.closeCharge {
+    margin-top: 40%;
+}
+/*工具升级弹窗位置*/
+.upgrade{
+    margin-top:50%;
+}
